@@ -1,0 +1,31 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:golden_plate"
+    },
+    {
+      "item": "kaleidoscope_nether:golden_plate"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "item": "betternether:nether_ruby"
+    },
+    {
+      "item": "betternether:nether_ruby"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:ruby_steak"
+  },
+  "stir_fry_count": 5,
+  "time": 550
+}

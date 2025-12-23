@@ -1,0 +1,31 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:raw_strider_meat"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_strider_meat"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_strider_meat"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:strider_nether_wart_stew"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}

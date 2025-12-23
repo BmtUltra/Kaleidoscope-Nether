@@ -1,0 +1,31 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_cookery:raw_noodles"
+    },
+    {
+      "item": "kaleidoscope_cookery:raw_noodles"
+    },
+    {
+      "item": "kaleidoscope_cookery:raw_noodles"
+    },
+    {
+      "item": "kaleidoscope_cookery:raw_noodles"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_ghast_meat"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_ghast_meat"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:ghast_pasta"
+  },
+  "stir_fry_count": 4,
+  "time": 350
+}

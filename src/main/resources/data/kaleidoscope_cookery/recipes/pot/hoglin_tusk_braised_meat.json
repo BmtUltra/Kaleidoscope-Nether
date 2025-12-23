@@ -1,0 +1,31 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:hoglin_tusk"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    },
+    {
+      "item": "kaleidoscope_cookery:lettuce"
+    },
+    {
+      "item": "kaleidoscope_cookery:lettuce"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:hoglin_tusk_braised_meat"
+  },
+  "stir_fry_count": 6,
+  "time": 650
+}

@@ -1,0 +1,31 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    },
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    },
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    },
+    {
+      "tag": "forge:raw_mutton"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:soul_lamb_chop"
+  },
+  "stir_fry_count": 4,
+  "time": 450
+}

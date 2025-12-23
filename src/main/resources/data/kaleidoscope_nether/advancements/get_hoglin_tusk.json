@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "kaleidoscope_nether:hoglin_tusk"
+    },
+    "title": {
+      "text": "野兽的獠牙"
+    },
+    "description": {
+      "text": "获得疣猪兽的獠牙，证明你的狩猎技巧"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "kaleidoscope_nether:root",
+  "criteria": {
+    "get_hoglin_tusk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["kaleidoscope_nether:hoglin_tusk"]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}

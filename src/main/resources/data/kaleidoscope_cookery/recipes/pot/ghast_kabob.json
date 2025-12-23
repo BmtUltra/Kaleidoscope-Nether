@@ -1,0 +1,19 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:stick"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:ghast_tentacle"
+    },
+    {
+      "item": "kaleidoscope_nether:ghast_tentacle"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:ghast_kabob"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}

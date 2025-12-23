@@ -1,0 +1,33 @@
+package com.bmt.kaleidoscope_nether.data;
+
+import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.DataGenerator;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Set;
+
+@Mod.EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class DataMain {
+    @SubscribeEvent
+    public static void generate(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        generator.addProvider(event.includeServer(),
+                new DatapackBuiltinEntriesProvider(
+                        generator.getPackOutput(),
+                        event.getLookupProvider(),
+                        new RegistrySetBuilder().
+                                add(Registries.CONFIGURED_FEATURE, ModFeatures::bootstrap).
+                                add(Registries.PLACED_FEATURE, ModPlacements::bootstrap).
+                                add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifier::bootstrap)
+
+                        ,
+                        Set.of(KaleidoscopeNether.MOD_ID)
+                ));
+    }
+}

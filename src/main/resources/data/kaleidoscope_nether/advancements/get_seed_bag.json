@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "kaleidoscope_nether:seed_bag"
+    },
+    "title": {
+      "text": "小农经济"
+    },
+    "description": {
+      "text": "获得种子袋，开始你的种田生活"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "kaleidoscope_nether:root",
+  "criteria": {
+    "get_seed_bag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["kaleidoscope_nether:seed_bag"]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 15
+  }
+}

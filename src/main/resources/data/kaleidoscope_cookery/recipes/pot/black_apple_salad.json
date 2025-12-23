@@ -1,0 +1,28 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "betternether:black_apple"
+    },
+    {
+      "item": "betternether:black_apple"
+    },
+    {
+      "item": "betternether:black_apple"
+    },
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    },
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:black_apple_salad"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "kaleidoscope_nether:soul_return_rice"
+    },
+    "title": {
+      "text": "短暂性死亡"
+    },
+    "description": {
+      "text": "获得一份回魂饭"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "kaleidoscope_nether:get_star_dust",
+  "criteria": {
+    "get_soul_return_rice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["kaleidoscope_nether:soul_return_rice"]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

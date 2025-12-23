@@ -1,0 +1,11 @@
+{
+  "lava_roasted_chicken_eat": {
+    "subtitle": "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat",
+    "sounds": [
+      {
+        "name": "kaleidoscope_nether:lava_roasted_chicken_eat",
+        "stream": false
+      }
+    ]
+  }
+}
