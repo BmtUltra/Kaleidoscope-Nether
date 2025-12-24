@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_nether",
-  "features": "kaleidoscope_nether:life_crystal",
-  "step": "vegetal_decoration"
+  "features": "kaleidoscope_nether:poisonous_fruit",
+  "step": "underground_decoration"
 }

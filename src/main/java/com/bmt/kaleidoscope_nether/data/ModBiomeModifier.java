@@ -5,7 +5,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
@@ -29,7 +28,7 @@ public class ModBiomeModifier {
         bootstrap.register(ADD_FEATURES,
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(BiomeTags.IS_NETHER),
-                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacements.LIFE_CRYSTAL)),
+                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacements.POISONOUS_FRUIT)),
                         GenerationStep.Decoration.UNDERGROUND_DECORATION
                 )
         );

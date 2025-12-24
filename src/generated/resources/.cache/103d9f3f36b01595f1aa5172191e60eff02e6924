@@ -1,4 +1,4 @@
-// 1.20.1	2025-12-22T16:42:17.639788	Registries
-b2e4b1b3845c74a16a643300109e2dc6202a8186 data/kaleidoscope_nether/forge/biome_modifier/add_features.json
-db8100daf4c13c66538129db7afb7d9eff847d4b data/kaleidoscope_nether/worldgen/configured_feature/life_crystal.json
-51a485a89b1d243adf7f13df8544a5d5a7a2d40a data/kaleidoscope_nether/worldgen/placed_feature/life_crystal.json
+// 1.20.1	2025-12-24T16:02:45.078248	Registries
+45cdc1672b938a77fb18318263d890132a063bee data/kaleidoscope_nether/forge/biome_modifier/add_features.json
+329f04898154665ff957c23aa6ccab7f58d232e4 data/kaleidoscope_nether/worldgen/configured_feature/poisonous_fruit.json
+9212358d92b2a80f5ea8ff2621b6d9ede9a8c7f9 data/kaleidoscope_nether/worldgen/placed_feature/poisonous_fruit.json

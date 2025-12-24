@@ -8,12 +8,11 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ModPlacements {
-    public static final ResourceKey<PlacedFeature> LIFE_CRYSTAL = createKey("life_crystal");
+    public static final ResourceKey<PlacedFeature> POISONOUS_FRUIT = createKey("poisonous_fruit");
 
     public static ResourceKey<PlacedFeature> createKey(String key) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, key));
@@ -23,9 +22,8 @@ public class ModPlacements {
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
         PlacementUtils.register(
                 context,
-                LIFE_CRYSTAL,
-                holdergetter.getOrThrow(ModFeatures.LIFE_CRYSTAL),
-                CountPlacement.of(2),
+                POISONOUS_FRUIT,
+                holdergetter.getOrThrow(ModFeatures.POISONOUS_FRUIT),
                 InSquarePlacement.spread(),
                 PlacementUtils.FULL_RANGE
         );
