@@ -58,7 +58,6 @@ public class BlazingEffect extends MobEffect {
                     });
         }
 
-        // 掉落经验
         float exp = expValue.get();
         if (exp > 0) {
             int i = Mth.floor(exp);

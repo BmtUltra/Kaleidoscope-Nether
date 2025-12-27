@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SoulPepperItem extends Item {
-    private final int buffDuration; // 持续时间（秒）
+    private final int buffDuration;
 
     public SoulPepperItem(FoodProperties food, int buffDurationInSeconds) {
         super(new Item.Properties().food(food));
@@ -27,7 +27,6 @@ public class SoulPepperItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltipComponents, flag);
 
-        // 添加怨魂buff的tooltip
         String translationKey = getDescriptionId() + ".tooltip.line1";
         tooltipComponents.add(Component.translatable(translationKey).withStyle(ChatFormatting.BLUE));
     }
@@ -35,29 +34,25 @@ public class SoulPepperItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 给予冤魂buff效果
             int durationInTicks = buffDuration * 20;
             MobEffectInstance ghostBuff = new MobEffectInstance(
                     ModEffects.GHOST_BUFF.get(),
                     durationInTicks,
-                    0, // 等级
-                    false, // 环境效果
-                    false, // 显示粒子
-                    true // 显示图标
+                    0,
+                    false,
+                    false,
+                    true
             );
 
             player.addEffect(ghostBuff);
 
-            // 损失25%生命值
             float maxHealth = player.getMaxHealth();
             float damageAmount = maxHealth * 0.25f;
 
-            // 确保至少造成1点伤害
             if (damageAmount < 1.0f) {
                 damageAmount = 1.0f;
             }
 
-            // 造成伤害
             player.hurt(player.damageSources().magic(), damageAmount);
         }
 

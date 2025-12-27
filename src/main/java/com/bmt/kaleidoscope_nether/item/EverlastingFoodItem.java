@@ -43,10 +43,7 @@ public class EverlastingFoodItem extends Item {
         if (isEdible()) {
             entity.eat(world, stack.copy());
             addCooldown(entity, eatingCooldown.get());
-
-            // 给予玩家效果
             if (entity instanceof Player player) {
-                // 使用软依赖方式获取效果
                 MobEffect warmthEffect = ForgeRegistries.MOB_EFFECTS.getValue(
                         net.minecraft.resources.ResourceLocation.tryBuild("kaleidoscope_cookery", "warmth")
                 );
@@ -54,12 +51,10 @@ public class EverlastingFoodItem extends Item {
                         net.minecraft.resources.ResourceLocation.tryBuild("kaleidoscope_cookery", "satiated_shield")
                 );
 
-                // 温暖效果 - 30秒
                 if (warmthEffect != null) {
                     player.addEffect(new MobEffectInstance(warmthEffect, 600, 0));
                 }
 
-                // 饱腹代偿 - 15秒
                 if (satiatedShieldEffect != null) {
                     player.addEffect(new MobEffectInstance(satiatedShieldEffect, 300, 0));
                 }

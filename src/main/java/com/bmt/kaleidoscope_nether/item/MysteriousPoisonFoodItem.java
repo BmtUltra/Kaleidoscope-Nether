@@ -31,15 +31,14 @@ public class MysteriousPoisonFoodItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 给予迷之中毒效果
             int durationInTicks = effectDuration * 20;
             MobEffectInstance poisonEffect = new MobEffectInstance(
                     ModEffects.MYSTERIOUS_POISON.get(),
                     durationInTicks,
                     effectAmplifier,
-                    false, // 环境效果
-                    false,  // 显示粒子
-                    true   // 显示图标
+                    false,
+                    false,
+                    true
             );
 
             player.addEffect(poisonEffect);

@@ -1,5 +1,7 @@
 package com.bmt.kaleidoscope_nether.item;
 
+import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import net.minecraft.ChatFormatting;
@@ -29,6 +31,9 @@ public class StarStewItem extends Item {
     private static final TagKey<net.minecraft.world.item.Item> STAR_BLESSING_FOODS =
             ItemTags.create(ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "star_blessing_foods"));
 
+    // 最大等级固定为12
+    private static final int MAX_STAR_BLESSING_LEVEL = 12;
+
     public StarStewItem(FoodProperties food) {
         super(new Properties().food(food));
     }
@@ -37,7 +42,6 @@ public class StarStewItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
-        // 使用和 BlazingBuffFoodItem 相同的方式
         String translationKey1 = getDescriptionId() + ".tooltip.line1";
         String translationKey2 = getDescriptionId() + ".tooltip.line2";
 
@@ -50,19 +54,16 @@ public class StarStewItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 固定给予30秒星之祝福buff
-            player.addEffect(new MobEffectInstance(ModEffects.STAR_BLESSING_BUFF.get(), 600, 0)); // 30秒
+            player.addEffect(new MobEffectInstance(ModEffects.STAR_BLESSING_BUFF.get(), 600, 0));
 
-            // 检查是否是星之祝福食物
             if (stack.is(STAR_BLESSING_FOODS)) {
-                // 40%概率增加一级星之祝福属性
                 if (level.random.nextFloat() < 0.4f) {
                     AttributeInstance starBlessingAttr = player.getAttribute(ModAttributes.STAR_BLESSING.get());
                     if (starBlessingAttr != null) {
                         int currentLevel = getCurrentStarBlessingLevel(starBlessingAttr);
 
-                        if (currentLevel < 15) {
-                            // 增加星之祝福等级
+                        // 使用固定最大等级12
+                        if (currentLevel < MAX_STAR_BLESSING_LEVEL) {
                             starBlessingAttr.removeModifier(STAR_BLESSING_MODIFIER_UUID);
                             AttributeModifier modifier = new AttributeModifier(
                                     STAR_BLESSING_MODIFIER_UUID,
@@ -72,10 +73,7 @@ public class StarStewItem extends Item {
                             );
                             starBlessingAttr.addPermanentModifier(modifier);
 
-                            // 更新玩家最大生命值
                             updatePlayerMaxHealth(player, currentLevel + 1);
-
-                            // 在服务器端生成粒子效果
                             spawnStarBlessingParticles(level, player);
                         }
                     }
@@ -95,14 +93,11 @@ public class StarStewItem extends Item {
     }
 
     private void updatePlayerMaxHealth(Player player, int starBlessingLevel) {
-        // 每级星之祝福增加2点生命值（1颗心）
         float healthIncrease = starBlessingLevel * 2.0f;
 
-        // 移除旧的属性修改器
         player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
                 .removeModifier(HEALTH_MODIFIER_UUID);
 
-        // 添加新的属性修改器
         AttributeModifier healthModifier = new AttributeModifier(
                 HEALTH_MODIFIER_UUID,
                 "Star Blessing Health Bonus",
@@ -112,52 +107,43 @@ public class StarStewItem extends Item {
         player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
                 .addPermanentModifier(healthModifier);
 
-        // 确保当前生命值不超过新的最大生命值
         if (player.getHealth() > player.getMaxHealth()) {
             player.setHealth(player.getMaxHealth());
         }
     }
 
     private void spawnStarBlessingParticles(Level level, Player player) {
-        // 参考GhostBuffEffect的粒子生成方式
         if (!level.isClientSide() && level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
-            // 在玩家周围生成星之主题粒子效果
             double x = player.getX();
             double y = player.getY() + player.getEyeHeight();
             double z = player.getZ();
 
-            // 生成多个粒子，形成向外扩散效果
-            int particleCount = 30; // 增加粒子数量
+            int particleCount = 30;
 
             for (int i = 0; i < particleCount; i++) {
-                // 计算粒子从玩家中心向外扩散的方向
-                double angle = level.random.nextDouble() * Math.PI * 2; // 随机角度
-                double radius = level.random.nextDouble() * 0.5; // 随机半径
+                double angle = level.random.nextDouble() * Math.PI * 2;
+                double radius = level.random.nextDouble() * 0.5;
 
-                // 计算粒子起始位置（从玩家中心向外）
                 double offsetX = Math.cos(angle) * radius;
                 double offsetY = level.random.nextDouble() * player.getBbHeight() - player.getBbHeight() * 0.5;
                 double offsetZ = Math.sin(angle) * radius;
 
-                // 计算向外扩散的速度（沿着半径方向）
-                double speedX = Math.cos(angle) * 0.1; // 向外扩散的速度
-                double speedY = level.random.nextDouble() * 0.05 - 0.025; // 轻微上下浮动
-                double speedZ = Math.sin(angle) * 0.1; // 向外扩散的速度
+                double speedX = Math.cos(angle) * 0.1;
+                double speedY = level.random.nextDouble() * 0.05 - 0.025;
+                double speedZ = Math.sin(angle) * 0.1;
 
-                // 使用ServerLevel发送粒子
                 serverLevel.sendParticles(
                         ParticleTypes.GLOW,
                         x + offsetX,
                         y + offsetY,
                         z + offsetZ,
-                        1, // 粒子数量
-                        speedX, speedY, speedZ, // 向外扩散的速度
-                        0.0 // 额外数据
+                        1,
+                        speedX, speedY, speedZ,
+                        0.0
                 );
             }
 
-            // 额外添加一些END_ROD粒子作为点缀（星尘效果）
-            for (int i = 0; i < 10; i++) { // 增加点缀粒子数量
+            for (int i = 0; i < 10; i++) {
                 double angle = level.random.nextDouble() * Math.PI * 2;
                 double radius = level.random.nextDouble() * 0.3;
 
@@ -170,7 +156,7 @@ public class StarStewItem extends Item {
                 double speedZ = Math.sin(angle) * 0.08;
 
                 serverLevel.sendParticles(
-                        ParticleTypes.END_ROD, // 改为END_ROD粒子（星尘效果）
+                        ParticleTypes.END_ROD,
                         x + offsetX,
                         y + offsetY,
                         z + offsetZ,
@@ -180,15 +166,13 @@ public class StarStewItem extends Item {
                 );
             }
 
-            // 添加一些向上飘动的粒子，增加视觉效果层次
             for (int i = 0; i < 8; i++) {
                 double offsetX = (level.random.nextDouble() - 0.5) * player.getBbWidth();
                 double offsetY = level.random.nextDouble() * player.getBbHeight() * 0.5;
                 double offsetZ = (level.random.nextDouble() - 0.5) * player.getBbWidth();
 
-                // 主要向上飘动，轻微向外扩散
                 double speedX = (level.random.nextDouble() - 0.5) * 0.02;
-                double speedY = level.random.nextDouble() * 0.08 + 0.04; // 向上飘动
+                double speedY = level.random.nextDouble() * 0.08 + 0.04;
                 double speedZ = (level.random.nextDouble() - 0.5) * 0.02;
 
                 serverLevel.sendParticles(

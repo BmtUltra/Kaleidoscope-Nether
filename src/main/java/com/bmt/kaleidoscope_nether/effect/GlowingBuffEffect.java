@@ -60,7 +60,6 @@ public class GlowingBuffEffect extends MobEffect {
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        // 20tick执行一次
         return duration % 20 == 0;
     }
 }

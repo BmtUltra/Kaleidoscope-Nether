@@ -1,6 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import net.minecraft.tags.DamageTypeTags;
@@ -24,9 +25,11 @@ import java.util.*;
 public class StarBlessingEvents {
 
     private static final UUID STAR_BLESSING_MODIFIER_UUID = UUID.fromString("1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c5d6");
-    private static final UUID MOVEMENT_SPEED_MODIFIER_UUID = UUID.fromString("6f7a8b9c-0d1e-2f3a-4b5c-d6e7f8a9b0c1");
-    private static final UUID ATTACK_DAMAGE_MODIFIER_UUID = UUID.fromString("7a8b9c0d-1e2f-3a4b-5c6d-e7f8a9b0c1d2");
-    private static final UUID HUNGER_MODIFIER_UUID = UUID.fromString("8b9c0d1e-2f3a-4b5c-6d7e-f8a9b0c1d2e3");
+    private static final UUID ARMOR_MODIFIER_UUID = UUID.fromString("9c0d1e2f-3a4b-5c6d-7e8f-a9b0c1d2e3f4");
+    private static final UUID ARMOR_TOUGHNESS_MODIFIER_UUID = UUID.fromString("0d1e2f3a-4b5c-6d7e-8f9a-b0c1d2e3f4a5");
+    private static final UUID KNOCKBACK_RESISTANCE_MODIFIER_UUID = UUID.fromString("1e2f3a4b-5c6d-7e8f-9a0b-c1d2e3f4a5b6");
+
+    private static final int MAX_STAR_BLESSING_LEVEL = 12;
 
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
@@ -35,8 +38,9 @@ public class StarBlessingEvents {
             if (starBlessingAttr != null) {
                 int starBlessingLevel = getStarBlessingLevel(starBlessingAttr);
 
-                // 15：完全免疫火焰伤害
-                if (starBlessingLevel >= 15 && isFireDamage(event.getSource())) {
+                if (starBlessingLevel >= MAX_STAR_BLESSING_LEVEL &&
+                        Config.STAR_BLESSING_LEVEL_12_FIRE_IMMUNITY.get() &&
+                        isFireDamage(event.getSource())) {
                     event.setCanceled(true);
                     return;
                 }
@@ -47,34 +51,9 @@ public class StarBlessingEvents {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            AttributeInstance starBlessingAttr = player.getAttribute(ModAttributes.STAR_BLESSING.get());
-            if (starBlessingAttr != null) {
-                int starBlessingLevel = getStarBlessingLevel(starBlessingAttr);
-
-                // 6级：受到的伤害降低10%
-                if (starBlessingLevel >= 6) {
-                    float reducedDamage = event.getAmount() * 0.9f;
-                    event.setAmount(reducedDamage);
-                }
-
-                // buff：受到的伤害降低50%
-                if (player.hasEffect(ModEffects.STAR_BLESSING_BUFF.get())) {
-                    float reducedDamage = event.getAmount() * 0.5f;
-                    event.setAmount(reducedDamage);
-                }
-            }
-        }
-
-        // 3级：造成的伤害提升10%（任何地方都生效）
-        if (event.getSource().getEntity() instanceof Player attacker) {
-            AttributeInstance starBlessingAttr = attacker.getAttribute(ModAttributes.STAR_BLESSING.get());
-            if (starBlessingAttr != null) {
-                int starBlessingLevel = getStarBlessingLevel(starBlessingAttr);
-
-                if (starBlessingLevel >= 3) {
-                    float increasedDamage = event.getAmount() * 1.1f;
-                    event.setAmount(increasedDamage);
-                }
+            if (player.hasEffect(ModEffects.STAR_BLESSING_BUFF.get())) {
+                float reducedDamage = event.getAmount() * 0.5f;
+                event.setAmount(reducedDamage);
             }
         }
     }
@@ -86,39 +65,8 @@ public class StarBlessingEvents {
             if (starBlessingAttr != null) {
                 int starBlessingLevel = getStarBlessingLevel(starBlessingAttr);
 
-                // 等级9：移动速度提升6%（任何地方都生效）
-                if (starBlessingLevel >= 9) {
-                    AttributeInstance movementAttr = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
-                    if (movementAttr != null && movementAttr.getModifier(MOVEMENT_SPEED_MODIFIER_UUID) == null) {
-                        AttributeModifier speedModifier = new AttributeModifier(
-                                MOVEMENT_SPEED_MODIFIER_UUID,
-                                "Star Blessing Speed Bonus",
-                                0.06,
-                                AttributeModifier.Operation.MULTIPLY_TOTAL
-                        );
-                        movementAttr.addPermanentModifier(speedModifier);
-                    }
-                } else {
-                    AttributeInstance movementAttr = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
-                    if (movementAttr != null) {
-                        movementAttr.removeModifier(MOVEMENT_SPEED_MODIFIER_UUID);
-                    }
-                }
+                updateAttributeModifiers(player, starBlessingLevel);
 
-                if (starBlessingLevel >= 12) {
-                    // 每tick减少饥饿值消耗
-                    if (player.tickCount % 20 == 0) { // 每秒执行一次
-                        if (player.getFoodData().needsFood()) {
-                            // 减少饥饿值消耗
-                            float exhaustion = player.getFoodData().getExhaustionLevel();
-                            if (exhaustion > 0) {
-                                player.getFoodData().setExhaustion(exhaustion * 0.88f); // 减少12%
-                            }
-                        }
-                    }
-                }
-
-                // 星之祝福buff：每10tick恢复5%生命值+0.5生命值
                 if (player.hasEffect(ModEffects.STAR_BLESSING_BUFF.get()) && player.tickCount % 10 == 0) {
                     float maxHealth = player.getMaxHealth();
                     float healAmount = (maxHealth * 0.05f) + 0.5f;
@@ -128,13 +76,73 @@ public class StarBlessingEvents {
         }
     }
 
+    private static void updateAttributeModifiers(Player player, int starBlessingLevel) {
+        AttributeInstance armorAttr = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR);
+        if (armorAttr != null) {
+            if (starBlessingLevel >= 3) {
+                int armorBonus = Config.STAR_BLESSING_LEVEL_3_ARMOR_BONUS.get();
+                if (armorBonus > 0) {
+                    AttributeModifier armorModifier = new AttributeModifier(
+                            ARMOR_MODIFIER_UUID,
+                            "Star Blessing Armor Bonus",
+                            armorBonus,
+                            AttributeModifier.Operation.ADDITION
+                    );
+                    if (armorAttr.getModifier(ARMOR_MODIFIER_UUID) == null) {
+                        armorAttr.addPermanentModifier(armorModifier);
+                    }
+                }
+            } else {
+                armorAttr.removeModifier(ARMOR_MODIFIER_UUID);
+            }
+        }
+
+        AttributeInstance toughnessAttr = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR_TOUGHNESS);
+        if (toughnessAttr != null) {
+            if (starBlessingLevel >= 6) {
+                int toughnessBonus = Config.STAR_BLESSING_LEVEL_6_TOUGHNESS_BONUS.get();
+                if (toughnessBonus > 0) {
+                    AttributeModifier toughnessModifier = new AttributeModifier(
+                            ARMOR_TOUGHNESS_MODIFIER_UUID,
+                            "Star Blessing Armor Toughness Bonus",
+                            toughnessBonus,
+                            AttributeModifier.Operation.ADDITION
+                    );
+                    if (toughnessAttr.getModifier(ARMOR_TOUGHNESS_MODIFIER_UUID) == null) {
+                        toughnessAttr.addPermanentModifier(toughnessModifier);
+                    }
+                }
+            } else {
+                toughnessAttr.removeModifier(ARMOR_TOUGHNESS_MODIFIER_UUID);
+            }
+        }
+
+        AttributeInstance knockbackResistanceAttr = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.KNOCKBACK_RESISTANCE);
+        if (knockbackResistanceAttr != null) {
+            if (starBlessingLevel >= 9) {
+                int knockbackResistanceBonus = Config.STAR_BLESSING_LEVEL_9_KNOCKBACK_RESISTANCE.get();
+                if (knockbackResistanceBonus > 0) {
+                    AttributeModifier knockbackModifier = new AttributeModifier(
+                            KNOCKBACK_RESISTANCE_MODIFIER_UUID,
+                            "Star Blessing Knockback Resistance Bonus",
+                            knockbackResistanceBonus * 0.1,
+                            AttributeModifier.Operation.ADDITION
+                    );
+                    if (knockbackResistanceAttr.getModifier(KNOCKBACK_RESISTANCE_MODIFIER_UUID) == null) {
+                        knockbackResistanceAttr.addPermanentModifier(knockbackModifier);
+                    }
+                }
+            } else {
+                knockbackResistanceAttr.removeModifier(KNOCKBACK_RESISTANCE_MODIFIER_UUID);
+            }
+        }
+    }
+
     @SubscribeEvent
     public static void onEffectAdded(net.minecraftforge.event.entity.living.MobEffectEvent.Added event) {
-        // 星之祝福buff：立刻清除全部debuff
         if (event.getEffectInstance().getEffect() == ModEffects.STAR_BLESSING_BUFF.get() &&
                 event.getEntity() instanceof Player player) {
 
-            // 安全地清除所有负面效果 - 先收集再移除
             List<MobEffect> effectsToRemove = new ArrayList<>();
             for (Map.Entry<MobEffect, MobEffectInstance> entry : player.getActiveEffectsMap().entrySet()) {
                 MobEffect effect = entry.getKey();
@@ -143,12 +151,10 @@ public class StarBlessingEvents {
                 }
             }
 
-            // 移除收集到的负面效果
             for (MobEffect effect : effectsToRemove) {
                 player.removeEffect(effect);
             }
 
-            // 立刻获得生命值50%的黄心（吸收生命值）
             float maxHealth = player.getMaxHealth();
             float absorptionAmount = maxHealth * 0.5f;
             player.setAbsorptionAmount(player.getAbsorptionAmount() + absorptionAmount);

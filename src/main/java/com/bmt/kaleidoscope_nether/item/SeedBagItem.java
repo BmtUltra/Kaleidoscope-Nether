@@ -191,7 +191,7 @@ public class SeedBagItem extends Item {
             return plantOnFarmland(context, seedBag, clickedPos);
         }
 
-        // 检查是否是灵魂沙（用于下界疣）
+        // 下界疣
         if (blockState.is(net.minecraft.world.level.block.Blocks.SOUL_SAND)) {
             return plantOnSoulSand(context, seedBag, clickedPos);
         }
@@ -243,7 +243,6 @@ public class SeedBagItem extends Item {
             Player player = context.getPlayer();
             Level level = context.getLevel();
 
-            // 按顺序从左至右选择第一个合适的种子
             Optional<SeedEntry> suitableSeed = contents.findSuitableSeedForFarmland(level, farmlandPos.above());
             if(suitableSeed.isEmpty())
                 return InteractionResult.PASS;
@@ -268,7 +267,6 @@ public class SeedBagItem extends Item {
             Player player = context.getPlayer();
             Level level = context.getLevel();
 
-            // 寻找下界疣
             Optional<SeedEntry> netherWartEntry = contents.findNetherWart();
             if(netherWartEntry.isEmpty())
                 return InteractionResult.PASS;
@@ -365,7 +363,6 @@ public class SeedBagItem extends Item {
         return bestRes;
     }
 
-    // 修改方法签名，添加UseOnContext参数
     private InteractionResult tryPlantSeed(UseOnContext context, Level level, BlockPos plantPos, ItemStack seed) {
         if (!level.isEmptyBlock(plantPos)) {
             return InteractionResult.FAIL;
@@ -376,7 +373,6 @@ public class SeedBagItem extends Item {
             return InteractionResult.FAIL;
         }
 
-        // 检查是否是作物
         boolean isCrop = block instanceof CropBlock;
 
         if (!isCrop) {
@@ -420,7 +416,6 @@ public class SeedBagItem extends Item {
         tooltip.add(Component.translatable("item.kaleidoscope_nether.seed_bag.description").withStyle(ChatFormatting.GRAY));
     }
 
-    // 添加工具提示图像组件
     @NotNull
     @Override
     public Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack stack) {
@@ -431,7 +426,6 @@ public class SeedBagItem extends Item {
         return Optional.empty();
     }
 
-    // 添加自动拾取功能
     public static boolean tryAutoPickup(Player player, ItemStack seedStack) {
         if (player == null || seedStack.isEmpty() || !isSeed(seedStack)) {
             return false;
@@ -580,7 +574,6 @@ public class SeedBagItem extends Item {
                     .orElse(0);
         }
 
-        // 添加公共访问方法
         public List<SeedEntry> getEntries() {
             return Collections.unmodifiableList(entries);
         }
@@ -607,13 +600,10 @@ public class SeedBagItem extends Item {
                 return false;
 
             if(existingEntry.isPresent()) {
-                // 如果已有该种子，增加数量
                 SeedEntry entry = existingEntry.get();
                 entry.count += toMove;
 
-                // 如果是自动拾取，不改变位置
                 if (!isAutoPickup) {
-                    // 手动添加时移动到列表开头
                     entries.remove(entry);
                     entries.add(0, entry);
                 }
@@ -627,14 +617,12 @@ public class SeedBagItem extends Item {
                 SeedEntry newEntry = new SeedEntry(newSeed, toMove);
 
                 if (isAutoPickup) {
-                    // 新种子放在第二个位置
                     if (entries.isEmpty()) {
                         entries.add(newEntry);
                     } else {
                         entries.add(1, newEntry);
                     }
                 } else {
-                    // 新种子放在列表开头
                     entries.add(0, newEntry);
                 }
             }
@@ -647,7 +635,6 @@ public class SeedBagItem extends Item {
             if(isEmpty())
                 return ItemStack.EMPTY;
 
-            // 从列表开头取出（最后放入的种子）
             SeedEntry firstEntry = entries.get(0);
             int toTake = Math.min(firstEntry.count, firstEntry.seed.getMaxStackSize());
 
@@ -694,11 +681,9 @@ public class SeedBagItem extends Item {
             if(!level.isEmptyBlock(plantPos))
                 return Optional.empty();
 
-            // 按顺序从左至右选择第一个合适的种子
             for (SeedEntry entry : entries) {
                 Block block = Block.byItem(entry.seed.getItem());
 
-                // 检查是否是作物
                 boolean isCrop = block instanceof CropBlock;
 
                 if (isCrop) {
@@ -711,7 +696,6 @@ public class SeedBagItem extends Item {
         }
 
         public Optional<SeedEntry> findNetherWart() {
-            // 寻找下界疣
             for (SeedEntry entry : entries) {
                 if (entry.seed.getItem() == Items.NETHER_WART) {
                     return Optional.of(entry);

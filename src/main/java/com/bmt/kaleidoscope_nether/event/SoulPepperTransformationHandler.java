@@ -26,27 +26,21 @@ public class SoulPepperTransformationHandler {
         BlockState blockState = level.getBlockState(pos);
         ItemStack heldItem = player.getMainHandItem();
 
-        // 检查右键的方块是否是灵魂沙或灵魂土
         if (blockState.is(KNTags.Blocks.SOUL_SOIL_SAND)) {
-            // 检查手中的物品是否在可转化标签中
             if (heldItem.is(KNTags.Items.SOUL_PEPPER_TRANSFORMABLE)) {
-                // 消耗1个物品
                 if (!player.isCreative()) {
                     heldItem.shrink(1);
                 }
 
-                // 给予玩家1个灵魂椒
                 ItemStack soulPepper = new ItemStack(ModItems.SOUL_PEPPER.get());
                 if (!player.getInventory().add(soulPepper)) {
                     player.drop(soulPepper, false);
                 }
 
-                // 生成粒子效果
                 if (!level.isClientSide()) {
                     spawnSoulParticles(level, pos, player);
                 }
 
-                // 阻止默认的右键行为
                 event.setCanceled(true);
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
@@ -55,23 +49,19 @@ public class SoulPepperTransformationHandler {
 
     private static void spawnSoulParticles(Level level, BlockPos pos, Player player) {
         if (level instanceof ServerLevel serverLevel) {
-            // 在方块位置生成粒子
             double x = pos.getX() + 0.5;
             double y = pos.getY() + 1.0;
             double z = pos.getZ() + 0.5;
 
-            // 生成多个灵魂粒子，形成向上飘动的效果
             int particleCount = 20;
 
             for (int i = 0; i < particleCount; i++) {
-                // 随机偏移
                 double offsetX = (level.random.nextDouble() - 0.5) * 0.8;
                 double offsetY = level.random.nextDouble() * 0.5;
                 double offsetZ = (level.random.nextDouble() - 0.5) * 0.8;
 
-                // 随机速度（缓慢向上飘动）
                 double speedX = (level.random.nextDouble() - 0.5) * 0.02;
-                double speedY = level.random.nextDouble() * 0.03 + 0.01; // 主要向上飘动
+                double speedY = level.random.nextDouble() * 0.03 + 0.01;
                 double speedZ = (level.random.nextDouble() - 0.5) * 0.02;
 
                 serverLevel.sendParticles(
@@ -85,7 +75,6 @@ public class SoulPepperTransformationHandler {
                 );
             }
 
-            // 在玩家周围也生成一些粒子，表示转化效果
             double playerX = player.getX();
             double playerY = player.getY() + player.getEyeHeight();
             double playerZ = player.getZ();

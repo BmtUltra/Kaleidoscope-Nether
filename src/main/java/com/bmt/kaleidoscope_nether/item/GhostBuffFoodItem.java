@@ -26,15 +26,14 @@ public class GhostBuffFoodItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 给予冤魂buff效果
             int durationInTicks = buffDuration * 20;
             MobEffectInstance ghostBuff = new MobEffectInstance(
                     ModEffects.GHOST_BUFF.get(),
                     durationInTicks,
-                    0, // 等级
-                    false, // 环境效果
-                    false, // 显示粒子
-                    true // 显示图标
+                    0,
+                    false,
+                    false,
+                    true
             );
 
             player.addEffect(ghostBuff);
@@ -47,7 +46,6 @@ public class GhostBuffFoodItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltipComponents, flag);
 
-        // 直接使用翻译键，不传递参数
         String translationKey = getDescriptionId() + ".tooltip.line1";
         tooltipComponents.add(Component.translatable(translationKey).withStyle(ChatFormatting.BLUE));
     }

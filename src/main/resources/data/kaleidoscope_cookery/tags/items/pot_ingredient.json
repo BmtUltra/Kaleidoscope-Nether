@@ -4,6 +4,12 @@
     "kaleidoscope_nether:star_dust",
     "kaleidoscope_nether:wither_rib",
     "kaleidoscope_nether:blaze_heart",
-    "minecraft:blaze_powder"
+    "minecraft:blaze_powder",
+    "kaleidoscope_nether:magma_bubble",
+    "kaleidoscope_nether:strider_rock_shell",
+    "kaleidoscope_nether:gilded_fragment",
+    "kaleidoscope_nether:hoglin_tusk",
+    "kaleidoscope_nether:ghast_hide",
+    "kaleidoscope_nether:golden_plate"
   ]
 }

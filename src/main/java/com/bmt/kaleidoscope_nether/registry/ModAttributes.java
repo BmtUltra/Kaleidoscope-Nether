@@ -15,7 +15,7 @@ public class ModAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, KaleidoscopeNether.MOD_ID);
 
     public static final RegistryObject<Attribute> STAR_BLESSING = ATTRIBUTES.register("star_blessing",
-            () -> new RangedAttribute("attribute.kaleidoscope_nether.star_blessing", 0.0, 0.0, 15.0)
+            () -> new RangedAttribute("attribute.kaleidoscope_nether.star_blessing", 0.0, 0.0, 12.0)
                     .setSyncable(true));
 
     @SubscribeEvent

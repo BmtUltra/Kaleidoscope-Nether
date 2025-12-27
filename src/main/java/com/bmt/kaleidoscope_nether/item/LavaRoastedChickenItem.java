@@ -17,7 +17,6 @@ public class LavaRoastedChickenItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 播放音效
             level.playSound(null,
                     player.getX(),
                     player.getY(),
@@ -27,7 +26,6 @@ public class LavaRoastedChickenItem extends Item {
                     1.0F,
                     1.0F);
 
-            // 点燃玩家
             entity.setSecondsOnFire(29);
         }
 

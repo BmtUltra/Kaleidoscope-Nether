@@ -34,14 +34,13 @@ public class SpecialFruitItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (entity instanceof Player player && !level.isClientSide()) {
-            // 给予效果
             player.addEffect(new MobEffectInstance(
                     effect.get(),
                     duration,
                     amplifier,
-                    false, // 环境效果
-                    false, // 显示粒子
-                    true   // 显示图标
+                    false,
+                    false,
+                    true
             ));
         }
 

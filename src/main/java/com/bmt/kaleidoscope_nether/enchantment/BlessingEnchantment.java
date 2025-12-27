@@ -18,7 +18,7 @@ public class BlessingEnchantment extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 4; // 改为最大4级
+        return 4;
     }
 
     @Override

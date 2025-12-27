@@ -1,6 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.registry.ModItems;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
@@ -17,8 +18,8 @@ public class DropHandler {
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
         if (event.getEntity() instanceof Ghast) {
-            // 恶魂肉
-            if (event.getEntity().getRandom().nextFloat() < 0.3f) {
+            //恶魂肉
+            if (event.getEntity().getRandom().nextFloat() < Config.GHAST_RAW_MEAT_CHANCE.get()) {
                 ItemStack rawGhastMeat = new ItemStack(ModItems.RAW_GHAST_MEAT.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -29,8 +30,8 @@ public class DropHandler {
                 ));
             }
 
-            // 恶魂皮
-            if (event.getEntity().getRandom().nextFloat() < 0.1f) {
+            //恶魂皮
+            if (event.getEntity().getRandom().nextFloat() < Config.GHAST_HIDE_CHANCE.get()) {
                 ItemStack ghastHide = new ItemStack(ModItems.GHAST_HIDE.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -41,8 +42,8 @@ public class DropHandler {
                 ));
             }
 
-            // 恶魂触手
-            if (event.getEntity().getRandom().nextFloat() < 0.2f) {
+            //恶魂触手
+            if (event.getEntity().getRandom().nextFloat() < Config.GHAST_TENTACLE_CHANCE.get()) {
                 ItemStack ghastTentacle = new ItemStack(ModItems.GHAST_TENTACLE.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -55,8 +56,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof Hoglin hoglin && !hoglin.isBaby()) {
-            // 疣猪兽獠牙
-            if (event.getEntity().getRandom().nextFloat() < 0.15f) {
+            //疣猪兽獠牙
+            if (event.getEntity().getRandom().nextFloat() < Config.HOGLIN_TUSK_CHANCE.get()) {
                 ItemStack hoglinTusk = new ItemStack(ModItems.HOGLIN_TUSK.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -67,8 +68,8 @@ public class DropHandler {
                 ));
             }
 
-            // 火腿
-            if (event.getEntity().getRandom().nextFloat() < 0.25f) {
+            //火腿
+            if (event.getEntity().getRandom().nextFloat() < Config.HOGLIN_HAM_CHANCE.get()) {
                 ItemStack ham = new ItemStack(ModItems.HAM.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -81,8 +82,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof WitherSkeleton) {
-            // 凋零肋骨
-            if (event.getEntity().getRandom().nextFloat() < 0.2f) {
+            //凋零肋骨
+            if (event.getEntity().getRandom().nextFloat() < Config.WITHER_RIB_CHANCE.get()) {
                 ItemStack witherRib = new ItemStack(ModItems.WITHER_RIB.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -95,9 +96,11 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof Strider strider && !strider.isBaby()) {
-            // 炽足兽肉
-            if (event.getEntity().getRandom().nextFloat() < 0.4f) {
-                int count = 1 + event.getEntity().getRandom().nextInt(2);
+            //炽足兽肉
+            if (event.getEntity().getRandom().nextFloat() < Config.STRIDER_RAW_MEAT_CHANCE.get()) {
+                int minCount = Config.STRIDER_RAW_MEAT_MIN_COUNT.get();
+                int maxCount = Config.STRIDER_RAW_MEAT_MAX_COUNT.get();
+                int count = minCount + event.getEntity().getRandom().nextInt(maxCount - minCount + 1);
                 ItemStack rawStriderMeat = new ItemStack(ModItems.RAW_STRIDER_MEAT.get(), count);
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -108,8 +111,8 @@ public class DropHandler {
                 ));
             }
 
-            // 炽足兽岩壳
-            if (event.getEntity().getRandom().nextFloat() < 0.15f) {
+            //炽足兽岩壳
+            if (event.getEntity().getRandom().nextFloat() < Config.STRIDER_ROCK_SHELL_CHANCE.get()) {
                 ItemStack striderRockShell = new ItemStack(ModItems.STRIDER_ROCK_SHELL.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -122,8 +125,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof MagmaCube) {
-            // 熔岩泡泡
-            if (event.getEntity().getRandom().nextFloat() < 0.25f) {
+            //熔岩泡泡
+            if (event.getEntity().getRandom().nextFloat() < Config.MAGMA_BUBBLE_CHANCE.get()) {
                 ItemStack magmaBubble = new ItemStack(ModItems.MAGMA_BUBBLE.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -136,8 +139,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof Blaze) {
-            // 烈焰之心
-            if (event.getEntity().getRandom().nextFloat() < 0.2f) {
+            //烈焰之心
+            if (event.getEntity().getRandom().nextFloat() < Config.BLAZE_HEART_CHANCE.get()) {
                 ItemStack blazeHeart = new ItemStack(ModItems.BLAZE_HEART.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -150,8 +153,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof Piglin) {
-            // 碎金块
-            if (event.getEntity().getRandom().nextFloat() < 0.15f) {
+            //碎金块
+            if (event.getEntity().getRandom().nextFloat() < Config.PIGLIN_GOLDEN_PLATE_CHANCE.get()) {
                 ItemStack goldenPlate = new ItemStack(ModItems.GOLDEN_PLATE.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -164,8 +167,8 @@ public class DropHandler {
         }
 
         if (event.getEntity() instanceof PiglinBrute) {
-            // 镀金裂片
-            if (event.getEntity().getRandom().nextFloat() < 0.1f) {
+            //镀金裂片
+            if (event.getEntity().getRandom().nextFloat() < Config.PIGLIN_BRUTE_GILDED_FRAGMENT_CHANCE.get()) {
                 ItemStack gildedFragment = new ItemStack(ModItems.GILDED_FRAGMENT.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
