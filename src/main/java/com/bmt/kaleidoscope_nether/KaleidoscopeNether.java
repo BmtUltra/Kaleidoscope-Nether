@@ -38,7 +38,7 @@ public class KaleidoscopeNether {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
+        KNItems.ITEMS.register(modEventBus);
         ModEffects.EFFECTS.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);

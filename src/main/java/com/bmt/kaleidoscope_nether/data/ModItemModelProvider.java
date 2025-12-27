@@ -1,11 +1,9 @@
 package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.item.SeedBagItem;
-import com.bmt.kaleidoscope_nether.registry.ModItems;
+import com.bmt.kaleidoscope_nether.registry.KNItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -18,7 +16,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        ResourceLocation bagItem = ForgeRegistries.ITEMS.getKey(ModItems.SEED_BAG.get());
+        ResourceLocation bagItem = ForgeRegistries.ITEMS.getKey(KNItems.SEED_BAG.get());
         if (bagItem != null) {
             ItemModelBuilder emptyBag = basicItem(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "seed_bag"));
             ItemModelBuilder hasItemsBag = basicItem(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "seed_bag_has_items"));

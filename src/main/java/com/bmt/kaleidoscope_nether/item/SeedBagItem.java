@@ -1,5 +1,6 @@
 package com.bmt.kaleidoscope_nether.item;
 
+import com.bmt.kaleidoscope_nether.registry.KNItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
@@ -463,7 +464,7 @@ public class SeedBagItem extends Item {
     }
 
     public static void registerItemProperties() {
-        ItemProperties.register(com.bmt.kaleidoscope_nether.registry.ModItems.SEED_BAG.get(),
+        ItemProperties.register(KNItems.SEED_BAG.get(),
                 ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "has_items"),
                 (stack, level, entity, seed) -> {
                     BagContents contents = getContents(stack);

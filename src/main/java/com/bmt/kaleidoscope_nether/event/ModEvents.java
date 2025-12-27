@@ -5,10 +5,7 @@ import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.effect.CrimsonBuffEffect;
 import com.bmt.kaleidoscope_nether.effect.WarpedBuffEffect;
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
-import com.bmt.kaleidoscope_nether.registry.ModItems;
-import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.world.entity.monster.MagmaCube;
-import net.minecraft.world.entity.monster.piglin.Piglin;
+import com.bmt.kaleidoscope_nether.registry.KNItems;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -58,7 +55,7 @@ public class ModEvents {
         BlockState state = event.getState();
         if (state.is(Blocks.NETHER_WART) && state.getValue(NetherWartBlock.AGE) == 3) {
             if (event.getLevel().getRandom().nextDouble() < Config.NETHER_CATERPILLAR_DROP_CHANCE.get()) {
-                ItemStack caterpillar = new ItemStack(ModItems.NETHER_CATERPILLAR.get());
+                ItemStack caterpillar = new ItemStack(KNItems.NETHER_CATERPILLAR.get());
                 Level level = (Level) event.getLevel();
                 Containers.dropItemStack(level,
                         event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), caterpillar);
@@ -67,7 +64,7 @@ public class ModEvents {
 
         if (state.is(Blocks.WEEPING_VINES) || state.is(Blocks.WEEPING_VINES_PLANT)) {
             if (event.getLevel().getRandom().nextDouble() < Config.CRIMSON_FRUIT_DROP_CHANCE.get()) {
-                ItemStack crimsonFruit = new ItemStack(ModItems.CRIMSON_FRUIT.get());
+                ItemStack crimsonFruit = new ItemStack(KNItems.CRIMSON_FRUIT.get());
                 Level level = (Level) event.getLevel();
                 Containers.dropItemStack(level,
                         event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), crimsonFruit);
@@ -76,7 +73,7 @@ public class ModEvents {
 
         if (state.is(Blocks.TWISTING_VINES) || state.is(Blocks.TWISTING_VINES_PLANT)) {
             if (event.getLevel().getRandom().nextDouble() < Config.WARPED_FRUIT_DROP_CHANCE.get()) {
-                ItemStack warpedFruit = new ItemStack(ModItems.WARPED_FRUIT.get());
+                ItemStack warpedFruit = new ItemStack(KNItems.WARPED_FRUIT.get());
                 Level level = (Level) event.getLevel();
                 Containers.dropItemStack(level,
                         event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), warpedFruit);

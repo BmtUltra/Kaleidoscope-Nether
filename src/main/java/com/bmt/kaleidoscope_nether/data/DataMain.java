@@ -5,6 +5,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,6 +35,10 @@ public class DataMain {
 
         CompletableFuture<HolderLookup.Provider> registryProvider = datapackBuiltinEntriesProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(generator.getPackOutput(), registryProvider, event.getExistingFileHelper()));
+
+        BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(), new ModBlockTagsProvider(generator.getPackOutput(), registryProvider, event.getExistingFileHelper()));
+
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(generator.getPackOutput(), registryProvider, blockTagsProvider.contentsGetter(), event.getExistingFileHelper()));
     }
 
 

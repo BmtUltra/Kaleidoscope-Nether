@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.API.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.ModItems;
+import com.bmt.kaleidoscope_nether.registry.KNItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -32,7 +32,7 @@ public class SoulPepperTransformationHandler {
                     heldItem.shrink(1);
                 }
 
-                ItemStack soulPepper = new ItemStack(ModItems.SOUL_PEPPER.get());
+                ItemStack soulPepper = new ItemStack(KNItems.SOUL_PEPPER.get());
                 if (!player.getInventory().add(soulPepper)) {
                     player.drop(soulPepper, false);
                 }

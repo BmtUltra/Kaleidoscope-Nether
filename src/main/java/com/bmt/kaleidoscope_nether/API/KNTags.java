@@ -18,6 +18,10 @@ public interface KNTags {
 
     interface Items {
         TagKey<Item> SOUL_PEPPER_TRANSFORMABLE = register("soul_pepper_transformable");
+        TagKey<Item> BLAZE_FOODS = register("blaze_foods");
+        TagKey<Item> MAGMA_CREAM_FOODS = register("magma_cream_foods");
+        TagKey<Item> STAR_BLESSING_FOODS = register("star_blessing_foods");
+        TagKey<Item> WARPED_FOOD = register("warped_food");
 
         private static TagKey<Item> register(String name) {
             return ItemTags.create(KaleidoscopeNether.id(name));
