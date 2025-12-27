@@ -4,6 +4,7 @@ import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -22,16 +23,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(KaleidoscopeNether.MOD_ID)
-public class KaleidoscopeNether
-{
+public class KaleidoscopeNether {
     public static final String MOD_ID = "kaleidoscope_nether";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    public KaleidoscopeNether(FMLJavaModLoadingContext context)
-    {
+    public KaleidoscopeNether(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -54,24 +53,25 @@ public class KaleidoscopeNether
         LOGGER.info("Initializing Kaleidoscope Nether Mixins");
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+
+    public static ResourceLocation id(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("Glowing Buff effect now allows eating regardless of hunger level");
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
