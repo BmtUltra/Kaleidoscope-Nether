@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class GhostBuffFoodItem extends Item {
-    private final int buffDuration; // 持续时间（秒）
+    private final int buffDuration;
 
     public GhostBuffFoodItem(FoodProperties food, int buffDurationInSeconds) {
         super(new Item.Properties().food(food));

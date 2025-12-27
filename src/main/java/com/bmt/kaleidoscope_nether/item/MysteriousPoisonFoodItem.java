@@ -17,8 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MysteriousPoisonFoodItem extends Item {
-    private final int effectDuration; // 效果持续时间（秒）
-    private final int effectAmplifier; // 效果等级
+    private final int effectDuration;
+    private final int effectAmplifier;
 
     public MysteriousPoisonFoodItem(FoodProperties food, int durationInSeconds, int amplifier, Rarity rarity) {
         super(new Item.Properties().food(food).rarity(rarity));
@@ -51,7 +51,6 @@ public class MysteriousPoisonFoodItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
-        // 添加效果说明
         String translationKey = getDescriptionId() + ".tooltip.line1";
         tooltip.add(Component.translatable(translationKey).withStyle(ChatFormatting.DARK_PURPLE));
         }

@@ -26,7 +26,6 @@ public class BlazingBuffFoodItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
-            // 火热
             int durationInTicks = buffDuration * 20;
             MobEffectInstance blazingEffect = new MobEffectInstance(
                     ModEffects.BLAZING.get(),
