@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.mixin;
+package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import net.minecraft.world.effect.MobEffectInstance;

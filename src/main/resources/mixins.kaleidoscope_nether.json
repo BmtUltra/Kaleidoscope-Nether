@@ -1,11 +1,10 @@
 {
   "required": true,
-  "package": "com.bmt.kaleidoscope_nether.mixin",
+  "package": "com.bmt.kaleidoscope_nether.mixins",
+  "plugin": "com.bmt.kaleidoscope_nether.mixins.MainMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "kaleidoscope_nether.refmap.json",
-  "mixins": [
-
-  ],
+  "mixins": ["alexsmobs.SeagullAIStealFromPlayersMixin", "kaleidoscope_nether.PlayerEatMixin"],
   "client": [],
   "server": [],
   "injectors": {
