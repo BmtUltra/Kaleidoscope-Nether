@@ -123,5 +123,26 @@
   "enchantment.kaleidoscope_nether.blessing": "祝福",
   "enchantment.kaleidoscope_nether.blessing.desc": "食用食物后回复少量生命值",
 
-  "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat": "熔岩烤鸡"
+  "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat": "熔岩烤鸡",
+
+  "advancements.kaleidoscope_nether.root.title": "森罗物语：下界",
+  "advancements.kaleidoscope_nether.root.description": "下界也要有奇幻色彩！",
+  "advancements.kaleidoscope_nether.get_star_dust.title": "这也能磨成粉？",
+  "advancements.kaleidoscope_nether.get_star_dust.description": "把下界之星打成粉末",
+  "advancements.kaleidoscope_nether.get_star_stew.title": "下界之星做的美食....",
+  "advancements.kaleidoscope_nether.get_star_stew.description": "获得任意一份下界之星制作的美食",
+  "advancements.kaleidoscope_nether.get_seed_bag.title": "小农经济",
+  "advancements.kaleidoscope_nether.get_seed_bag.description": "获得种子袋，开始你的种田生活",
+  "advancements.kaleidoscope_nether.get_nether_caterpillar.title": "下界蛋白质",
+  "advancements.kaleidoscope_nether.get_nether_caterpillar.description": "获得下界猪儿虫",
+  "advancements.kaleidoscope_nether.get_hoglin_tusk.title": "野兽的獠牙",
+  "advancements.kaleidoscope_nether.get_hoglin_tusk.description": "获得疣猪兽的獠牙，证明你的狩猎技巧",
+  "advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.title": "朴素的烹饪方式",
+  "advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.description": "制作一份庞猪兽獠牙焖肉",
+  "advancements.kaleidoscope_nether.get_blazing_buff.title": "小鬼，有点火热啊",
+  "advancements.kaleidoscope_nether.get_blazing_buff.description": "获得火热效果",
+  "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.title": "LaLaLaLava~",
+  "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.description": "食用一只美味的熔岩烤鸡",
+  "advancements.kaleidoscope_nether.get_soul_return_rice.title": "短暂性死亡",
+  "advancements.kaleidoscope_nether.get_soul_return_rice.description": "获得一份回魂饭"
 }

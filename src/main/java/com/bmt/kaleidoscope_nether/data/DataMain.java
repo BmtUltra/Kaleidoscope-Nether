@@ -1,6 +1,7 @@
 package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
@@ -11,13 +12,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataMain {
     @SubscribeEvent
     public static void generate(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        generator.addProvider(event.includeServer(),
+        DatapackBuiltinEntriesProvider datapackBuiltinEntriesProvider = generator.addProvider(event.includeServer(),
                 new DatapackBuiltinEntriesProvider(
                         generator.getPackOutput(),
                         event.getLookupProvider(),
@@ -29,5 +31,10 @@ public class DataMain {
                         ,
                         Set.of(KaleidoscopeNether.MOD_ID)
                 ));
+
+        CompletableFuture<HolderLookup.Provider> registryProvider = datapackBuiltinEntriesProvider.getRegistryProvider();
+        generator.addProvider(event.includeServer(), new ModAdvancementProvider(generator.getPackOutput(), registryProvider, event.getExistingFileHelper()));
     }
+
+
 }
