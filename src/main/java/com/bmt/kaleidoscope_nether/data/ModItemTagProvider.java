@@ -42,7 +42,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(
                         KNItems.STAR_STEW.get(),
                         KNItems.STAR_GHAST_PASTA.get(),
-                        KNItems.STAR_STEW_MEAT.get()
+                        KNItems.STAR_STEW_MEAT.get(),
+                        KNItems.SOUL_RETURN_RICE.get()
                 );
 
         tag(KNTags.Items.WARPED_FOOD)

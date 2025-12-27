@@ -1,6 +1,5 @@
 {
   "itemGroup.kaleidoscope_nether": "森罗物语：下界",
-
   "item.kaleidoscope_nether.ghast_hide": "恶魂皮",
   "item.kaleidoscope_nether.hoglin_tusk": "疣猪兽獠牙",
   "item.kaleidoscope_nether.strider_rock_shell": "炽足兽岩壳",
@@ -87,7 +86,6 @@
   "item.kaleidoscope_nether.soul_lamb_chop": "灵魂羊排",
   "item.kaleidoscope_nether.soul_lamb_chop.tooltip.line1": "§9怨魂（00:30）",
   "item.kaleidoscope_nether.sauerkraut_fish": "酸菜鱼",
-
   "item.kaleidoscope_nether.soul_strider_kabob": "灵魂炽足兽烤串",
   "item.kaleidoscope_nether.soul_strider_kabob.tooltip.line1": "§9怨魂（01:00）",
   "item.kaleidoscope_nether.golden_kabob": "黄金烤串",
@@ -108,7 +106,6 @@
   "item.kaleidoscope_nether.black_apple_salad": "黑苹果沙拉",
   "item.kaleidoscope_nether.ruby_steak": "红宝石牛排",
   "item.kaleidoscope_nether.nether_reed_stew": "下界芦苇炖菜",
-
   "effect.kaleidoscope_nether.mysterious_poison": "迷之中毒",
   "effect.kaleidoscope_nether.star_blessing_buff": "星之祝福",
   "effect.kaleidoscope_nether.crimson_buff": "绯红",
@@ -117,14 +114,10 @@
   "effect.kaleidoscope_nether.lava_walker": "熔岩行者",
   "effect.kaleidoscope_nether.blazing": "火热",
   "effect.kaleidoscope_nether.glowing_buff": "开窍",
-
   "attribute.kaleidoscope_nether.star_blessing": "星之祝福",
-
   "enchantment.kaleidoscope_nether.blessing": "祝福",
   "enchantment.kaleidoscope_nether.blessing.desc": "食用食物后回复少量生命值",
-
   "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat": "熔岩烤鸡",
-
   "advancements.kaleidoscope_nether.root.title": "森罗物语：下界",
   "advancements.kaleidoscope_nether.root.description": "下界也要有奇幻色彩！",
   "advancements.kaleidoscope_nether.get_star_dust.title": "这也能磨成粉？",
@@ -144,5 +137,7 @@
   "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.title": "LaLaLaLava~",
   "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.description": "食用一只美味的熔岩烤鸡",
   "advancements.kaleidoscope_nether.get_soul_return_rice.title": "短暂性死亡",
-  "advancements.kaleidoscope_nether.get_soul_return_rice.description": "获得一份回魂饭"
+  "advancements.kaleidoscope_nether.get_soul_return_rice.description": "获得一份回魂饭",
+  "advancements.kaleidoscope_nether.seagull_steal_failure.title": "自食恶果",
+  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排"
 }

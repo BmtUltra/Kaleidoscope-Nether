@@ -1,5 +1,6 @@
 package com.bmt.kaleidoscope_nether;
 
+import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -61,6 +62,8 @@ public class KaleidoscopeNether {
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("Glowing Buff effect now allows eating regardless of hunger level");
+
+        KNAdvancementTriggerRegistry.init();
     }
 
     @SubscribeEvent

@@ -1,13 +1,19 @@
 package com.bmt.kaleidoscope_nether.data.subAdvancements;
 
+import com.bmt.kaleidoscope_nether.API.KNTags;
+import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTrigger;
+import com.bmt.kaleidoscope_nether.data.ModAdvancementProvider;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.crafting.ConditionalAdvancement;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +26,7 @@ public class KNAdvances implements ForgeAdvancementProvider.AdvancementGenerator
         Advancement root = Advancement.Builder.advancement().display(KNItems.CRIMSON_FRUIT.get(), Component.translatable("advancements.kaleidoscope_nether.root.title"), Component.translatable("advancements.kaleidoscope_nether.root.description"), ResourceLocation.parse("kaleidoscope_cookery:textures/advancement/background.png"), FrameType.TASK, false, false, false).addCriterion("kaleidoscope_nether", PlayerTrigger.TriggerInstance.tick()).save(saver, "kaleidoscope_nether/root");
 
         Advancement getStarDust = Advancement.Builder.advancement().parent(root).display(KNItems.STAR_DUST.get(), Component.translatable("advancements.kaleidoscope_nether.get_star_dust.title"), Component.translatable("advancements.kaleidoscope_nether.get_star_dust.description"), null, FrameType.TASK, true, true, false).addCriterion("get_star_dust", InventoryChangeTrigger.TriggerInstance.hasItems(KNItems.STAR_DUST.get())).save(saver, "kaleidoscope_nether/get_star_dust");
-        Advancement getStarStew = Advancement.Builder.advancement().parent(getStarDust).display(KNItems.STAR_GHAST_PASTA.get(), Component.translatable("advancements.kaleidoscope_nether.get_star_stew.title"), Component.translatable("advancements.kaleidoscope_nether.get_star_stew.description"), null, FrameType.TASK, true, true, false).addCriterion("get_star_stew", InventoryChangeTrigger.TriggerInstance.hasItems(KNItems.STAR_STEW.get(), KNItems.STAR_GHAST_PASTA.get(), KNItems.STAR_STEW_MEAT.get())).save(saver, "kaleidoscope_nether/get_star_stew");
+        Advancement getStarStew = Advancement.Builder.advancement().parent(getStarDust).display(KNItems.STAR_GHAST_PASTA.get(), Component.translatable("advancements.kaleidoscope_nether.get_star_stew.title"), Component.translatable("advancements.kaleidoscope_nether.get_star_stew.description"), null, FrameType.TASK, true, true, false).addCriterion("get_star_stew", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(KNTags.Items.STAR_BLESSING_FOODS).build())).save(saver, "kaleidoscope_nether/get_star_stew");
         Advancement getSoulReturnRice = Advancement.Builder.advancement().parent(getStarDust).display(KNItems.BLAZING_KABOB.get(), Component.translatable("advancements.kaleidoscope_nether.get_soul_return_rice.title"), Component.translatable("advancements.kaleidoscope_nether.get_soul_return_rice.description"), null, FrameType.GOAL, true, true, false).addCriterion("get_soul_return_rice", InventoryChangeTrigger.TriggerInstance.hasItems(KNItems.SOUL_RETURN_RICE.get())).save(saver, "kaleidoscope_nether/get_soul_return_rice");
 
 
@@ -35,6 +41,13 @@ public class KNAdvances implements ForgeAdvancementProvider.AdvancementGenerator
 
         Advancement eatLavaRoastedChicken = Advancement.Builder.advancement().parent(root).display(KNItems.LAVA_ROASTED_CHICKEN.get(), Component.translatable("advancements.kaleidoscope_nether.eat_lava_roasted_chicken.title"), Component.translatable("advancements.kaleidoscope_nether.eat_lava_roasted_chicken.description"), null, FrameType.GOAL, true, true, false).addCriterion("eat_lava_roasted_chicken", ConsumeItemTrigger.TriggerInstance.usedItem(KNItems.LAVA_ROASTED_CHICKEN.get())).save(saver, "kaleidoscope_nether/eat_lava_roasted_chicken");
 
+//        Advancement SeagullStealFailure = Advancement.Builder.advancement().parent(root).display(KNItems.EVERLASTING_FLAME_STEAK.get(), Component.translatable("advancements.kaleidoscope_nether.seagull_steal_failure.title"), Component.translatable("advancements.kaleidoscope_nether.seagull_steal_failure.description"), null, FrameType.TASK, true, true, false).addCriterion("seagull_steal_failure", KNAdvancementTrigger.Instance.id("seagull_steal_failure")).save(saver, "kaleidoscope_nether/seagull_steal_failure");
 
+        Advancement.Builder SeagullStealFailureTest = Advancement.Builder.advancement().parent(root).display(KNItems.EVERLASTING_FLAME_STEAK.get(), Component.translatable("advancements.kaleidoscope_nether.seagull_steal_failure.title"), Component.translatable("advancements.kaleidoscope_nether.seagull_steal_failure.description"), null, FrameType.TASK, true, true, false).addCriterion("seagull_steal_failure", KNAdvancementTrigger.Instance.id("seagull_steal_failure"));
+
+
+        JsonObject jsonObject = ConditionalAdvancement.builder().addCondition(new ModLoadedCondition("alexsmobs")).addAdvancement(SeagullStealFailureTest).write();
+        ModAdvancementProvider.BUILD_CONDITION.accept(jsonObject, ResourceLocation.withDefaultNamespace("kaleidoscope_nether/seagull_steal_failure"));
     }
+
 }
