@@ -3,6 +3,7 @@ package com.bmt.kaleidoscope_nether.event;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.effect.CrimsonBuffEffect;
+import com.bmt.kaleidoscope_nether.effect.WarpedBuffEffect;
 import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import com.bmt.kaleidoscope_nether.registry.ModItems;
 import net.minecraft.world.entity.monster.Ghast;
@@ -27,9 +28,7 @@ public class ModEvents {
     public static void onLivingChangeTarget(LivingChangeTargetEvent event) {
         if (event.getNewTarget() instanceof Player player) {
             if (player.hasEffect(ModEffects.WARPED_BUFF.get())) {
-                if (event.getEntity() instanceof Piglin ||
-                        event.getEntity() instanceof Ghast ||
-                        event.getEntity() instanceof MagmaCube) {
+                if (WarpedBuffEffect.isAffectedMob(event.getEntity())) {
                     event.setCanceled(true);
                 }
             }
@@ -67,7 +66,7 @@ public class ModEvents {
         }
 
         if (state.is(Blocks.WEEPING_VINES) || state.is(Blocks.WEEPING_VINES_PLANT)) {
-            if (event.getLevel().getRandom().nextDouble() < 0.6) {
+            if (event.getLevel().getRandom().nextDouble() < Config.CRIMSON_FRUIT_DROP_CHANCE.get()) {
                 ItemStack crimsonFruit = new ItemStack(ModItems.CRIMSON_FRUIT.get());
                 Level level = (Level) event.getLevel();
                 Containers.dropItemStack(level,
@@ -76,7 +75,7 @@ public class ModEvents {
         }
 
         if (state.is(Blocks.TWISTING_VINES) || state.is(Blocks.TWISTING_VINES_PLANT)) {
-            if (event.getLevel().getRandom().nextDouble() < 0.6) {
+            if (event.getLevel().getRandom().nextDouble() < Config.WARPED_FRUIT_DROP_CHANCE.get()) {
                 ItemStack warpedFruit = new ItemStack(ModItems.WARPED_FRUIT.get());
                 Level level = (Level) event.getLevel();
                 Containers.dropItemStack(level,

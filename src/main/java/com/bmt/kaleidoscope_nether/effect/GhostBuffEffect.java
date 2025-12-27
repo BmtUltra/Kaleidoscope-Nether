@@ -49,7 +49,7 @@ public class GhostBuffEffect extends MobEffect {
                     double offsetZ = (entity.getRandom().nextDouble() - 0.5) * entity.getBbWidth();
 
                     double speedX = (entity.getRandom().nextDouble() - 0.5) * 0.01;
-                    double speedY = entity.getRandom().nextDouble() * 0.03 + 0.01; // 缓慢向上飘动
+                    double speedY = entity.getRandom().nextDouble() * 0.03 + 0.01;
                     double speedZ = (entity.getRandom().nextDouble() - 0.5) * 0.01;
 
                     serverLevel.sendParticles(
@@ -57,9 +57,9 @@ public class GhostBuffEffect extends MobEffect {
                             pos.x() + offsetX,
                             pos.y() + offsetY,
                             pos.z() + offsetZ,
-                            1, // 每次生成1个粒子
+                            1,
                             speedX, speedY, speedZ,
-                            0.0 // 速度缩放
+                            0.0
                     );
                 }
             }

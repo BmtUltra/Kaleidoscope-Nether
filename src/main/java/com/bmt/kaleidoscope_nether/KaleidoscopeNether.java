@@ -50,11 +50,14 @@ public class KaleidoscopeNether
         MinecraftForge.EVENT_BUS.register(this);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        LOGGER.info("Initializing Kaleidoscope Nether Mixins");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("HELLO FROM COMMON SETUP");
+        LOGGER.info("Glowing Buff effect now allows eating regardless of hunger level");
     }
 
     @SubscribeEvent

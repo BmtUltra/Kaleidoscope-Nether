@@ -33,8 +33,7 @@ public class BlazingEffectEvents {
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         if (event.getPlayer() != null &&
-                event.getPlayer().hasEffect(ModEffects.BLAZING.get()) &&
-                event.getPlayer().isShiftKeyDown()) {
+                event.getPlayer().hasEffect(ModEffects.BLAZING.get())) {
 
             Player player = event.getPlayer();
             int amplifier = player.getEffect(ModEffects.BLAZING.get()).getAmplifier();
@@ -43,7 +42,6 @@ public class BlazingEffectEvents {
             BlockPos pos = event.getPos();
 
             if (!event.getLevel().isClientSide() && event.getLevel() instanceof ServerLevel serverLevel) {
-                // 获取原始掉落物
                 List<ItemStack> drops = Block.getDrops(state, serverLevel, pos, null, player, player.getMainHandItem());
 
                 List<ItemStack> transformedDrops = BlazingEffect.transformDropsAndDropExp(

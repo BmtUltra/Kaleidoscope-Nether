@@ -5,6 +5,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Mod.EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config
 {
@@ -39,6 +42,12 @@ public class Config
     public static final ForgeConfigSpec.DoubleValue BLAZE_HEART_CHANCE;
     public static final ForgeConfigSpec.DoubleValue PIGLIN_GOLDEN_PLATE_CHANCE;
     public static final ForgeConfigSpec.DoubleValue PIGLIN_BRUTE_GILDED_FRAGMENT_CHANCE;
+    public static final ForgeConfigSpec.DoubleValue CRIMSON_FRUIT_DROP_CHANCE;
+    public static final ForgeConfigSpec.DoubleValue WARPED_FRUIT_DROP_CHANCE;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> WARPED_BUFF_AFFECTED_MOBS;
+
+    public static final ForgeConfigSpec.DoubleValue BLESSING_ENCHANTMENT_HEAL_AMOUNT;
+    public static final ForgeConfigSpec.BooleanValue BLESSING_ENCHANTMENT_ENABLED;
 
     static {
         BUILDER.push("star_dust_repair");
@@ -135,6 +144,14 @@ public class Config
                 .comment("Chance for Piglin Brute to drop gilded fragment (0.0 to 1.0)")
                 .defineInRange("piglinBruteGildedFragmentChance", 0.1, 0.0, 1.0);
 
+        CRIMSON_FRUIT_DROP_CHANCE = BUILDER
+                .comment("Drop chance for Crimson Fruit from Weeping Vines (0.0 to 1.0)")
+                .defineInRange("crimsonFruitDropChance", 0.6, 0.0, 1.0);
+
+        WARPED_FRUIT_DROP_CHANCE = BUILDER
+                .comment("Drop chance for Warped Fruit from Twisting Vines (0.0 to 1.0)")
+                .defineInRange("warpedFruitDropChance", 0.6, 0.0, 1.0);
+
         BUILDER.pop();
 
         BUILDER.push("star_blessing");
@@ -154,6 +171,33 @@ public class Config
         STAR_BLESSING_LEVEL_12_FIRE_IMMUNITY = BUILDER
                 .comment("Whether level 12 provides complete fire immunity")
                 .define("level12FireImmunity", true);
+
+        BUILDER.pop();
+
+        BUILDER.push("warped_buff");
+
+        WARPED_BUFF_AFFECTED_MOBS = BUILDER
+                .comment("List of mob entity IDs that are affected by Warped Buff (e.g., minecraft:piglin, minecraft:ghast)")
+                .defineList("affectedMobs",
+                        Arrays.asList(
+                                "minecraft:piglin",
+                                "minecraft:ghast",
+                                "minecraft:magma_cube",
+                                "minecraft:hoglin"
+                        ),
+                        obj -> obj instanceof String);
+
+        BUILDER.pop();
+
+        BUILDER.push("blessing_enchantment");
+
+        BLESSING_ENCHANTMENT_ENABLED = BUILDER
+                .comment("Whether the Blessing enchantment is enabled")
+                .define("enabled", true);
+
+        BLESSING_ENCHANTMENT_HEAL_AMOUNT = BUILDER
+                .comment("Amount of health healed when eating food with Blessing enchantment (in half-hearts, 0.5 = 1 heart)")
+                .defineInRange("healAmount", 0.5, 0.0, 10.0);
 
         BUILDER.pop();
     }
