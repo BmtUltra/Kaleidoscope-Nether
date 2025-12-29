@@ -32,7 +32,7 @@ public class PoisonousFruit extends CropBlock {
 
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         int i = blockState.getValue(AGE);
-        if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(10) == 0)) {
+        if (i < 7 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(10) == 0)) {
             blockState = blockState.setValue(AGE, i + 1);
             serverLevel.setBlock(blockPos, blockState, 2);
             net.minecraftforge.common.ForgeHooks.onCropsGrowPost(serverLevel, blockPos, blockState);

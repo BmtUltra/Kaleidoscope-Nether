@@ -4,6 +4,7 @@ import com.bmt.kaleidoscope_nether.API.KNTags;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -27,10 +28,18 @@ public class SoulPepper extends CropBlock {
 
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         int i = blockState.getValue(AGE);
-        if (i < 3 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(10) == 0)) {
+        if (i < 7 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(serverLevel, blockPos, blockState, randomSource.nextInt(10) == 0)) {
             blockState = blockState.setValue(AGE, i + 1);
             serverLevel.setBlock(blockPos, blockState, 2);
             net.minecraftforge.common.ForgeHooks.onCropsGrowPost(serverLevel, blockPos, blockState);
+        }
+
+    }
+
+    @Override
+    public void animateTick(BlockState blockState, Level level, BlockPos blockPos, RandomSource randomSource) {
+        if (randomSource.nextInt(5) == 0) {
+            spawnSoulParticles(level, blockPos);
         }
     }
 
@@ -65,5 +74,31 @@ public class SoulPepper extends CropBlock {
         if (blockState.getBlock() == this)
             return levelReader.getBlockState(blockpos).canSustainPlant(levelReader, blockpos, Direction.UP, this);
         return this.mayPlaceOn(levelReader.getBlockState(blockpos), levelReader, blockpos);
+    }
+
+    private static void spawnSoulParticles(Level level, BlockPos pos) {
+        double x = pos.getX() + 0.5;
+        double y = pos.getY();
+        double z = pos.getZ() + 0.5;
+
+        int particleCount = 1;
+
+        for (int i = 0; i < particleCount; i++) {
+            double offsetX = (level.random.nextDouble() - 0.5) * 0.8;
+            double offsetY = level.random.nextDouble() * 0.5;
+            double offsetZ = (level.random.nextDouble() - 0.5) * 0.8;
+
+            double speedX = (level.random.nextDouble() - 0.5) * 0.02;
+            double speedY = level.random.nextDouble() * 0.03 + 0.01;
+            double speedZ = (level.random.nextDouble() - 0.5) * 0.02;
+
+            level.addParticle(
+                    ParticleTypes.SOUL,
+                    x + offsetX,
+                    y + offsetY,
+                    z + offsetZ,
+                    speedX, speedY, speedZ
+            );
+        }
     }
 }
