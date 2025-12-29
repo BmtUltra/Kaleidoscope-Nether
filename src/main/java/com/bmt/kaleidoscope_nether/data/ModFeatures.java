@@ -2,13 +2,14 @@ package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.API.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.registry.KNBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -34,7 +35,7 @@ public class ModFeatures {
                         PlacementUtils.filtered(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(
-                                        BlockStateProvider.simple(Blocks.DIAMOND_BLOCK)
+                                        BlockStateProvider.simple(KNBlocks.POISONOUS_FRUIT.get().defaultBlockState().setValue(CropBlock.AGE, 7))
                                 ),
                                 ModFeatureUtils.simplePatchPredicate(KNTags.Blocks.SOUL_SOIL_SAND)
                         )

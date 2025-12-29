@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.registry;
 
-import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.google.common.collect.Sets;
 import net.minecraft.world.food.FoodProperties;
@@ -14,8 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
-public class KNItems
-{
+public class KNItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, KaleidoscopeNether.MOD_ID);
     public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
@@ -274,7 +273,8 @@ public class KNItems
 
     // 剧毒果
     public static final RegistryObject<Item> POISONOUS_FRUIT = registerWithTab("poisonous_fruit",
-            () -> new MysteriousPoisonFoodItem(
+            () -> new MysteriousPoisonFoodBlockItem(
+                    KNBlocks.POISONOUS_FRUIT.get(),
                     new FoodProperties.Builder()
                             .nutrition(2)
                             .saturationMod(0.1f)

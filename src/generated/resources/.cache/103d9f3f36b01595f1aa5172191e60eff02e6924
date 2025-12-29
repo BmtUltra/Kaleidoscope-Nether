@@ -1,4 +1,4 @@
-// 1.20.1	2025-12-24T16:02:45.078248	Registries
+// 1.20.1	2025-12-29T13:30:53.5473093	Registries
 45cdc1672b938a77fb18318263d890132a063bee data/kaleidoscope_nether/forge/biome_modifier/add_features.json
-329f04898154665ff957c23aa6ccab7f58d232e4 data/kaleidoscope_nether/worldgen/configured_feature/poisonous_fruit.json
-9212358d92b2a80f5ea8ff2621b6d9ede9a8c7f9 data/kaleidoscope_nether/worldgen/placed_feature/poisonous_fruit.json
+56ea4bc1abc570c0c8f8fb1783df52c27530b342 data/kaleidoscope_nether/worldgen/configured_feature/poisonous_fruit.json
+70afb0d1766936ce8e645986588d4d77b9bc7f03 data/kaleidoscope_nether/worldgen/placed_feature/poisonous_fruit.json

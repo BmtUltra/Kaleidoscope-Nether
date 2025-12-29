@@ -39,6 +39,14 @@ public class DataMain {
         BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(), new ModBlockTagsProvider(generator.getPackOutput(), registryProvider, event.getExistingFileHelper()));
 
         generator.addProvider(event.includeServer(), new ModItemTagProvider(generator.getPackOutput(), registryProvider, blockTagsProvider.contentsGetter(), event.getExistingFileHelper()));
+
+
+        generator.addProvider(event.includeServer(), new ModBlockModelProvider(generator.getPackOutput(), event.getExistingFileHelper()));
+
+        generator.addProvider(event.includeServer(), new ModBlockStateProvider(generator.getPackOutput(), event.getExistingFileHelper()));
+
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(generator.getPackOutput()));
+
     }
 
 
