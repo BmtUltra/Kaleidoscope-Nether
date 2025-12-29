@@ -4,12 +4,14 @@ import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.registry.KNBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -18,12 +20,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        VariantBlockStateBuilder builder = getVariantBuilder(KNBlocks.POISONOUS_FRUIT.get());
+        cropBlock(KNBlocks.POISONOUS_FRUIT);
+        cropBlock(KNBlocks.SOUL_PEPPER);
+    }
+
+    protected void cropBlock(RegistryObject<? extends Block> registryObject) {
+        Block block = registryObject.get();
+        VariantBlockStateBuilder builder = getVariantBuilder(block);
         builder.forAllStates(blockState -> {
             int age = blockState.getValue(CropBlock.AGE);
-            ResourceLocation file = modLoc("poisonous_fruit/stage%d".formatted(age));
+            ResourceLocation file = modLoc("%s/stage%d".formatted(registryObject.getId().getPath(), age));
             return ConfiguredModel.builder().modelFile(new ModelFile.UncheckedModelFile(file)).build();
         });
-
     }
 }

@@ -2,6 +2,7 @@ package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.registry.KNBlocks;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -39,13 +40,16 @@ public class ModLootTableProvider extends LootTableProvider {
 
         @Override
         protected void generate() {
-            Block poisonousFruitBlock = KNBlocks.POISONOUS_FRUIT.get();
-            Item poisonousFruitItem = KNItems.POISONOUS_FRUIT.get();
-            LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(poisonousFruitBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PotatoBlock.AGE, 7));
-            this.add(poisonousFruitBlock, this.applyExplosionDecay(poisonousFruitBlock, LootTable.lootTable()
-                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(poisonousFruitItem)))
-                    .withPool(LootPool.lootPool().when(builder).add(LootItem.lootTableItem(poisonousFruitItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
+            simpleCropBlockLoot(KNBlocks.POISONOUS_FRUIT.get(), 7, KNItems.POISONOUS_FRUIT.get(), KNItems.POISONOUS_FRUIT.get(), 3);
+            simpleCropBlockLoot(KNBlocks.SOUL_PEPPER.get(), 7, ModItems.CHILI_SEED.get(), KNItems.SOUL_PEPPER.get(), 3);
 
+        }
+
+        private void simpleCropBlockLoot(Block cropBlock, int canHarvestAge, Item seed, Item crop, int cropCount) {
+            LootItemCondition.Builder ageCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PotatoBlock.AGE, canHarvestAge));
+            this.add(cropBlock, this.applyExplosionDecay(cropBlock, LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(seed)))
+                    .withPool(LootPool.lootPool().when(ageCondition).add(LootItem.lootTableItem(crop).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, cropCount))))));
         }
 
         @Override
