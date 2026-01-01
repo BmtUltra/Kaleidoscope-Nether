@@ -8,14 +8,16 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SoulPepper extends CropBlock {
+import java.util.Set;
+
+public class SoulPepper extends KNCropBlockBase {
     public SoulPepper(Properties properties) {
         super(properties);
     }
@@ -34,6 +36,11 @@ public class SoulPepper extends CropBlock {
             net.minecraftforge.common.ForgeHooks.onCropsGrowPost(serverLevel, blockPos, blockState);
         }
 
+    }
+
+    @Override
+    public Set<Item> getHandHarvestExclude() {
+        return Set.of(ModItems.CHILI_SEED.get());
     }
 
     @Override

@@ -12,11 +12,15 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 public class KNBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, KaleidoscopeNether.MOD_ID);
 
-    public static final RegistryObject<PoisonousFruit> POISONOUS_FRUIT = BLOCKS.register("poisonous_fruit", () -> new PoisonousFruit(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+    private static final Supplier<BlockBehaviour.Properties> CROP_DEFAULT_PROPERTIES = () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY);
 
-    public static final RegistryObject<SoulPepper> SOUL_PEPPER = BLOCKS.register("soul_pepper", () -> new SoulPepper(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<PoisonousFruit> POISONOUS_FRUIT = BLOCKS.register("poisonous_fruit", () -> new PoisonousFruit(CROP_DEFAULT_PROPERTIES.get()));
+
+    public static final RegistryObject<SoulPepper> SOUL_PEPPER = BLOCKS.register("soul_pepper", () -> new SoulPepper(CROP_DEFAULT_PROPERTIES.get()));
 
 }

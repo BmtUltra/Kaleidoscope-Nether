@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 
 public class ModPlacements {
     public static final ResourceKey<PlacedFeature> POISONOUS_FRUIT = createKey("poisonous_fruit");
@@ -25,7 +26,8 @@ public class ModPlacements {
                 POISONOUS_FRUIT,
                 holdergetter.getOrThrow(ModFeatures.POISONOUS_FRUIT),
                 PlacementUtils.FULL_RANGE,
-                BiomeFilter.biome()
+                BiomeFilter.biome(),
+                RarityFilter.onAverageOnceEvery(5)
         );
     }
 }
