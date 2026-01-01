@@ -43,7 +43,6 @@ public class KaleidoscopeNether {
         ModAttributes.ATTRIBUTES.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
-        //ModBlocks.BLOCKS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

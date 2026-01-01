@@ -71,6 +71,9 @@ dependencies {
     implementation fg.deobf("curse.maven:alexs-mobs-426558:5698791")
     implementation fg.deobf("curse.maven:citadel-331936:6702068")
     implementation fg.deobf("curse.maven:jei-238222:7361881")
+    implementation fg.deobf("curse.maven:jade-324717:6855440")
+    //implementation fg.deobf("curse.maven:imblocker-483760:7188270")
+    implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:6172935")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
