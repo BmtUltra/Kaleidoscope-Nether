@@ -10,6 +10,8 @@
     "kaleidoscope_nether:gilded_fragment",
     "kaleidoscope_nether:hoglin_tusk",
     "kaleidoscope_nether:ghast_hide",
-    "kaleidoscope_nether:golden_plate"
+    "kaleidoscope_nether:golden_plate",
+    "regions_unexplored:yellow_bioshroom",
+    "regions_unexplored:mycotoxic_daisy"
   ]
 }
