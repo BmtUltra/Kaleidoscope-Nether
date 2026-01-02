@@ -4,6 +4,8 @@ import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -43,6 +45,7 @@ public class KaleidoscopeNether {
         ModAttributes.ATTRIBUTES.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        ModEntities.ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -74,6 +77,11 @@ public class KaleidoscopeNether {
         public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+            event.enqueueWork(() -> {
+                EntityRenderers.register(ModEntities.BLAZE_HEART_PROJECTILE.get(),
+                        BlazeHeartProjectileRenderer::new);
+            });
         }
     }
 }

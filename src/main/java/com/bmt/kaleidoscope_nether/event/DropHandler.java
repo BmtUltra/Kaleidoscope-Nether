@@ -19,7 +19,7 @@ public class DropHandler {
     public static void onLivingDrops(LivingDropsEvent event) {
         if (event.getEntity() instanceof Ghast) {
             //恶魂肉
-            if (event.getEntity().getRandom().nextFloat() < Config.GHAST_RAW_MEAT_CHANCE.get()) {
+            /*if (event.getEntity().getRandom().nextFloat() < Config.GHAST_RAW_MEAT_CHANCE.get()) {
                 ItemStack rawGhastMeat = new ItemStack(KNItems.RAW_GHAST_MEAT.get());
                 event.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(
                         event.getEntity().level(),
@@ -28,7 +28,7 @@ public class DropHandler {
                         event.getEntity().getZ(),
                         rawGhastMeat
                 ));
-            }
+            }*/
 
             //恶魂皮
             if (event.getEntity().getRandom().nextFloat() < Config.GHAST_HIDE_CHANCE.get()) {
@@ -123,7 +123,7 @@ public class DropHandler {
                 ));
             }
         }
-
+/*
         if (event.getEntity() instanceof MagmaCube) {
             //熔岩泡泡
             if (event.getEntity().getRandom().nextFloat() < Config.MAGMA_BUBBLE_CHANCE.get()) {
@@ -137,7 +137,7 @@ public class DropHandler {
                 ));
             }
         }
-
+*/
         if (event.getEntity() instanceof Blaze) {
             //烈焰之心
             if (event.getEntity().getRandom().nextFloat() < Config.BLAZE_HEART_CHANCE.get()) {
@@ -151,7 +151,7 @@ public class DropHandler {
                 ));
             }
         }
-
+/*
         if (event.getEntity() instanceof Piglin) {
             //碎金块
             if (event.getEntity().getRandom().nextFloat() < Config.PIGLIN_GOLDEN_PLATE_CHANCE.get()) {
@@ -165,7 +165,7 @@ public class DropHandler {
                 ));
             }
         }
-
+*/
         if (event.getEntity() instanceof PiglinBrute) {
             //镀金裂片
             if (event.getEntity().getRandom().nextFloat() < Config.PIGLIN_BRUTE_GILDED_FRAGMENT_CHANCE.get()) {

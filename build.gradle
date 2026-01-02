@@ -74,6 +74,10 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:imblocker-483760:7188270")
     implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:6172935")
+    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")
+    implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
+    implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
+    implementation fg.deobf("curse.maven:selene-499980:7388296")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
