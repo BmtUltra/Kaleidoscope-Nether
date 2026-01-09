@@ -1,0 +1,36 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "mynethersdelight:hoglin_hide"
+    },
+    "c": {
+      "tag": "mynethersdelight:crimson_colony"
+    },
+    "h": {
+      "tag": "forge:raw_ham"
+    },
+    "l": {
+      "tag": "mynethersdelight:raw_hoglin_loin"
+    },
+    "w": {
+      "tag": "mynethersdelight:warped_colony"
+    }
+  },
+  "pattern": [
+    "hwh",
+    "l#l",
+    "hch"
+  ],
+  "result": {
+    "item": "mynethersdelight:raw_stuffed_hoglin"
+  },
+  "show_notification": true
+}

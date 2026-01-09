@@ -1,0 +1,46 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    [
+      {
+        "tag": "forge:raw_ghast"
+      },
+      {
+        "item": "minecraft:ghast_tear"
+      }
+    ],
+    [
+      {
+        "tag": "forge:raw_ghast"
+      },
+      {
+        "item": "minecraft:ghast_tear"
+      }
+    ],
+    [
+      {
+        "tag": "forge:raw_ghast"
+      },
+      {
+        "item": "minecraft:ghast_tear"
+      }
+    ],
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:ghast_pudding"
+  },
+  "stir_fry_count": 3,
+  "time": 400
+}

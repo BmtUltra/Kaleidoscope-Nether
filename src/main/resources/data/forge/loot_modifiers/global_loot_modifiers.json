@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "entries": [
+    "kaleidoscope_nether:chests/bastion_hoglin_stable",
+    "kaleidoscope_nether:chests/bastion_treasure",
+    "kaleidoscope_nether:gameplay/piglin_bartering",
+    "kaleidoscope_nether:integration/bygonenether/corpor",
+    "kaleidoscope_nether:integration/bygonenether/piglin_hunter",
+    "kaleidoscope_nether:integration/bygonenether/piglin_prisoner",
+    "kaleidoscope_nether:integration/bygonenether/wex",
+    "kaleidoscope_nether:integration/bygonenether/wither_skeleton_horse",
+    "kaleidoscope_nether:integration/bygonenether/wither_skeleton_knight",
+    "kaleidoscope_nether:integration/bygonenether/wraither",
+    "kaleidoscope_nether:integration/dungeonsmobs/fungus_thrower",
+    "kaleidoscope_nether:integration/dungeonsmobs/wildfire",
+    "kaleidoscope_nether:integration/dungeonsmobs/zombified_fungus_thrower",
+    "kaleidoscope_nether:integration/twilightforest/boar",
+    "kaleidoscope_nether:integration/twilightforest/carminite_ghastguard",
+    "kaleidoscope_nether:integration/twilightforest/carminite_ghastling",
+    "kaleidoscope_nether:integration/twilightforest/ur_ghast",
+    "kaleidoscope_nether:blaze",
+    "kaleidoscope_nether:ghast",
+    "kaleidoscope_nether:hoglin",
+    "kaleidoscope_nether:magma_cube",
+    "kaleidoscope_nether:pig",
+    "kaleidoscope_nether:piglin_brute",
+    "kaleidoscope_nether:strider",
+    "kaleidoscope_nether:wither",
+    "kaleidoscope_nether:wither_skeleton"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "delightful"
+    }
+  ],
+  "type": "kaleidoscope_cookery:pot",
+  "ingredients": [
+    {
+      "item": "delightful:animal_fat"
+    },
+    {
+      "item": "delightful:animal_fat"
+    },
+    {
+      "item": "delightful:animal_fat"
+    },
+    {
+      "item": "delightful:animal_fat"
+    },
+    {
+      "item": "delightful:animal_fat"
+    },
+    {
+      "item": "delightful:animal_fat"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "kaleidoscope_cookery:oil"
+  },
+  "stir_fry_count": 5,
+  "time": 200
+}

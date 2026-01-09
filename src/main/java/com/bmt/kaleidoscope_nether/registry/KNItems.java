@@ -52,9 +52,9 @@ public class KNItems {
     public static final RegistryObject<Item> STAR_DUST = registerWithTab("star_dust",
             () -> new StarDustItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
-    /* 碎金块
+    // 碎金块
     public static final RegistryObject<Item> GOLDEN_PLATE = registerWithTab("golden_plate",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));*/
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // 烈焰珍珠
     public static final RegistryObject<Item> BLAZE_HEART = registerWithTab("blaze_heart",
@@ -63,9 +63,9 @@ public class KNItems {
                     .stacksTo(16),
                     3000));
 
-    /* 熔岩泡泡
+    // 熔岩泡泡
     public static final RegistryObject<Item> MAGMA_BUBBLE = registerWithTab("magma_bubble",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));*/
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> SEED_BAG = registerWithTab("seed_bag",
             () -> new SeedBagItem(new Item.Properties().rarity(Rarity.COMMON)));
@@ -205,7 +205,7 @@ public class KNItems {
                     .nutrition(10)
                     .saturationMod(0.6f)
                     .build())));
-/*
+
     public static final RegistryObject<Item> RAW_GHAST_MEAT = registerWithTab("raw_ghast_meat",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(3)
@@ -219,7 +219,7 @@ public class KNItems {
                     .saturationMod(0.8f)
                     .meat()
                     .build())));
-*/
+
     public static final RegistryObject<Item> WITHER_BONE_SOUP = registerWithTab("wither_bone_soup",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(10)

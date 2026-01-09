@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "kaleidoscope_nether": {
+      "conditions": {},
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "kaleidoscope_cookery:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:crimson_fruit"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "kaleidoscope_nether"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

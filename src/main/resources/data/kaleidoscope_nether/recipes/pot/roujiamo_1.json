@@ -1,0 +1,20 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_cookery:stuffed_dough_food"
+    },
+    {
+      "tag": "forge:raw_meats"
+    },
+    {
+      "item": "kaleidoscope_cookery:stuffed_dough_food"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "kaleidoscope_nether:roujiamo"
+  },
+  "stir_fry_count": 5,
+  "time": 400
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:kaleidoscope_nether/root",
+  "criteria": {
+    "get_blazing_buff": {
+      "conditions": {
+        "effects": {
+          "kaleidoscope_nether:blazing": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.get_blazing_buff.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:blazing_kabob"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.get_blazing_buff.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_blazing_buff"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

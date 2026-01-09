@@ -1,0 +1,23 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:stick"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:soul_pepper"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_strider_meat"
+    },
+    {
+      "item": "kaleidoscope_nether:raw_strider_meat"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kaleidoscope_nether:soul_strider_kabob"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}
