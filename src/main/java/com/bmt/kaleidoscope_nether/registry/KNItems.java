@@ -4,14 +4,20 @@ import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.google.common.collect.Sets;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TippedArrowItem;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class KNItems {
@@ -40,7 +46,9 @@ public class KNItems {
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> STRIDER_ROCK_SHELL = registerWithTab("strider_rock_shell",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+                    .fireResistant()));
 
     public static final RegistryObject<Item> GILDED_FRAGMENT = registerWithTab("gilded_fragment",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
@@ -69,6 +77,31 @@ public class KNItems {
 
     public static final RegistryObject<Item> SEED_BAG = registerWithTab("seed_bag",
             () -> new SeedBagItem(new Item.Properties().rarity(Rarity.COMMON)));
+
+    // 吹箭筒
+    public static final RegistryObject<Item> BLOWGUN = ITEMS.register("blowgun",
+            () -> new BlowgunItem(new Item.Properties()
+                    .durability(384)
+                    .rarity(Rarity.UNCOMMON)));
+
+    //药水箭
+    public static final RegistryObject<Item> MYSTERIOUS_POISON_ARROW = ITEMS.register("mysterious_poison_arrow",
+            () -> new TippedArrowItem(new Item.Properties()
+                    .stacksTo(64)) {
+                @Override
+                public ItemStack getDefaultInstance() {
+                    ItemStack stack = new ItemStack(this);
+                    PotionUtils.setPotion(stack, Potions.AWKWARD);
+                    PotionUtils.setCustomEffects(stack, List.of(
+                            new MobEffectInstance(
+                                    ModEffects.MYSTERIOUS_POISON.get(),
+                                    1500,
+                                    0
+                            )
+                    ));
+                    return stack;
+                }
+            });
 
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = registerWithTab("everlasting_flame_steak",
             () -> new EverlastingFoodItem(
@@ -639,5 +672,91 @@ public class KNItems {
                     .saturationMod(0.5f)
                     .alwaysEat()
                     .build())));
+
+    // 岩浆膏炒肉
+    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY = registerWithTab("magma_cream_stir_fry",
+            () -> new BlazingBuffFoodItem(
+                    new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationMod(0.7f)
+                            .meat()
+                            .build(),
+                    60 // 60秒持续时间
+            ));
+
+    // 岩浆膏炒肉盖饭
+    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY_RICE = registerWithTab("magma_cream_stir_fry_rice",
+            () -> new BlazingBuffFoodItem(
+                    new FoodProperties.Builder()
+                            .nutrition(10)
+                            .saturationMod(0.8f)
+                            .meat()
+                            .build(),
+                    90 // 90秒持续时间
+            ));
+
+    // 麻婆豆腐
+    public static final RegistryObject<Item> MAPO_TOFU = registerWithTab("mapo_tofu",
+            () -> new Item(foodItem(new FoodProperties.Builder()
+                    .nutrition(6)
+                    .saturationMod(0.6f)
+                    .build())));
+
+    // 麻婆豆腐盖饭
+    public static final RegistryObject<Item> MAPO_TOFU_RICE = registerWithTab("mapo_tofu_rice",
+            () -> new Item(foodItem(new FoodProperties.Builder()
+                    .nutrition(12)
+                    .saturationMod(0.9f)
+                    .build())));
+
+    // 诡异蛋糕
+    public static final RegistryObject<Item> WARPED_CAKE = registerWithTab("warped_cake",
+            () -> new SpecialFruitItem(
+                    new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationMod(0.3f)
+                            .alwaysEat()
+                            .build(),
+                    ModEffects.WARPED_BUFF,
+                    1200, // 60秒
+                    0,
+                    Rarity.COMMON
+            ));
+
+    // 重庆小面
+    public static final RegistryObject<Item> CHONGQING_NOODLES = registerWithTab("chongqing_noodles",
+            () -> new Item(foodItem(new FoodProperties.Builder()
+                    .nutrition(8)
+                    .saturationMod(0.7f)
+                    .build())));
+
+    // 螺蛳粉
+    public static final RegistryObject<Item> LUOSIFEN = registerWithTab("luosifen",
+            () -> new Item(foodItem(new FoodProperties.Builder()
+                    .nutrition(10)
+                    .saturationMod(0.8f)
+                    .build())));
+
+    // 灵魂炒肉
+    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT = registerWithTab("soul_stir_fry_meat",
+            () -> new GhostBuffFoodItem(
+                    new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationMod(0.7f)
+                            .meat()
+                            .build(),
+                    60 // 60秒持续时间
+            ));
+
+    // 灵魂炒肉盖饭
+    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT_RICE = registerWithTab("soul_stir_fry_meat_rice",
+            () -> new GhostBuffFoodItem(
+                    new FoodProperties.Builder()
+                            .nutrition(14)
+                            .saturationMod(1.0f)
+                            .meat()
+                            .build(),
+                    90 // 90秒持续时间
+            ));
 
 }

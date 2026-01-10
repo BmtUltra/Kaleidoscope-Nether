@@ -38,6 +38,12 @@ public class ModCreativeTabs {
                         output.accept(KNItems.SOUL_PEPPER.get());
                         output.accept(KNItems.POISONOUS_FRUIT.get());
                         output.accept(KNItems.NETHER_CATERPILLAR.get());
+                        output.accept(KNItems.MAPO_TOFU.get());
+                        output.accept(KNItems.MAPO_TOFU_RICE.get());
+                        output.accept(KNItems.MAGMA_CREAM_STIR_FRY.get());
+                        output.accept(KNItems.MAGMA_CREAM_STIR_FRY_RICE.get());
+                        output.accept(KNItems.SOUL_STIR_FRY_MEAT.get());
+                        output.accept(KNItems.SOUL_STIR_FRY_MEAT_RICE.get());
                         output.accept(KNItems.STAR_STEW.get());
                         output.accept(KNItems.SOUL_SOUP.get());
                         output.accept(KNItems.BLAZE_SOUP.get());
@@ -46,6 +52,8 @@ public class ModCreativeTabs {
                         output.accept(KNItems.POISONOUS_SOUP.get());
                         output.accept(KNItems.GLOWING_SOUP.get());
                         output.accept(KNItems.SAUERKRAUT_FISH.get());
+                        output.accept(KNItems.CHONGQING_NOODLES.get());
+                        output.accept(KNItems.LUOSIFEN.get());
                         output.accept(KNItems.NETHER_REED_STEW.get());
                         output.accept(KNItems.SOUL_RETURN_RICE.get());
                         output.accept(KNItems.STRIDER_NETHER_WART_STEW.get());
@@ -60,6 +68,7 @@ public class ModCreativeTabs {
                         output.accept(KNItems.GILDED_BARBARIC_ROAST.get());
                         output.accept(KNItems.CRIMSON_MAGMA_STEW.get());
                         output.accept(KNItems.STAR_STEW_MEAT.get());
+                        output.accept(KNItems.WARPED_CAKE.get());
                         output.accept(KNItems.GOLDEN_ROAST.get());
                         output.accept(KNItems.GLOWING_PUDDING.get());
                         output.accept(KNItems.LAVA_JELLY.get());
