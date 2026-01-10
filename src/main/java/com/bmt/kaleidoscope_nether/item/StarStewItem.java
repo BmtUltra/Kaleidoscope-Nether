@@ -31,7 +31,6 @@ public class StarStewItem extends Item {
     private static final TagKey<net.minecraft.world.item.Item> STAR_BLESSING_FOODS =
             ItemTags.create(ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "star_blessing_foods"));
 
-    // 最大等级固定为12
     private static final int MAX_STAR_BLESSING_LEVEL = 12;
 
     public StarStewItem(FoodProperties food) {
@@ -62,7 +61,6 @@ public class StarStewItem extends Item {
                     if (starBlessingAttr != null) {
                         int currentLevel = getCurrentStarBlessingLevel(starBlessingAttr);
 
-                        // 使用固定最大等级12
                         if (currentLevel < MAX_STAR_BLESSING_LEVEL) {
                             starBlessingAttr.removeModifier(STAR_BLESSING_MODIFIER_UUID);
                             AttributeModifier modifier = new AttributeModifier(

@@ -1,63 +1,50 @@
 package com.bmt.kaleidoscope_nether.effect;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.level.Level;
+
+import java.util.UUID;
 
 public class LavaWalkerEffect extends MobEffect {
+    private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d");
+
     public LavaWalkerEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
     @Override
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (!(livingEntity instanceof Player player && player.isSpectator())) {
-            Vec3 pos = livingEntity.position();
-            Vec3 movement = livingEntity.getDeltaMovement();
-            Vec3 futurePos = pos.add(movement);
-            BlockPos onPos = livingEntity.getOnPos();
-            BlockPos futureBlockPos = new BlockPos((int) futurePos.x, (int) futurePos.y, (int) futurePos.z);
-
-            boolean isMoving = movement.lengthSqr() > 0.0001;
-
-            if (livingEntity.isInLava()) {
-                livingEntity.setDeltaMovement(movement.add(0, 0.1, 0));
-
-                if (isMoving && livingEntity.level() instanceof ServerLevel level && livingEntity.tickCount % 5 == 0) {
-                    level.sendParticles(ParticleTypes.LAVA,
-                            pos.x(), pos.y() + 0.1D, pos.z(),
-                            3,
-                            0.2, 0.1, 0.2, 1.5);
-                }
-            } else if (livingEntity.level().getFluidState(onPos).is(FluidTags.LAVA)) {
-                if (livingEntity.level() instanceof ServerLevel level && isMoving && livingEntity.tickCount % 5 == 0) {
-                    level.sendParticles(ParticleTypes.LAVA,
-                            pos.x(), pos.y() + 0.1D, pos.z(),
-                            3,
-                            0.2, 0.1, 0.2, 1.5);
-                }
-                livingEntity.setDeltaMovement(movement.x(), Math.max(movement.y(), 0D), movement.z());
-                livingEntity.setOnGround(true);
-            } else if (livingEntity.level().getFluidState(futureBlockPos).is(FluidTags.LAVA) && movement.y() > -0.8) {
-                if (livingEntity.level() instanceof ServerLevel level && isMoving && livingEntity.tickCount % 5 == 0) {
-                    level.sendParticles(ParticleTypes.LAVA,
-                            pos.x(), pos.y() + 0.1D, pos.z(),
-                            3,
-                            0.2, 0.1, 0.2, 1.5);
-                }
-                livingEntity.setDeltaMovement(movement.x(), Math.max(movement.y(), movement.y() * 0.5), movement.z());
-            }
-        }
+    public boolean isDurationEffectTick(int duration, int amplifier) {
+        return duration % 20 == 0;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
-        return true;
+    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+        boolean isInNether = livingEntity.level().dimension().equals(Level.NETHER);
+        if (isInNether) {
+            applySpeedBoost(livingEntity, true);
+        } else {
+            applySpeedBoost(livingEntity, false);
+        }
+    }
+
+    private void applySpeedBoost(LivingEntity livingEntity, boolean shouldBoost) {
+        livingEntity.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(SPEED_MODIFIER_UUID);
+
+        if (shouldBoost) {
+            AttributeModifier speedModifier = new AttributeModifier(
+                    SPEED_MODIFIER_UUID,
+                    "Lava Walker Speed Boost",
+                    0.30,
+                    AttributeModifier.Operation.MULTIPLY_TOTAL
+            );
+
+            if (!livingEntity.getAttribute(Attributes.MOVEMENT_SPEED).hasModifier(speedModifier)) {
+                livingEntity.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(speedModifier);
+            }
+        }
     }
 }

@@ -88,7 +88,7 @@ public class KNItems {
                             .saturationMod(0.3f)
                             .build(),
                     ModEffects.CRIMSON_BUFF,
-                    600, // 30秒
+                    600, //30s
                     0,
                     Rarity.COMMON
             ));
