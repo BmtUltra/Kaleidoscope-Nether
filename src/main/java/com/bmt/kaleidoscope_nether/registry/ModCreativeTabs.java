@@ -94,7 +94,6 @@ public class ModCreativeTabs {
                         output.accept(KNItems.LAVA_ROASTED_CHICKEN.get());
                         output.accept(KNItems.ROUJIAMO.get());
                         output.accept(KNItems.ROASTED_HAM.get());
-                        output.accept(KNItems.SEED_BAG.get());
                     })
                     .build());
 }

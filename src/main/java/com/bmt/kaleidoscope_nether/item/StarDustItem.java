@@ -1,6 +1,7 @@
 package com.bmt.kaleidoscope_nether.item;
 
 import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.registry.ModSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SlotAccess;
@@ -85,7 +86,7 @@ public class StarDustItem extends Item {
         }
 
         player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-                SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.8F, 1.0F);
+                ModSounds.STAR_DUST_REPAIR.get(), SoundSource.PLAYERS, 0.8F, 1.0F);
 
         return true;
     }
