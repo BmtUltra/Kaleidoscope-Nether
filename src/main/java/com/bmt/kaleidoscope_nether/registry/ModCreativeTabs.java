@@ -51,9 +51,9 @@ public class ModCreativeTabs {
                         output.accept(KNItems.WITHER_BONE_SOUP.get());
                         output.accept(KNItems.POISONOUS_SOUP.get());
                         output.accept(KNItems.GLOWING_SOUP.get());
-                        output.accept(KNItems.SAUERKRAUT_FISH.get());
                         output.accept(KNItems.CHONGQING_NOODLES.get());
                         output.accept(KNItems.LUOSIFEN.get());
+                        output.accept(KNItems.SAUERKRAUT_FISH.get());
                         output.accept(KNItems.NETHER_REED_STEW.get());
                         output.accept(KNItems.SOUL_RETURN_RICE.get());
                         output.accept(KNItems.STRIDER_NETHER_WART_STEW.get());
