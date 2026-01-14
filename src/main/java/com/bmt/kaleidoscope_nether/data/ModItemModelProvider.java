@@ -14,16 +14,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(output, KaleidoscopeNether.MOD_ID, existingFileHelper);
     }
 
+
     @Override
     protected void registerModels() {
         ResourceLocation bagItem = ForgeRegistries.ITEMS.getKey(KNItems.SEED_BAG.get());
         if (bagItem != null) {
-            ItemModelBuilder emptyBag = basicItem(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "seed_bag"));
-            ItemModelBuilder hasItemsBag = basicItem(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "seed_bag_has_items"));
+            ItemModelBuilder emptyBag = basicItem(KaleidoscopeNether.id("seed_bag"));
+            ItemModelBuilder hasItemsBag = basicItem(KaleidoscopeNether.id("seed_bag_has_items"));
 
             getBuilder(bagItem.toString())
-                    .override().model(emptyBag).predicate(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "has_items"), 0.0F).end()
-                    .override().model(hasItemsBag).predicate(ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "has_items"), 1.0F).end();
+                    .override().model(emptyBag).predicate(KaleidoscopeNether.id("has_items"), 0.0F).end()
+                    .override().model(hasItemsBag).predicate(KaleidoscopeNether.id("has_items"), 1.0F).end();
         }
     }
 }

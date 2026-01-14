@@ -12,7 +12,7 @@ public class CreativeTabEventHandler {
 
     @SubscribeEvent
     public static void addItemsToTabs(BuildCreativeModeTabContentsEvent event) {
-        ResourceLocation artifactsTab = ResourceLocation.fromNamespaceAndPath("artifacts", "main");
+        ResourceLocation artifactsTab = KaleidoscopeNether.fromNamespaceAndPath("artifacts", "main");
         if (event.getTabKey().location().equals(artifactsTab)) {
             event.accept(KNItems.EVERLASTING_FLAME_STEAK.get());
         }

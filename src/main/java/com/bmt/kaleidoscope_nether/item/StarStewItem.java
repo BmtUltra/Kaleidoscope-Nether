@@ -29,7 +29,7 @@ public class StarStewItem extends Item {
     private static final UUID STAR_BLESSING_MODIFIER_UUID = UUID.fromString("1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c5d6");
     private static final UUID HEALTH_MODIFIER_UUID = UUID.fromString("4d5e6f7a-8b9c-0d1e-2f3a-b4c5d6e7f8a9");
     private static final TagKey<net.minecraft.world.item.Item> STAR_BLESSING_FOODS =
-            ItemTags.create(ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "star_blessing_foods"));
+            ItemTags.create(KaleidoscopeNether.id( "star_blessing_foods"));
 
     private static final int MAX_STAR_BLESSING_LEVEL = 12;
 

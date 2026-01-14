@@ -1,10 +1,10 @@
 package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
+import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -56,7 +56,11 @@ public class KaleidoscopeNether {
 
 
     public static ResourceLocation id(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+        return ResourceLocation.tryBuild(MOD_ID, name);
+    }
+
+    public static ResourceLocation fromNamespaceAndPath(String path, String name) {
+        return ResourceLocation.tryBuild(path, name);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
