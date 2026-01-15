@@ -3,9 +3,16 @@ package com.bmt.kaleidoscope_nether.event;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CreativeTabEventHandler {
@@ -15,6 +22,17 @@ public class CreativeTabEventHandler {
         ResourceLocation artifactsTab = KaleidoscopeNether.fromNamespaceAndPath("artifacts", "main");
         if (event.getTabKey().location().equals(artifactsTab)) {
             event.accept(KNItems.EVERLASTING_FLAME_STEAK.get());
+        }
+
+        if (event.getTabKey().location().equals(KaleidoscopeNether.fromNamespaceAndPath("kaleidoscope_cookery", "cookery_food"))) {
+            Iterator<Map.Entry<ItemStack, CreativeModeTab.TabVisibility>> iterator = event.getEntries().iterator();
+            while (iterator.hasNext()) {
+                ItemStack itemStack = iterator.next().getKey();
+                if (Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
+                    iterator.remove();
+                    break;
+                }
+            }
         }
     }
 }

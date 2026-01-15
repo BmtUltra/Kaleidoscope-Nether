@@ -46,7 +46,7 @@ public class KaleidoscopeNether {
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
-
+        KNPotions.POISONS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
