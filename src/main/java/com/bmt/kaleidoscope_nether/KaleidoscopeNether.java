@@ -40,7 +40,7 @@ public class KaleidoscopeNether {
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
-        ModEffects.EFFECTS.register(modEventBus);
+        KNEffects.EFFECTS.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
@@ -51,7 +51,7 @@ public class KaleidoscopeNether {
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        LOGGER.info("Initializing Kaleidoscope Nether Mixins");
+        KNFoodBiteRegistry.init();
     }
 
 

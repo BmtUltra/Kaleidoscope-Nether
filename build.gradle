@@ -74,7 +74,9 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:imblocker-483760:7188270")
     implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:6172935")
-    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")
+    //这个模组会导致数据生成失败
+//    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")
+
     implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
     implementation fg.deobf("curse.maven:selene-499980:7388296")
@@ -90,11 +92,11 @@ dependencies {
 
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
-            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-            forge_version: forge_version, forge_version_range: forge_version_range,
+            minecraft_version   : minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version       : forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
-            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description,
+            mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors         : mod_authors, mod_description: mod_description,
     ]
     inputs.properties replaceProperties
 

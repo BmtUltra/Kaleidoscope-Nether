@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.item;
 
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
@@ -68,7 +68,7 @@ public class SoulReturnRiceItem extends Item {
             }
 
             player.addEffect(new MobEffectInstance(
-                    ModEffects.GHOST_BUFF.get(),
+                    KNEffects.GHOST_BUFF.get(),
                     45 * 20,
                     0,
                     false,

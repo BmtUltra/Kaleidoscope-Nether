@@ -84,7 +84,9 @@
   "item.kaleidoscope_nether.strider_shell_stir_fry": "Strider Shell Stir Fry",
   "item.kaleidoscope_nether.fruit_platter": "Fruit Platter",
   "item.kaleidoscope_nether.ham_yogurt": "Ham Yogurt",
-  "item.kaleidoscope_nether.soul_lamb_chop": "Soul Lamb Chop",
+  "block.kaleidoscope_nether.soul_lamb_chop": "Soul Lamb Chop",
+  "tooltip.kaleidoscope_nether.soul_lamb_chop.maxim": "Lamb chops blessed with soul peppers, hit the soul",
+
   "item.kaleidoscope_nether.soul_lamb_chop.tooltip.line1": "§9Ghost (00:30)",
   "item.kaleidoscope_nether.sauerkraut_fish": "Sauerkraut Fish",
 

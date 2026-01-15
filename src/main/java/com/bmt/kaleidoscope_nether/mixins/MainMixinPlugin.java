@@ -1,7 +1,9 @@
 package com.bmt.kaleidoscope_nether.mixins;
 
+import com.mojang.logging.LogUtils;
 import net.minecraftforge.fml.loading.FMLLoader;
 import org.objectweb.asm.tree.ClassNode;
+import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
@@ -10,9 +12,11 @@ import java.util.Set;
 
 public class MainMixinPlugin implements IMixinConfigPlugin {
 
+    private static final Logger LOGGER = LogUtils.getLogger();
+
     @Override
     public void onLoad(String mixinPackage) {
-
+        LOGGER.info("Initializing Kaleidoscope Nether Mixins");
     }
 
     @Override

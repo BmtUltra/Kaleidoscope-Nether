@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.effect.BlazingEffect;
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,8 +23,8 @@ public class BlazingEffectEvents {
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
         if (event.getSource().getEntity() instanceof LivingEntity attacker) {
-            if (attacker.hasEffect(ModEffects.BLAZING.get())) {
-                int amplifier = attacker.getEffect(ModEffects.BLAZING.get()).getAmplifier();
+            if (attacker.hasEffect(KNEffects.BLAZING.get())) {
+                int amplifier = attacker.getEffect(KNEffects.BLAZING.get()).getAmplifier();
                 BlazingEffect.onAttack(attacker, event.getEntity(), amplifier);
             }
         }
@@ -33,10 +33,10 @@ public class BlazingEffectEvents {
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         if (event.getPlayer() != null &&
-                event.getPlayer().hasEffect(ModEffects.BLAZING.get())) {
+                event.getPlayer().hasEffect(KNEffects.BLAZING.get())) {
 
             Player player = event.getPlayer();
-            int amplifier = player.getEffect(ModEffects.BLAZING.get()).getAmplifier();
+            int amplifier = player.getEffect(KNEffects.BLAZING.get()).getAmplifier();
 
             BlockState state = event.getState();
             BlockPos pos = event.getPos();

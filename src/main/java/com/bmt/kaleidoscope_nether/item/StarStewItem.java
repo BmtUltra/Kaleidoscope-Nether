@@ -1,13 +1,11 @@
 package com.bmt.kaleidoscope_nether.item;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -53,7 +51,7 @@ public class StarStewItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(ModEffects.STAR_BLESSING_BUFF.get(), 600, 0));
+            player.addEffect(new MobEffectInstance(KNEffects.STAR_BLESSING_BUFF.get(), 600, 0));
 
             if (stack.is(STAR_BLESSING_FOODS)) {
                 if (level.random.nextFloat() < 0.4f) {

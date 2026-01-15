@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.block;
 
 import com.bmt.kaleidoscope_nether.API.KNTags;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -46,13 +46,13 @@ public class PoisonousFruit extends KNCropBlockBase {
             if (!(living.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.FARMER_BOOTS.get() &&
                     living.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.FARMER_LEGGINGS.get() &&
                     living.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.FARMER_CHEST_PLATE.get())) {
-                MobEffectInstance effect = living.getEffect(ModEffects.MYSTERIOUS_POISON.get());
+                MobEffectInstance effect = living.getEffect(KNEffects.MYSTERIOUS_POISON.get());
                 if (effect != null) {
                     if (effect.getDuration() <= 7 * 20) {
-                        living.addEffect(new MobEffectInstance(ModEffects.MYSTERIOUS_POISON.get(), 9 * 20, effect.getAmplifier() + 1));
+                        living.addEffect(new MobEffectInstance(KNEffects.MYSTERIOUS_POISON.get(), 9 * 20, effect.getAmplifier() + 1));
                     }
                 } else {
-                    living.addEffect(new MobEffectInstance(ModEffects.MYSTERIOUS_POISON.get(), 9 * 20));
+                    living.addEffect(new MobEffectInstance(KNEffects.MYSTERIOUS_POISON.get(), 9 * 20));
                 }
             }
         }

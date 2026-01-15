@@ -38,10 +38,10 @@ public class GhostBuffEffect extends MobEffect {
 
     private void spawnSoulParticles(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide() && entity.level() instanceof ServerLevel serverLevel) {
-            if (entity.tickCount % 5 == 0) {
+            if (entity.tickCount % 10 == 0) {
                 Vec3 pos = entity.position();
-
-                int particleCount = 3 + amplifier * 2;
+                //降低粒子生成数量（有点挡视线）
+                int particleCount = 1 + amplifier * 1;
 
                 for (int i = 0; i < particleCount; i++) {
                     double offsetX = (entity.getRandom().nextDouble() - 0.5) * entity.getBbWidth();

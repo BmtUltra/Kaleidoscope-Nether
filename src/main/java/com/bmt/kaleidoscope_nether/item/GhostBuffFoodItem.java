@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.item;
 
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -28,7 +28,7 @@ public class GhostBuffFoodItem extends Item {
         if (!level.isClientSide() && entity instanceof Player player) {
             int durationInTicks = buffDuration * 20;
             MobEffectInstance ghostBuff = new MobEffectInstance(
-                    ModEffects.GHOST_BUFF.get(),
+                    KNEffects.GHOST_BUFF.get(),
                     durationInTicks,
                     0,
                     false,

@@ -84,7 +84,9 @@
   "item.kaleidoscope_nether.strider_shell_stir_fry": "炽足兽岩壳炒肉",
   "item.kaleidoscope_nether.fruit_platter": "下界果切拼盘",
   "item.kaleidoscope_nether.ham_yogurt": "火腿酸酪",
-  "item.kaleidoscope_nether.soul_lamb_chop": "灵魂羊排",
+  "block.kaleidoscope_nether.soul_lamb_chop": "灵魂羊排",
+  "tooltip.kaleidoscope_nether.soul_lamb_chop.maxim": "灵魂辣椒加持的羊排，直击灵魂",
+
   "item.kaleidoscope_nether.soul_lamb_chop.tooltip.line1": "§9怨魂（00:30）",
   "item.kaleidoscope_nether.sauerkraut_fish": "酸菜鱼",
   "item.kaleidoscope_nether.soul_strider_kabob": "灵魂炽足兽烤串",

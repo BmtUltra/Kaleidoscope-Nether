@@ -3,8 +3,8 @@ package com.bmt.kaleidoscope_nether.data.subAdvancements;
 import com.bmt.kaleidoscope_nether.API.KNTags;
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTrigger;
 import com.bmt.kaleidoscope_nether.data.ModAdvancementProvider;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
@@ -37,7 +37,7 @@ public class KNAdvances implements ForgeAdvancementProvider.AdvancementGenerator
         Advancement getHoglinTusk = Advancement.Builder.advancement().parent(root).display(KNItems.HOGLIN_TUSK.get(), Component.translatable("advancements.kaleidoscope_nether.get_hoglin_tusk.title"), Component.translatable("advancements.kaleidoscope_nether.get_hoglin_tusk.description"), null, FrameType.TASK, true, true, false).addCriterion("get_hoglin_tusk", InventoryChangeTrigger.TriggerInstance.hasItems(KNItems.HOGLIN_TUSK.get())).save(saver, "kaleidoscope_nether/get_hoglin_tusk");
         Advancement getHoglinTuskBraisedMeat = Advancement.Builder.advancement().parent(getHoglinTusk).display(KNItems.HOGLIN_TUSK_BRAISED_MEAT.get(), Component.translatable("advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.title"), Component.translatable("advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.description"), null, FrameType.TASK, true, true, false).addCriterion("get_hoglin_tusk_braised_meat", InventoryChangeTrigger.TriggerInstance.hasItems(KNItems.HOGLIN_TUSK_BRAISED_MEAT.get())).save(saver, "kaleidoscope_nether/get_hoglin_tusk_braised_meat");
 
-        Advancement getBlazingBuff = Advancement.Builder.advancement().parent(root).display(KNItems.BLAZING_KABOB.get(), Component.translatable("advancements.kaleidoscope_nether.get_blazing_buff.title"), Component.translatable("advancements.kaleidoscope_nether.get_blazing_buff.description"), null, FrameType.GOAL, true, true, false).addCriterion("get_blazing_buff", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.effects().and(ModEffects.BLAZING.get()))).save(saver, "kaleidoscope_nether/get_blazing_buff");
+        Advancement getBlazingBuff = Advancement.Builder.advancement().parent(root).display(KNItems.BLAZING_KABOB.get(), Component.translatable("advancements.kaleidoscope_nether.get_blazing_buff.title"), Component.translatable("advancements.kaleidoscope_nether.get_blazing_buff.description"), null, FrameType.GOAL, true, true, false).addCriterion("get_blazing_buff", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.effects().and(KNEffects.BLAZING.get()))).save(saver, "kaleidoscope_nether/get_blazing_buff");
 
         Advancement eatLavaRoastedChicken = Advancement.Builder.advancement().parent(root).display(KNItems.LAVA_ROASTED_CHICKEN.get(), Component.translatable("advancements.kaleidoscope_nether.eat_lava_roasted_chicken.title"), Component.translatable("advancements.kaleidoscope_nether.eat_lava_roasted_chicken.description"), null, FrameType.GOAL, true, true, false).addCriterion("eat_lava_roasted_chicken", ConsumeItemTrigger.TriggerInstance.usedItem(KNItems.LAVA_ROASTED_CHICKEN.get())).save(saver, "kaleidoscope_nether/eat_lava_roasted_chicken");
 

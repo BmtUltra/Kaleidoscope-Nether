@@ -2,14 +2,13 @@ package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -51,7 +50,7 @@ public class StarBlessingEvents {
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (player.hasEffect(ModEffects.STAR_BLESSING_BUFF.get())) {
+            if (player.hasEffect(KNEffects.STAR_BLESSING_BUFF.get())) {
                 float reducedDamage = event.getAmount() * 0.5f;
                 event.setAmount(reducedDamage);
             }
@@ -67,7 +66,7 @@ public class StarBlessingEvents {
 
                 updateAttributeModifiers(player, starBlessingLevel);
 
-                if (player.hasEffect(ModEffects.STAR_BLESSING_BUFF.get()) && player.tickCount % 10 == 0) {
+                if (player.hasEffect(KNEffects.STAR_BLESSING_BUFF.get()) && player.tickCount % 10 == 0) {
                     float maxHealth = player.getMaxHealth();
                     float healAmount = (maxHealth * 0.05f) + 0.5f;
                     player.heal(healAmount);
@@ -140,7 +139,7 @@ public class StarBlessingEvents {
 
     @SubscribeEvent
     public static void onEffectAdded(net.minecraftforge.event.entity.living.MobEffectEvent.Added event) {
-        if (event.getEffectInstance().getEffect() == ModEffects.STAR_BLESSING_BUFF.get() &&
+        if (event.getEffectInstance().getEffect() == KNEffects.STAR_BLESSING_BUFF.get() &&
                 event.getEntity() instanceof Player player) {
 
             List<MobEffect> effectsToRemove = new ArrayList<>();

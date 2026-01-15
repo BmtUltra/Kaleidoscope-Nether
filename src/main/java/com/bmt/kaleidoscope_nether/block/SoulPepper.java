@@ -56,13 +56,13 @@ public class SoulPepper extends KNCropBlockBase {
 //            if (!(living.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.FARMER_BOOTS.get() &&
 //                    living.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.FARMER_LEGGINGS.get() &&
 //                    living.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.FARMER_CHEST_PLATE.get())) {
-//                MobEffectInstance effect = living.getEffect(ModEffects.MYSTERIOUS_POISON.get());
+//                MobEffectInstance effect = living.getEffect(KNEffects.MYSTERIOUS_POISON.get());
 //                if (effect != null) {
 //                    if (effect.getDuration() <= 7 * 20) {
-//                        living.addEffect(new MobEffectInstance(ModEffects.MYSTERIOUS_POISON.get(), 9 * 20, effect.getAmplifier() + 1));
+//                        living.addEffect(new MobEffectInstance(KNEffects.MYSTERIOUS_POISON.get(), 9 * 20, effect.getAmplifier() + 1));
 //                    }
 //                } else {
-//                    living.addEffect(new MobEffectInstance(ModEffects.MYSTERIOUS_POISON.get(), 9 * 20));
+//                    living.addEffect(new MobEffectInstance(KNEffects.MYSTERIOUS_POISON.get(), 9 * 20));
 //                }
 //            }
 //        }
