@@ -1,10 +1,10 @@
 package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
+import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -40,23 +40,27 @@ public class KaleidoscopeNether {
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
-        ModEffects.EFFECTS.register(modEventBus);
+        KNEffects.EFFECTS.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
-
+        KNPotions.POISONS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        LOGGER.info("Initializing Kaleidoscope Nether Mixins");
+        KNFoodBiteRegistry.init();
     }
 
 
     public static ResourceLocation id(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+        return ResourceLocation.tryBuild(MOD_ID, name);
+    }
+
+    public static ResourceLocation fromNamespaceAndPath(String path, String name) {
+        return ResourceLocation.tryBuild(path, name);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

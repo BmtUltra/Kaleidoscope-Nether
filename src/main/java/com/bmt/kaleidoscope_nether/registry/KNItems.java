@@ -4,20 +4,21 @@ import com.bmt.kaleidoscope_nether.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.google.common.collect.Sets;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TippedArrowItem;
 import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.function.Supplier;
 
 public class KNItems {
@@ -89,16 +90,9 @@ public class KNItems {
             () -> new TippedArrowItem(new Item.Properties()
                     .stacksTo(64)) {
                 @Override
-                public ItemStack getDefaultInstance() {
+                public @NotNull ItemStack getDefaultInstance() {
                     ItemStack stack = new ItemStack(this);
-                    PotionUtils.setPotion(stack, Potions.AWKWARD);
-                    PotionUtils.setCustomEffects(stack, List.of(
-                            new MobEffectInstance(
-                                    ModEffects.MYSTERIOUS_POISON.get(),
-                                    1500,
-                                    0
-                            )
-                    ));
+                    PotionUtils.setPotion(stack, KNPotions.MYSTERIOUS_POISON.get());
                     return stack;
                 }
             });
@@ -120,7 +114,7 @@ public class KNItems {
                             .nutrition(2)
                             .saturationMod(0.3f)
                             .build(),
-                    ModEffects.CRIMSON_BUFF,
+                    KNEffects.CRIMSON_BUFF,
                     600, //30s
                     0,
                     Rarity.COMMON
@@ -132,7 +126,7 @@ public class KNItems {
                             .nutrition(2)
                             .saturationMod(0.3f)
                             .build(),
-                    ModEffects.WARPED_BUFF,
+                    KNEffects.WARPED_BUFF,
                     600, // 30秒
                     0,
                     Rarity.COMMON
@@ -435,15 +429,8 @@ public class KNItems {
                     .saturationMod(0.6f)
                     .build())));
 
-    public static final RegistryObject<Item> SOUL_LAMB_CHOP = registerWithTab("soul_lamb_chop",
-            () -> new GhostBuffFoodItem(
-                    new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.9f)
-                            .meat()
-                            .build(),
-                    30
-            ));
+//    public static final RegistryObject<Item> SOUL_LAMB_CHOP = registerWithTab("soul_lamb_chop",
+//            () -> new BowlFoodBlockItem(KNBlocks.SOUL_LAMB_CHOP_BLOCK.get(), KNFoods.SOUL_LAMB_CHOP_ITEM));
 
     public static final RegistryObject<Item> SAUERKRAUT_FISH = registerWithTab("sauerkraut_fish",
             () -> new Item(foodItem(new FoodProperties.Builder()
@@ -478,7 +465,7 @@ public class KNItems {
                             .nutrition(6)
                             .saturationMod(0.5f)
                             .build(),
-                    ModEffects.CRIMSON_BUFF,
+                    KNEffects.CRIMSON_BUFF,
                     900, // 45秒
                     0,
                     Rarity.COMMON
@@ -492,7 +479,7 @@ public class KNItems {
                             .saturationMod(0.8f)
                             .meat()
                             .build(),
-                    ModEffects.CRIMSON_BUFF,
+                    KNEffects.CRIMSON_BUFF,
                     1200, // 60秒
                     0,
                     Rarity.COMMON
@@ -505,7 +492,7 @@ public class KNItems {
                             .nutrition(6)
                             .saturationMod(0.5f)
                             .build(),
-                    ModEffects.WARPED_BUFF,
+                    KNEffects.WARPED_BUFF,
                     900, // 45秒
                     0,
                     Rarity.COMMON
@@ -550,7 +537,7 @@ public class KNItems {
                             .saturationMod(0.2f)
                             .meat()
                             .build(),
-                    ModEffects.CRIMSON_BUFF,
+                    KNEffects.CRIMSON_BUFF,
                     1200, // 60秒
                     0,
                     Rarity.COMMON
@@ -564,7 +551,7 @@ public class KNItems {
                             .saturationMod(0.2f)
                             .meat()
                             .build(),
-                    ModEffects.WARPED_BUFF,
+                    KNEffects.WARPED_BUFF,
                     1200, // 60秒
                     0,
                     Rarity.COMMON
@@ -599,7 +586,7 @@ public class KNItems {
                             .saturationMod(0.5f)
                             .alwaysEat()
                             .build(),
-                    ModEffects.GLOWING_BUFF,
+                    KNEffects.GLOWING_BUFF,
                     1200, // 60秒
                     0,
                     Rarity.COMMON
@@ -613,7 +600,7 @@ public class KNItems {
                             .saturationMod(0.5f)
                             .alwaysEat()
                             .build(),
-                    ModEffects.GLOWING_BUFF,
+                    KNEffects.GLOWING_BUFF,
                     900, // 45秒
                     0,
                     Rarity.COMMON
@@ -628,7 +615,7 @@ public class KNItems {
                             .meat()
                             .alwaysEat()
                             .build(),
-                    ModEffects.GLOWING_BUFF,
+                    KNEffects.GLOWING_BUFF,
                     1800, // 90秒
                     0,
                     Rarity.COMMON
@@ -642,7 +629,7 @@ public class KNItems {
                             .saturationMod(0.6f)
                             .alwaysEat()
                             .build(),
-                    ModEffects.GLOWING_BUFF,
+                    KNEffects.GLOWING_BUFF,
                     900, // 45秒
                     0,
                     Rarity.COMMON
@@ -717,7 +704,7 @@ public class KNItems {
                             .saturationMod(0.3f)
                             .alwaysEat()
                             .build(),
-                    ModEffects.WARPED_BUFF,
+                    KNEffects.WARPED_BUFF,
                     1200, // 60秒
                     0,
                     Rarity.COMMON

@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.effect;
 
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -40,7 +40,7 @@ public class CrimsonBuffEffect extends MobEffect {
     }
 
     public static float getDamageMultiplier(LivingEntity attacker, LivingEntity target) {
-        if (attacker.hasEffect(ModEffects.CRIMSON_BUFF.get())) {
+        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF.get())) {
             if (isInNether(attacker)) {
                 return 1.3f;
             } else if (isUndead(target)) {

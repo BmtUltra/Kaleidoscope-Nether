@@ -1,12 +1,17 @@
 package com.bmt.kaleidoscope_nether.registry;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.github.ysbbbbbb.kaleidoscopecookery.init.registry.FoodBiteRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Objects;
 
 public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -80,7 +85,14 @@ public class ModCreativeTabs {
                         output.accept(KNItems.STRIDER_SHELL_STIR_FRY.get());
                         output.accept(KNItems.FRUIT_PLATTER.get());
                         output.accept(KNItems.HAM_YOGURT.get());
-                        output.accept(KNItems.SOUL_LAMB_CHOP.get());
+
+                        FoodBiteRegistry.FOOD_DATA_MAP.forEach((resourceLocation, foodData) -> {
+                            if (resourceLocation.getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
+                                Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
+                                output.accept(Objects.requireNonNull(item));
+                            }
+                        });
+
                         output.accept(KNItems.GLOWING_SALAD.get());
                         output.accept(KNItems.BLACK_APPLE_SALAD.get());
                         output.accept(KNItems.RUBY_STEAK.get());

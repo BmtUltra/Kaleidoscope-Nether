@@ -3,6 +3,7 @@ package com.bmt.kaleidoscope_nether.registry;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.block.PoisonousFruit;
 import com.bmt.kaleidoscope_nether.block.SoulPepper;
+import com.github.ysbbbbbb.kaleidoscopecookery.block.food.FoodBiteBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,5 +23,7 @@ public class KNBlocks {
     public static final RegistryObject<PoisonousFruit> POISONOUS_FRUIT = BLOCKS.register("poisonous_fruit", () -> new PoisonousFruit(CROP_DEFAULT_PROPERTIES.get()));
 
     public static final RegistryObject<SoulPepper> SOUL_PEPPER = BLOCKS.register("soul_pepper", () -> new SoulPepper(CROP_DEFAULT_PROPERTIES.get()));
+
+//    public static final RegistryObject<FoodBiteBlock> SOUL_LAMB_CHOP_BLOCK = BLOCKS.register("soul_lamb_chop", () -> new FoodBiteBlock(KNFoods.SOUL_LAMB_CHOP_BLOCK, 4, null));
 
 }

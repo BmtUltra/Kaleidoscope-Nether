@@ -8,7 +8,6 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -20,7 +19,7 @@ public class ModFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> POISONOUS_FRUIT = createKey("poisonous_fruit");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, KaleidoscopeNether.id(name));
     }
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {

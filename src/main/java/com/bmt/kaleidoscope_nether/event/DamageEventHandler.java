@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.event;
 
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,7 +16,7 @@ public class DamageEventHandler {
         LivingEntity entity = event.getEntity();
         DamageSource source = event.getSource();
 
-        if (entity.hasEffect(ModEffects.LAVA_WALKER.get())) {
+        if (entity.hasEffect(KNEffects.LAVA_WALKER.get())) {
             if (source.is(DamageTypeTags.IS_FIRE)) {
                 event.setCanceled(true);
                 entity.clearFire();

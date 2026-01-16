@@ -16,7 +16,7 @@ public class ModPlacements {
     public static final ResourceKey<PlacedFeature> POISONOUS_FRUIT = createKey("poisonous_fruit");
 
     public static ResourceKey<PlacedFeature> createKey(String key) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, key));
+        return ResourceKey.create(Registries.PLACED_FEATURE, KaleidoscopeNether.id(key));
     }
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {

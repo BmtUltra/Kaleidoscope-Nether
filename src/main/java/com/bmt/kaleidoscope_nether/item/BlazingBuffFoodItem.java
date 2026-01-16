@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.item;
 
-import com.bmt.kaleidoscope_nether.registry.ModEffects;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -28,7 +28,7 @@ public class BlazingBuffFoodItem extends Item {
         if (!level.isClientSide() && entity instanceof Player player) {
             int durationInTicks = buffDuration * 20;
             MobEffectInstance blazingEffect = new MobEffectInstance(
-                    ModEffects.BLAZING.get(),
+                    KNEffects.BLAZING.get(),
                     durationInTicks,
                     0, // 等级
                     false, // 环境效果

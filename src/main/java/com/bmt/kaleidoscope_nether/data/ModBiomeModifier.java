@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifier {
     public static final ResourceKey<BiomeModifier> ADD_FEATURES = ResourceKey.create(
             ForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "add_features")
+            KaleidoscopeNether.id("add_features")
     );
 
 
