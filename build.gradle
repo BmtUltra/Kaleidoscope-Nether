@@ -75,8 +75,11 @@ dependencies {
     //implementation fg.deobf("curse.maven:imblocker-483760:7188270")
     implementation fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:6172935")
     //这个模组会导致数据生成失败
+    //我的obtips（哭
 //    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")
 
+    implementation fg.deobf("curse.maven:appleskin-248787:4770828")
+    implementation fg.deobf("curse.maven:modern-ui-352491:6956345")
     implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
     implementation fg.deobf("curse.maven:selene-499980:7388296")

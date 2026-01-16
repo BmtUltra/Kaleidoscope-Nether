@@ -8,7 +8,10 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "kaleidoscope_nether:poisonous_fruit"
+              "Name": "kaleidoscope_nether:poisonous_fruit",
+              "Properties": {
+                "age": "7"
+              }
             }
           }
         }

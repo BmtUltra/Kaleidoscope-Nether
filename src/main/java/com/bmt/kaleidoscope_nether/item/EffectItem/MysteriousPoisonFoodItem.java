@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item;
+package com.bmt.kaleidoscope_nether.item.EffectItem;
 
 import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;

@@ -1,8 +1,8 @@
-package com.bmt.kaleidoscope_nether.item;
+package com.bmt.kaleidoscope_nether.item.EffectItem;
 
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,14 +11,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class BlazingBuffFoodItem extends Item {
+public class WarmthBuffFoodItem extends Item {
     private final int buffDuration;
 
-    public BlazingBuffFoodItem(FoodProperties food, int buffDurationInSeconds) {
+    public WarmthBuffFoodItem(FoodProperties food, int buffDurationInSeconds) {
         super(new Item.Properties().food(food));
         this.buffDuration = buffDurationInSeconds;
     }
@@ -26,26 +27,28 @@ public class BlazingBuffFoodItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
-            int durationInTicks = buffDuration * 20;
-            MobEffectInstance blazingEffect = new MobEffectInstance(
-                    KNEffects.BLAZING.get(),
-                    durationInTicks,
-                    0, // 等级
-                    false, // 环境效果
-                    false,  // 粒子
-                    true   // 图标
+            MobEffect warmthEffect = ForgeRegistries.MOB_EFFECTS.getValue(
+                    net.minecraft.resources.ResourceLocation.tryBuild("kaleidoscope_cookery", "warmth")
             );
-
-            player.addEffect(blazingEffect);
+            if (warmthEffect != null) {
+                int durationInTicks = buffDuration * 20;
+                MobEffectInstance effectInstance = new MobEffectInstance(
+                        warmthEffect,
+                        durationInTicks,
+                        0,
+                        false,
+                        false,
+                        true
+                );
+                player.addEffect(effectInstance);
+            }
         }
-
         return super.finishUsingItem(stack, level, entity);
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltipComponents, flag);
-
         String translationKey = getDescriptionId() + ".tooltip.line1";
         tooltipComponents.add(Component.translatable(translationKey).withStyle(ChatFormatting.GOLD));
     }

@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item;
+package com.bmt.kaleidoscope_nether.item.EffectItem;
 
 import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.ChatFormatting;
@@ -15,12 +15,20 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class GhostBuffFoodItem extends Item {
+public class SoulPepperItem extends Item {
     private final int buffDuration;
 
-    public GhostBuffFoodItem(FoodProperties food, int buffDurationInSeconds) {
+    public SoulPepperItem(FoodProperties food, int buffDurationInSeconds) {
         super(new Item.Properties().food(food));
         this.buffDuration = buffDurationInSeconds;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltipComponents, flag);
+
+        String translationKey = getDescriptionId() + ".tooltip.line1";
+        tooltipComponents.add(Component.translatable(translationKey).withStyle(ChatFormatting.BLUE));
     }
 
     @Override
@@ -37,17 +45,18 @@ public class GhostBuffFoodItem extends Item {
             );
 
             player.addEffect(ghostBuff);
+
+            float maxHealth = player.getMaxHealth();
+            float damageAmount = maxHealth * 0.25f;
+
+            if (damageAmount < 1.0f) {
+                damageAmount = 1.0f;
+            }
+
+            player.hurt(player.damageSources().magic(), damageAmount);
         }
 
         return super.finishUsingItem(stack, level, entity);
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltipComponents, flag);
-
-        String translationKey = getDescriptionId() + ".tooltip.line1";
-        tooltipComponents.add(Component.translatable(translationKey).withStyle(ChatFormatting.BLUE));
     }
 
     public int getBuffDuration() {

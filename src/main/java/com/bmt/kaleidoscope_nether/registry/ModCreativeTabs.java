@@ -28,6 +28,9 @@ public class ModCreativeTabs {
                         output.accept(KNItems.GHAST_HIDE.get());
                         output.accept(KNItems.HAM_SLICE.get());
                         output.accept(KNItems.HAM.get());
+                        output.accept(KNItems.HOGLIN_HIDE.get());
+                        output.accept(KNItems.RAW_PIGLIN_MEAT.get());
+                        output.accept(KNItems.COOKED_PIGLIN_MEAT.get());
                         output.accept(KNItems.RAW_STRIDER_MEAT.get());
                         output.accept(KNItems.COOKED_STRIDER_MEAT.get());
                         output.accept(KNItems.HOGLIN_TUSK.get());
@@ -35,20 +38,24 @@ public class ModCreativeTabs {
                         output.accept(KNItems.GILDED_FRAGMENT.get());
                         output.accept(KNItems.WITHER_RIB.get());
                         output.accept(KNItems.STAR_DUST.get());
-                        output.accept(KNItems.GOLDEN_PLATE.get());
+                        //output.accept(KNItems.GOLDEN_PLATE.get());
                         output.accept(KNItems.BLAZE_HEART.get());
-                        output.accept(KNItems.MAGMA_BUBBLE.get());
+                        //output.accept(KNItems.MAGMA_BUBBLE.get());
                         output.accept(KNItems.CRIMSON_FRUIT.get());
                         output.accept(KNItems.WARPED_FRUIT.get());
                         output.accept(KNItems.SOUL_PEPPER.get());
                         output.accept(KNItems.POISONOUS_FRUIT.get());
                         output.accept(KNItems.NETHER_CATERPILLAR.get());
+                        output.accept(KNItems.SPICY_POT.get());
+                        output.accept(KNItems.SPICY_POT_RICE.get());
                         output.accept(KNItems.MAPO_TOFU.get());
                         output.accept(KNItems.MAPO_TOFU_RICE.get());
                         output.accept(KNItems.MAGMA_CREAM_STIR_FRY.get());
                         output.accept(KNItems.MAGMA_CREAM_STIR_FRY_RICE.get());
                         output.accept(KNItems.SOUL_STIR_FRY_MEAT.get());
                         output.accept(KNItems.SOUL_STIR_FRY_MEAT_RICE.get());
+                        output.accept(KNItems.CARAMEL_NETHER_CATERPILLAR.get());
+                        output.accept(KNItems.CARAMEL_NETHER_CATERPILLAR_RICE.get());
                         output.accept(KNItems.STAR_STEW.get());
                         output.accept(KNItems.SOUL_SOUP.get());
                         output.accept(KNItems.BLAZE_SOUP.get());
@@ -58,6 +65,7 @@ public class ModCreativeTabs {
                         output.accept(KNItems.GLOWING_SOUP.get());
                         output.accept(KNItems.CHONGQING_NOODLES.get());
                         output.accept(KNItems.LUOSIFEN.get());
+                        output.accept(KNItems.SPICY_HOGLIN_RAMEN.get());
                         output.accept(KNItems.SAUERKRAUT_FISH.get());
                         output.accept(KNItems.NETHER_REED_STEW.get());
                         output.accept(KNItems.SOUL_RETURN_RICE.get());
@@ -65,6 +73,7 @@ public class ModCreativeTabs {
                         output.accept(KNItems.WARPED_SALAD.get());
                         output.accept(KNItems.CRIMSON_SALAD.get());
                         output.accept(KNItems.BRAISED_STRIDER.get());
+                        output.accept(KNItems.WARPED_HOGLIN_TENDERLOIN_STEW.get());
                         output.accept(KNItems.GHAST_PASTA.get());
                         output.accept(KNItems.STAR_GHAST_PASTA.get());
                         output.accept(KNItems.SOUL_GLAZED_ROAST.get());
@@ -106,6 +115,11 @@ public class ModCreativeTabs {
                         output.accept(KNItems.LAVA_ROASTED_CHICKEN.get());
                         output.accept(KNItems.ROUJIAMO.get());
                         output.accept(KNItems.ROASTED_HAM.get());
+
+                        output.accept(KNItems.GHAST_PENDANT.get());
+
+                        output.accept(KNItems.GIANT_BEAST_CROISSANT.get());
+                        output.accept(KNItems.MAGMA_SWEET_AND_SOUR_PORK.get());
                     })
                     .build());
 }
