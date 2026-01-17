@@ -27,17 +27,11 @@
       "item": "regions_unexplored:yellow_bioshroom"
     },
     {
-      "item": "regions_unexplored:yellow_bioshroom"
-    },
-    {
-      "item": "regions_unexplored:yellow_bioshroom"
-    },
-    {
-      "item": "regions_unexplored:yellow_bioshroom"
+      "item": "minecraft:shroomlight"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "item": "kaleidoscope_nether:glowing_soup"
   },
   "soup_base": "minecraft:water",

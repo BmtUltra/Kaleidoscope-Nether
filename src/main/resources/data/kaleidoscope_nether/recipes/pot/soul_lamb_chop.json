@@ -14,13 +14,13 @@
       "tag": "forge:raw_mutton"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "tag": "forge:soul_speed_blocks"
+      "tag": "forge:vegetables/soul_pepper"
     }
   ],
   "result": {

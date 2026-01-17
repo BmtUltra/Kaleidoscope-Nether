@@ -1,20 +1,20 @@
 package com.bmt.kaleidoscope_nether.registry;
 
-import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.bmt.kaleidoscope_nether.item.EffectItem.*;
+import com.bmt.kaleidoscope_nether.item.SpecialFood.EverlastingFoodItem;
+import com.bmt.kaleidoscope_nether.item.SpecialFood.LavaRoastedChickenItem;
+import com.bmt.kaleidoscope_nether.item.SpecialFood.NetherCaterpillarItem;
+import com.bmt.kaleidoscope_nether.item.SpecialFood.SoulReturnRiceItem;
 import com.google.common.collect.Sets;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TippedArrowItem;
-import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -38,22 +38,22 @@ public class KNItems {
     }
 
     public static final RegistryObject<Item> GHAST_HIDE = registerWithTab("ghast_hide",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 疣猪兽獠牙
     public static final RegistryObject<Item> HOGLIN_TUSK = registerWithTab("hoglin_tusk",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> STRIDER_ROCK_SHELL = registerWithTab("strider_rock_shell",
             () -> new Item(new Item.Properties()
-                    .rarity(Rarity.UNCOMMON)
+                    .rarity(Rarity.COMMON)
                     .fireResistant()));
 
     public static final RegistryObject<Item> GILDED_FRAGMENT = registerWithTab("gilded_fragment",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> WITHER_RIB = registerWithTab("wither_rib",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 星之尘
     public static final RegistryObject<Item> STAR_DUST = registerWithTab("star_dust",
@@ -66,7 +66,7 @@ public class KNItems {
     // 烈焰珍珠
     public static final RegistryObject<Item> BLAZE_HEART = registerWithTab("blaze_heart",
             () -> new ThrowableFuelItem(new Item.Properties()
-                    .rarity(Rarity.UNCOMMON)
+                    .rarity(Rarity.COMMON)
                     .stacksTo(16),
                     3000));
 
@@ -90,7 +90,7 @@ public class KNItems {
     // 恶魂挂坠
     public static final RegistryObject<Item> GHAST_PENDANT = registerWithTab("ghast_pendant",
             () -> new GhastPendantItem());
-
+/*
     //药水箭
     public static final RegistryObject<Item> MYSTERIOUS_POISON_ARROW = ITEMS.register("mysterious_poison_arrow",
             () -> new TippedArrowItem(new Item.Properties()
@@ -102,12 +102,13 @@ public class KNItems {
                     return stack;
                 }
             });
-
+*/
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = registerWithTab("everlasting_flame_steak",
             () -> new EverlastingFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(8)
                             .saturationMod(1.2f)
+                            .alwaysEat()
                             .build(),
                     Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get,
                     Config.EVERLASTING_FLAME_STEAK_ENABLED::get,
@@ -119,6 +120,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(2)
                             .saturationMod(0.3f)
+                            .alwaysEat()
                             .build(),
                     KNEffects.CRIMSON_BUFF,
                     600, //30s
@@ -131,6 +133,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(2)
                             .saturationMod(0.3f)
+                            .alwaysEat()
                             .build(),
                     KNEffects.WARPED_BUFF,
                     600, // 30秒
@@ -143,6 +146,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(18)
                             .saturationMod(0.35f)
+                            .alwaysEat()
                             .build()
             ));
 
@@ -151,6 +155,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.7f)
+                            .alwaysEat()
                             .build()
             ));
 
@@ -160,6 +165,7 @@ public class KNItems {
                             .nutrition(8)
                             .saturationMod(0.9f)
                             .meat()
+                            .alwaysEat()
                             .build()
             ));
 
@@ -168,6 +174,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(8)
                             .saturationMod(0.8f)
+                            .alwaysEat()
                             .build()
             ));
 
@@ -177,8 +184,9 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(1)
                             .saturationMod(0.0f)
+                            .alwaysEat()
                             .build(),
-                    15 // 15秒持续时间
+                    15 //秒
             ));
 
     public static final RegistryObject<Item> SOUL_SOUP = registerWithTab("soul_soup",
@@ -186,6 +194,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.45f)
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -195,6 +204,7 @@ public class KNItems {
                     .nutrition(3)
                     .saturationMod(0.3f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     public static final RegistryObject<Item> COOKED_STRIDER_MEAT = registerWithTab("cooked_strider_meat",
@@ -202,6 +212,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.8f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     public static final RegistryObject<Item> HAM = registerWithTab("ham",
@@ -209,6 +220,7 @@ public class KNItems {
                     .nutrition(6)
                     .saturationMod(0.5f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     public static final RegistryObject<Item> HAM_SLICE = registerWithTab("ham_slice",
@@ -216,6 +228,7 @@ public class KNItems {
                     .nutrition(2)
                     .saturationMod(0.2f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 烤火腿
@@ -224,6 +237,7 @@ public class KNItems {
                     .nutrition(10)
                     .saturationMod(0.8f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
 
@@ -231,6 +245,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(9)
                     .saturationMod(0.7f)
+                    .alwaysEat()
                     .build())));
 
     // 红烧炽足兽
@@ -239,6 +254,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(9)
                             .saturationMod(0.55f)
+                            .alwaysEat()
                             .build(),
                     90
             ));
@@ -248,6 +264,7 @@ public class KNItems {
                     .nutrition(3)
                     .saturationMod(0.3f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     public static final RegistryObject<Item> COOKED_GHAST_MEAT = registerWithTab("cooked_ghast_meat",
@@ -255,6 +272,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.8f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 凋零大骨汤
@@ -263,6 +281,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(9)
                             .saturationMod(0.75f)
+                            .alwaysEat()
                             .build(),
                     300
             ));
@@ -274,6 +293,7 @@ public class KNItems {
                             .nutrition(13)
                             .saturationMod(0.75f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90 //秒
             ));
@@ -283,6 +303,7 @@ public class KNItems {
                     .nutrition(4)
                     .saturationMod(0.3f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
 
@@ -291,6 +312,7 @@ public class KNItems {
                     .nutrition(3)
                     .saturationMod(0.3f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     public static final RegistryObject<Item> ROASTED_GHAST_TENTACLE = registerWithTab("roasted_ghast_tentacle",
@@ -298,6 +320,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.7f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 恶魂意面
@@ -307,6 +330,7 @@ public class KNItems {
                             .nutrition(9)
                             .saturationMod(0.55f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90
             ));
@@ -317,6 +341,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.45f)
+                            .alwaysEat()
                             .build(),
                     480
             ));
@@ -327,6 +352,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(8)
                             .saturationMod(0.0f)
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -365,6 +391,7 @@ public class KNItems {
                             .nutrition(13)
                             .saturationMod(0.75f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90
             ));
@@ -375,6 +402,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(9)
                             .saturationMod(0.55f)
+                            .alwaysEat()
                             .build(),
                     90
             ));
@@ -387,6 +415,7 @@ public class KNItems {
                             .nutrition(22)
                             .saturationMod(1.8f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90
             ));
@@ -397,6 +426,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(19)
                             .saturationMod(1.2f)
+                            .alwaysEat()
                             .build(),
                     300
             ));
@@ -407,6 +437,7 @@ public class KNItems {
                     .nutrition(15)
                     .saturationMod(1.1f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 下界薯条拼盘
@@ -415,6 +446,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(20)
                             .saturationMod(1.1f)
+                            .alwaysEat()
                             .build(),
                     300
             ));
@@ -426,6 +458,7 @@ public class KNItems {
                             .nutrition(20)
                             .saturationMod(1.1f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     80
             ));
@@ -439,8 +472,8 @@ public class KNItems {
                             .meat()
                             .alwaysEat()
                             .build(),
-                    60, // 60秒
-                    1,  // 2级效果
+                    60, //秒
+                    0,
                     Rarity.COMMON
             ));
 
@@ -451,6 +484,7 @@ public class KNItems {
                             .nutrition(8)
                             .saturationMod(0.7f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     45 // 45秒持续时间
             ));
@@ -461,6 +495,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.9f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 四色果切拼盘
@@ -468,6 +503,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(8)
                     .saturationMod(0.7f)
+                    .alwaysEat()
                     .build())));
 
     // 火腿酸酪
@@ -475,6 +511,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(7)
                     .saturationMod(0.6f)
+                    .alwaysEat()
                     .build())));
 
 //    public static final RegistryObject<Item> SOUL_LAMB_CHOP = registerWithTab("soul_lamb_chop",
@@ -486,6 +523,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(7)
                             .saturationMod(0.55f)
+                            .alwaysEat()
                             .build(),
                     240
             ));
@@ -496,6 +534,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.45f)
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -506,6 +545,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(3)
                             .saturationMod(0.3f)
+                            .alwaysEat()
                             .build(),
                     120
             ));
@@ -516,6 +556,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.5f)
+                            .alwaysEat()
                             .build(),
                     KNEffects.CRIMSON_BUFF,
                     900, // 45秒
@@ -530,6 +571,7 @@ public class KNItems {
                             .nutrition(9)
                             .saturationMod(0.55f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -540,6 +582,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationMod(0.5f)
+                            .alwaysEat()
                             .build(),
                     KNEffects.WARPED_BUFF,
                     900, // 45秒
@@ -555,6 +598,7 @@ public class KNItems {
                             .nutrition(5)
                             .saturationMod(0.4f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     60 // 60秒持续时间
             ));
@@ -565,6 +609,7 @@ public class KNItems {
                     .nutrition(6)
                     .saturationMod(0.5f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 烈焰烤串
@@ -574,6 +619,7 @@ public class KNItems {
                             .nutrition(5)
                             .saturationMod(0.3f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90 // 90秒持续时间
             ));
@@ -585,6 +631,7 @@ public class KNItems {
                             .nutrition(4)
                             .saturationMod(0.2f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     KNEffects.CRIMSON_BUFF,
                     1200, // 60秒
@@ -599,6 +646,7 @@ public class KNItems {
                             .nutrition(4)
                             .saturationMod(0.2f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     KNEffects.WARPED_BUFF,
                     1200, // 60秒
@@ -613,6 +661,7 @@ public class KNItems {
                             .nutrition(9)
                             .saturationMod(0.7f)
                             .meat()
+                            .alwaysEat()
                             .build()
             ));
 
@@ -623,6 +672,7 @@ public class KNItems {
                             .nutrition(11)
                             .saturationMod(0.6f)
                             .meat()
+                            .alwaysEat()
                             .build()
             ));
 
@@ -716,6 +766,7 @@ public class KNItems {
                             .nutrition(8)
                             .saturationMod(0.7f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     60 // 60秒持续时间
             ));
@@ -727,6 +778,7 @@ public class KNItems {
                             .nutrition(10)
                             .saturationMod(0.8f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90 // 90秒持续时间
             ));
@@ -736,6 +788,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(6)
                     .saturationMod(0.6f)
+                    .alwaysEat()
                     .build())));
 
     // 麻婆豆腐盖饭
@@ -743,6 +796,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(12)
                     .saturationMod(0.9f)
+                    .alwaysEat()
                     .build())));
 
     // 诡异蛋糕
@@ -765,6 +819,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(14)
                             .saturationMod(0.95f)
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -775,6 +830,7 @@ public class KNItems {
                     new FoodProperties.Builder()
                             .nutrition(14)
                             .saturationMod(0.95f)
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -786,6 +842,7 @@ public class KNItems {
                             .nutrition(8)
                             .saturationMod(0.7f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     60 // 60秒持续时间
             ));
@@ -797,6 +854,7 @@ public class KNItems {
                             .nutrition(14)
                             .saturationMod(1.0f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     90 // 90秒持续时间
             ));
@@ -806,6 +864,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(6)
                     .saturationMod(0.8f)
+                    .alwaysEat()
                     .build())));
 
     // 焦糖下界猪儿虫盖饭
@@ -813,6 +872,7 @@ public class KNItems {
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(12)
                     .saturationMod(1.2f)
+                    .alwaysEat()
                     .build())));
 
     // 生猪灵肉
@@ -821,6 +881,7 @@ public class KNItems {
                     .nutrition(3)
                     .saturationMod(0.3f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 熟猪灵肉
@@ -829,6 +890,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.8f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 诡异疣猪兽里脊炖
@@ -837,6 +899,7 @@ public class KNItems {
                     .nutrition(10)
                     .saturationMod(0.9f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 麻辣疣猪兽拉面
@@ -846,6 +909,7 @@ public class KNItems {
                             .nutrition(9)
                             .saturationMod(0.8f)
                             .meat()
+                            .alwaysEat()
                             .build(),
                     180
             ));
@@ -856,6 +920,7 @@ public class KNItems {
                     .nutrition(8)
                     .saturationMod(0.7f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 麻辣香锅盖饭
@@ -864,21 +929,29 @@ public class KNItems {
                     .nutrition(14)
                     .saturationMod(1.1f)
                     .meat()
+                    .alwaysEat()
                     .build())));
 
     // 巨兽牛角包
     public static final RegistryObject<Item> GIANT_BEAST_CROISSANT = registerWithTab("giant_beast_croissant",
-            () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(7)
-                    .saturationMod(0.6f)
-                    .build())));
+            () -> new CataclysmBuffFoodItem(
+                    new FoodProperties.Builder()
+                            .nutrition(7)
+                            .saturationMod(0.6f)
+                            .alwaysEat()
+                            .build(),
+                    240
+            ));
 
-    // 魔焰咕噜肉
+    // 魔眼咕噜肉
     public static final RegistryObject<Item> MAGMA_SWEET_AND_SOUR_PORK = registerWithTab("magma_sweet_and_sour_pork",
-            () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(9)
-                    .saturationMod(0.8f)
-                    .meat()
-                    .build())));
+            () -> new MagmaSweetAndSourPorkItem(
+                    new FoodProperties.Builder()
+                            .nutrition(9)
+                            .saturationMod(0.8f)
+                            .meat()
+                            .alwaysEat()
+                            .build()
+            ));
 
 }

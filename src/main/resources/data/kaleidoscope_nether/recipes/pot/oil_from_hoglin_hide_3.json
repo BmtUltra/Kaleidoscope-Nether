@@ -1,0 +1,20 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "ingredients": [
+    {
+      "tag": "forge:hoglin_hide"
+    },
+    {
+      "tag": "forge:hoglin_hide"
+    },
+    {
+      "tag": "forge:hoglin_hide"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "item": "kaleidoscope_cookery:oil"
+  },
+  "stir_fry_count": 5,
+  "time": 200
+}

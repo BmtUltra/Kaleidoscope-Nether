@@ -11,22 +11,22 @@
       "tag": "forge:raw_beef"
     },
     {
-      "tag": "forge:vegetables"
+      "tag": "forge:vegetables/tomato"
     },
     {
-      "tag": "forge:vegetables"
+      "tag": "forge:vegetables/tomato"
     },
     {
-      "tag": "forge:vegetables"
+      "tag": "forge:vegetables/tomato"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     }
   ],
   "result": {

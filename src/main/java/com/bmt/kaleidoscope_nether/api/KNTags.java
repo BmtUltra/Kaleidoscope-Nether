@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.API;
+package com.bmt.kaleidoscope_nether.api;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import net.minecraft.tags.BlockTags;

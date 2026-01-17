@@ -20,10 +20,16 @@
       "tag": "forge:hot_spices"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
+    },
+    {
+      "tag": "forge:soul_speed_blocks"
+    },
+    {
+      "tag": "forge:soul_speed_blocks"
     }
   ],
   "result": {

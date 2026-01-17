@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.data;
 
-import com.bmt.kaleidoscope_nether.API.KNTags;
+import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

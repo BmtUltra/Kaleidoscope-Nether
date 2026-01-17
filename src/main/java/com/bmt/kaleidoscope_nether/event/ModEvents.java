@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.event;
 
-import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.effect.CrimsonBuffEffect;
 import com.bmt.kaleidoscope_nether.effect.WarpedBuffEffect;

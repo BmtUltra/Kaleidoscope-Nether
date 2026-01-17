@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
 import net.minecraft.tags.DamageTypeTags;

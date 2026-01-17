@@ -5,28 +5,22 @@
   },
   "ingredients": [
     {
-      "item": "minecraft:melon_slice"
+      "tag": "forge:crimson_fruits"
     },
     {
-      "item": "minecraft:melon_slice"
+      "tag": "forge:crimson_fruits"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:warped_fruits"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:warped_fruits"
     },
     {
-      "item": "minecraft:glow_berries"
+      "tag": "forge:poisonous_fruits"
     },
     {
-      "item": "minecraft:glow_berries"
-    },
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:apple"
+      "tag": "forge:poisonous_fruits"
     }
   ],
   "result": {

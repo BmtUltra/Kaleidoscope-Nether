@@ -1,0 +1,46 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "tag": "forge:cooked_rice"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:raw_meats"
+    },
+    [
+      {
+        "tag": "forge:vegetables/carrot"
+      },
+      {
+        "tag": "forge:vegetables/potato"
+      },
+      {
+        "item": "minecraft:beetroot"
+      }
+    ],
+    {
+      "tag": "forge:vegetables/lettuce"
+    },
+    [
+      {
+        "tag": "forge:vegetables/pepper"
+      },
+      {
+        "tag": "forge:hot_spices"
+      }
+    ],
+    [
+      {
+        "tag": "forge:vegetables/pepper"
+      },
+      {
+        "tag": "forge:hot_spices"
+      }
+    ]
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:spicy_pot_rice"
+  },
+  "stir_fry_count": 5,
+  "time": 300
+}

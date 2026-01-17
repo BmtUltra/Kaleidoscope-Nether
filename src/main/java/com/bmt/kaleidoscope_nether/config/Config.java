@@ -1,5 +1,6 @@
-package com.bmt.kaleidoscope_nether;
+package com.bmt.kaleidoscope_nether.config;
 
+import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -34,6 +35,9 @@ public class Config
 
     public static final ForgeConfigSpec.DoubleValue BLESSING_ENCHANTMENT_HEAL_AMOUNT;
     public static final ForgeConfigSpec.BooleanValue BLESSING_ENCHANTMENT_ENABLED;
+
+    public static final ForgeConfigSpec.BooleanValue BLAZE_HEART_DESTROY_TERRAIN;
+    public static final ForgeConfigSpec.BooleanValue BLAZE_HEART_HURT_OWNER;
 
     static {
         BUILDER.push("star_dust_repair");
@@ -130,9 +134,21 @@ public class Config
                 .defineInRange("healAmount", 0.5, 0.0, 10.0);
 
         BUILDER.pop();
+
+        BUILDER.push("blaze_heart");
+
+        BLAZE_HEART_DESTROY_TERRAIN = BUILDER
+                .comment("Whether Blaze Heart explosion destroys terrain blocks")
+                .define("destroyTerrain", false);
+
+        BLAZE_HEART_HURT_OWNER = BUILDER
+                .comment("Whether Blaze Heart explosion can hurt the thrower/owner")
+                .define("hurtOwner", false);
+
+        BUILDER.pop();
     }
 
-    static final ForgeConfigSpec SPEC = BUILDER.build();
+    public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)

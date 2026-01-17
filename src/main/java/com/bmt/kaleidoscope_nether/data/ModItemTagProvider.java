@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.data;
 
-import com.bmt.kaleidoscope_nether.API.KNTags;
+import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.registry.KNItems;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;

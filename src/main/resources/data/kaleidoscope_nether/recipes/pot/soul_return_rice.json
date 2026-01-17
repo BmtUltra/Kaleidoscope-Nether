@@ -5,13 +5,13 @@
   },
   "ingredients": [
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
-      "item": "kaleidoscope_nether:soul_pepper"
+      "tag": "forge:vegetables/soul_pepper"
     },
     {
       "tag": "forge:soul_speed_blocks"

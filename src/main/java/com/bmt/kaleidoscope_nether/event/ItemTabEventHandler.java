@@ -14,11 +14,11 @@ public class ItemTabEventHandler {
     @SubscribeEvent
     public static void addItemsToTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.getEntries().putAfter(
-                    Items.TIPPED_ARROW.getDefaultInstance(),
-                    KNItems.MYSTERIOUS_POISON_ARROW.get().getDefaultInstance(),
-                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
-            );
+            //event.getEntries().putAfter(
+            //        Items.TIPPED_ARROW.getDefaultInstance(),
+            //        KNItems.MYSTERIOUS_POISON_ARROW.get().getDefaultInstance(),
+             //       CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            //);
 
             event.getEntries().putAfter(
                     Items.CROSSBOW.getDefaultInstance(),

@@ -2,13 +2,13 @@
   "type": "kaleidoscope_cookery:pot",
   "ingredients": [
     {
-      "item": "kaleidoscope_cookery:stuffed_dough_food"
+      "tag": "forge:dough"
     },
     {
       "tag": "forge:raw_meats"
     },
     {
-      "item": "kaleidoscope_cookery:stuffed_dough_food"
+      "tag": "forge:dough"
     }
   ],
   "result": {

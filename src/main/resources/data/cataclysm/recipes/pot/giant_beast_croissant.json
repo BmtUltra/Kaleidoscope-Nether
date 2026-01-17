@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "cataclysm:monstrous_horn"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "tag": "forge:raw_beef"
+    },
+    {
+      "tag": "forge:hot_spices"
+    },
+    {
+      "tag": "forge:hot_spices"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:giant_beast_croissant"
+  },
+  "stir_fry_count": 6,
+  "time": 650
+}

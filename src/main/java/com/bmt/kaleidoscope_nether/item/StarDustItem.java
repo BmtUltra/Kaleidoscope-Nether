@@ -1,8 +1,7 @@
 package com.bmt.kaleidoscope_nether.item;
 
-import com.bmt.kaleidoscope_nether.Config;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.registry.ModSounds;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
@@ -10,8 +9,6 @@ import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import org.jetbrains.annotations.NotNull;
 
 public class StarDustItem extends Item {

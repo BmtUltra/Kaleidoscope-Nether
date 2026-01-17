@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.block;
 
-import com.bmt.kaleidoscope_nether.API.KNTags;
+import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

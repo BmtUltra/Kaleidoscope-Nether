@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "forge:crimson_fruits"
+    },
+    "B": {
+      "tag": "forge:milk"
+    },
+    "C": {
+      "tag": "forge:warped_fruits"
+    },
+    "D": [
+      {
+        "item": "minecraft:warped_roots"
+      },
+      {
+        "item": "minecraft:twisting_vines"
+      }
+    ]
+  },
+  "pattern": [
+    " A ",
+    "BCB",
+    "DDD"
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:warped_cake"
+  },
+  "show_notification": true
+}

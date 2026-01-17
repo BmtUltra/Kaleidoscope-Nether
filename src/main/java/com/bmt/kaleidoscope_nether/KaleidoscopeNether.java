@@ -2,6 +2,7 @@ package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;

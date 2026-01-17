@@ -15,7 +15,7 @@ public class MysteriousPoisonEffect extends MobEffect {
     public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.level().isClientSide()) {
             float maxHealth = livingEntity.getMaxHealth();
-            float damage = maxHealth * 0.05f + amplifier * 0.5f;
+            float damage = maxHealth * 0.01f + amplifier * 0.5f;
 
             damage = Math.max(damage, 1.0f);
 

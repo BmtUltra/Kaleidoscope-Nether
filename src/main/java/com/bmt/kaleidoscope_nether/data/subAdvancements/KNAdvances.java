@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.data.subAdvancements;
 
-import com.bmt.kaleidoscope_nether.API.KNTags;
+import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTrigger;
 import com.bmt.kaleidoscope_nether.data.ModAdvancementProvider;
 import com.bmt.kaleidoscope_nether.registry.KNEffects;

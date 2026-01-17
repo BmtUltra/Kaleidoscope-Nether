@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item;
+package com.bmt.kaleidoscope_nether.item.SpecialFood;
 
 import com.bmt.kaleidoscope_nether.registry.ModSounds;
 import net.minecraft.sounds.SoundSource;

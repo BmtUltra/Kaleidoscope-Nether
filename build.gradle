@@ -89,6 +89,11 @@ dependencies {
     implementation fg.deobf("curse.maven:curios-309927:6418456")
     implementation fg.deobf("curse.maven:kaleidoscope-doll-1233277:7201584")
     implementation fg.deobf("curse.maven:farmers-delight-398521:6917255")
+    implementation fg.deobf("curse.maven:kubejs-238086:5853326")
+    implementation fg.deobf("curse.maven:rhino-416294:6186971")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    implementation fg.deobf("curse.maven:lendercataclysm-551586:6906993")
+    implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

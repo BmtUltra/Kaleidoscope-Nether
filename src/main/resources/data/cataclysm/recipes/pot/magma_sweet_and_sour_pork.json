@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "cataclysm:flame_eye"
+    },
+    {
+      "tag": "forge:raw_pork"
+    },
+    {
+      "tag": "forge:vegetables/pepper"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "kaleidoscope_nether:magma_sweet_and_sour_pork"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}
