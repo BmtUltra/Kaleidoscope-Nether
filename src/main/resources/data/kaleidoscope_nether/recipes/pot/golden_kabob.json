@@ -5,7 +5,7 @@
   },
   "ingredients": [
     {
-      "item": "kaleidoscope_nether:golden_plate"
+      "item": "minecraft:gold_block"
     },
     {
       "tag": "forge:raw_beef"

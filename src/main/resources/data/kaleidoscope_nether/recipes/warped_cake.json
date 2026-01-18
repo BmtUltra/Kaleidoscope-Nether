@@ -3,26 +3,21 @@
   "category": "misc",
   "key": {
     "A": {
-      "tag": "forge:crimson_fruits"
+      "tag": "forge:milk"
     },
     "B": {
-      "tag": "forge:milk"
+      "tag": "forge:crimson_fruits"
     },
     "C": {
       "tag": "forge:warped_fruits"
     },
-    "D": [
-      {
-        "item": "minecraft:warped_roots"
-      },
-      {
-        "item": "minecraft:twisting_vines"
-      }
-    ]
+    "D": {
+      "tag": "forge:flour"
+    }
   },
   "pattern": [
-    " A ",
-    "BCB",
+    "ABA",
+    "CCC",
     "DDD"
   ],
   "result": {
