@@ -1,5 +1,6 @@
 package com.bmt.kaleidoscope_nether.item.SpecialFood;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,11 +9,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class NetherCaterpillarItem extends Item {
     public NetherCaterpillarItem(FoodProperties food) {
         super(new Properties().food(food));
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        tooltip.add(Component.translatable("item.kaleidoscope_nether.nether_caterpillar.tooltip.line1"));
     }
 
     @Override
@@ -28,12 +39,12 @@ public class NetherCaterpillarItem extends Item {
                 strider.setAge(0);
 
                 level.broadcastEntityEvent(strider, (byte) 18);
-                
+
                 return InteractionResult.SUCCESS;
             }
             return InteractionResult.CONSUME;
         }
-        
+
         return super.interactLivingEntity(stack, player, target, hand);
     }
 }

@@ -37,6 +37,7 @@ public class ModCreativeTabs {
                         output.accept(KNItems.STRIDER_ROCK_SHELL.get());
                         output.accept(KNItems.GILDED_FRAGMENT.get());
                         output.accept(KNItems.WITHER_RIB.get());
+                        output.accept(KNItems.NETHER_CATERPILLAR.get());
                         output.accept(KNItems.STAR_DUST.get());
                         //output.accept(KNItems.GOLDEN_PLATE.get());
                         output.accept(KNItems.BLAZE_HEART.get());
@@ -45,7 +46,6 @@ public class ModCreativeTabs {
                         output.accept(KNItems.WARPED_FRUIT.get());
                         output.accept(KNItems.SOUL_PEPPER.get());
                         output.accept(KNItems.POISONOUS_FRUIT.get());
-                        output.accept(KNItems.NETHER_CATERPILLAR.get());
                         output.accept(KNItems.SPICY_POT.get());
                         output.accept(KNItems.SPICY_POT_RICE.get());
                         output.accept(KNItems.MAPO_TOFU.get());
