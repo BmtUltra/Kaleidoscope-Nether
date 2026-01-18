@@ -58,11 +58,11 @@ public class KNItems {
     // 星之尘
     public static final RegistryObject<Item> STAR_DUST = registerWithTab("star_dust",
             () -> new StarDustItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
-/*
-    // 碎金块
-    public static final RegistryObject<Item> GOLDEN_PLATE = registerWithTab("golden_plate",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
-*/
+    /*
+        // 碎金块
+        public static final RegistryObject<Item> GOLDEN_PLATE = registerWithTab("golden_plate",
+                () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    */
     // 烈焰珍珠
     public static final RegistryObject<Item> BLAZE_HEART = registerWithTab("blaze_heart",
             () -> new ThrowableFuelItem(new Item.Properties()
@@ -72,7 +72,7 @@ public class KNItems {
 
     // 熔岩泡泡
     //public static final RegistryObject<Item> MAGMA_BUBBLE = registerWithTab("magma_bubble",
-     //       () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    //       () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> SEED_BAG = registerWithTab("seed_bag",
             () -> new SeedBagItem(new Item.Properties().rarity(Rarity.COMMON)));
@@ -90,19 +90,20 @@ public class KNItems {
     // 恶魂挂坠
     public static final RegistryObject<Item> GHAST_PENDANT = registerWithTab("ghast_pendant",
             () -> new GhastPendantItem());
-/*
-    //药水箭
-    public static final RegistryObject<Item> MYSTERIOUS_POISON_ARROW = ITEMS.register("mysterious_poison_arrow",
-            () -> new TippedArrowItem(new Item.Properties()
-                    .stacksTo(64)) {
-                @Override
-                public @NotNull ItemStack getDefaultInstance() {
-                    ItemStack stack = new ItemStack(this);
-                    PotionUtils.setPotion(stack, KNPotions.MYSTERIOUS_POISON.get());
-                    return stack;
-                }
-            });
-*/
+    /*
+        //药水箭
+        public static final RegistryObject<Item> MYSTERIOUS_POISON_ARROW = ITEMS.register("mysterious_poison_arrow",
+                () -> new TippedArrowItem(new Item.Properties()
+                        .stacksTo(64)) {
+                    @Override
+                    public @NotNull ItemStack getDefaultInstance() {
+                        ItemStack stack = new ItemStack(this);
+                        PotionUtils.setPotion(stack, KNPotions.MYSTERIOUS_POISON.get());
+                        return stack;
+                    }
+                });
+    */
+    //烈焰永恒牛排
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = registerWithTab("everlasting_flame_steak",
             () -> new EverlastingFoodItem(
                     new FoodProperties.Builder()
@@ -115,6 +116,7 @@ public class KNItems {
                     Rarity.EPIC
             ));
 
+    //绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = registerWithTab("crimson_fruit",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
@@ -128,6 +130,7 @@ public class KNItems {
                     Rarity.COMMON
             ));
 
+    //诡异果
     public static final RegistryObject<Item> WARPED_FRUIT = registerWithTab("warped_fruit",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
@@ -141,39 +144,43 @@ public class KNItems {
                     Rarity.COMMON
             ));
 
+    //下界猪儿虫
     public static final RegistryObject<Item> NETHER_CATERPILLAR = registerWithTab("nether_caterpillar",
             () -> new NetherCaterpillarItem(
                     new FoodProperties.Builder()
                             .nutrition(18)
-                            .saturationMod(0.35f)
+                            .saturationMod(0.2f)
                             .alwaysEat()
                             .build()
             ));
 
+    //回魂饭
     public static final RegistryObject<Item> SOUL_RETURN_RICE = registerWithTab("soul_return_rice",
             () -> new SoulReturnRiceItem(
                     new FoodProperties.Builder()
-                            .nutrition(6)
-                            .saturationMod(0.7f)
+                            .nutrition(16)
+                            .saturationMod(1.8f)
                             .alwaysEat()
                             .build()
             ));
 
+    //熔岩烤鸡
     public static final RegistryObject<Item> LAVA_ROASTED_CHICKEN = registerWithTab("lava_roasted_chicken",
             () -> new LavaRoastedChickenItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.9f)
+                            .nutrition(20)
+                            .saturationMod(0.55f)
                             .meat()
                             .alwaysEat()
                             .build()
             ));
 
+    //星之炖菜
     public static final RegistryObject<Item> STAR_STEW = registerWithTab("star_stew",
             () -> new StarStewItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.8f)
+                            .nutrition(16)
+                            .saturationMod(1.8f)
                             .alwaysEat()
                             .build()
             ));
@@ -189,32 +196,36 @@ public class KNItems {
                     15 //秒
             ));
 
+    // 灵魂浓汤
     public static final RegistryObject<Item> SOUL_SOUP = registerWithTab("soul_soup",
             () -> new GhostBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.45f)
+                            .saturationMod(0.667f)
                             .alwaysEat()
                             .build(),
                     180
             ));
 
+    // 生炽足兽肉
     public static final RegistryObject<Item> RAW_STRIDER_MEAT = registerWithTab("raw_strider_meat",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(3)
+                    .nutrition(2)
                     .saturationMod(0.3f)
                     .meat()
                     .alwaysEat()
                     .build())));
 
+    // 熟炽足兽肉
     public static final RegistryObject<Item> COOKED_STRIDER_MEAT = registerWithTab("cooked_strider_meat",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
+                    .nutrition(6)
                     .saturationMod(0.8f)
                     .meat()
                     .alwaysEat()
                     .build())));
 
+    // 疣猪火腿
     public static final RegistryObject<Item> HAM = registerWithTab("ham",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(6)
@@ -223,6 +234,7 @@ public class KNItems {
                     .alwaysEat()
                     .build())));
 
+    // 火腿片
     public static final RegistryObject<Item> HAM_SLICE = registerWithTab("ham_slice",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(2)
@@ -231,7 +243,7 @@ public class KNItems {
                     .alwaysEat()
                     .build())));
 
-    // 烤火腿
+    // 烤疣猪火腿
     public static final RegistryObject<Item> ROASTED_HAM = registerWithTab("roasted_ham",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(10)
@@ -240,11 +252,11 @@ public class KNItems {
                     .alwaysEat()
                     .build())));
 
-
+    // 肉夹馍
     public static final RegistryObject<Item> ROUJIAMO = registerWithTab("roujiamo",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(9)
-                    .saturationMod(0.7f)
+                    .nutrition(8)
+                    .saturationMod(1.0f)
                     .alwaysEat()
                     .build())));
 
@@ -253,7 +265,7 @@ public class KNItems {
             () -> new VigorBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationMod(0.55f)
+                            .saturationMod(0.611f)
                             .alwaysEat()
                             .build(),
                     90
@@ -261,7 +273,7 @@ public class KNItems {
 
     public static final RegistryObject<Item> RAW_GHAST_MEAT = registerWithTab("raw_ghast_meat",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(3)
+                    .nutrition(2)
                     .saturationMod(0.3f)
                     .meat()
                     .alwaysEat()
@@ -269,8 +281,8 @@ public class KNItems {
 
     public static final RegistryObject<Item> COOKED_GHAST_MEAT = registerWithTab("cooked_ghast_meat",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
-                    .saturationMod(0.8f)
+                    .nutrition(6)
+                    .saturationMod(0.6f)
                     .meat()
                     .alwaysEat()
                     .build())));
@@ -280,7 +292,7 @@ public class KNItems {
             () -> new VigorBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationMod(0.75f)
+                            .saturationMod(0.8f)
                             .alwaysEat()
                             .build(),
                     300
@@ -291,34 +303,36 @@ public class KNItems {
             () -> new SatiatedShieldBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(13)
-                            .saturationMod(0.75f)
+                            .saturationMod(0.615f)
                             .meat()
                             .alwaysEat()
                             .build(),
                     90 //秒
             ));
 
+    // 恶魂烤串
     public static final RegistryObject<Item> GHAST_KABOB = registerWithTab("ghast_kabob",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(4)
-                    .saturationMod(0.3f)
+                    .nutrition(8)
+                    .saturationMod(0.9f)
                     .meat()
                     .alwaysEat()
                     .build())));
 
-
+    // 恶魂触手
     public static final RegistryObject<Item> GHAST_TENTACLE = registerWithTab("ghast_tentacle",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(3)
+                    .nutrition(2)
                     .saturationMod(0.3f)
                     .meat()
                     .alwaysEat()
                     .build())));
 
+    // 烤恶魂触手
     public static final RegistryObject<Item> ROASTED_GHAST_TENTACLE = registerWithTab("roasted_ghast_tentacle",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
-                    .saturationMod(0.7f)
+                    .nutrition(6)
+                    .saturationMod(0.6f)
                     .meat()
                     .alwaysEat()
                     .build())));
@@ -328,7 +342,7 @@ public class KNItems {
             () -> new SulfurBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationMod(0.55f)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -340,7 +354,7 @@ public class KNItems {
             () -> new WarmthBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.45f)
+                            .saturationMod(0.667f)
                             .alwaysEat()
                             .build(),
                     480
@@ -376,7 +390,7 @@ public class KNItems {
             () -> new MysteriousPoisonFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.6f)
+                            .saturationMod(0.667f)
                             .alwaysEat()
                             .build(),
                     45, // 45秒
@@ -389,7 +403,7 @@ public class KNItems {
             () -> new SatiatedShieldBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(13)
-                            .saturationMod(0.75f)
+                            .saturationMod(0.615f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -401,19 +415,18 @@ public class KNItems {
             () -> new VigorBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationMod(0.55f)
+                            .saturationMod(0.611f)
                             .alwaysEat()
                             .build(),
                     90
             ));
 
-
     // 野蛮烤肉
     public static final RegistryObject<Item> GILDED_BARBARIC_ROAST = registerWithTab("gilded_barbaric_roast",
             () -> new SatiatedShieldBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(22)
-                            .saturationMod(1.8f)
+                            .nutrition(24)
+                            .saturationMod(0.8f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -425,7 +438,7 @@ public class KNItems {
             () -> new MustardBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(19)
-                            .saturationMod(1.2f)
+                            .saturationMod(0.65f)
                             .alwaysEat()
                             .build(),
                     300
@@ -445,7 +458,7 @@ public class KNItems {
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(20)
-                            .saturationMod(1.1f)
+                            .saturationMod(0.55f)
                             .alwaysEat()
                             .build(),
                     300
@@ -456,7 +469,7 @@ public class KNItems {
             () -> new SatiatedShieldBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(20)
-                            .saturationMod(1.1f)
+                            .saturationMod(0.8f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -467,8 +480,8 @@ public class KNItems {
     public static final RegistryObject<Item> POISONOUS_GHAST_ROAST = registerWithTab("poisonous_ghast_roast",
             () -> new MysteriousPoisonFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(10)
-                            .saturationMod(0.8f)
+                            .nutrition(9)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -481,8 +494,8 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_PEPPER_STIR_FRY = registerWithTab("soul_pepper_stir_fry",
             () -> new GhostBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.7f)
+                            .nutrition(9)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -492,25 +505,25 @@ public class KNItems {
     // 炽足兽岩壳炒肉
     public static final RegistryObject<Item> STRIDER_SHELL_STIR_FRY = registerWithTab("strider_shell_stir_fry",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
-                    .saturationMod(0.9f)
+                    .nutrition(13)
+                    .saturationMod(0.615f)
                     .meat()
                     .alwaysEat()
                     .build())));
 
-    // 四色果切拼盘
+    // 下界果切拼盘
     public static final RegistryObject<Item> FRUIT_PLATTER = registerWithTab("fruit_platter",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
-                    .saturationMod(0.7f)
+                    .nutrition(10)
+                    .saturationMod(0.667f)
                     .alwaysEat()
                     .build())));
 
     // 火腿酸酪
     public static final RegistryObject<Item> HAM_YOGURT = registerWithTab("ham_yogurt",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(7)
-                    .saturationMod(0.6f)
+                    .nutrition(13)
+                    .saturationMod(0.615f)
                     .alwaysEat()
                     .build())));
 
@@ -522,7 +535,7 @@ public class KNItems {
             () -> new VigorBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(7)
-                            .saturationMod(0.55f)
+                            .saturationMod(0.8f)
                             .alwaysEat()
                             .build(),
                     240
@@ -533,7 +546,7 @@ public class KNItems {
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.45f)
+                            .saturationMod(0.667f)
                             .alwaysEat()
                             .build(),
                     180
@@ -543,8 +556,8 @@ public class KNItems {
     public static final RegistryObject<Item> LAVA_JELLY = registerWithTab("lava_jelly",
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(3)
-                            .saturationMod(0.3f)
+                            .nutrition(8)
+                            .saturationMod(0.0f)
                             .alwaysEat()
                             .build(),
                     120
@@ -555,7 +568,7 @@ public class KNItems {
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.5f)
+                            .saturationMod(0.55f)
                             .alwaysEat()
                             .build(),
                     KNEffects.CRIMSON_BUFF,
@@ -569,7 +582,7 @@ public class KNItems {
             () -> new WarmthBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationMod(0.55f)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -581,7 +594,7 @@ public class KNItems {
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationMod(0.5f)
+                            .saturationMod(0.55f)
                             .alwaysEat()
                             .build(),
                     KNEffects.WARPED_BUFF,
@@ -590,13 +603,12 @@ public class KNItems {
                     Rarity.COMMON
             ));
 
-
     // 灵魂炽足兽烤串
     public static final RegistryObject<Item> SOUL_STRIDER_KABOB = registerWithTab("soul_strider_kabob",
             () -> new GhostBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(5)
-                            .saturationMod(0.4f)
+                            .nutrition(8)
+                            .saturationMod(0.9f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -616,8 +628,8 @@ public class KNItems {
     public static final RegistryObject<Item> BLAZING_KABOB = registerWithTab("blazing_kabob",
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(5)
-                            .saturationMod(0.3f)
+                            .nutrition(8)
+                            .saturationMod(0.9f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -629,7 +641,7 @@ public class KNItems {
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
                             .nutrition(4)
-                            .saturationMod(0.2f)
+                            .saturationMod(0.55f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -644,7 +656,7 @@ public class KNItems {
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
                             .nutrition(4)
-                            .saturationMod(0.2f)
+                            .saturationMod(0.55f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -658,8 +670,8 @@ public class KNItems {
     public static final RegistryObject<Item> STAR_GHAST_PASTA = registerWithTab("star_ghast_pasta",
             () -> new StarStewItem(
                     new FoodProperties.Builder()
-                            .nutrition(9)
-                            .saturationMod(0.7f)
+                            .nutrition(16)
+                            .saturationMod(1.8f)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -669,20 +681,19 @@ public class KNItems {
     public static final RegistryObject<Item> STAR_STEW_MEAT = registerWithTab("star_stew_meat",
             () -> new StarStewItem(
                     new FoodProperties.Builder()
-                            .nutrition(11)
-                            .saturationMod(0.6f)
+                            .nutrition(16)
+                            .saturationMod(1.8f)
                             .meat()
                             .alwaysEat()
                             .build()
             ));
 
-
     // 荧光浓汤
     public static final RegistryObject<Item> GLOWING_SOUP = registerWithTab("glowing_soup",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.5f)
+                            .nutrition(6)
+                            .saturationMod(0.667f)
                             .alwaysEat()
                             .build(),
                     KNEffects.GLOWING_BUFF,
@@ -695,8 +706,8 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_PUDDING = registerWithTab("glowing_pudding",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
-                            .nutrition(5)
-                            .saturationMod(0.5f)
+                            .nutrition(8)
+                            .saturationMod(0.0f)
                             .alwaysEat()
                             .build(),
                     KNEffects.GLOWING_BUFF,
@@ -709,8 +720,8 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_KABOB = registerWithTab("glowing_kabob",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
-                            .nutrition(10)
-                            .saturationMod(0.3f)
+                            .nutrition(4)
+                            .saturationMod(0.55f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -724,8 +735,8 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_SALAD = registerWithTab("glowing_salad",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
-                            .nutrition(5)
-                            .saturationMod(0.6f)
+                            .nutrition(6)
+                            .saturationMod(0.55f)
                             .alwaysEat()
                             .build(),
                     KNEffects.GLOWING_BUFF,
@@ -737,8 +748,8 @@ public class KNItems {
     // 黑苹果沙拉
     public static final RegistryObject<Item> BLACK_APPLE_SALAD = registerWithTab("black_apple_salad",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(7)
-                    .saturationMod(0.5f)
+                    .nutrition(6)
+                    .saturationMod(0.55f)
                     .alwaysEat()
                     .build())));
 
@@ -755,7 +766,7 @@ public class KNItems {
     public static final RegistryObject<Item> NETHER_REED_STEW = registerWithTab("nether_reed_stew",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(6)
-                    .saturationMod(0.5f)
+                    .saturationMod(0.667f)
                     .alwaysEat()
                     .build())));
 
@@ -763,8 +774,8 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY = registerWithTab("magma_cream_stir_fry",
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.7f)
+                            .nutrition(9)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -775,8 +786,8 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY_RICE = registerWithTab("magma_cream_stir_fry_rice",
             () -> new BlazingBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(10)
-                            .saturationMod(0.8f)
+                            .nutrition(14)
+                            .saturationMod(0.643f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -786,16 +797,16 @@ public class KNItems {
     // 麻婆豆腐
     public static final RegistryObject<Item> MAPO_TOFU = registerWithTab("mapo_tofu",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(6)
-                    .saturationMod(0.6f)
+                    .nutrition(9)
+                    .saturationMod(0.611f)
                     .alwaysEat()
                     .build())));
 
     // 麻婆豆腐盖饭
     public static final RegistryObject<Item> MAPO_TOFU_RICE = registerWithTab("mapo_tofu_rice",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(12)
-                    .saturationMod(0.9f)
+                    .nutrition(14)
+                    .saturationMod(0.643f)
                     .alwaysEat()
                     .build())));
 
@@ -803,8 +814,8 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_CAKE = registerWithTab("warped_cake",
             () -> new SpecialFruitItem(
                     new FoodProperties.Builder()
-                            .nutrition(4)
-                            .saturationMod(0.3f)
+                            .nutrition(9)
+                            .saturationMod(0.4f)
                             .alwaysEat()
                             .build(),
                     KNEffects.WARPED_BUFF,
@@ -818,7 +829,7 @@ public class KNItems {
             () -> new WarmthBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(14)
-                            .saturationMod(0.95f)
+                            .saturationMod(0.643f)
                             .alwaysEat()
                             .build(),
                     180
@@ -829,7 +840,7 @@ public class KNItems {
             () -> new WarmthBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(14)
-                            .saturationMod(0.95f)
+                            .saturationMod(0.643f)
                             .alwaysEat()
                             .build(),
                     180
@@ -839,8 +850,8 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT = registerWithTab("soul_stir_fry_meat",
             () -> new GhostBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationMod(0.7f)
+                            .nutrition(9)
+                            .saturationMod(0.611f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -852,7 +863,7 @@ public class KNItems {
             () -> new GhostBuffFoodItem(
                     new FoodProperties.Builder()
                             .nutrition(14)
-                            .saturationMod(1.0f)
+                            .saturationMod(0.643f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -862,16 +873,16 @@ public class KNItems {
     // 焦糖下界猪儿虫
     public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR = registerWithTab("caramel_nether_caterpillar",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(6)
-                    .saturationMod(0.8f)
+                    .nutrition(18)
+                    .saturationMod(0.36f)
                     .alwaysEat()
                     .build())));
 
     // 焦糖下界猪儿虫盖饭
     public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR_RICE = registerWithTab("caramel_nether_caterpillar_rice",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(12)
-                    .saturationMod(1.2f)
+                    .nutrition(19)
+                    .saturationMod(0.7f)
                     .alwaysEat()
                     .build())));
 
@@ -897,7 +908,7 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_HOGLIN_TENDERLOIN_STEW = registerWithTab("warped_hoglin_tenderloin_stew",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(10)
-                    .saturationMod(0.9f)
+                    .saturationMod(0.667f)
                     .meat()
                     .alwaysEat()
                     .build())));
@@ -906,8 +917,8 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_HOGLIN_RAMEN = registerWithTab("spicy_hoglin_ramen",
             () -> new WarmthBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(9)
-                            .saturationMod(0.8f)
+                            .nutrition(14)
+                            .saturationMod(0.643f)
                             .meat()
                             .alwaysEat()
                             .build(),
@@ -917,8 +928,8 @@ public class KNItems {
     // 麻辣香锅
     public static final RegistryObject<Item> SPICY_POT = registerWithTab("spicy_pot",
             () -> new Item(foodItem(new FoodProperties.Builder()
-                    .nutrition(8)
-                    .saturationMod(0.7f)
+                    .nutrition(9)
+                    .saturationMod(0.611f)
                     .meat()
                     .alwaysEat()
                     .build())));
@@ -927,7 +938,7 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_POT_RICE = registerWithTab("spicy_pot_rice",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(14)
-                    .saturationMod(1.1f)
+                    .saturationMod(0.643f)
                     .meat()
                     .alwaysEat()
                     .build())));
@@ -936,8 +947,8 @@ public class KNItems {
     public static final RegistryObject<Item> GIANT_BEAST_CROISSANT = registerWithTab("giant_beast_croissant",
             () -> new CataclysmBuffFoodItem(
                     new FoodProperties.Builder()
-                            .nutrition(7)
-                            .saturationMod(0.6f)
+                            .nutrition(20)
+                            .saturationMod(1.75f)
                             .alwaysEat()
                             .build(),
                     240
@@ -947,8 +958,8 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_SWEET_AND_SOUR_PORK = registerWithTab("magma_sweet_and_sour_pork",
             () -> new MagmaSweetAndSourPorkItem(
                     new FoodProperties.Builder()
-                            .nutrition(9)
-                            .saturationMod(0.8f)
+                            .nutrition(16)
+                            .saturationMod(2.0f)
                             .meat()
                             .alwaysEat()
                             .build()
