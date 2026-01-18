@@ -79,6 +79,8 @@ dependencies {
 //    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")
 
     implementation fg.deobf("curse.maven:appleskin-248787:4770828")
+    implementation fg.deobf("curse.maven:embeddium-908741:5681725")
+    implementation fg.deobf("curse.maven:radium-reforged-570017:5706069")
     implementation fg.deobf("curse.maven:modern-ui-352491:6956345")
     implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")

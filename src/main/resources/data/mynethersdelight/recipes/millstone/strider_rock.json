@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "kaleidoscope_cookery:millstone",
+  "ingredient": {
+    "item": "mynethersdelight:strider_rock"
+  },
+  "result": {
+    "count": 1,
+    "item": "kaleidoscope_nether:strider_rock_shell"
+  }
+}

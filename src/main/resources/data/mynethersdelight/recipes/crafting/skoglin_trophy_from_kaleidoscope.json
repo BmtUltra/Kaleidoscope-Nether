@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "nether_trophy",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:skoglin_trophy"
+    },
+    {
+      "tag": "forge:hoglin_hide"
+    }
+  ],
+  "result": {
+    "item": "mynethersdelight:hoglin_trophy"
+  }
+}

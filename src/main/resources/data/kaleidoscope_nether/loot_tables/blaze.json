@@ -20,13 +20,30 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
+                "max": 1.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:blaze_rod"
+          "name": "kaleidoscope_nether:blaze_heart"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.2,
+          "looting_multiplier": 0.2
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "kaleidoscope_nether:blaze_heart"
         }
       ],
       "rolls": 1.0

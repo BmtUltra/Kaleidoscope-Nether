@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "nether_trophy",
+  "key": {
+    "#": {
+      "tag": "forge:hoglin_hide"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "b": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "W#W",
+    "bBb",
+    "WGW"
+  ],
+  "result": {
+    "item": "mynethersdelight:hoglin_trophy"
+  },
+  "show_notification": true
+}

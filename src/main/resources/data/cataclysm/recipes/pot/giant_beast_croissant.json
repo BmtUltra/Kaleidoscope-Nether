@@ -6,21 +6,18 @@
     }
   ],
   "type": "kaleidoscope_cookery:pot",
-  "carrier": {
-    "item": "minecraft:bowl"
-  },
   "ingredients": [
     {
       "item": "cataclysm:monstrous_horn"
     },
     {
-      "tag": "forge:raw_beef"
+      "tag": "forge:flour"
     },
     {
-      "tag": "forge:raw_beef"
+      "tag": "forge:flour"
     },
     {
-      "tag": "forge:raw_beef"
+      "tag": "forge:flour"
     },
     {
       "tag": "forge:hot_spices"

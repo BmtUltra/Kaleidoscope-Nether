@@ -45,6 +45,23 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "kaleidoscope_nether:hoglin_hide"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.4,
+          "looting_multiplier": 0.2
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "kaleidoscope_nether:ham"
         }
       ],

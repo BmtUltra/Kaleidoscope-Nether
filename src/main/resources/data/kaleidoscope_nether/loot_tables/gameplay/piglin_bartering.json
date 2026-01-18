@@ -6,23 +6,33 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "kaleidoscope_nether:nether_caterpillar"
+          "functions": [
+            {
+              "enchantments": [
+                "kaleidoscope_nether:blessing"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:book"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+              "enchantments": [
+                "kaleidoscope_nether:blessing"
+              ],
+              "function": "minecraft:enchant_randomly"
             }
           ],
-          "name": "kaleidoscope_nether:strider_rock_shell",
-          "weight": 8
+          "name": "minecraft:chainmail_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "kaleidoscope_nether:gilded_fragment",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -38,7 +48,7 @@
             }
           ],
           "name": "kaleidoscope_nether:ghast_hide",
-          "weight": 4
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -47,7 +57,23 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "kaleidoscope_nether:strider_rock_shell",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -63,7 +89,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
+                "max": 5.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -74,7 +100,7 @@
         },
         {
           "type": "minecraft:empty",
-          "weight": 72
+          "weight": 80
         }
       ],
       "rolls": 1.0
