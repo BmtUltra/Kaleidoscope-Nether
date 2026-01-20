@@ -20,9 +20,22 @@ public class ModBlockModelProvider extends BlockModelProvider {
         cropBlocksId.add("soul_pepper");
         for (int i = 0; i < 8; i++) {
             for (String string : cropBlocksId) {
-                cross("%s/stage%d".formatted(string, i), KaleidoscopeNether.id("block/%s/stage%d".formatted(string, i))).renderType("cutout");
+                cross("block/%s/stage%d".formatted(string, i), KaleidoscopeNether.id("block/%s/stage%d".formatted(string, i))).renderType("cutout");
             }
         }
+
+        cross("twisting_cave_vines",KaleidoscopeNether.id("block/twisting_cave_vines")).renderType("cutout");
+        cross("twisting_cave_vines_berries",KaleidoscopeNether.id("block/twisting_cave_vines_berries")).renderType("cutout");
+
+        cross("twisting_cave_vines_plant",KaleidoscopeNether.id("block/twisting_cave_vines_plant")).renderType("cutout");
+        cross("twisting_cave_vines_plant_berries",KaleidoscopeNether.id("block/twisting_cave_vines_plant_berries")).renderType("cutout");
+
+        cross("weeping_cave_vines_plant",KaleidoscopeNether.id("block/weeping_cave_vines_plant")).renderType("cutout");
+        cross("weeping_cave_vines_plant_berries",KaleidoscopeNether.id("block/weeping_cave_vines_plant_berries")).renderType("cutout");
+
+        cross("weeping_cave_vines",KaleidoscopeNether.id("block/weeping_cave_vines")).renderType("cutout");
+        cross("weeping_cave_vines_berries",KaleidoscopeNether.id("block/weeping_cave_vines_berries")).renderType("cutout");
+
     }
 
 

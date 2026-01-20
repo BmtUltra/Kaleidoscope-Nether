@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
+
 import javax.annotation.Nullable;
 import java.util.Set;
 
@@ -35,7 +36,6 @@ public class KNCropBlockBase extends CropBlock {
 
             return InteractionResult.SUCCESS;
         }
-
 
         return InteractionResult.PASS;
     }

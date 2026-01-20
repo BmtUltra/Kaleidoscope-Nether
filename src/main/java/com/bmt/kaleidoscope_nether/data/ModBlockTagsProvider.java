@@ -1,9 +1,11 @@
 package com.bmt.kaleidoscope_nether.data;
 
-import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.api.KNTags;
+import com.bmt.kaleidoscope_nether.registry.KNBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -23,6 +25,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(
                         Blocks.SOUL_SAND,
                         Blocks.SOUL_SOIL
+                );
+
+        tag(BlockTags.CLIMBABLE)
+                .add(
+                        KNBlocks.WEEPING_CAVE_VINES.get(),
+                        KNBlocks.WEEPING_CAVE_VINES_PLANT.get(),
+                        KNBlocks.TWISTING_CAVE_VINES.get(),
+                        KNBlocks.TWISTING_CAVE_VINES_PLANT.get()
                 );
     }
 }

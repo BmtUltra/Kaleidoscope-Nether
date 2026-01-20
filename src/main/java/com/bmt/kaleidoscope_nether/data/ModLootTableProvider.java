@@ -13,9 +13,11 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CaveVines;
 import net.minecraft.world.level.block.PotatoBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -54,11 +56,27 @@ public class ModLootTableProvider extends LootTableProvider {
             simpleCropBlockLoot(KNBlocks.POISONOUS_FRUIT.get(), 7, KNItems.POISONOUS_FRUIT.get(), KNItems.POISONOUS_FRUIT.get(), 3);
             simpleCropBlockLoot(KNBlocks.SOUL_PEPPER.get(), 7, ModItems.CHILI_SEED.get(), KNItems.SOUL_PEPPER.get(), 3);
 
+            this.vines(KNBlocks.TWISTING_CAVE_VINES.get(), Items.TWISTING_VINES, KNItems.WARPED_FRUIT.get());
+            this.vines(KNBlocks.TWISTING_CAVE_VINES_PLANT.get(), Items.TWISTING_VINES, KNItems.WARPED_FRUIT.get());
+
+            this.vines(KNBlocks.WEEPING_CAVE_VINES.get(), Items.WEEPING_VINES, KNItems.CRIMSON_FRUIT.get());
+            this.vines(KNBlocks.WEEPING_CAVE_VINES_PLANT.get(), Items.WEEPING_VINES, KNItems.CRIMSON_FRUIT.get());
+
+
             FoodBiteRegistry.FOOD_DATA_MAP.forEach((resourceLocation, foodData) -> {
                 if (resourceLocation.getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
                     dropFoodBite(resourceLocation, foodData);
                 }
             });
+        }
+
+
+        private void vines(Block block, Item normal, Item berries) {
+            this.add(block, LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(berries)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CaveVines.BERRIES, true))))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(normal)))
+            );
+
         }
 
         private void simpleCropBlockLoot(Block cropBlock, int canHarvestAge, Item seed, Item crop, int cropCount) {

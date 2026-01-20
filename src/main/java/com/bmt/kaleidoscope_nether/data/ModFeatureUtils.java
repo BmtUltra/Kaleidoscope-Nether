@@ -3,6 +3,7 @@ package com.bmt.kaleidoscope_nether.data;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 
 public class ModFeatureUtils {
@@ -12,6 +13,10 @@ public class ModFeatureUtils {
         return blockpredicate;
     }
 
-
+    public static BlockPredicate notAirPredicate(Direction direction) {
+        BlockPredicate blockpredicate;
+        blockpredicate = BlockPredicate.not(BlockPredicate.matchesBlocks(direction.getNormal(), Blocks.AIR));
+        return blockpredicate;
+    }
 
 }

@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.registry;
 
-import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.bmt.kaleidoscope_nether.item.EffectItem.*;
 import com.bmt.kaleidoscope_nether.item.SpecialFood.EverlastingFoodItem;
@@ -118,7 +118,8 @@ public class KNItems {
 
     //绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = registerWithTab("crimson_fruit",
-            () -> new SpecialFruitItem(
+            () -> new SpecialFruitBlockItem(
+                    KNBlocks.WEEPING_CAVE_VINES.get(),
                     new FoodProperties.Builder()
                             .nutrition(2)
                             .saturationMod(0.3f)
@@ -132,7 +133,8 @@ public class KNItems {
 
     //诡异果
     public static final RegistryObject<Item> WARPED_FRUIT = registerWithTab("warped_fruit",
-            () -> new SpecialFruitItem(
+            () -> new SpecialFruitBlockItem(
+                    KNBlocks.TWISTING_CAVE_VINES.get(),
                     new FoodProperties.Builder()
                             .nutrition(2)
                             .saturationMod(0.3f)

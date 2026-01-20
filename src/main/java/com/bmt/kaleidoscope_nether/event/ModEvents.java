@@ -78,22 +78,22 @@ public class ModEvents {
             }
         }
 
-        if (state.is(Blocks.WEEPING_VINES) || state.is(Blocks.WEEPING_VINES_PLANT)) {
-            if (event.getLevel().getRandom().nextDouble() < Config.CRIMSON_FRUIT_DROP_CHANCE.get()) {
-                ItemStack crimsonFruit = new ItemStack(KNItems.CRIMSON_FRUIT.get());
-                Level level = (Level) event.getLevel();
-                Containers.dropItemStack(level,
-                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), crimsonFruit);
-            }
-        }
-
-        if (state.is(Blocks.TWISTING_VINES) || state.is(Blocks.TWISTING_VINES_PLANT)) {
-            if (event.getLevel().getRandom().nextDouble() < Config.WARPED_FRUIT_DROP_CHANCE.get()) {
-                ItemStack warpedFruit = new ItemStack(KNItems.WARPED_FRUIT.get());
-                Level level = (Level) event.getLevel();
-                Containers.dropItemStack(level,
-                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), warpedFruit);
-            }
-        }
+//        if (state.is(Blocks.WEEPING_VINES) || state.is(Blocks.WEEPING_VINES_PLANT)) {
+//            if (event.getLevel().getRandom().nextDouble() < Config.CRIMSON_FRUIT_DROP_CHANCE.get()) {
+//                ItemStack crimsonFruit = new ItemStack(KNItems.CRIMSON_FRUIT.get());
+//                Level level = (Level) event.getLevel();
+//                Containers.dropItemStack(level,
+//                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), crimsonFruit);
+//            }
+//        }
+//
+//        if (state.is(Blocks.TWISTING_VINES) || state.is(Blocks.TWISTING_VINES_PLANT)) {
+//            if (event.getLevel().getRandom().nextDouble() < Config.WARPED_FRUIT_DROP_CHANCE.get()) {
+//                ItemStack warpedFruit = new ItemStack(KNItems.WARPED_FRUIT.get());
+//                Level level = (Level) event.getLevel();
+//                Containers.dropItemStack(level,
+//                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), warpedFruit);
+//            }
+//        }
     }
 }
