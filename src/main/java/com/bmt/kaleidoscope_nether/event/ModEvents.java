@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
-import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.effect.CrimsonBuffEffect;
 import com.bmt.kaleidoscope_nether.effect.WarpedBuffEffect;
 import com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether.ArrowAccessor;
@@ -54,7 +54,7 @@ public class ModEvents {
                 MobEffectInstance instance = event.getEntity().getEffect(KNEffects.MYSTERIOUS_POISON.get());
                 if (instance != null) {
                     event.getEntity().addEffect(new MobEffectInstance(KNEffects.MYSTERIOUS_POISON.get(),
-                            1500,
+                            1500 / 8,
                             instance.getAmplifier() + 1));
 
                 }
