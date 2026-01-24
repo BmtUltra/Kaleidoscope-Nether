@@ -21,8 +21,8 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemGroup.kaleidoscope_nether"))
                     .icon(() -> new ItemStack(KNItems.CRIMSON_FRUIT.get()))
                     .displayItems((parameters, output) -> {
-                        output.accept(KNItems.RAW_GHAST_MEAT.get());
-                        output.accept(KNItems.COOKED_GHAST_MEAT.get());
+                        //output.accept(KNItems.RAW_GHAST_MEAT.get());
+                        //output.accept(KNItems.COOKED_GHAST_MEAT.get());
                         output.accept(KNItems.GHAST_TENTACLE.get());
                         output.accept(KNItems.ROASTED_GHAST_TENTACLE.get());
                         output.accept(KNItems.GHAST_HIDE.get());
