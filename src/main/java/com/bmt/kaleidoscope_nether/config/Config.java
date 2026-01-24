@@ -29,8 +29,6 @@ public class Config
     public static final ForgeConfigSpec.IntValue STAR_BLESSING_LEVEL_9_KNOCKBACK_RESISTANCE;
     public static final ForgeConfigSpec.BooleanValue STAR_BLESSING_LEVEL_12_FIRE_IMMUNITY;
 
-    public static final ForgeConfigSpec.DoubleValue CRIMSON_FRUIT_DROP_CHANCE;
-    public static final ForgeConfigSpec.DoubleValue WARPED_FRUIT_DROP_CHANCE;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> WARPED_BUFF_AFFECTED_MOBS;
 
     public static final ForgeConfigSpec.DoubleValue BLESSING_ENCHANTMENT_HEAL_AMOUNT;
@@ -77,14 +75,6 @@ public class Config
         NETHER_CATERPILLAR_DROP_CHANCE = BUILDER
                 .comment("Drop chance for Nether Caterpillar from Nether Wart (0.0 to 1.0)")
                 .defineInRange("netherCaterpillarDropChance", 0.1, 0.0, 1.0);
-
-        CRIMSON_FRUIT_DROP_CHANCE = BUILDER
-                .comment("Drop chance for Crimson Fruit from Weeping Vines (0.0 to 1.0)")
-                .defineInRange("crimsonFruitDropChance", 0.6, 0.0, 1.0);
-
-        WARPED_FRUIT_DROP_CHANCE = BUILDER
-                .comment("Drop chance for Warped Fruit from Twisting Vines (0.0 to 1.0)")
-                .defineInRange("warpedFruitDropChance", 0.6, 0.0, 1.0);
 
         BUILDER.pop();
 
