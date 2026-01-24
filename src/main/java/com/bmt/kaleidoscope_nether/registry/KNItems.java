@@ -23,8 +23,9 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
-import static com.bmt.kaleidoscope_nether.registry.KNEffects.GHOST_BUFF;
+import static com.bmt.kaleidoscope_nether.registry.KNEffects.*;
 import static com.github.ysbbbbbb.kaleidoscopecookery.init.ModEffects.*;
+import static net.minecraft.world.effect.MobEffects.*;
 
 public class KNItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, KaleidoscopeNether.MOD_ID);
@@ -96,6 +97,8 @@ public class KNItems {
             () -> new EverlastingFoodItem(new FoodProperties.Builder()
                             .nutrition(8)
                             .saturationMod(1.2f)
+                    .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 300,0), 1.0F)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 600,0), 1.0F)
                             .alwaysEat()
                             .build(),
                     Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get,
@@ -137,6 +140,7 @@ public class KNItems {
     public static final RegistryObject<Item> NETHER_CATERPILLAR = registerWithTab("nether_caterpillar",
             () -> new NetherCaterpillarItem(new FoodProperties.Builder()
                             .nutrition(18).saturationMod(0.2f)
+                    .effect(() -> new MobEffectInstance(CONFUSION, 200), 1F)
                             .alwaysEat()
                             .build()
             ));
@@ -145,6 +149,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_RETURN_RICE = registerWithTab("soul_return_rice",
             () -> new SoulReturnRiceItem(new FoodProperties.Builder()
                             .nutrition(16).saturationMod(1.8f)
+                    .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 1800,0), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -160,11 +165,11 @@ public class KNItems {
                             .build()
             ));
 
-    //星之炖菜
+    // 星之炖菜
     public static final RegistryObject<Item> STAR_STEW = registerWithTab("star_stew",
             () -> new StarStewItem(new FoodProperties.Builder()
-                            .nutrition(16)
-                            .saturationMod(1.8f)
+                            .nutrition(16).saturationMod(1.8f)
+                    .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600,0), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -226,6 +231,7 @@ public class KNItems {
     public static final RegistryObject<Item> ROUJIAMO = registerWithTab("roujiamo",
             () -> new Item(foodItem(new FoodProperties.Builder()
                     .nutrition(8).saturationMod(1.0f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 80 * 20), 1.0F)
                     .alwaysEat()
                     .build())));
 
@@ -288,6 +294,7 @@ public class KNItems {
     public static final RegistryObject<Item> GHAST_PASTA = registerWithTab("ghast_pasta",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(SULFUR.get(), 1800,0), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -297,6 +304,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_SOUP = registerWithTab("magma_cream_soup",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.667f)
+                            .effect(() -> new MobEffectInstance(WARMTH.get(), 480 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -305,6 +313,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_PUDDING = registerWithTab("magma_cream_pudding",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.0f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -326,6 +335,7 @@ public class KNItems {
     public static final RegistryObject<Item> POISONOUS_SOUP = registerWithTab("poisonous_soup",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(MYSTERIOUS_POISON.get(), 80 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -334,6 +344,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_GLAZED_ROAST = registerWithTab("soul_glazed_roast",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(13).saturationMod(0.615f)
+                    .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 1800,0), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -343,6 +354,7 @@ public class KNItems {
     public static final RegistryObject<Item> GHAST_PUDDING = registerWithTab("ghast_pudding",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -351,6 +363,7 @@ public class KNItems {
     public static final RegistryObject<Item> GILDED_BARBARIC_ROAST = registerWithTab("gilded_barbaric_roast",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(24).saturationMod(0.8f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -360,6 +373,7 @@ public class KNItems {
     public static final RegistryObject<Item> NETHER_CATERPILLAR_SASHIMI = registerWithTab("nether_caterpillar_sashimi",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(19).saturationMod(0.65f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -368,6 +382,7 @@ public class KNItems {
     public static final RegistryObject<Item> GOLDEN_ROAST = registerWithTab("golden_roast",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(15).saturationMod(1.1f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -377,6 +392,7 @@ public class KNItems {
     public static final RegistryObject<Item> NETHER_FRIES_PLATTER = registerWithTab("nether_fries_platter",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(20).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -385,6 +401,7 @@ public class KNItems {
     public static final RegistryObject<Item> HOGLIN_TUSK_BRAISED_MEAT = registerWithTab("hoglin_tusk_braised_meat",
             () -> new FoodWithEffectsItem(new FoodProperties.Builder()
                             .nutrition(20).saturationMod(0.8f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -394,6 +411,7 @@ public class KNItems {
     public static final RegistryObject<Item> POISONOUS_GHAST_ROAST = registerWithTab("poisonous_ghast_roast",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -403,6 +421,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_PEPPER_STIR_FRY = registerWithTab("soul_pepper_stir_fry",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -412,6 +431,7 @@ public class KNItems {
     public static final RegistryObject<Item> STRIDER_SHELL_STIR_FRY = registerWithTab("strider_shell_stir_fry",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(13).saturationMod(0.615f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -421,6 +441,7 @@ public class KNItems {
     public static final RegistryObject<Item> FRUIT_PLATTER = registerWithTab("fruit_platter",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(10).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -429,6 +450,7 @@ public class KNItems {
     public static final RegistryObject<Item> HAM_YOGURT = registerWithTab("ham_yogurt",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(13).saturationMod(0.615f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -438,6 +460,7 @@ public class KNItems {
     public static final RegistryObject<Item> SAUERKRAUT_FISH = registerWithTab("sauerkraut_fish",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(7).saturationMod(0.8f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -446,6 +469,7 @@ public class KNItems {
     public static final RegistryObject<Item> BLAZE_SOUP = registerWithTab("blaze_soup",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -454,6 +478,7 @@ public class KNItems {
     public static final RegistryObject<Item> LAVA_JELLY = registerWithTab("lava_jelly",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.0f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -462,6 +487,7 @@ public class KNItems {
     public static final RegistryObject<Item> CRIMSON_SALAD = registerWithTab("crimson_salad",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(CRIMSON_BUFF.get(), 1800,0), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -470,6 +496,7 @@ public class KNItems {
     public static final RegistryObject<Item> CRIMSON_MAGMA_STEW = registerWithTab("crimson_magma_stew",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -479,6 +506,7 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_SALAD = registerWithTab("warped_salad",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 1800,0), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -487,6 +515,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_STRIDER_KABOB = registerWithTab("soul_strider_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.9f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -496,6 +525,7 @@ public class KNItems {
     public static final RegistryObject<Item> GOLDEN_KABOB = registerWithTab("golden_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.5f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -505,6 +535,7 @@ public class KNItems {
     public static final RegistryObject<Item> BLAZING_KABOB = registerWithTab("blazing_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.9f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -514,6 +545,7 @@ public class KNItems {
     public static final RegistryObject<Item> CRIMSON_KABOB = registerWithTab("crimson_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                             .nutrition(4).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -523,6 +555,7 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_KABOB = registerWithTab("warped_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                             .nutrition(4).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -532,6 +565,7 @@ public class KNItems {
     public static final RegistryObject<Item> STAR_GHAST_PASTA = registerWithTab("star_ghast_pasta",
             () -> new StarStewItem(new FoodProperties.Builder()
                             .nutrition(16).saturationMod(1.8f)
+                    .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600,0), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -541,6 +575,7 @@ public class KNItems {
     public static final RegistryObject<Item> STAR_STEW_MEAT = registerWithTab("star_stew_meat",
             () -> new StarStewItem(new FoodProperties.Builder()
                             .nutrition(16).saturationMod(1.8f)
+                    .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600,0), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -550,6 +585,7 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_SOUP = registerWithTab("glowing_soup",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -558,6 +594,7 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_PUDDING = registerWithTab("glowing_pudding",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.0f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -566,6 +603,7 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_KABOB = registerWithTab("glowing_kabob",
             () -> new StickReturnFoodItem(new FoodProperties.Builder()
                             .nutrition(4).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -575,6 +613,7 @@ public class KNItems {
     public static final RegistryObject<Item> GLOWING_SALAD = registerWithTab("glowing_salad",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -583,6 +622,7 @@ public class KNItems {
     public static final RegistryObject<Item> BLACK_APPLE_SALAD = registerWithTab("black_apple_salad",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.55f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -591,6 +631,7 @@ public class KNItems {
     public static final RegistryObject<Item> RUBY_STEAK = registerWithTab("ruby_steak",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(11).saturationMod(1.0f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -600,6 +641,7 @@ public class KNItems {
     public static final RegistryObject<Item> NETHER_REED_STEW = registerWithTab("nether_reed_stew",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -608,6 +650,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY = registerWithTab("magma_cream_stir_fry",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -617,6 +660,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY_RICE = registerWithTab("magma_cream_stir_fry_rice",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(14).saturationMod(0.643f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -626,6 +670,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAPO_TOFU = registerWithTab("mapo_tofu",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -634,6 +679,7 @@ public class KNItems {
     public static final RegistryObject<Item> MAPO_TOFU_RICE = registerWithTab("mapo_tofu_rice",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(14).saturationMod(0.643f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -642,6 +688,7 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_CAKE = registerWithTab("warped_cake",
             () -> new FoodWithEffectsItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.4f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .alwaysEat()
                             .build()
             ));
@@ -668,6 +715,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT = registerWithTab("soul_stir_fry_meat",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -677,6 +725,7 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT_RICE = registerWithTab("soul_stir_fry_meat_rice",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(14).saturationMod(0.643f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -686,6 +735,7 @@ public class KNItems {
     public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR = registerWithTab("caramel_nether_caterpillar",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(18).saturationMod(0.36f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -694,6 +744,7 @@ public class KNItems {
     public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR_RICE = registerWithTab("caramel_nether_caterpillar_rice",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(19).saturationMod(0.7f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .alwaysEat()
                     .build()
             ));
@@ -718,6 +769,7 @@ public class KNItems {
     public static final RegistryObject<Item> WARPED_HOGLIN_TENDERLOIN_STEW = registerWithTab("warped_hoglin_tenderloin_stew",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(10).saturationMod(0.667f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -727,6 +779,7 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_HOGLIN_RAMEN = registerWithTab("spicy_hoglin_ramen",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                             .nutrition(14).saturationMod(0.643f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                             .meat()
                             .alwaysEat()
                             .build()
@@ -736,6 +789,7 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_POT = registerWithTab("spicy_pot",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(9).saturationMod(0.611f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()
@@ -745,6 +799,7 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_POT_RICE = registerWithTab("spicy_pot_rice",
             () -> new BowlFoodOnlyItem(new FoodProperties.Builder()
                     .nutrition(14).saturationMod(0.643f)
+                    .effect(() -> new MobEffectInstance(WARMTH.get(), 180 * 20), 1.0F)
                     .meat()
                     .alwaysEat()
                     .build()

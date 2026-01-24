@@ -2,7 +2,7 @@
   "type": "kaleidoscope_cookery:pot",
   "ingredients": [
     {
-      "tag": "forge:hoglin_hide"
+      "item": "kaleidoscope_nether:hoglin_hide"
     }
   ],
   "result": {

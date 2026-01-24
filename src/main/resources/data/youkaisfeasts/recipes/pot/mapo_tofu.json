@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "youkaisfeasts"
+    }
+  ],
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "item": "youkaisfeasts:tofu"
+    },
+    {
+      "item": "youkaisfeasts:tofu"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:vegetables/pepper"
+    },
+    {
+      "tag": "forge:vegetables/pepper"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:mapo_tofu"
+  },
+  "stir_fry_count": 4,
+  "time": 300
+}

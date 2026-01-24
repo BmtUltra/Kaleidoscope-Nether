@@ -1,7 +1,5 @@
 package com.bmt.kaleidoscope_nether.item.EffectItem;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,9 +10,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class SpecialFruitBlockItem extends BlockItem {
     private final RegistryObject<MobEffect> effect;
@@ -50,13 +45,5 @@ public class SpecialFruitBlockItem extends BlockItem {
         }
 
         return result;
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltip, flag);
-
-        String translationKey = getDescriptionId() + ".tooltip.line1";
-        tooltip.add(Component.translatable(translationKey).withStyle(ChatFormatting.BLUE));
     }
 }

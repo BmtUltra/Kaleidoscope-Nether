@@ -30,24 +30,10 @@
         "tag": "forge:raw_chicken"
       },
       {
-        "item": "kaleidoscope_cookery:raw_donkey_meat"
+        "item": "minecraft:rabbit"
       },
       {
-        "item": "kaleidoscope_cookery:raw_cut_small_meats"
-      }
-    ],
-    [
-      {
-        "tag": "forge:raw_pork"
-      },
-      {
-        "tag": "forge:raw_beef"
-      },
-      {
-        "tag": "forge:raw_mutton"
-      },
-      {
-        "tag": "forge:raw_chicken"
+        "item": "kaleidoscope_nether:raw_strider_meat"
       },
       {
         "item": "kaleidoscope_cookery:raw_donkey_meat"
@@ -70,24 +56,10 @@
         "tag": "forge:raw_chicken"
       },
       {
-        "item": "kaleidoscope_cookery:raw_donkey_meat"
+        "item": "minecraft:rabbit"
       },
       {
-        "item": "kaleidoscope_cookery:raw_cut_small_meats"
-      }
-    ],
-    [
-      {
-        "tag": "forge:raw_pork"
-      },
-      {
-        "tag": "forge:raw_beef"
-      },
-      {
-        "tag": "forge:raw_mutton"
-      },
-      {
-        "tag": "forge:raw_chicken"
+        "item": "kaleidoscope_nether:raw_strider_meat"
       },
       {
         "item": "kaleidoscope_cookery:raw_donkey_meat"
@@ -108,6 +80,64 @@
       },
       {
         "tag": "forge:raw_chicken"
+      },
+      {
+        "item": "minecraft:rabbit"
+      },
+      {
+        "item": "kaleidoscope_nether:raw_strider_meat"
+      },
+      {
+        "item": "kaleidoscope_cookery:raw_donkey_meat"
+      },
+      {
+        "item": "kaleidoscope_cookery:raw_cut_small_meats"
+      }
+    ],
+    [
+      {
+        "tag": "forge:raw_pork"
+      },
+      {
+        "tag": "forge:raw_beef"
+      },
+      {
+        "tag": "forge:raw_mutton"
+      },
+      {
+        "tag": "forge:raw_chicken"
+      },
+      {
+        "item": "minecraft:rabbit"
+      },
+      {
+        "item": "kaleidoscope_nether:raw_strider_meat"
+      },
+      {
+        "item": "kaleidoscope_cookery:raw_donkey_meat"
+      },
+      {
+        "item": "kaleidoscope_cookery:raw_cut_small_meats"
+      }
+    ],
+    [
+      {
+        "tag": "forge:raw_pork"
+      },
+      {
+        "tag": "forge:raw_beef"
+      },
+      {
+        "tag": "forge:raw_mutton"
+      },
+      {
+        "tag": "forge:raw_chicken"
+      },
+      {
+        "item": "minecraft:rabbit"
+      },
+      {
+        "item": "kaleidoscope_nether:raw_strider_meat"
       },
       {
         "item": "kaleidoscope_cookery:raw_donkey_meat"

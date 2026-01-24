@@ -19,7 +19,7 @@ public class ModCreativeTabs {
     public static final RegistryObject<CreativeModeTab> KALEIDOSCOPE_NETHER_TAB = CREATIVE_MODE_TABS.register("kaleidoscope_nether_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.kaleidoscope_nether"))
-                    .icon(() -> new ItemStack(KNItems.CRIMSON_FRUIT.get()))
+                    .icon(() -> new ItemStack(KNItems.BLOWGUN.get()))
                     .displayItems((parameters, output) -> {
                         //output.accept(KNItems.RAW_GHAST_MEAT.get());
                         //output.accept(KNItems.COOKED_GHAST_MEAT.get());

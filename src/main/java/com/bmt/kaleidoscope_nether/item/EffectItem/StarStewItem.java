@@ -2,19 +2,17 @@ package com.bmt.kaleidoscope_nether.item.EffectItem;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.registry.ModAttributes;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -23,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class StarStewItem extends Item {
+public class StarStewItem extends BowlFoodOnlyItem {
     private static final UUID STAR_BLESSING_MODIFIER_UUID = UUID.fromString("1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c5d6");
     private static final UUID HEALTH_MODIFIER_UUID = UUID.fromString("4d5e6f7a-8b9c-0d1e-2f3a-b4c5d6e7f8a9");
     private static final TagKey<net.minecraft.world.item.Item> STAR_BLESSING_FOODS =
@@ -32,18 +30,15 @@ public class StarStewItem extends Item {
     private static final int MAX_STAR_BLESSING_LEVEL = 12;
 
     public StarStewItem(FoodProperties food) {
-        super(new Properties().food(food));
+        super(food);
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
-        String translationKey1 = getDescriptionId() + ".tooltip.line1";
-        String translationKey2 = getDescriptionId() + ".tooltip.line2";
-
-        tooltip.add(Component.translatable(translationKey1).withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable(translationKey2).withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("item.kaleidoscope_nether.star_stew.tooltip.line1")
+                .withStyle(ChatFormatting.GRAY));
     }
 
     @Override
@@ -51,8 +46,6 @@ public class StarStewItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(KNEffects.STAR_BLESSING_BUFF.get(), 600, 0));
-
             if (stack.is(STAR_BLESSING_FOODS)) {
                 if (level.random.nextFloat() < 0.4f) {
                     AttributeInstance starBlessingAttr = player.getAttribute(ModAttributes.STAR_BLESSING.get());
