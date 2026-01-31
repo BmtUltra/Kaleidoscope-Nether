@@ -10,6 +10,7 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +41,10 @@ public class KNItems {
     // 凋零骨头
     public static final RegistryObject<Item> WITHER_RIB = ITEMS.register("wither_rib",
             () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+
+    // 下界炉灶
+    public static final RegistryObject<Item> NETHER_STOVE = ITEMS.register("nether_stove",
+            () -> new BlockItem(KNBlocks.NETHER_STOVE.get(), new Item.Properties()));
 
     // 星之尘
     public static final RegistryObject<Item> STAR_DUST = ITEMS.register("star_dust",

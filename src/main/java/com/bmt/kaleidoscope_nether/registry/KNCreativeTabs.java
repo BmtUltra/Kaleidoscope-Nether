@@ -24,6 +24,7 @@ public class KNCreativeTabs {
                         //output.accept(KNItems.RAW_GHAST_MEAT.get());
                         //output.accept(KNItems.COOKED_GHAST_MEAT.get());
                         output.accept(KNItems.PRIMITIVE_MACHETE.get());
+                        output.accept(KNItems.NETHER_STOVE.get());
                         output.accept(KNItems.GHAST_TENTACLE.get());
                         output.accept(KNItems.ROASTED_GHAST_TENTACLE.get());
                         //output.accept(KNItems.GHAST_HIDE.get());
