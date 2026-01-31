@@ -434,11 +434,11 @@ public class KNItems {
     // 玉米胡萝卜排骨汤
     public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
             () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
-
+/*
     // 广式肠粉
     public static final RegistryObject<Item> CANTONESE_RICE_NOODLE_ROLL = ITEMS.register("cantonese_rice_noodle_roll",
             () -> new BowlFoodOnlyItem(KNFoods.CANTONESE_RICE_NOODLE_ROLL));
-
+*/
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

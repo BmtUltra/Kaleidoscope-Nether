@@ -574,6 +574,7 @@ public class KNFoods {
     // 魔眼咕噜肉
     public static final FoodProperties MAGMA_SWEET_AND_SOUR_PORK = new FoodProperties.Builder()
             .nutrition(16).saturationMod(2.0f)
+            .effect(() -> new MobEffectInstance(FIRE_RESISTANCE, 2 * 60 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -631,11 +632,12 @@ public class KNFoods {
             .meat()
             .alwaysEat()
             .build();
-
+/*
     // 广式肠粉
     public static final FoodProperties CANTONESE_RICE_NOODLE_ROLL = new FoodProperties.Builder()
             .nutrition(7).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0F)
             .alwaysEat()
             .build();
+ */
 }

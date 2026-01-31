@@ -1,5 +1,6 @@
 package com.bmt.kaleidoscope_nether.item.EffectItem;
 
+import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +11,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -21,24 +21,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class MagmaSweetAndSourPorkItem extends Item {
+public class MagmaSweetAndSourPorkItem extends BowlFoodOnlyItem {
 
     private static final boolean IS_CATACLYSM_INSTALLED = ModList.get().isLoaded("cataclysm");
 
     public MagmaSweetAndSourPorkItem(FoodProperties food) {
-        super(new Item.Properties().food(food));
+        super(food);
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+        ItemStack resultStack = super.finishUsingItem(stack, level, entity);
+
         if (!level.isClientSide() && entity instanceof Player player) {
             if (IS_CATACLYSM_INSTALLED) {
                 spawnFlameWaves(level, player);
             }
-
-            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 4800, 0, false, false, true));
         }
-        return super.finishUsingItem(stack, level, entity);
+        return resultStack;
     }
 
     private void spawnFlameWaves(Level level, Player player) {
@@ -52,7 +52,7 @@ public class MagmaSweetAndSourPorkItem extends Item {
         int standingOnY = Mth.floor(player.getY()) - 2;
 
         for (int direction = 0; direction < 8; direction++) {
-            float yawRadians = (float) (Math.toRadians(90 + direction * 45)); //每45度一个方向
+            float yawRadians = (float) (Math.toRadians(90 + direction * 45));
 
             for (int distance = 0; distance < 5; distance++) {
                 double offset = 2.25D * (distance + 1);
@@ -124,7 +124,5 @@ public class MagmaSweetAndSourPorkItem extends Item {
 
         tooltipComponents.add(Component.translatable("item.kaleidoscope_nether.magma_sweet_and_sour_pork.tooltip.line1")
                 .withStyle(ChatFormatting.DARK_RED));
-        tooltipComponents.add(Component.translatable("item.kaleidoscope_nether.magma_sweet_and_sour_pork.tooltip.line2")
-                .withStyle(ChatFormatting.GOLD));
     }
 }

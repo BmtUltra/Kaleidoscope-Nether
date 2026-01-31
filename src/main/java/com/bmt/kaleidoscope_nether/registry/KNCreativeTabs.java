@@ -129,7 +129,7 @@ public class KNCreativeTabs {
                         output.accept(KNItems.BRAISED_PORK_RICE.get());
                         output.accept(KNItems.GARLIC_OYSTERS.get());
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());
-                        output.accept(KNItems.CANTONESE_RICE_NOODLE_ROLL.get());
+                        //output.accept(KNItems.CANTONESE_RICE_NOODLE_ROLL.get());
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
                         output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
                     })
