@@ -92,7 +92,7 @@ dependencies {
     implementation fg.deobf("curse.maven:inventory-hud-forge-357540:5639966")
     //implementation fg.deobf("curse.maven:artifacts-312353:6351716")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
-    implementation fg.deobf("curse.maven:kaleidoscope-doll-1233277:7201584")
+    implementation fg.deobf("curse.maven:kaleidoscope-doll-1233277:7400829")
     implementation fg.deobf("curse.maven:farmers-delight-398521:6917255")
     implementation fg.deobf("curse.maven:kubejs-238086:5853326")
     implementation fg.deobf("curse.maven:rhino-416294:6186971")

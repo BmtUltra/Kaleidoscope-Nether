@@ -2,10 +2,10 @@
   "type": "kaleidoscope_cookery:pot",
   "ingredients": [
     {
-      "tag": "forge:hot_spices"
+      "item": "minecraft:chicken"
     },
     {
-      "item": "minecraft:chicken"
+      "tag": "forge:hot_spices"
     },
     {
       "tag": "forge:hot_spices"

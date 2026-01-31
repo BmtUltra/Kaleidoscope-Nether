@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "mod_items": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "kaleidoscope_nether:mod_items"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "kaleidoscope_nether:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:blowgun"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "mod_items"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

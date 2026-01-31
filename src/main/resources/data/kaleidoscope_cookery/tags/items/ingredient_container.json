@@ -1,6 +1,9 @@
 {
   "values": [
     "minecraft:stick",
-    "betternether:stalagnate_bowl"
+    {
+      "id": "betternether:stalagnate_bowl",
+      "required": false
+    }
   ]
 }

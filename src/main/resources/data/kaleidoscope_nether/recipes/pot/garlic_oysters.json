@@ -1,0 +1,34 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:vegetables/pepper"
+    },
+    {
+      "tag": "forge:vegetables/pepper"
+    },
+    {
+      "tag": "forge:hot_spices"
+    },
+    {
+      "tag": "forge:hot_spices"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:garlic_oysters"
+  },
+  "stir_fry_count": 4,
+  "time": 300
+}

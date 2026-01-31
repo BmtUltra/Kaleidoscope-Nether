@@ -1,0 +1,37 @@
+{
+  "parent": "kaleidoscope_nether:wither_rib",
+  "criteria": {
+    "wither_bone_soup": {
+      "conditions": {
+        "item": {
+          "items":[
+            "kaleidoscope_nether:wither_bone_soup"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "kaleidoscope_nether:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.wither_bone_soup.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:wither_bone_soup"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.wither_bone_soup.title"
+    }
+  },
+  "requirements": [
+    [
+      "wither_bone_soup"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

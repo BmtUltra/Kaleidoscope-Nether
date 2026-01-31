@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "artifacts"
+    }
+  ],
+  "type": "kaleidoscope_cookery:pot",
+  "ingredients": [
+    {
+      "item": "artifacts:everlasting_beef"
+    }
+  ],
+  "result": {
+    "item": "artifacts:eternal_steak"
+  },
+  "stir_fry_count": 3,
+  "time": 200
+}

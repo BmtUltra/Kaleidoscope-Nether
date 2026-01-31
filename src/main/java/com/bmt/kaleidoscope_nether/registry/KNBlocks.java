@@ -3,6 +3,7 @@ package com.bmt.kaleidoscope_nether.registry;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.block.*;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.kitchen.StoveBlock;
+import com.github.ysbbbbbb.kaleidoscopedoll.block.CustomDollBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -44,5 +45,4 @@ public class KNBlocks {
     // 下界炉灶
     public static final RegistryObject<StoveBlock> NETHER_STOVE = BLOCKS.register("nether_stove",
             () -> new StoveBlock());
-
 }

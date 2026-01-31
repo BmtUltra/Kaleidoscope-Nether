@@ -1,10 +1,4 @@
 {
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "betternether"
-    }
-  ],
   "type": "kaleidoscope_cookery:stockpot",
   "carrier": {
     "item": "minecraft:bowl"
@@ -15,28 +9,36 @@
   "finished_texture": "kaleidoscope_cookery:stockpot/default_finished",
   "ingredients": [
     {
-      "item": "betternether:nether_reed_stem"
+      "item": "minecraft:ghast_tear"
     },
     {
-      "item": "betternether:nether_reed_stem"
+      "item": "minecraft:ghast_tear"
     },
     {
-      "item": "betternether:nether_reed_stem"
+      "item": "minecraft:ghast_tear"
     },
     {
-      "item": "minecraft:carrot"
+      "item": "minecraft:ghast_tear"
     },
     {
-      "item": "minecraft:carrot"
+      "item": "kaleidoscope_nether:star_dust"
     },
     {
-      "item": "kaleidoscope_cookery:lettuce"
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:ghast_tear"
     }
   ],
   "result": {
-    "count": 3,
-    "item": "kaleidoscope_nether:nether_reed_stew"
+    "item": "kaleidoscope_nether:forgetfulness_soup"
   },
   "soup_base": "minecraft:water",
-  "time": 350
+  "time": 300
 }

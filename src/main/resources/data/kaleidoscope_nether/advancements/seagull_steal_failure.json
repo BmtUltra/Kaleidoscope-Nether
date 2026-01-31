@@ -1,0 +1,33 @@
+{
+  "parent": "kaleidoscope_nether:root",
+  "criteria": {
+    "seagull_steal_failure": {
+      "conditions": {
+        "triggerId": "seagull_steal_failure"
+      },
+      "trigger": "kaleidoscope_nether:simple_id"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "kaleidoscope_nether:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.seagull_steal_failure.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "kaleidoscope_nether:everlasting_flame_steak"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.seagull_steal_failure.title"
+    }
+  },
+  "requirements": [
+    [
+      "seagull_steal_failure"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

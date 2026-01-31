@@ -1,0 +1,39 @@
+{
+  "parent": "kaleidoscope_nether:root",
+  "criteria": {
+    "nether_caterpillar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_nether:nether_caterpillar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "kaleidoscope_nether:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.nether_caterpillar.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:nether_caterpillar"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.nether_caterpillar.title"
+    }
+  },
+  "requirements": [
+    [
+      "nether_caterpillar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

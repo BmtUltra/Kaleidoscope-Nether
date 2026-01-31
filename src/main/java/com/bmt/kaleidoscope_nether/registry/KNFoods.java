@@ -49,14 +49,14 @@ public class KNFoods {
     // 回魂饭
     public static final FoodProperties SOUL_RETURN_RICE = new FoodProperties.Builder()
             .nutrition(16).saturationMod(1.8f)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
     // 熔岩烤鸡
     public static final FoodProperties LAVA_ROASTED_CHICKEN = new FoodProperties.Builder()
-            .nutrition(20)
-            .saturationMod(0.55f)
+            .nutrition(13)
+            .saturationMod(0.615f)
             .meat()
             .alwaysEat()
             .build();
@@ -71,7 +71,7 @@ public class KNFoods {
     // 灵魂浓汤
     public static final FoodProperties SOUL_SOUP = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.667f)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -120,14 +120,14 @@ public class KNFoods {
     // 红烧炽足兽
     public static final FoodProperties BRAISED_STRIDER = new FoodProperties.Builder()
             .nutrition(9).saturationMod(0.611f)
-            .effect(() -> new MobEffectInstance(VIGOR.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(VIGOR.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
     // 凋零大骨汤
     public static final FoodProperties WITHER_BONE_SOUP = new FoodProperties.Builder()
             .nutrition(9).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(VIGOR.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(VIGOR.get(), 300 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -135,7 +135,7 @@ public class KNFoods {
     public static final FoodProperties STRIDER_NETHER_WART_STEW = new FoodProperties.Builder()
             .nutrition(13).saturationMod(0.615f)
             .meat()
-            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -165,7 +165,7 @@ public class KNFoods {
     // 恶魂意面
     public static final FoodProperties GHAST_PASTA = new FoodProperties.Builder()
             .nutrition(9).saturationMod(0.611f)
-            .effect(() -> new MobEffectInstance(SULFUR.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(SULFUR.get(), 90 * 20, 0), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -200,7 +200,7 @@ public class KNFoods {
     // 灵魂浇汁烤肉
     public static final FoodProperties SOUL_GLAZED_ROAST = new FoodProperties.Builder()
             .nutrition(13).saturationMod(0.615f)
-            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 90 * 20, 0), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -229,7 +229,7 @@ public class KNFoods {
 
     // 黄金烤肉
     public static final FoodProperties GOLDEN_ROAST = new FoodProperties.Builder()
-            .nutrition(15).saturationMod(1.1f)
+            .nutrition(20).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(VIGOR.get(), 120 * 20), 1.0F)
             .meat()
             .alwaysEat()
@@ -312,7 +312,7 @@ public class KNFoods {
     // 绯红沙拉
     public static final FoodProperties CRIMSON_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(CRIMSON_BUFF.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(CRIMSON_BUFF.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -327,7 +327,7 @@ public class KNFoods {
     // 诡异沙拉
     public static final FoodProperties WARPED_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 1800, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -341,7 +341,7 @@ public class KNFoods {
 
     // 黄金烤串
     public static final FoodProperties GOLDEN_KABOB = new FoodProperties.Builder()
-            .nutrition(6).saturationMod(0.5f)
+            .nutrition(10).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(VIGOR.get(), 60 * 20), 1.0F)
             .meat()
             .alwaysEat()
@@ -425,7 +425,7 @@ public class KNFoods {
 
     // 红宝石牛排
     public static final FoodProperties RUBY_STEAK = new FoodProperties.Builder()
-            .nutrition(11).saturationMod(1.0f)
+            .nutrition(20).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 240 * 20), 1.0F)
             .meat()
             .alwaysEat()
@@ -581,54 +581,54 @@ public class KNFoods {
 
     // 孟婆汤
     public static final FoodProperties FORGETFULNESS_SOUP = new FoodProperties.Builder()
-            .nutrition(8).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
+            .nutrition(8).saturationMod(1.0f)
+            .effect(() -> new MobEffectInstance(WARMTH.get(), 80 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 红烧狮子头
     public static final FoodProperties BRAISED_LION_HEAD = new FoodProperties.Builder()
-            .nutrition(12).saturationMod(1.2f)
-            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F)
+            .nutrition(16).saturationMod(0.8f)
+            .effect(() -> new MobEffectInstance(WARMTH.get(), 80 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
 
     // 蒜蓉生蚝
     public static final FoodProperties GARLIC_OYSTERS = new FoodProperties.Builder()
-            .nutrition(6).saturationMod(0.7f)
-            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 600, 0), 1.0F)
+            .nutrition(13).saturationMod(0.611f)
+            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 180 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
     // 夫妻肺片
     public static final FoodProperties COUPLES_LUNG_SLICE = new FoodProperties.Builder()
-            .nutrition(10).saturationMod(1.0f)
-            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0F)
+            .nutrition(13).saturationMod(0.611f)
+            .effect(() -> new MobEffectInstance(WARMTH.get(), 80 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
 
     // 卤肉饭
     public static final FoodProperties BRAISED_PORK_RICE = new FoodProperties.Builder()
-            .nutrition(14).saturationMod(1.4f)
-            .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 200, 0), 1.0F)
+            .nutrition(13).saturationMod(0.611f)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
 
     // 胡椒猪肚鸡汤
     public static final FoodProperties PEPPER_PORK_BELLY_CHICKEN_SOUP = new FoodProperties.Builder()
-            .nutrition(10).saturationMod(1.1f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 400, 0), 1.0F)
+            .nutrition(20).saturationMod(0.55f)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
 
     // 玉米胡萝卜排骨汤
     public static final FoodProperties CORN_CARROT_PORK_RIB_SOUP = new FoodProperties.Builder()
-            .nutrition(9).saturationMod(1.0f)
-            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0), 1.0F)
+            .nutrition(20).saturationMod(0.55f)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();

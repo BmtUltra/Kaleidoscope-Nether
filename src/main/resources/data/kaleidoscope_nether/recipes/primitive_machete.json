@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "kaleidoscope_nether:hoglin_tusk"
+    },
+    "S": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "  #",
+    " # ",
+    "S  "
+  ],
+  "result": {
+    "item": "kaleidoscope_nether:primitive_machete"
+  },
+  "show_notification": true
+}
