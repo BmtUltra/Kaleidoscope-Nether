@@ -10,8 +10,6 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
-import com.google.common.collect.Sets;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,61 +17,43 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.LinkedHashSet;
-import java.util.function.Supplier;
-
 public class KNItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, KaleidoscopeNether.MOD_ID);
-    public static LinkedHashSet<RegistryObject<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
-
-    public static RegistryObject<Item> registerWithTab(final String name, final Supplier<Item> supplier) {
-        RegistryObject<Item> item = ITEMS.register(name, supplier);
-        CREATIVE_TAB_ITEMS.add(item);
-        return item;
-    }
-
-    public static Item.Properties basicItem() {
-        return new Item.Properties();
-    }
-
-    public static Item.Properties foodItem(FoodProperties food) {
-        return new Item.Properties().food(food);
-    }
 
     // 恶魂皮
-    public static final RegistryObject<Item> GHAST_HIDE = registerWithTab("ghast_hide",
+    public static final RegistryObject<Item> GHAST_HIDE = ITEMS.register("ghast_hide",
             () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 疣猪兽獠牙
-    public static final RegistryObject<Item> HOGLIN_TUSK = registerWithTab("hoglin_tusk",
+    public static final RegistryObject<Item> HOGLIN_TUSK = ITEMS.register("hoglin_tusk",
             () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 炽足兽岩壳
-    public static final RegistryObject<Item> STRIDER_ROCK_SHELL = registerWithTab("strider_rock_shell",
+    public static final RegistryObject<Item> STRIDER_ROCK_SHELL = ITEMS.register("strider_rock_shell",
             () -> new Item(new Item.Properties()
                     .fireResistant()));
 
     // 镀金碎片
-    public static final RegistryObject<Item> GILDED_FRAGMENT = registerWithTab("gilded_fragment",
+    public static final RegistryObject<Item> GILDED_FRAGMENT = ITEMS.register("gilded_fragment",
             () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 凋零骨头
-    public static final RegistryObject<Item> WITHER_RIB = registerWithTab("wither_rib",
+    public static final RegistryObject<Item> WITHER_RIB = ITEMS.register("wither_rib",
             () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     // 星之尘
-    public static final RegistryObject<Item> STAR_DUST = registerWithTab("star_dust",
+    public static final RegistryObject<Item> STAR_DUST = ITEMS.register("star_dust",
             () -> new StarDustItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // 烈焰珍珠
-    public static final RegistryObject<Item> BLAZE_HEART = registerWithTab("blaze_heart",
+    public static final RegistryObject<Item> BLAZE_HEART = ITEMS.register("blaze_heart",
             () -> new ThrowableFuelItem(new Item.Properties()
                     .rarity(Rarity.COMMON)
                     .stacksTo(16),
                     3000));
 
     // 疣猪兽皮
-    public static final RegistryObject<Item> HOGLIN_HIDE = registerWithTab("hoglin_hide",
+    public static final RegistryObject<Item> HOGLIN_HIDE = ITEMS.register("hoglin_hide",
             () -> new Item(new Item.Properties()));
 
     // 吹箭筒
@@ -83,20 +63,20 @@ public class KNItems {
                     .rarity(Rarity.UNCOMMON)));
 
     // 原始砍刀
-    public static final RegistryObject<Item> PRIMITIVE_MACHETE = registerWithTab("primitive_machete",
+    public static final RegistryObject<Item> PRIMITIVE_MACHETE = ITEMS.register("primitive_machete",
             () -> new KitchenKnifeItem(
                     new PrimitiveMacheteTier(),
                     new Item.Properties()
                             .durability(2031)
-                            //.rarity(Rarity.UNCOMMON)
+                    //.rarity(Rarity.UNCOMMON)
             ));
 
     // 恶魂挂坠
-    public static final RegistryObject<Item> GHAST_PENDANT = registerWithTab("ghast_pendant",
+    public static final RegistryObject<Item> GHAST_PENDANT = ITEMS.register("ghast_pendant",
             () -> new GhastPendantItem());
 
     // 烈焰永恒牛排
-    public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = registerWithTab("everlasting_flame_steak",
+    public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
             () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK,
                     Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get,
                     Config.EVERLASTING_FLAME_STEAK_ENABLED::get,
@@ -104,7 +84,7 @@ public class KNItems {
             ));
 
     // 绯红果
-    public static final RegistryObject<Item> CRIMSON_FRUIT = registerWithTab("crimson_fruit",
+    public static final RegistryObject<Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",
             () -> new SpecialFruitBlockItem(
                     KNBlocks.WEEPING_CAVE_VINES.get(),
                     KNFoods.CRIMSON_FRUIT,
@@ -115,7 +95,7 @@ public class KNItems {
             ));
 
     // 诡异果
-    public static final RegistryObject<Item> WARPED_FRUIT = registerWithTab("warped_fruit",
+    public static final RegistryObject<Item> WARPED_FRUIT = ITEMS.register("warped_fruit",
             () -> new SpecialFruitBlockItem(
                     KNBlocks.TWISTING_CAVE_VINES.get(),
                     KNFoods.WARPED_FRUIT,
@@ -126,91 +106,91 @@ public class KNItems {
             ));
 
     // 下界猪儿虫
-    public static final RegistryObject<Item> NETHER_CATERPILLAR = registerWithTab("nether_caterpillar",
+    public static final RegistryObject<Item> NETHER_CATERPILLAR = ITEMS.register("nether_caterpillar",
             () -> new NetherCaterpillarItem(KNFoods.NETHER_CATERPILLAR));
 
     // 回魂饭
-    public static final RegistryObject<Item> SOUL_RETURN_RICE = registerWithTab("soul_return_rice",
+    public static final RegistryObject<Item> SOUL_RETURN_RICE = ITEMS.register("soul_return_rice",
             () -> new SoulReturnRiceItem(KNFoods.SOUL_RETURN_RICE));
 
     // 熔岩烤鸡
-    public static final RegistryObject<Item> LAVA_ROASTED_CHICKEN = registerWithTab("lava_roasted_chicken",
+    public static final RegistryObject<Item> LAVA_ROASTED_CHICKEN = ITEMS.register("lava_roasted_chicken",
             () -> new LavaRoastedChickenItem(KNFoods.LAVA_ROASTED_CHICKEN));
 
     // 星之炖菜
-    public static final RegistryObject<Item> STAR_STEW = registerWithTab("star_stew",
+    public static final RegistryObject<Item> STAR_STEW = ITEMS.register("star_stew",
             () -> new BowlFoodOnlyItem(KNFoods.STAR_STEW));
 
     // 灵魂椒
-    public static final RegistryObject<Item> SOUL_PEPPER = registerWithTab("soul_pepper",
+    public static final RegistryObject<Item> SOUL_PEPPER = ITEMS.register("soul_pepper",
             () -> new ChiliItem(4));
 
     // 灵魂浓汤
-    public static final RegistryObject<Item> SOUL_SOUP = registerWithTab("soul_soup",
+    public static final RegistryObject<Item> SOUL_SOUP = ITEMS.register("soul_soup",
             () -> new BowlFoodOnlyItem(KNFoods.SOUL_SOUP));
 
     // 生炽足兽肉
-    public static final RegistryObject<Item> RAW_STRIDER_MEAT = registerWithTab("raw_strider_meat",
-            () -> new Item(foodItem(KNFoods.RAW_STRIDER_MEAT)));
+    public static final RegistryObject<Item> RAW_STRIDER_MEAT = ITEMS.register("raw_strider_meat",
+            () -> new Item(new Item.Properties().food(KNFoods.RAW_STRIDER_MEAT)));
 
     // 熟炽足兽肉
-    public static final RegistryObject<Item> COOKED_STRIDER_MEAT = registerWithTab("cooked_strider_meat",
-            () -> new Item(foodItem(KNFoods.COOKED_STRIDER_MEAT)));
+    public static final RegistryObject<Item> COOKED_STRIDER_MEAT = ITEMS.register("cooked_strider_meat",
+            () -> new Item(new Item.Properties().food(KNFoods.COOKED_STRIDER_MEAT)));
 
     // 疣猪火腿
-    public static final RegistryObject<Item> HAM = registerWithTab("ham",
-            () -> new Item(foodItem(KNFoods.HAM)));
+    public static final RegistryObject<Item> HAM = ITEMS.register("ham",
+            () -> new Item(new Item.Properties().food(KNFoods.HAM)));
 
     // 火腿片
-    public static final RegistryObject<Item> HAM_SLICE = registerWithTab("ham_slice",
-            () -> new Item(foodItem(KNFoods.HAM_SLICE)));
+    public static final RegistryObject<Item> HAM_SLICE = ITEMS.register("ham_slice",
+            () -> new Item(new Item.Properties().food(KNFoods.HAM_SLICE)));
 
     // 烤疣猪火腿
-    public static final RegistryObject<Item> ROASTED_HAM = registerWithTab("roasted_ham",
-            () -> new Item(foodItem(KNFoods.ROASTED_HAM)));
+    public static final RegistryObject<Item> ROASTED_HAM = ITEMS.register("roasted_ham",
+            () -> new Item(new Item.Properties().food(KNFoods.ROASTED_HAM)));
 
     // 肉夹馍
-    public static final RegistryObject<Item> ROUJIAMO = registerWithTab("roujiamo",
+    public static final RegistryObject<Item> ROUJIAMO = ITEMS.register("roujiamo",
             () -> new FoodWithEffectsItem(KNFoods.ROUJIAMO));
 
     // 红烧炽足兽
-    public static final RegistryObject<Item> BRAISED_STRIDER = registerWithTab("braised_strider",
+    public static final RegistryObject<Item> BRAISED_STRIDER = ITEMS.register("braised_strider",
             () -> new BowlFoodOnlyItem(KNFoods.BRAISED_STRIDER));
 
     // 凋零大骨汤
-    public static final RegistryObject<Item> WITHER_BONE_SOUP = registerWithTab("wither_bone_soup",
+    public static final RegistryObject<Item> WITHER_BONE_SOUP = ITEMS.register("wither_bone_soup",
             () -> new BowlFoodOnlyItem(KNFoods.WITHER_BONE_SOUP));
 
     // 炽足兽炖下界疣
-    public static final RegistryObject<Item> STRIDER_NETHER_WART_STEW = registerWithTab("strider_nether_wart_stew",
+    public static final RegistryObject<Item> STRIDER_NETHER_WART_STEW = ITEMS.register("strider_nether_wart_stew",
             () -> new BowlFoodOnlyItem(KNFoods.STRIDER_NETHER_WART_STEW));
 
     // 恶魂烤串
-    public static final RegistryObject<Item> GHAST_KABOB = registerWithTab("ghast_kabob",
+    public static final RegistryObject<Item> GHAST_KABOB = ITEMS.register("ghast_kabob",
             () -> new StickReturnFoodItem(KNFoods.GHAST_KABOB));
 
     // 恶魂触手
-    public static final RegistryObject<Item> GHAST_TENTACLE = registerWithTab("ghast_tentacle",
-            () -> new Item(foodItem(KNFoods.GHAST_TENTACLE)));
+    public static final RegistryObject<Item> GHAST_TENTACLE = ITEMS.register("ghast_tentacle",
+            () -> new Item(new Item.Properties().food(KNFoods.GHAST_TENTACLE)));
 
     // 烤恶魂触手
-    public static final RegistryObject<Item> ROASTED_GHAST_TENTACLE = registerWithTab("roasted_ghast_tentacle",
-            () -> new Item(foodItem(KNFoods.ROASTED_GHAST_TENTACLE)));
+    public static final RegistryObject<Item> ROASTED_GHAST_TENTACLE = ITEMS.register("roasted_ghast_tentacle",
+            () -> new Item(new Item.Properties().food(KNFoods.ROASTED_GHAST_TENTACLE)));
 
     // 恶魂意面
-    public static final RegistryObject<Item> GHAST_PASTA = registerWithTab("ghast_pasta",
+    public static final RegistryObject<Item> GHAST_PASTA = ITEMS.register("ghast_pasta",
             () -> new BowlFoodOnlyItem(KNFoods.GHAST_PASTA));
 
     // 岩浆膏浓汤
-    public static final RegistryObject<Item> MAGMA_CREAM_SOUP = registerWithTab("magma_cream_soup",
+    public static final RegistryObject<Item> MAGMA_CREAM_SOUP = ITEMS.register("magma_cream_soup",
             () -> new BowlFoodOnlyItem(KNFoods.MAGMA_CREAM_SOUP));
 
     // 岩浆膏布丁
-    public static final RegistryObject<Item> MAGMA_CREAM_PUDDING = registerWithTab("magma_cream_pudding",
+    public static final RegistryObject<Item> MAGMA_CREAM_PUDDING = ITEMS.register("magma_cream_pudding",
             () -> new BowlFoodOnlyItem(KNFoods.MAGMA_CREAM_PUDDING));
 
     // 剧毒果
-    public static final RegistryObject<Item> POISONOUS_FRUIT = registerWithTab("poisonous_fruit",
+    public static final RegistryObject<Item> POISONOUS_FRUIT = ITEMS.register("poisonous_fruit",
             () -> new MysteriousPoisonFoodBlockItem(
                     KNBlocks.POISONOUS_FRUIT.get(),
                     KNFoods.POISONOUS_FRUIT,
@@ -220,243 +200,243 @@ public class KNItems {
             ));
 
     // 剧毒浓汤
-    public static final RegistryObject<Item> POISONOUS_SOUP = registerWithTab("poisonous_soup",
+    public static final RegistryObject<Item> POISONOUS_SOUP = ITEMS.register("poisonous_soup",
             () -> new BowlFoodOnlyItem(KNFoods.POISONOUS_SOUP));
 
     // 灵魂浇汁烤肉
-    public static final RegistryObject<Item> SOUL_GLAZED_ROAST = registerWithTab("soul_glazed_roast",
+    public static final RegistryObject<Item> SOUL_GLAZED_ROAST = ITEMS.register("soul_glazed_roast",
             () -> new BowlFoodOnlyItem(KNFoods.SOUL_GLAZED_ROAST));
 
     // 恶魂布丁
-    public static final RegistryObject<Item> GHAST_PUDDING = registerWithTab("ghast_pudding",
+    public static final RegistryObject<Item> GHAST_PUDDING = ITEMS.register("ghast_pudding",
             () -> new BowlFoodOnlyItem(KNFoods.GHAST_PUDDING));
 
     // 野蛮烤肉
-    public static final RegistryObject<Item> GILDED_BARBARIC_ROAST = registerWithTab("gilded_barbaric_roast",
+    public static final RegistryObject<Item> GILDED_BARBARIC_ROAST = ITEMS.register("gilded_barbaric_roast",
             () -> new BowlFoodOnlyItem(KNFoods.GILDED_BARBARIC_ROAST));
 
     // 下界猪儿虫刺身
-    public static final RegistryObject<Item> NETHER_CATERPILLAR_SASHIMI = registerWithTab("nether_caterpillar_sashimi",
+    public static final RegistryObject<Item> NETHER_CATERPILLAR_SASHIMI = ITEMS.register("nether_caterpillar_sashimi",
             () -> new BowlFoodOnlyItem(KNFoods.NETHER_CATERPILLAR_SASHIMI));
 
     // 黄金烤肉
-    public static final RegistryObject<Item> GOLDEN_ROAST = registerWithTab("golden_roast",
+    public static final RegistryObject<Item> GOLDEN_ROAST = ITEMS.register("golden_roast",
             () -> new BowlFoodOnlyItem(KNFoods.GOLDEN_ROAST));
 
     // 下界薯条拼盘
-    public static final RegistryObject<Item> NETHER_FRIES_PLATTER = registerWithTab("nether_fries_platter",
+    public static final RegistryObject<Item> NETHER_FRIES_PLATTER = ITEMS.register("nether_fries_platter",
             () -> new BowlFoodOnlyItem(KNFoods.NETHER_FRIES_PLATTER));
 
     // 疣猪兽獠牙焖肉
-    public static final RegistryObject<Item> HOGLIN_TUSK_BRAISED_MEAT = registerWithTab("hoglin_tusk_braised_meat",
+    public static final RegistryObject<Item> HOGLIN_TUSK_BRAISED_MEAT = ITEMS.register("hoglin_tusk_braised_meat",
             () -> new FoodWithEffectsItem(KNFoods.HOGLIN_TUSK_BRAISED_MEAT));
 
     // 剧毒恶魂烤肉
-    public static final RegistryObject<Item> POISONOUS_GHAST_ROAST = registerWithTab("poisonous_ghast_roast",
+    public static final RegistryObject<Item> POISONOUS_GHAST_ROAST = ITEMS.register("poisonous_ghast_roast",
             () -> new BowlFoodOnlyItem(KNFoods.POISONOUS_GHAST_ROAST));
 
     // 灵魂椒炒肉
-    public static final RegistryObject<Item> SOUL_PEPPER_STIR_FRY = registerWithTab("soul_pepper_stir_fry",
+    public static final RegistryObject<Item> SOUL_PEPPER_STIR_FRY = ITEMS.register("soul_pepper_stir_fry",
             () -> new BowlFoodOnlyItem(KNFoods.SOUL_PEPPER_STIR_FRY));
 
     // 炽足兽岩壳炒肉
-    public static final RegistryObject<Item> STRIDER_SHELL_STIR_FRY = registerWithTab("strider_shell_stir_fry",
+    public static final RegistryObject<Item> STRIDER_SHELL_STIR_FRY = ITEMS.register("strider_shell_stir_fry",
             () -> new BowlFoodOnlyItem(KNFoods.STRIDER_SHELL_STIR_FRY));
 
     // 下界果切拼盘
-    public static final RegistryObject<Item> FRUIT_PLATTER = registerWithTab("fruit_platter",
+    public static final RegistryObject<Item> FRUIT_PLATTER = ITEMS.register("fruit_platter",
             () -> new BowlFoodOnlyItem(KNFoods.FRUIT_PLATTER));
 
     // 火腿酸酪
-    public static final RegistryObject<Item> HAM_YOGURT = registerWithTab("ham_yogurt",
+    public static final RegistryObject<Item> HAM_YOGURT = ITEMS.register("ham_yogurt",
             () -> new BowlFoodOnlyItem(KNFoods.HAM_YOGURT));
 
     // 酸菜鱼
-    public static final RegistryObject<Item> SAUERKRAUT_FISH = registerWithTab("sauerkraut_fish",
+    public static final RegistryObject<Item> SAUERKRAUT_FISH = ITEMS.register("sauerkraut_fish",
             () -> new BowlFoodOnlyItem(KNFoods.SAUERKRAUT_FISH));
 
     // 烈焰浓汤
-    public static final RegistryObject<Item> BLAZE_SOUP = registerWithTab("blaze_soup",
+    public static final RegistryObject<Item> BLAZE_SOUP = ITEMS.register("blaze_soup",
             () -> new BowlFoodOnlyItem(KNFoods.BLAZE_SOUP));
 
     // 熔岩果冻
-    public static final RegistryObject<Item> LAVA_JELLY = registerWithTab("lava_jelly",
+    public static final RegistryObject<Item> LAVA_JELLY = ITEMS.register("lava_jelly",
             () -> new BowlFoodOnlyItem(KNFoods.LAVA_JELLY));
 
     // 绯红沙拉
-    public static final RegistryObject<Item> CRIMSON_SALAD = registerWithTab("crimson_salad",
+    public static final RegistryObject<Item> CRIMSON_SALAD = ITEMS.register("crimson_salad",
             () -> new BowlFoodOnlyItem(KNFoods.CRIMSON_SALAD));
 
     // 绯红菌岩浆膏炖肉
-    public static final RegistryObject<Item> CRIMSON_MAGMA_STEW = registerWithTab("crimson_magma_stew",
+    public static final RegistryObject<Item> CRIMSON_MAGMA_STEW = ITEMS.register("crimson_magma_stew",
             () -> new BowlFoodOnlyItem(KNFoods.CRIMSON_MAGMA_STEW));
 
     // 诡异沙拉
-    public static final RegistryObject<Item> WARPED_SALAD = registerWithTab("warped_salad",
+    public static final RegistryObject<Item> WARPED_SALAD = ITEMS.register("warped_salad",
             () -> new BowlFoodOnlyItem(KNFoods.WARPED_SALAD));
 
     // 灵魂炽足兽烤串
-    public static final RegistryObject<Item> SOUL_STRIDER_KABOB = registerWithTab("soul_strider_kabob",
+    public static final RegistryObject<Item> SOUL_STRIDER_KABOB = ITEMS.register("soul_strider_kabob",
             () -> new StickReturnFoodItem(KNFoods.SOUL_STRIDER_KABOB));
 
     // 黄金烤串
-    public static final RegistryObject<Item> GOLDEN_KABOB = registerWithTab("golden_kabob",
+    public static final RegistryObject<Item> GOLDEN_KABOB = ITEMS.register("golden_kabob",
             () -> new StickReturnFoodItem(KNFoods.GOLDEN_KABOB));
 
     // 烈焰烤串
-    public static final RegistryObject<Item> BLAZING_KABOB = registerWithTab("blazing_kabob",
+    public static final RegistryObject<Item> BLAZING_KABOB = ITEMS.register("blazing_kabob",
             () -> new StickReturnFoodItem(KNFoods.BLAZING_KABOB));
 
     // 绯红烤串
-    public static final RegistryObject<Item> CRIMSON_KABOB = registerWithTab("crimson_kabob",
+    public static final RegistryObject<Item> CRIMSON_KABOB = ITEMS.register("crimson_kabob",
             () -> new StickReturnFoodItem(KNFoods.CRIMSON_KABOB));
 
     // 诡异烤串
-    public static final RegistryObject<Item> WARPED_KABOB = registerWithTab("warped_kabob",
+    public static final RegistryObject<Item> WARPED_KABOB = ITEMS.register("warped_kabob",
             () -> new StickReturnFoodItem(KNFoods.WARPED_KABOB));
 
     // 星之恶魂意面
-    public static final RegistryObject<Item> STAR_GHAST_PASTA = registerWithTab("star_ghast_pasta",
+    public static final RegistryObject<Item> STAR_GHAST_PASTA = ITEMS.register("star_ghast_pasta",
             () -> new BowlFoodOnlyItem(KNFoods.STAR_GHAST_PASTA));
 
     // 星之炖肉
-    public static final RegistryObject<Item> STAR_STEW_MEAT = registerWithTab("star_stew_meat",
+    public static final RegistryObject<Item> STAR_STEW_MEAT = ITEMS.register("star_stew_meat",
             () -> new BowlFoodOnlyItem(KNFoods.STAR_STEW_MEAT));
 
     // 荧光浓汤
-    public static final RegistryObject<Item> GLOWING_SOUP = registerWithTab("glowing_soup",
+    public static final RegistryObject<Item> GLOWING_SOUP = ITEMS.register("glowing_soup",
             () -> new BowlFoodOnlyItem(KNFoods.GLOWING_SOUP));
 
     // 荧光布丁
-    public static final RegistryObject<Item> GLOWING_PUDDING = registerWithTab("glowing_pudding",
+    public static final RegistryObject<Item> GLOWING_PUDDING = ITEMS.register("glowing_pudding",
             () -> new BowlFoodOnlyItem(KNFoods.GLOWING_PUDDING));
 
     // 荧光烤串
-    public static final RegistryObject<Item> GLOWING_KABOB = registerWithTab("glowing_kabob",
+    public static final RegistryObject<Item> GLOWING_KABOB = ITEMS.register("glowing_kabob",
             () -> new StickReturnFoodItem(KNFoods.GLOWING_KABOB));
 
     // 荧光沙拉
-    public static final RegistryObject<Item> GLOWING_SALAD = registerWithTab("glowing_salad",
+    public static final RegistryObject<Item> GLOWING_SALAD = ITEMS.register("glowing_salad",
             () -> new BowlFoodOnlyItem(KNFoods.GLOWING_SALAD));
 
     // 黑苹果沙拉
-    public static final RegistryObject<Item> BLACK_APPLE_SALAD = registerWithTab("black_apple_salad",
+    public static final RegistryObject<Item> BLACK_APPLE_SALAD = ITEMS.register("black_apple_salad",
             () -> new BowlFoodOnlyItem(KNFoods.BLACK_APPLE_SALAD));
 
     // 红宝石牛排
-    public static final RegistryObject<Item> RUBY_STEAK = registerWithTab("ruby_steak",
+    public static final RegistryObject<Item> RUBY_STEAK = ITEMS.register("ruby_steak",
             () -> new BowlFoodOnlyItem(KNFoods.RUBY_STEAK));
 
     // 下界芦苇炖菜
-    public static final RegistryObject<Item> NETHER_REED_STEW = registerWithTab("nether_reed_stew",
+    public static final RegistryObject<Item> NETHER_REED_STEW = ITEMS.register("nether_reed_stew",
             () -> new BowlFoodOnlyItem(KNFoods.NETHER_REED_STEW));
 
     // 岩浆膏炒肉
-    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY = registerWithTab("magma_cream_stir_fry",
+    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY = ITEMS.register("magma_cream_stir_fry",
             () -> new BowlFoodOnlyItem(KNFoods.MAGMA_CREAM_STIR_FRY));
 
     // 岩浆膏炒肉盖饭
-    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY_RICE = registerWithTab("magma_cream_stir_fry_rice",
+    public static final RegistryObject<Item> MAGMA_CREAM_STIR_FRY_RICE = ITEMS.register("magma_cream_stir_fry_rice",
             () -> new BowlFoodOnlyItem(KNFoods.MAGMA_CREAM_STIR_FRY_RICE));
 
     // 麻婆豆腐
-    public static final RegistryObject<Item> MAPO_TOFU = registerWithTab("mapo_tofu",
+    public static final RegistryObject<Item> MAPO_TOFU = ITEMS.register("mapo_tofu",
             () -> new BowlFoodOnlyItem(KNFoods.MAPO_TOFU));
 
     // 麻婆豆腐盖饭
-    public static final RegistryObject<Item> MAPO_TOFU_RICE = registerWithTab("mapo_tofu_rice",
+    public static final RegistryObject<Item> MAPO_TOFU_RICE = ITEMS.register("mapo_tofu_rice",
             () -> new BowlFoodOnlyItem(KNFoods.MAPO_TOFU_RICE));
 
     // 诡异蛋糕
-    public static final RegistryObject<Item> WARPED_CAKE = registerWithTab("warped_cake",
+    public static final RegistryObject<Item> WARPED_CAKE = ITEMS.register("warped_cake",
             () -> new FoodWithEffectsItem(KNFoods.WARPED_CAKE));
 
     // 重庆小面
-    public static final RegistryObject<Item> CHONGQING_NOODLES = registerWithTab("chongqing_noodles",
+    public static final RegistryObject<Item> CHONGQING_NOODLES = ITEMS.register("chongqing_noodles",
             () -> new BowlFoodOnlyItem(KNFoods.CHONGQING_NOODLES));
 
     // 螺蛳粉
-    public static final RegistryObject<Item> LUOSIFEN = registerWithTab("luosifen",
+    public static final RegistryObject<Item> LUOSIFEN = ITEMS.register("luosifen",
             () -> new BowlFoodOnlyItem(KNFoods.LUOSIFEN));
 
     // 灵魂炒肉
-    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT = registerWithTab("soul_stir_fry_meat",
+    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT = ITEMS.register("soul_stir_fry_meat",
             () -> new BowlFoodOnlyItem(KNFoods.SOUL_STIR_FRY_MEAT));
 
     // 灵魂炒肉盖饭
-    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT_RICE = registerWithTab("soul_stir_fry_meat_rice",
+    public static final RegistryObject<Item> SOUL_STIR_FRY_MEAT_RICE = ITEMS.register("soul_stir_fry_meat_rice",
             () -> new BowlFoodOnlyItem(KNFoods.SOUL_STIR_FRY_MEAT_RICE));
 
     // 焦糖下界猪儿虫
-    public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR = registerWithTab("caramel_nether_caterpillar",
+    public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR = ITEMS.register("caramel_nether_caterpillar",
             () -> new BowlFoodOnlyItem(KNFoods.CARAMEL_NETHER_CATERPILLAR));
 
     // 焦糖下界猪儿虫盖饭
-    public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR_RICE = registerWithTab("caramel_nether_caterpillar_rice",
+    public static final RegistryObject<Item> CARAMEL_NETHER_CATERPILLAR_RICE = ITEMS.register("caramel_nether_caterpillar_rice",
             () -> new BowlFoodOnlyItem(KNFoods.CARAMEL_NETHER_CATERPILLAR_RICE));
 
     // 生猪灵肉
-    public static final RegistryObject<Item> RAW_PIGLIN_MEAT = registerWithTab("raw_piglin_meat",
-            () -> new Item(foodItem(KNFoods.RAW_PIGLIN_MEAT)));
+    public static final RegistryObject<Item> RAW_PIGLIN_MEAT = ITEMS.register("raw_piglin_meat",
+            () -> new Item(new Item.Properties().food(KNFoods.RAW_PIGLIN_MEAT)));
 
     // 熟猪灵肉
-    public static final RegistryObject<Item> COOKED_PIGLIN_MEAT = registerWithTab("cooked_piglin_meat",
-            () -> new Item(foodItem(KNFoods.COOKED_PIGLIN_MEAT)));
+    public static final RegistryObject<Item> COOKED_PIGLIN_MEAT = ITEMS.register("cooked_piglin_meat",
+            () -> new Item(new Item.Properties().food(KNFoods.COOKED_PIGLIN_MEAT)));
 
     // 诡异霉烂肉
-    public static final RegistryObject<Item> WARPED_HOGLIN_TENDERLOIN_STEW = registerWithTab("warped_hoglin_tenderloin_stew",
+    public static final RegistryObject<Item> WARPED_HOGLIN_TENDERLOIN_STEW = ITEMS.register("warped_hoglin_tenderloin_stew",
             () -> new BowlFoodOnlyItem(KNFoods.WARPED_HOGLIN_TENDERLOIN_STEW));
 
     // 麻辣疣猪兽拉面
-    public static final RegistryObject<Item> SPICY_HOGLIN_RAMEN = registerWithTab("spicy_hoglin_ramen",
+    public static final RegistryObject<Item> SPICY_HOGLIN_RAMEN = ITEMS.register("spicy_hoglin_ramen",
             () -> new BowlFoodOnlyItem(KNFoods.SPICY_HOGLIN_RAMEN));
 
     // 麻辣香锅
-    public static final RegistryObject<Item> SPICY_POT = registerWithTab("spicy_pot",
+    public static final RegistryObject<Item> SPICY_POT = ITEMS.register("spicy_pot",
             () -> new BowlFoodOnlyItem(KNFoods.SPICY_POT));
 
     // 麻辣香锅盖饭
-    public static final RegistryObject<Item> SPICY_POT_RICE = registerWithTab("spicy_pot_rice",
+    public static final RegistryObject<Item> SPICY_POT_RICE = ITEMS.register("spicy_pot_rice",
             () -> new BowlFoodOnlyItem(KNFoods.SPICY_POT_RICE));
 
     // 巨兽牛角包
-    public static final RegistryObject<Item> GIANT_BEAST_CROISSANT = registerWithTab("giant_beast_croissant",
+    public static final RegistryObject<Item> GIANT_BEAST_CROISSANT = ITEMS.register("giant_beast_croissant",
             () -> new CataclysmBuffFoodItem(KNFoods.GIANT_BEAST_CROISSANT, 240));
 
     // 魔眼咕噜肉
-    public static final RegistryObject<Item> MAGMA_SWEET_AND_SOUR_PORK = registerWithTab("magma_sweet_and_sour_pork",
+    public static final RegistryObject<Item> MAGMA_SWEET_AND_SOUR_PORK = ITEMS.register("magma_sweet_and_sour_pork",
             () -> new MagmaSweetAndSourPorkItem(KNFoods.MAGMA_SWEET_AND_SOUR_PORK));
 
     // 孟婆汤
-    public static final RegistryObject<Item> FORGETFULNESS_SOUP = registerWithTab("forgetfulness_soup",
+    public static final RegistryObject<Item> FORGETFULNESS_SOUP = ITEMS.register("forgetfulness_soup",
             () -> new ForgetfulnessSoupItem(KNFoods.FORGETFULNESS_SOUP));
 
     // 红烧狮子头
-    public static final RegistryObject<Item> BRAISED_LION_HEAD = registerWithTab("braised_lion_head",
+    public static final RegistryObject<Item> BRAISED_LION_HEAD = ITEMS.register("braised_lion_head",
             () -> new BowlFoodOnlyItem(KNFoods.BRAISED_LION_HEAD));
 
     // 蒜蓉生蚝
-    public static final RegistryObject<Item> GARLIC_OYSTERS = registerWithTab("garlic_oysters",
+    public static final RegistryObject<Item> GARLIC_OYSTERS = ITEMS.register("garlic_oysters",
             () -> new BowlFoodOnlyItem(KNFoods.GARLIC_OYSTERS));
 
     // 夫妻肺片
-    public static final RegistryObject<Item> COUPLES_LUNG_SLICE = registerWithTab("couples_lung_slice",
+    public static final RegistryObject<Item> COUPLES_LUNG_SLICE = ITEMS.register("couples_lung_slice",
             () -> new BowlFoodOnlyItem(KNFoods.COUPLES_LUNG_SLICE));
 
     // 卤肉饭
-    public static final RegistryObject<Item> BRAISED_PORK_RICE = registerWithTab("braised_pork_rice",
+    public static final RegistryObject<Item> BRAISED_PORK_RICE = ITEMS.register("braised_pork_rice",
             () -> new BowlFoodOnlyItem(KNFoods.BRAISED_PORK_RICE));
 
     // 胡椒猪肚鸡汤
-    public static final RegistryObject<Item> PEPPER_PORK_BELLY_CHICKEN_SOUP = registerWithTab("pepper_pork_belly_chicken_soup",
+    public static final RegistryObject<Item> PEPPER_PORK_BELLY_CHICKEN_SOUP = ITEMS.register("pepper_pork_belly_chicken_soup",
             () -> new BowlFoodOnlyItem(KNFoods.PEPPER_PORK_BELLY_CHICKEN_SOUP));
 
     // 玉米胡萝卜排骨汤
-    public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = registerWithTab("corn_carrot_pork_rib_soup",
+    public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
             () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
 
     // 广式肠粉
-    public static final RegistryObject<Item> CANTONESE_RICE_NOODLE_ROLL = registerWithTab("cantonese_rice_noodle_roll",
+    public static final RegistryObject<Item> CANTONESE_RICE_NOODLE_ROLL = ITEMS.register("cantonese_rice_noodle_roll",
             () -> new BowlFoodOnlyItem(KNFoods.CANTONESE_RICE_NOODLE_ROLL));
 
     public static void register(IEventBus eventBus) {
