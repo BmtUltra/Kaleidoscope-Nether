@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Objects;
 
-public class ModCreativeTabs {
+public class KNCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, KaleidoscopeNether.MOD_ID);
     public static final RegistryObject<CreativeModeTab> KALEIDOSCOPE_NETHER_TAB = CREATIVE_MODE_TABS.register("kaleidoscope_nether_tab",
@@ -23,12 +23,14 @@ public class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         //output.accept(KNItems.RAW_GHAST_MEAT.get());
                         //output.accept(KNItems.COOKED_GHAST_MEAT.get());
+                        output.accept(KNItems.PRIMITIVE_MACHETE.get());
                         output.accept(KNItems.GHAST_TENTACLE.get());
                         output.accept(KNItems.ROASTED_GHAST_TENTACLE.get());
-                        output.accept(KNItems.GHAST_HIDE.get());
+                        //output.accept(KNItems.GHAST_HIDE.get());
                         output.accept(KNItems.HAM_SLICE.get());
                         output.accept(KNItems.HAM.get());
                         output.accept(KNItems.HOGLIN_HIDE.get());
+                        output.accept(KNItems.NETHER_CATERPILLAR.get());
                         output.accept(KNItems.RAW_PIGLIN_MEAT.get());
                         output.accept(KNItems.COOKED_PIGLIN_MEAT.get());
                         output.accept(KNItems.RAW_STRIDER_MEAT.get());
@@ -37,7 +39,6 @@ public class ModCreativeTabs {
                         output.accept(KNItems.STRIDER_ROCK_SHELL.get());
                         output.accept(KNItems.GILDED_FRAGMENT.get());
                         output.accept(KNItems.WITHER_RIB.get());
-                        output.accept(KNItems.NETHER_CATERPILLAR.get());
                         output.accept(KNItems.STAR_DUST.get());
                         //output.accept(KNItems.GOLDEN_PLATE.get());
                         output.accept(KNItems.BLAZE_HEART.get());
@@ -46,6 +47,8 @@ public class ModCreativeTabs {
                         output.accept(KNItems.WARPED_FRUIT.get());
                         output.accept(KNItems.SOUL_PEPPER.get());
                         output.accept(KNItems.POISONOUS_FRUIT.get());
+                        output.accept(KNItems.LAVA_ROASTED_CHICKEN.get());
+                        output.accept(KNItems.ROUJIAMO.get());
                         output.accept(KNItems.SPICY_POT.get());
                         output.accept(KNItems.SPICY_POT_RICE.get());
                         output.accept(KNItems.MAPO_TOFU.get());
@@ -112,14 +115,21 @@ public class ModCreativeTabs {
                         output.accept(KNItems.CRIMSON_KABOB.get());
                         output.accept(KNItems.WARPED_KABOB.get());
                         output.accept(KNItems.GLOWING_KABOB.get());
-                        output.accept(KNItems.LAVA_ROASTED_CHICKEN.get());
-                        output.accept(KNItems.ROUJIAMO.get());
-                        output.accept(KNItems.ROASTED_HAM.get());
+                        //output.accept(KNItems.ROASTED_HAM.get());
 
                         output.accept(KNItems.GHAST_PENDANT.get());
 
                         output.accept(KNItems.GIANT_BEAST_CROISSANT.get());
                         output.accept(KNItems.MAGMA_SWEET_AND_SOUR_PORK.get());
+
+                        output.accept(KNItems.FORGETFULNESS_SOUP.get());
+                        output.accept(KNItems.BRAISED_LION_HEAD.get());
+                        output.accept(KNItems.BRAISED_PORK_RICE.get());
+                        output.accept(KNItems.GARLIC_OYSTERS.get());
+                        output.accept(KNItems.COUPLES_LUNG_SLICE.get());
+                        output.accept(KNItems.CANTONESE_RICE_NOODLE_ROLL.get());
+                        output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
+                        output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
                     })
                     .build());
 }

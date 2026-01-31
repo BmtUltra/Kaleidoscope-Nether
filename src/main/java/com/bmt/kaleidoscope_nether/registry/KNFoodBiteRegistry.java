@@ -9,7 +9,9 @@ public class KNFoodBiteRegistry {
 
     public static void init() {
         FoodBiteRegistry registry = new FoodBiteRegistry();
-        SOUL_LAMB_CHOP = registry.registerFoodData(KaleidoscopeNether.id("soul_lamb_chop"), FoodBiteRegistry.FoodData.create(3, KNFoods.SOUL_LAMB_CHOP_BLOCK, KNFoods.SOUL_LAMB_CHOP_ITEM).setAnimateTick(null));
+        SOUL_LAMB_CHOP = registry.registerFoodData(KaleidoscopeNether.id("soul_lamb_chop"), FoodBiteRegistry.FoodData
+                .create(3, KNFoods.SOUL_LAMB_CHOP_BLOCK, KNFoods.SOUL_LAMB_CHOP_ITEM)
+        );
 
     }
 

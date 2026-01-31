@@ -1,24 +1,17 @@
 package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
-import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
 import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.registry.*;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -42,11 +35,10 @@ public class KaleidoscopeNether {
         CREATIVE_MODE_TABS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
         KNEffects.EFFECTS.register(modEventBus);
-        ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-        ModAttributes.ATTRIBUTES.register(modEventBus);
-        ModEnchantments.ENCHANTMENTS.register(modEventBus);
-        ModSounds.SOUND_EVENTS.register(modEventBus);
-        ModEntities.ENTITIES.register(modEventBus);
+        KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        KNEnchantments.ENCHANTMENTS.register(modEventBus);
+        KNSounds.SOUND_EVENTS.register(modEventBus);
+        KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -54,7 +46,6 @@ public class KaleidoscopeNether {
 
         KNFoodBiteRegistry.init();
     }
-
 
     public static ResourceLocation id(String name) {
         return ResourceLocation.tryBuild(MOD_ID, name);
@@ -65,28 +56,7 @@ public class KaleidoscopeNether {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("Glowing Buff effect now allows eating regardless of hunger level");
-
+        event.enqueueWork(KNComposterRegistry::register);
         KNAdvancementTriggerRegistry.init();
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-
-            event.enqueueWork(() -> {
-                EntityRenderers.register(ModEntities.BLAZE_HEART_PROJECTILE.get(),
-                        BlazeHeartProjectileRenderer::new);
-            });
-        }
     }
 }

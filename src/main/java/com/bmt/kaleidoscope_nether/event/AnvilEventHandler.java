@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.bmt.kaleidoscope_nether.registry.ModEnchantments;
+import com.bmt.kaleidoscope_nether.registry.KNEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
@@ -22,7 +22,7 @@ public class AnvilEventHandler {
         ItemStack right = event.getRight();
 
         if (isBoots(left) && right.is(KNItems.STRIDER_ROCK_SHELL.get())) {
-            if (EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.LAVA_WALKER.get(), left) > 0) {
+            if (EnchantmentHelper.getItemEnchantmentLevel(KNEnchantments.LAVA_WALKER.get(), left) > 0) {
                 return;
             }
 
@@ -46,7 +46,7 @@ public class AnvilEventHandler {
             resultTag.putInt(SHELL_COUNT_TAG, newShellCount);
 
             if (newShellCount >= REQUIRED_SHELLS) {
-                result.enchant(ModEnchantments.LAVA_WALKER.get(), 1);
+                result.enchant(KNEnchantments.LAVA_WALKER.get(), 1);
                 resultTag.remove(SHELL_COUNT_TAG);
             }
 

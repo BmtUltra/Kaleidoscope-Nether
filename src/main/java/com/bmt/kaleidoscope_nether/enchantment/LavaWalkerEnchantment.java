@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.enchantment;
 
-import com.bmt.kaleidoscope_nether.registry.ModEnchantments;
+import com.bmt.kaleidoscope_nether.registry.KNEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -110,7 +110,7 @@ public class LavaWalkerEnchantment extends Enchantment {
             ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 
             if (!boots.isEmpty()) {
-                int lavaWalkerLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.LAVA_WALKER.get(), boots);
+                int lavaWalkerLevel = EnchantmentHelper.getItemEnchantmentLevel(KNEnchantments.LAVA_WALKER.get(), boots);
 
                 if (lavaWalkerLevel > 0) {
                     applyLavaWalkerEffect(player);

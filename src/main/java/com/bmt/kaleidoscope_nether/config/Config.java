@@ -24,11 +24,6 @@ public class Config
     public static final ForgeConfigSpec.BooleanValue NETHER_CATERPILLAR_ENABLED;
     public static final ForgeConfigSpec.DoubleValue NETHER_CATERPILLAR_DROP_CHANCE;
 
-    public static final ForgeConfigSpec.IntValue STAR_BLESSING_LEVEL_3_ARMOR_BONUS;
-    public static final ForgeConfigSpec.IntValue STAR_BLESSING_LEVEL_6_TOUGHNESS_BONUS;
-    public static final ForgeConfigSpec.IntValue STAR_BLESSING_LEVEL_9_KNOCKBACK_RESISTANCE;
-    public static final ForgeConfigSpec.BooleanValue STAR_BLESSING_LEVEL_12_FIRE_IMMUNITY;
-
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> WARPED_BUFF_AFFECTED_MOBS;
 
     public static final ForgeConfigSpec.DoubleValue BLESSING_ENCHANTMENT_HEAL_AMOUNT;
@@ -75,26 +70,6 @@ public class Config
         NETHER_CATERPILLAR_DROP_CHANCE = BUILDER
                 .comment("Drop chance for Nether Caterpillar from Nether Wart (0.0 to 1.0)")
                 .defineInRange("netherCaterpillarDropChance", 0.1, 0.0, 1.0);
-
-        BUILDER.pop();
-
-        BUILDER.push("star_blessing");
-
-        STAR_BLESSING_LEVEL_3_ARMOR_BONUS = BUILDER
-                .comment("Armor bonus at level 3")
-                .defineInRange("level3ArmorBonus", 2, 0, 20);
-
-        STAR_BLESSING_LEVEL_6_TOUGHNESS_BONUS = BUILDER
-                .comment("Armor toughness bonus at level 6")
-                .defineInRange("level6ToughnessBonus", 1, 0, 10);
-
-        STAR_BLESSING_LEVEL_9_KNOCKBACK_RESISTANCE = BUILDER
-                .comment("Knockback resistance bonus at level 9 (0-10, where 1 = 10% resistance)")
-                .defineInRange("level9KnockbackResistance", 1, 0, 10);
-
-        STAR_BLESSING_LEVEL_12_FIRE_IMMUNITY = BUILDER
-                .comment("Whether level 12 provides complete fire immunity")
-                .define("level12FireImmunity", true);
 
         BUILDER.pop();
 

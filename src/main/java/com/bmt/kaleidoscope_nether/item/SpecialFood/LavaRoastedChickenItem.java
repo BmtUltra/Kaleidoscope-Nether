@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.item.SpecialFood;
 
-import com.bmt.kaleidoscope_nether.registry.ModSounds;
+import com.bmt.kaleidoscope_nether.registry.KNSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -21,7 +21,7 @@ public class LavaRoastedChickenItem extends Item {
                     player.getX(),
                     player.getY(),
                     player.getZ(),
-                    ModSounds.LAVA_ROASTED_CHICKEN_EAT.get(),
+                    KNSounds.LAVA_ROASTED_CHICKEN_EAT.get(),
                     SoundSource.PLAYERS,
                     1.0F,
                     1.0F);

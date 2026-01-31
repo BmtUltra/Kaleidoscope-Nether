@@ -19,22 +19,6 @@ public class GhastPendantItem extends Item {
                 .stacksTo(1));
     }
 
-    public static boolean hasGhastPendantInInventory(Player player) {
-        for (ItemStack stack : player.getInventory().items) {
-            if (!stack.isEmpty() && stack.getItem() instanceof GhastPendantItem) {
-                return true;
-            }
-        }
-
-        for (ItemStack stack : player.getInventory().offhand) {
-            if (!stack.isEmpty() && stack.getItem() instanceof GhastPendantItem) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);

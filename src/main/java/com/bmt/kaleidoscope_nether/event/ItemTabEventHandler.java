@@ -26,13 +26,13 @@ public class ItemTabEventHandler {
                     CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
             );
         }
-
+/*
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.getEntries().putAfter(
                     Items.WARPED_FUNGUS_ON_A_STICK.getDefaultInstance(),
                     KNItems.SEED_BAG.get().getDefaultInstance(),
                     CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
             );
-        }
+        }*/
     }
 }

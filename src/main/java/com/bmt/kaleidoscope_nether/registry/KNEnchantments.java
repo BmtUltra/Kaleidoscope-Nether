@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModEnchantments {
+public class KNEnchantments {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, KaleidoscopeNether.MOD_ID);
 
     public static final RegistryObject<Enchantment> LAVA_WALKER = ENCHANTMENTS.register("lava_walker",

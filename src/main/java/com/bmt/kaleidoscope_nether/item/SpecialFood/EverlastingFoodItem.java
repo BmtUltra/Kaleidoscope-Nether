@@ -20,11 +20,14 @@ import java.util.function.Supplier;
 public class EverlastingFoodItem extends FoodWithEffectsItem {
     private final Supplier<Integer> eatingCooldown;
     private final Supplier<Boolean> isEnabled;
+    private final Rarity rarity;
+
 
     public EverlastingFoodItem(FoodProperties food, Supplier<Integer> eatingCooldown, Supplier<Boolean> isEnabled, Rarity rarity) {
         super(food);
         this.eatingCooldown = eatingCooldown;
         this.isEnabled = isEnabled;
+        this.rarity = rarity;
     }
 
     @Override
