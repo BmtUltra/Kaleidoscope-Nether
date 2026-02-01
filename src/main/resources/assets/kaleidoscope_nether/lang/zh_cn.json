@@ -181,6 +181,9 @@
   "tooltip.kaleidoscope_nether.cantonese_rice_noodle_roll.maxim": "米皮薄如蝉翼，内馅丰富，广东早茶必点",
 
   "block.kaleidoscope_nether.nether_stove": "下界炉灶",
+  "block.kaleidoscope_nether.chair_wart": "下界疣木椅子",
+  "block.kaleidoscope_nether.cook_stool_wart": "下界疣木厨娘凳",
+  "block.kaleidoscope_nether.table_wart": "下界疣木餐桌",
 
   "item.minecraft.tipped_arrow.effect.mysterious_poison": "迷之中毒之箭",
   "item.minecraft.potion.effect.mysterious_poison": "迷之中毒药水",

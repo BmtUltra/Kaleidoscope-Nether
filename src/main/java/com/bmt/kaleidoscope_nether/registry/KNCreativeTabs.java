@@ -133,6 +133,10 @@ public class KNCreativeTabs {
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
                         output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
                         output.accept(KNItems.NETHER_STOVE.get());
+
+                        //output.accept(KNItems.CHAIR_WART.get());
+                        //output.accept(KNItems.COOK_STOOL_WART.get());
+                        //output.accept(KNItems.TABLE_WART.get());
                     })
                     .build());
 }

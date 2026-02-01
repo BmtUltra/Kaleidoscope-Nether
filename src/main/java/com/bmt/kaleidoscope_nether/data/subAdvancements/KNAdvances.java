@@ -49,5 +49,5 @@ public class KNAdvances implements ForgeAdvancementProvider.AdvancementGenerator
         JsonObject jsonObject = ConditionalAdvancement.builder().addCondition(new ModLoadedCondition("alexsmobs")).addAdvancement(SeagullStealFailureTest).write();
         ModAdvancementProvider.BUILD_CONDITION.accept(jsonObject, ResourceLocation.withDefaultNamespace("kaleidoscope_nether/seagull_steal_failure"));
     }
-
 }
+

@@ -10,10 +10,10 @@ import static net.minecraft.world.effect.MobEffects.*;
 
 public class KNFoods {
     // 灵魂羊排
-    public static final FoodProperties SOUL_LAMB_CHOP_ITEM = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.9F)
+    public static final FoodProperties SOUL_LAMB_CHOP_ITEM = (new FoodProperties.Builder()).nutrition(13).saturationMod(0.611F)
             .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 180 * 20), 1.0F).meat().build();
 
-    public static final FoodProperties SOUL_LAMB_CHOP_BLOCK = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.9F)
+    public static final FoodProperties SOUL_LAMB_CHOP_BLOCK = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.611F)
             .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 240 * 20), 1.0F).meat().build();
 
     // 烈焰永恒牛排

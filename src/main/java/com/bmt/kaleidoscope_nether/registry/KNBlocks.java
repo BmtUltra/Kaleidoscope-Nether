@@ -2,6 +2,9 @@ package com.bmt.kaleidoscope_nether.registry;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.block.*;
+import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.ChairBlock;
+import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.CookStoolBlock;
+import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.TableBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.kitchen.StoveBlock;
 import com.github.ysbbbbbb.kaleidoscopedoll.block.CustomDollBlock;
 import net.minecraft.world.level.block.Block;
@@ -45,4 +48,14 @@ public class KNBlocks {
     // 下界炉灶
     public static final RegistryObject<StoveBlock> NETHER_STOVE = BLOCKS.register("nether_stove",
             () -> new StoveBlock());
+
+    // 下界疣木家具
+    public static final RegistryObject<ChairBlock> CHAIR_WART = BLOCKS.register("chair_wart",
+            () -> new ChairBlock());
+
+    public static final RegistryObject<CookStoolBlock> COOK_STOOL_WART = BLOCKS.register("cook_stool_wart",
+            () -> new CookStoolBlock());
+
+    public static final RegistryObject<TableBlock> TABLE_WART = BLOCKS.register("table_wart",
+            () -> new TableBlock());
 }
