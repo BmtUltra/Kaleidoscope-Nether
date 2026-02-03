@@ -1,0 +1,13 @@
+{
+  "itemGroup.kaleidoscope_nether": "Example Mod Tab",
+  "block.kaleidoscope_nether.example_block": "Example Block",
+  "item.kaleidoscope_nether.example_item": "Example Item",
+
+  "kaleidoscope_nether.configuration.title": "Kaleidoscope Nether Configs",
+  "kaleidoscope_nether.configuration.section.kaleidoscope_nether.common.toml": "Kaleidoscope Nether Configs",
+  "kaleidoscope_nether.configuration.section.kaleidoscope_nether.common.toml.title": "Kaleidoscope Nether Configs",
+  "kaleidoscope_nether.configuration.items": "Item List",
+  "kaleidoscope_nether.configuration.logDirtBlock": "Log Dirt Block",
+  "kaleidoscope_nether.configuration.magicNumberIntroduction": "Magic Number Text",
+  "kaleidoscope_nether.configuration.magicNumber": "Magic Number"
+}
