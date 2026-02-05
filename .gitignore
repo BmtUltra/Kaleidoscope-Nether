@@ -28,3 +28,7 @@ repo
 # Decompiled Minecraft sources
 com/
 net/
+
+# IDE specific
+.vscode/
+.github/
