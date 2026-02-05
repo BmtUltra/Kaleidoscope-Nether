@@ -1,0 +1,28 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "tag": "c:cooked_rice"
+  },
+  "ingredients": [
+    {
+      "tag": "c:raw_pork"
+    },
+    {
+      "tag": "c:raw_pork"
+    },
+    {
+      "tag": "c:vegetables/soul_pepper"
+    },
+    {
+      "tag": "c:vegetables/soul_pepper"
+    },
+    {
+      "tag": "c:vegetables/soul_pepper"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:soul_stir_fry_meat_rice"
+  },
+  "stir_fry_count": 5,
+  "time": 300
+}

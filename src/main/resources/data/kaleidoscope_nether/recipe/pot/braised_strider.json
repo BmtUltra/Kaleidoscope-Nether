@@ -1,0 +1,30 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:raw_strider"
+    },
+    [
+      {
+        "tag": "c:warped_fruits"
+      },
+      {
+        "item": "minecraft:warped_fungus"
+      }
+    ],
+    {
+      "tag": "c:vegetables/chilipepper"
+    },
+    {
+      "tag": "c:vegetables/chilipepper"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:braised_strider"
+  },
+  "stir_fry_count": 5,
+  "time": 300
+}

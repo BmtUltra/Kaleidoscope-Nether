@@ -1,0 +1,22 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "tag": "c:cooked_rice"
+  },
+  "ingredients": [
+    {
+      "item": "kaleidoscope_nether:nether_caterpillar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:caramel_nether_caterpillar_rice"
+  },
+  "stir_fry_count": 5,
+  "time": 300
+}

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.chadate.kaleidoscope_nether.mixins",
+  "plugin": "com.chadate.kaleidoscope_nether.mixins.MainMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "alexsmobs.SeagullAIStealFromPlayersAccessor",
+    "alexsmobs.SeagullAIStealFromPlayersMixin",
+    "kaleidoscope_nether.BlockItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+

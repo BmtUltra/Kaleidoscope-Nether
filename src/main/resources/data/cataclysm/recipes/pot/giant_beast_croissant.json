@@ -1,0 +1,28 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "ingredients": [
+    {
+      "item": "cataclysm:monstrous_horn"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:hot_spices"
+    },
+    {
+      "tag": "c:hot_spices"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:giant_beast_croissant"
+  },
+  "stir_fry_count": 6,
+  "time": 650
+}

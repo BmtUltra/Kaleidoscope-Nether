@@ -1,0 +1,40 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:rods/blaze"
+    },
+    {
+      "tag": "c:rods/blaze"
+    },
+    {
+      "tag": "c:hot_spices"
+    },
+    {
+      "tag": "c:hot_spices"
+    },
+    {
+      "tag": "c:hot_spices"
+    },
+    {
+      "tag": "c:vegetables/soul_pepper"
+    },
+    {
+      "tag": "c:vegetables/soul_pepper"
+    },
+    {
+      "tag": "c:soul_speed_blocks"
+    },
+    {
+      "tag": "c:soul_speed_blocks"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:nether_fries_platter"
+  },
+  "stir_fry_count": 3,
+  "time": 400
+}

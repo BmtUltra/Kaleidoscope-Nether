@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "kaleidoscope_nether:raw_strider_meat"
+  },
+  "id": "kaleidoscope_nether:cooked_strider_meat"
+}

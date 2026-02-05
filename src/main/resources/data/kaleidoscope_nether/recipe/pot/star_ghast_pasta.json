@@ -1,0 +1,28 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:bowl"
+  },
+  "ingredients": [
+    {
+      "tag": "c:raw_ghast"
+    },
+    {
+      "tag": "c:raw_ghast"
+    },
+    {
+      "tag": "c:pasta"
+    },
+    {
+      "tag": "c:pasta"
+    },
+    {
+      "item": "kaleidoscope_nether:star_dust"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:star_ghast_pasta"
+  },
+  "stir_fry_count": 5,
+  "time": 450
+}

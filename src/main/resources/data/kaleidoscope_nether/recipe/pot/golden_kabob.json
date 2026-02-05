@@ -1,0 +1,19 @@
+{
+  "type": "kaleidoscope_cookery:pot",
+  "carrier": {
+    "item": "minecraft:stick"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "tag": "c:raw_beef"
+    }
+  ],
+  "result": {
+    "id": "kaleidoscope_nether:golden_kabob"
+  },
+  "stir_fry_count": 3,
+  "time": 300
+}
