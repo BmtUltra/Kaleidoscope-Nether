@@ -53,7 +53,10 @@ public class KaleidoscopeNether {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(KNComposterRegistry::register);
-        KNAdvancementTriggerRegistry.init();
+        event.enqueueWork(() -> {
+            KNComposterRegistry.register();
+            KNAdvancementTriggerRegistry.init();
+            KNSoupBases.registerAll();
+        });
     }
 }
