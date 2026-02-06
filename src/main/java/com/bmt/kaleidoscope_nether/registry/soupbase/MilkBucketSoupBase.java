@@ -11,10 +11,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MilkBucketSoupBase implements ISoupBase {
-    private static final ResourceLocation NAME = new ResourceLocation("minecraft", "milk");
+    private static final ResourceLocation NAME = ResourceLocation.fromNamespaceAndPath("minecraft", "milk");
     private static final int BUBBLE_COLOR = 0xFFFFFF;
 
-    private static final ResourceLocation MILK_TEXTURE = new ResourceLocation("minecraft", "block/water_still");
+    private static final ResourceLocation MILK_TEXTURE = ResourceLocation.fromNamespaceAndPath("minecraft", "block/water_still");
 
     @Override
     public ResourceLocation getName() {

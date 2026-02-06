@@ -5,7 +5,7 @@ import com.github.ysbbbbbb.kaleidoscopecookery.crafting.soupbase.SoupBaseManager
 import net.minecraft.resources.ResourceLocation;
 
 public class KNSoupBases {
-    public static final ResourceLocation MILK_BUCKET = new ResourceLocation("minecraft", "milk");
+    public static final ResourceLocation MILK_BUCKET = ResourceLocation.fromNamespaceAndPath("minecraft", "milk");
 
     public static void registerAll() {
         SoupBaseManager.registerSoupBase(new MilkBucketSoupBase());
