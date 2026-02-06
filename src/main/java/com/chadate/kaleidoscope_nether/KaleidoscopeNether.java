@@ -40,7 +40,6 @@ public class KaleidoscopeNether {
         KNItems.ITEMS.register(modEventBus);
         KNEffects.EFFECTS.register(modEventBus);
         KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-        KNEnchantments.ENCHANTMENTS.register(modEventBus);
         KNSounds.SOUND_EVENTS.register(modEventBus);
         KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);

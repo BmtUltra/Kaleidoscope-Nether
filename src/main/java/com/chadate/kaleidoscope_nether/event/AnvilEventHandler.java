@@ -2,6 +2,7 @@ package com.chadate.kaleidoscope_nether.event;
 
 import com.chadate.kaleidoscope_nether.registry.KNEnchantments;
 import com.chadate.kaleidoscope_nether.registry.KNItems;
+
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -25,7 +26,7 @@ public class AnvilEventHandler {
 
         if (isBoots(left) && right.is(KNItems.STRIDER_ROCK_SHELL.get())) {
             ItemEnchantments enchantments = left.getEnchantments();
-            if (enchantments.getLevel(KNEnchantments.LAVA_WALKER) > 0) {
+            if (enchantments.getLevel(event.getPlayer().level().holderOrThrow(KNEnchantments.LAVA_WALKER)) > 0) {
                 return;
             }
 
@@ -52,7 +53,7 @@ public class AnvilEventHandler {
             if (newShellCount >= REQUIRED_SHELLS) {
                 // 应用附魔
                 ItemEnchantments.Mutable mutable = new ItemEnchantments.Mutable(result.getEnchantments());
-                mutable.set(KNEnchantments.LAVA_WALKER, 1);
+                mutable.set(event.getPlayer().level().holderOrThrow(KNEnchantments.LAVA_WALKER), 1);
                 result.set(DataComponents.ENCHANTMENTS, mutable.toImmutable());
                 resultTag.remove(SHELL_COUNT_TAG);
             }

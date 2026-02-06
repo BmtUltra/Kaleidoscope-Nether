@@ -2,6 +2,7 @@ package com.chadate.kaleidoscope_nether.enchantment;
 
 import com.chadate.kaleidoscope_nether.KaleidoscopeNether;
 import com.chadate.kaleidoscope_nether.registry.KNEnchantments;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -10,7 +11,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -68,7 +68,9 @@ public class LavaWalkerEnchantment {
         ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
 
         if (!boots.isEmpty()) {
-            int lavaWalkerLevel = EnchantmentHelper.getEnchantmentLevel(KNEnchantments.LAVA_WALKER, event.getEntity());
+            int lavaWalkerLevel = boots.getEnchantmentLevel(
+                player.level().holderOrThrow(KNEnchantments.LAVA_WALKER)
+            );
 
             if (lavaWalkerLevel > 0) {
                 applyLavaWalkerEffect(player);

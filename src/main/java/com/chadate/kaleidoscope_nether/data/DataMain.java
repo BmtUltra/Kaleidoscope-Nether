@@ -28,7 +28,8 @@ public class DataMain {
                         new RegistrySetBuilder().
                                 add(Registries.CONFIGURED_FEATURE, ModFeatures::bootstrap).
                                 add(Registries.PLACED_FEATURE, ModPlacements::bootstrap).
-                                add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifier::bootstrap)
+                                add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifier::bootstrap).
+                                add(Registries.ENCHANTMENT, ModEnchantments::bootstrap)
 
                         ,
                         Set.of(KaleidoscopeNether.MOD_ID)
