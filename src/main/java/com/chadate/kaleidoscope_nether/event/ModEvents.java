@@ -63,51 +63,23 @@ public class ModEvents {
         }
 
         if (event.getSource().getDirectEntity() instanceof Arrow arrow) {
-            // 先测试：任何箭矢都触发效果
-            System.out.println("Any arrow hit detected!");
-            MobEffectInstance testInstance = event.getEntity().getEffect(KNEffects.MYSTERIOUS_POISON);
-            if (testInstance == null) {
-                System.out.println("Applying test poison effect!");
-                event.getEntity().addEffect(new MobEffectInstance(
-                    KNEffects.MYSTERIOUS_POISON,
-                    1500,
-                    0
-                ));
-            } else {
-                System.out.println("Stacking test poison effect!");
-                event.getEntity().addEffect(new MobEffectInstance(
-                    KNEffects.MYSTERIOUS_POISON,
-                    1500 / 8,
-                    testInstance.getAmplifier() + 1
-                ));
-            }
-            
             PotionContents potionContents = getArrowPotionContents(arrow);
             
-            // 调试日志：检查箭矢是否有药水内容
-            System.out.println("Arrow hit detected, potion present: " + potionContents.potion().isPresent());
-            if (potionContents.potion().isPresent()) {
-                System.out.println("Arrow potion: " + potionContents.potion().get());
-                System.out.println("Target potion: " + KNPotions.MYSTERIOUS_POISON.get());
-            }
-            
+            // 只有神秘毒药箭才会触发效果
             if (potionContents.potion().isPresent() && 
-                potionContents.potion().get() == KNPotions.MYSTERIOUS_POISON.get()) {
+                potionContents.potion().get().value() == KNPotions.MYSTERIOUS_POISON.get()) {
                 
-                System.out.println("Mysterious poison arrow detected!");
                 MobEffectInstance instance = event.getEntity().getEffect(KNEffects.MYSTERIOUS_POISON);
-                System.out.println("Current poison effect: " + (instance != null ? "Level " + instance.getAmplifier() : "None"));
                 
                 if (instance != null) {
-                    System.out.println("Applying stacked poison effect!");
+                    // 如果已有毒药效果，叠加等级但缩短时间
                     event.getEntity().addEffect(new MobEffectInstance(
                         KNEffects.MYSTERIOUS_POISON,
                         1500 / 8,
                         instance.getAmplifier() + 1
                     ));
                 } else {
-                    // 如果目标没有毒药效果，先给一个基础效果
-                    System.out.println("Applying initial poison effect!");
+                    // 如果目标没有毒药效果，给一个基础效果
                     event.getEntity().addEffect(new MobEffectInstance(
                         KNEffects.MYSTERIOUS_POISON,
                         1500,
