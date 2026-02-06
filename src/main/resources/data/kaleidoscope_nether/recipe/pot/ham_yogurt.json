@@ -15,7 +15,7 @@
     },
     [
       {
-        "tag": "c:foods/raw_ham"
+        "tag": "c:raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -23,7 +23,7 @@
     ],
     [
       {
-        "tag": "c:foods/raw_ham"
+        "tag": "c:raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -31,7 +31,7 @@
     ],
     [
       {
-        "tag": "c:foods/raw_ham"
+        "tag": "c:raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"

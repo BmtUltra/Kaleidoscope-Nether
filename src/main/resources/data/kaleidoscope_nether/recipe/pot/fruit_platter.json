@@ -5,22 +5,22 @@
   },
   "ingredients": [
     {
-      "tag": "c:foods/crimson_fruit"
+      "tag": "c:crimson_fruits"
     },
     {
-      "tag": "c:foods/crimson_fruit"
+      "tag": "c:crimson_fruits"
     },
     {
-      "tag": "c:foods/warped_fruit"
+      "tag": "c:warped_fruits"
     },
     {
-      "tag": "c:foods/warped_fruit"
+      "tag": "c:warped_fruits"
     },
     {
-      "tag": "c:foods/poisonous_fruit"
+      "tag": "c:poisonous_fruits"
     },
     {
-      "tag": "c:foods/poisonous_fruit"
+      "tag": "c:poisonous_fruits"
     }
   ],
   "result": {

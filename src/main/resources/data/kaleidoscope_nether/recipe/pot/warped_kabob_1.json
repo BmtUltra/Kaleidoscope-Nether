@@ -5,7 +5,7 @@
   },
   "ingredients": [
     {
-      "tag": "c:foods/warped_fruit"
+      "tag": "c:warped_fruits"
     },
     {
       "item": "minecraft:warped_fungus"

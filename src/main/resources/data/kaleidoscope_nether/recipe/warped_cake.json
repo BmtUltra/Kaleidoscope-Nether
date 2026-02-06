@@ -6,10 +6,10 @@
       "tag": "c:foods/milk"
     },
     "B": {
-      "tag": "c:foods/crimson_fruit"
+      "tag": "c:crimson_fruits"
     },
     "C": {
-      "tag": "c:foods/warped_fruit"
+      "tag": "c:warped_fruits"
     },
     "D": {
       "tag": "c:flour"
