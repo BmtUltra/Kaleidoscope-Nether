@@ -9,13 +9,13 @@
   "finished_texture": "kaleidoscope_cookery:stockpot/default_finished",
   "ingredients": [
     {
-      "tag": "c:foods/poisonous_fruit"
+      "tag": "c:poisonous_fruits"
     },
     {
-      "tag": "c:foods/poisonous_fruit"
+      "tag": "c:poisonous_fruits"
     },
     {
-      "tag": "c:foods/poisonous_fruit"
+      "tag": "c:poisonous_fruits"
     },
     {
       "tag": "c:vegetables/pepper"
