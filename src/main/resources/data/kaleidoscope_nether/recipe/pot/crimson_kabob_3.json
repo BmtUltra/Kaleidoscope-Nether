@@ -5,13 +5,13 @@
   },
   "ingredients": [
     {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     {
       "item": "minecraft:crimson_fungus"

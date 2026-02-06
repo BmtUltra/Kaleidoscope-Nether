@@ -6,7 +6,7 @@
   "ingredients": [
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
@@ -14,7 +14,7 @@
     ],
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
@@ -22,7 +22,7 @@
     ],
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
@@ -39,6 +39,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:ghast_pudding"
   },
   "stir_fry_count": 3,

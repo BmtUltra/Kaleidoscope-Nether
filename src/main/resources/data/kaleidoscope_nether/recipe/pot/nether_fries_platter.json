@@ -5,10 +5,10 @@
   },
   "ingredients": [
     {
-      "tag": "c:rods/blaze"
+      "item": "minecraft:blaze_rod"
     },
     {
-      "tag": "c:rods/blaze"
+      "item": "minecraft:blaze_rod"
     },
     {
       "tag": "c:hot_spices"
@@ -33,6 +33,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:nether_fries_platter"
   },
   "stir_fry_count": 3,

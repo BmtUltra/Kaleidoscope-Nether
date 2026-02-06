@@ -15,7 +15,7 @@
     },
     [
       {
-        "tag": "c:raw_ham"
+        "tag": "c:foods/raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -23,7 +23,7 @@
     ],
     [
       {
-        "tag": "c:raw_ham"
+        "tag": "c:foods/raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -31,7 +31,7 @@
     ],
     [
       {
-        "tag": "c:raw_ham"
+        "tag": "c:foods/raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -39,6 +39,7 @@
     ]
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:ham_yogurt"
   },
   "stir_fry_count": 3,

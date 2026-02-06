@@ -5,10 +5,10 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
       "tag": "c:hot_spices"
@@ -24,6 +24,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:golden_roast"
   },
   "stir_fry_count": 5,

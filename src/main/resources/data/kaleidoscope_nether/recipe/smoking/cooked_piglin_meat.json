@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "kaleidoscope_nether:raw_piglin_meat"
   },
-  "id": "kaleidoscope_nether:cooked_piglin_meat"
+  "result": {
+    "id": "kaleidoscope_nether:cooked_piglin_meat"
+  }
 }

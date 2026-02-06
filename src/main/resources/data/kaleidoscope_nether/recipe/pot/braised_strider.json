@@ -5,11 +5,14 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_strider"
+      "tag": "c:foods/raw_strider"
+    },
+    {
+      "tag": "c:foods/raw_strider"
     },
     [
       {
-        "tag": "c:warped_fruits"
+        "tag": "c:foods/warped_fruit"
       },
       {
         "item": "minecraft:warped_fungus"
@@ -23,6 +26,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:braised_strider"
   },
   "stir_fry_count": 5,

@@ -5,10 +5,10 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
       "tag": "c:vegetables/pepper"
@@ -27,6 +27,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:braised_pork_rice"
   },
   "stir_fry_count": 4,

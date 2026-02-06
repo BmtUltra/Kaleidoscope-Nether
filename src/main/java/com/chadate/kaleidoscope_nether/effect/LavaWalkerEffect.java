@@ -17,7 +17,8 @@ public class LavaWalkerEffect extends MobEffect {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    @Override
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return duration % 20 == 0;
     }
 

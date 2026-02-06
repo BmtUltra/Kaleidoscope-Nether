@@ -1,9 +1,9 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
-      "type": "c:not",
+      "type": "neoforge:not",
       "value": {
-        "type": "c:tag_empty",
+        "type": "neoforge:tag_empty",
         "tag": "c:crops/corn"
       }
     }
@@ -30,10 +30,10 @@
       "tag": "c:vegetables/carrot"
     },
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
       "item": "minecraft:bone"
@@ -43,6 +43,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:corn_carrot_pork_rib_soup"
   },
   "soup_base": "minecraft:water",

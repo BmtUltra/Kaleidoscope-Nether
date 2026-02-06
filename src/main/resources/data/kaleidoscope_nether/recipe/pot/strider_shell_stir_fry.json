@@ -8,10 +8,13 @@
       "item": "kaleidoscope_nether:strider_rock_shell"
     },
     {
-      "tag": "c:raw_strider"
+      "tag": "c:foods/raw_strider"
     },
     {
-      "tag": "c:raw_strider"
+      "tag": "c:foods/raw_strider"
+    },
+    {
+      "tag": "c:foods/raw_strider"
     },
     {
       "tag": "c:vegetables/pepper"
@@ -21,6 +24,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:strider_shell_stir_fry"
   },
   "stir_fry_count": 5,

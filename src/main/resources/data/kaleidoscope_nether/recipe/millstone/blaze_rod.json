@@ -1,7 +1,7 @@
 {
   "type": "kaleidoscope_cookery:millstone",
   "ingredient": {
-    "tag": "c:rods/blaze"
+    "item": "minecraft:blaze_rod"
   },
   "result": {
     "count": 3,

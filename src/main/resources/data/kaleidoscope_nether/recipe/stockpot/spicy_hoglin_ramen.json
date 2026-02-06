@@ -10,7 +10,7 @@
   "ingredients": [
     [
       {
-        "tag": "c:raw_ham"
+        "tag": "c:foods/raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -18,7 +18,7 @@
     ],
     [
       {
-        "tag": "c:raw_ham"
+        "tag": "c:foods/raw_ham"
       },
       {
         "item": "kaleidoscope_nether:ham_slice"
@@ -34,13 +34,13 @@
       "tag": "c:vegetables/pepper"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     }
   ],
   "result": {

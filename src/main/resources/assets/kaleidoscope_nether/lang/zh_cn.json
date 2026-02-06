@@ -216,8 +216,10 @@
   "advancements.kaleidoscope_nether.root.description": "下界也要有奇幻色彩！",
   "advancements.kaleidoscope_nether.star_dust.title": "这也能磨成粉？",
   "advancements.kaleidoscope_nether.star_dust.description": "将下界之星扔进石磨",
-  "advancements.kaleidoscope_nether.soul_return_rice.title": "这是哪？",
+  "advancements.kaleidoscope_nether.soul_return_rice.title": "唤魂归旧迹",
   "advancements.kaleidoscope_nether.soul_return_rice.description": "食用一份回魂饭",
+  "advancements.kaleidoscope_nether.forgetfulness_soup.title": "尽释前尘缘",
+  "advancements.kaleidoscope_nether.forgetfulness_soup.description": "品尝一碗孟婆汤",
   "advancements.kaleidoscope_nether.star_blessing_buff.title": "星辰祝福",
   "advancements.kaleidoscope_nether.star_blessing_buff.description": "食用一份星之尘菜品并获得星之祝福效果",
   "advancements.kaleidoscope_nether.star_diet.title": "星辉盛宴",
@@ -246,6 +248,8 @@
   "advancements.kaleidoscope_nether.nether_agriculturist.description": "在绯红森林、诡异森林、灵魂沙峡谷收集绯红果、诡异果、剧毒果，将辣椒种子种植在灵魂沙上",
   "advancements.kaleidoscope_nether.eight_cuisines.title": "八大菜系",
   "advancements.kaleidoscope_nether.eight_cuisines.description": "尝遍全部特色菜品",
+  "advancements.kaleidoscope_nether.ghast_pendant.title": "晴天娃娃",
+  "advancements.kaleidoscope_nether.ghast_pendant.description": "在堡垒遗迹中找到恶魂挂坠",
   "advancements.kaleidoscope_nether.seagull_steal_failure.title": "自食恶果",
   "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排"
 }

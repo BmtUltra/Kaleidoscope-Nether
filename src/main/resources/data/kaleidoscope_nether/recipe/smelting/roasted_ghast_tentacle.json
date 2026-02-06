@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "kaleidoscope_nether:ghast_tentacle"
   },
-  "id": "kaleidoscope_nether:roasted_ghast_tentacle"
+  "result": {
+    "id": "kaleidoscope_nether:roasted_ghast_tentacle"
+  }
 }

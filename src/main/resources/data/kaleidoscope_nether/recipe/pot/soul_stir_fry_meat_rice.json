@@ -1,14 +1,14 @@
 {
   "type": "kaleidoscope_cookery:pot",
   "carrier": {
-    "tag": "c:cooked_rice"
+    "tag": "c:foods/cooked_rice"
   },
   "ingredients": [
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
-      "tag": "c:raw_pork"
+      "tag": "c:foods/raw_pork"
     },
     {
       "tag": "c:vegetables/soul_pepper"
@@ -21,6 +21,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:soul_stir_fry_meat_rice"
   },
   "stir_fry_count": 5,

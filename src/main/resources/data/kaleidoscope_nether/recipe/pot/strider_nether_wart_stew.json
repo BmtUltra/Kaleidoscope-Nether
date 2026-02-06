@@ -5,10 +5,10 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_strider"
+      "tag": "c:foods/raw_strider"
     },
     {
-      "tag": "c:raw_strider"
+      "tag": "c:foods/raw_strider"
     },
     {
       "item": "minecraft:string"
@@ -27,6 +27,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:strider_nether_wart_stew"
   },
   "stir_fry_count": 3,

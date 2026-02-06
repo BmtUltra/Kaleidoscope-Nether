@@ -24,13 +24,13 @@
       "tag": "c:vegetables/lettuce"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     },
     {
-      "tag": "c:pasta"
+      "tag": "c:foods/pasta"
     }
   ],
   "result": {

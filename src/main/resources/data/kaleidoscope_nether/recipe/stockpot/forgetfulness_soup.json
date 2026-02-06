@@ -37,6 +37,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:forgetfulness_soup"
   },
   "soup_base": "minecraft:water",

@@ -1,7 +1,7 @@
 {
   "type": "kaleidoscope_cookery:pot",
   "carrier": {
-    "tag": "c:cooked_rice"
+    "tag": "c:foods/cooked_rice"
   },
   "ingredients": [
     {
@@ -39,6 +39,7 @@
     ]
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:spicy_pot_rice"
   },
   "stir_fry_count": 5,

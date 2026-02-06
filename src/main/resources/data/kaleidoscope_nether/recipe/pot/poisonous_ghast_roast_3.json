@@ -6,7 +6,7 @@
   "ingredients": [
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
@@ -14,7 +14,7 @@
     ],
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
@@ -22,20 +22,20 @@
     ],
     [
       {
-        "tag": "c:raw_ghast"
+        "tag": "c:foods/raw_ghast"
       },
       {
         "item": "minecraft:ghast_tear"
       }
     ],
     {
-      "tag": "c:raw_ghast"
+      "tag": "c:foods/raw_ghast"
     },
     {
-      "tag": "c:raw_ghast"
+      "tag": "c:foods/raw_ghast"
     },
     {
-      "tag": "c:raw_ghast"
+      "tag": "c:foods/raw_ghast"
     },
     {
       "item": "kaleidoscope_nether:poisonous_fruit"

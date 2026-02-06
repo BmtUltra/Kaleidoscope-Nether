@@ -5,10 +5,10 @@
   },
   "ingredients": [
     {
-      "item": "minecraft:magma_cream"
+      "item": "minecraft:blaze_powder"
     },
     {
-      "item": "minecraft:blaze_powder"
+      "item": "minecraft:blaze_rod"
     }
   ],
   "result": {

@@ -5,13 +5,13 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_mutton"
+      "tag": "c:foods/raw_mutton"
     },
     {
-      "tag": "c:raw_mutton"
+      "tag": "c:foods/raw_mutton"
     },
     {
-      "tag": "c:raw_mutton"
+      "tag": "c:foods/raw_mutton"
     },
     {
       "tag": "c:vegetables/soul_pepper"
@@ -24,6 +24,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:soul_lamb_chop"
   },
   "stir_fry_count": 4,

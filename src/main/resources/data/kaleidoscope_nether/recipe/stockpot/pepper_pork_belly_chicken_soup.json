@@ -21,32 +21,48 @@
       "item": "kaleidoscope_cookery:raw_pork_belly"
     },
     {
+      "item": "kaleidoscope_cookery:raw_pork_belly"
+    },
+    {
       "item": "minecraft:chicken"
     },
     [
       {
-        "item": "minecraft:vine"
+        "item": "minecraft:hanging_roots"
       },
       {
         "item": "minecraft:glow_lichen"
       },
       {
-        "item": "minecraft:hanging_roots"
+        "item": "minecraft:vine"
+      },
+      {
+        "item": "minecraft:weeping_vines"
+      },
+      {
+        "item": "minecraft:twisting_vines"
       }
     ],
     [
       {
-        "item": "minecraft:vine"
+        "item": "minecraft:hanging_roots"
       },
       {
         "item": "minecraft:glow_lichen"
       },
       {
-        "item": "minecraft:hanging_roots"
+        "item": "minecraft:vine"
+      },
+      {
+        "item": "minecraft:weeping_vines"
+      },
+      {
+        "item": "minecraft:twisting_vines"
       }
     ]
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:pepper_pork_belly_chicken_soup"
   },
   "soup_base": "minecraft:water",

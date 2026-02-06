@@ -15,7 +15,7 @@
     },
     [
       {
-        "tag": "c:warped_fruits"
+        "tag": "c:foods/warped_fruit"
       },
       {
         "item": "minecraft:warped_fungus"
@@ -23,7 +23,7 @@
     ],
     [
       {
-        "tag": "c:warped_fruits"
+        "tag": "c:foods/warped_fruit"
       },
       {
         "item": "minecraft:warped_fungus"
@@ -31,7 +31,7 @@
     ],
     [
       {
-        "tag": "c:warped_fruits"
+        "tag": "c:foods/warped_fruit"
       },
       {
         "item": "minecraft:warped_fungus"
@@ -39,6 +39,7 @@
     ]
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:warped_hoglin_tenderloin_stew"
   },
   "stir_fry_count": 5,

@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "A": {
-      "tag": "c:milk"
+      "tag": "c:foods/milk"
     },
     "B": {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     "C": {
-      "tag": "c:warped_fruits"
+      "tag": "c:foods/warped_fruit"
     },
     "D": {
       "tag": "c:flour"
@@ -21,6 +21,7 @@
     "DDD"
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:warped_cake"
   },
   "show_notification": true

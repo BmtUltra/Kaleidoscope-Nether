@@ -5,25 +5,26 @@
   },
   "ingredients": [
     {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     {
-      "tag": "c:crimson_fruits"
+      "tag": "c:foods/crimson_fruit"
     },
     {
-      "tag": "c:warped_fruits"
+      "tag": "c:foods/warped_fruit"
     },
     {
-      "tag": "c:warped_fruits"
+      "tag": "c:foods/warped_fruit"
     },
     {
-      "tag": "c:poisonous_fruits"
+      "tag": "c:foods/poisonous_fruit"
     },
     {
-      "tag": "c:poisonous_fruits"
+      "tag": "c:foods/poisonous_fruit"
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:fruit_platter"
   },
   "stir_fry_count": 3,

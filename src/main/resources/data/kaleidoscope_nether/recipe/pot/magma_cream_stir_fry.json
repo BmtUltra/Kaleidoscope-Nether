@@ -5,13 +5,13 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
       "item": "minecraft:magma_cream"
@@ -24,6 +24,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:magma_cream_stir_fry"
   },
   "stir_fry_count": 5,

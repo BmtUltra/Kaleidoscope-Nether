@@ -21,8 +21,9 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:caramel_nether_caterpillar"
   },
   "stir_fry_count": 5,
-  "time": 300
+  "time": 350
 }

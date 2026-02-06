@@ -5,9 +5,14 @@
     "#": {
       "item": "minecraft:blackstone"
     },
-    "F": {
-      "item": "minecraft:campfire"
-    }
+    "F": [
+      {
+        "item": "minecraft:campfire"
+      },
+      {
+        "item": "minecraft:soul_campfire"
+      }
+    ]
   },
   "pattern": [
     "###",
@@ -15,6 +20,7 @@
     "###"
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:nether_stove"
   },
   "show_notification": true

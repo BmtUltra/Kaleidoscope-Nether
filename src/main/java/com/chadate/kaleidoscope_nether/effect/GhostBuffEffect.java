@@ -34,14 +34,13 @@ public class GhostBuffEffect extends MobEffect {
         }
 
         spawnSoulParticles(entity, amplifier);
-        return false;
+        return true;
     }
 
     private void spawnSoulParticles(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide() && entity.level() instanceof ServerLevel serverLevel) {
             if (entity.tickCount % 10 == 0) {
                 Vec3 pos = entity.position();
-                //降低粒子生成数量（有点挡视线）
                 int particleCount = 1 + amplifier;
 
                 for (int i = 0; i < particleCount; i++) {
@@ -67,7 +66,8 @@ public class GhostBuffEffect extends MobEffect {
         }
     }
 
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    @Override
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

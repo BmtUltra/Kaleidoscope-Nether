@@ -21,22 +21,23 @@
       "item": "minecraft:sweet_berries"
     },
     {
-      "tag": "c:cooked_ham"
+      "tag": "c:foods/cooked_ham"
     },
     {
       "item": "minecraft:sweet_berries"
     },
     {
-      "tag": "c:cooked_rice"
+      "tag": "c:foods/cooked_rice"
     },
     {
       "item": "minecraft:bowl"
     },
     {
-      "tag": "c:cooked_rice"
+      "tag": "c:foods/cooked_rice"
     }
   ],
   "result": {
+    "count": 1,
     "id": "farmersdelight:honey_glazed_ham_block"
   }
 }

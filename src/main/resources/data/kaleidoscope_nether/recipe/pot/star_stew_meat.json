@@ -5,13 +5,13 @@
   },
   "ingredients": [
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
-      "tag": "c:raw_beef"
+      "tag": "c:foods/raw_beef"
     },
     {
       "tag": "c:vegetables/pepper"
@@ -27,6 +27,7 @@
     }
   ],
   "result": {
+    "count": 1,
     "id": "kaleidoscope_nether:star_stew_meat"
   },
   "stir_fry_count": 6,
