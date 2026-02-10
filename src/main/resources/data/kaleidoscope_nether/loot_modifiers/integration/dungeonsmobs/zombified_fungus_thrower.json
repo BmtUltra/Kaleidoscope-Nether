@@ -1,7 +1,10 @@
 {
-  "type": "kaleidoscope_cookery:addition",
-  "conditions": [],
-  "loot_table_add": "kaleidoscope_nether:integration/dungeonsmobs/zombified_fungus_thrower",
-  "loot_table_id": "dungeonsmobs:entities/zombified_fungus_thrower",
-  "loot_table_type": "minecraft:entity"
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "dungeonsmobs:entities/zombified_fungus_thrower"
+    }
+  ],
+  "table": "kaleidoscope_nether:integration/dungeonsmobs/zombified_fungus_thrower"
 }
