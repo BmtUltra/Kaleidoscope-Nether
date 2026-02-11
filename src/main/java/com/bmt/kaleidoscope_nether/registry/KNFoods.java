@@ -565,20 +565,6 @@ public class KNFoods {
             .alwaysEat()
             .build();
 
-    // 巨兽牛角包
-    public static final FoodProperties GIANT_BEAST_CROISSANT = new FoodProperties.Builder()
-            .nutrition(20).saturationMod(1.75f)
-            .alwaysEat()
-            .build();
-
-    // 魔眼咕噜肉
-    public static final FoodProperties MAGMA_SWEET_AND_SOUR_PORK = new FoodProperties.Builder()
-            .nutrition(16).saturationMod(2.0f)
-            .effect(() -> new MobEffectInstance(FIRE_RESISTANCE, 2 * 60 * 20), 1.0F)
-            .meat()
-            .alwaysEat()
-            .build();
-
     // 孟婆汤
     public static final FoodProperties FORGETFULNESS_SOUP = new FoodProperties.Builder()
             .nutrition(8).saturationMod(1.0f)

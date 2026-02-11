@@ -415,14 +415,6 @@ public class KNItems {
     public static final RegistryObject<Item> SPICY_POT_RICE = ITEMS.register("spicy_pot_rice",
             () -> new BowlFoodOnlyItem(KNFoods.SPICY_POT_RICE));
 
-    // 巨兽牛角包
-    public static final RegistryObject<Item> GIANT_BEAST_CROISSANT = ITEMS.register("giant_beast_croissant",
-            () -> new CataclysmBuffFoodItem(KNFoods.GIANT_BEAST_CROISSANT, 240));
-
-    // 魔眼咕噜肉
-    public static final RegistryObject<Item> MAGMA_SWEET_AND_SOUR_PORK = ITEMS.register("magma_sweet_and_sour_pork",
-            () -> new MagmaSweetAndSourPorkItem(KNFoods.MAGMA_SWEET_AND_SOUR_PORK));
-
     // 孟婆汤
     public static final RegistryObject<Item> FORGETFULNESS_SOUP = ITEMS.register("forgetfulness_soup",
             () -> new ForgetfulnessSoupItem(KNFoods.FORGETFULNESS_SOUP));

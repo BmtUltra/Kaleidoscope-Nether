@@ -56,7 +56,6 @@ public class KaleidoscopeNether {
         event.enqueueWork(() -> {
             KNComposterRegistry.register();
             KNAdvancementTriggerRegistry.init();
-            KNSoupBases.registerAll();
         });
     }
 }

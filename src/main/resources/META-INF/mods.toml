@@ -29,6 +29,6 @@ side = "BOTH"
 [[dependencies.${ mod_id }]]
 modId = "kaleidoscope_cookery"
 mandatory = true
-versionRange = "[1.1.2-forge+mc1.20.1,)"
+versionRange = "[1.2.0-forge+mc1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
