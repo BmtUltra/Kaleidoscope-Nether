@@ -2,11 +2,11 @@ package com.chadate.kaleidoscope_nether;
 
 import com.chadate.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.chadate.kaleidoscope_nether.config.Config;
+import com.chadate.kaleidoscope_nether.integration.KaleidoscopeDollIntegration;
 import com.chadate.kaleidoscope_nether.registry.KNBlocks;
 import com.chadate.kaleidoscope_nether.registry.KNComposterRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNCreativeTabs;
 import com.chadate.kaleidoscope_nether.registry.KNEffects;
-import com.chadate.kaleidoscope_nether.registry.KNEnchantments;
 import com.chadate.kaleidoscope_nether.registry.KNEntities;
 import com.chadate.kaleidoscope_nether.registry.KNFoodBiteRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNItems;
@@ -36,18 +36,22 @@ public class KaleidoscopeNether {
 
         KNBlocks.BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
-        CREATIVE_MODE_TABS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
         KNEffects.EFFECTS.register(modEventBus);
-        KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         KNSounds.SOUND_EVENTS.register(modEventBus);
         KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);
         KNAdvancementTriggerRegistry.TRIGGERS.register(modEventBus);
+        
+        CREATIVE_MODE_TABS.register(modEventBus);
+        KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         KNFoodBiteRegistry.init();
+        
+        KaleidoscopeDollIntegration.init();
+        modEventBus.register(KaleidoscopeDollIntegration.class);
     }
 
     public static ResourceLocation id(String name) {
