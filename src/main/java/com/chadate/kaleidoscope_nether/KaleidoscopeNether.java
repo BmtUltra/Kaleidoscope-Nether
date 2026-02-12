@@ -54,9 +54,6 @@ public class KaleidoscopeNether {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         KNFoodBiteRegistry.init();
-
-        KaleidoscopeDollIntegration.init();
-        modEventBus.register(KaleidoscopeDollIntegration.class);
     }
 
     public static ResourceLocation id(String name) {

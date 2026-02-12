@@ -1,11 +1,16 @@
 package com.chadate.kaleidoscope_nether.integration;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import com.chadate.kaleidoscope_nether.KaleidoscopeNether;
 import com.github.ysbbbbbb.kaleidoscopedoll.KaleidoscopeDoll;
 import com.github.ysbbbbbb.kaleidoscopedoll.block.DollBlock;
+import com.github.ysbbbbbb.kaleidoscopedoll.event.ModRegisterEvent;
 import com.github.ysbbbbbb.kaleidoscopedoll.init.ModCreativeTabs;
 import com.github.ysbbbbbb.kaleidoscopedoll.item.DollEntityItem;
 import com.github.ysbbbbbb.kaleidoscopedoll.item.DollItem;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -16,9 +21,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class KaleidoscopeDollIntegration {
     private static final Map<ResourceLocation, Block> DOLL_BLOCKS = new LinkedHashMap<>();
@@ -63,6 +65,9 @@ public class KaleidoscopeDollIntegration {
                 DollBlock block = new DollBlock();
                 DOLL_BLOCKS.put(id, block);
                 event.register(Registries.BLOCK, id, () -> block);
+                
+                String tooltipKey = DOLL_DEFINITIONS.get(dollId);
+                ModRegisterEvent.SPECIAL_TOOLTIPS.put(id, tooltipKey);
             });
         }
     }

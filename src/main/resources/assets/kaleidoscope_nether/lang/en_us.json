@@ -208,5 +208,12 @@
   "advancements.kaleidoscope_nether.get_soul_return_rice.title": "Temporary Death",
   "advancements.kaleidoscope_nether.get_soul_return_rice.description": "Obtain a Soul Return Rice",
   "advancements.kaleidoscope_nether.seagull_steal_failure.title": "Reap What You Sow",
-  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "Have a seagull attempt to steal your Everlasting Flame Steak"
+  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "Have a seagull attempt to steal your Everlasting Flame Steak",
+
+  "tooltip.kaleidoscope_doll.doll.contributor_0": "Author: Old Dream",
+  "tooltip.kaleidoscope_doll.doll.contributor_1": "Author: Contributor 1",
+  "tooltip.kaleidoscope_doll.doll.contributor_2": "Author: Contributor 2",
+  "tooltip.kaleidoscope_doll.doll.contributor_3": "Author: Contributor 3",
+  "tooltip.kaleidoscope_doll.doll.contributor_4": "Author: Contributor 4",
+  "tooltip.kaleidoscope_doll.doll.contributor_5": "Author: Contributor 5"
 }

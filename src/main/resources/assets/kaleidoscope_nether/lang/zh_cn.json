@@ -253,5 +253,10 @@
   "advancements.kaleidoscope_nether.seagull_steal_failure.title": "自食恶果",
   "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排",
 
-  "tooltip.kaleidoscope_doll.doll.contributor_0": "作者：旧梦"
+  "tooltip.kaleidoscope_doll.doll.contributor_0": "作者：旧梦",
+  "tooltip.kaleidoscope_doll.doll.contributor_1": "作者：贡献者1",
+  "tooltip.kaleidoscope_doll.doll.contributor_2": "作者：贡献者2",
+  "tooltip.kaleidoscope_doll.doll.contributor_3": "作者：贡献者3",
+  "tooltip.kaleidoscope_doll.doll.contributor_4": "作者：贡献者4",
+  "tooltip.kaleidoscope_doll.doll.contributor_5": "作者：贡献者5"
 }
