@@ -2,6 +2,7 @@ package com.chadate.kaleidoscope_nether;
 
 import com.chadate.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.chadate.kaleidoscope_nether.config.Config;
+import com.chadate.kaleidoscope_nether.integration.KaleidoscopeDollIntegration;
 import com.chadate.kaleidoscope_nether.registry.KNBlocks;
 import com.chadate.kaleidoscope_nether.registry.KNComposterRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNCreativeTabs;
@@ -48,6 +49,9 @@ public class KaleidoscopeNether {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         KNFoodBiteRegistry.init();
+
+        KaleidoscopeDollIntegration.init();
+        modEventBus.register(KaleidoscopeDollIntegration.class);
     }
 
     public static ResourceLocation id(String name) {

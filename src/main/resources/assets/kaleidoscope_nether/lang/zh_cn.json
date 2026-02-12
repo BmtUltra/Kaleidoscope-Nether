@@ -251,5 +251,7 @@
   "advancements.kaleidoscope_nether.ghast_pendant.title": "晴天娃娃",
   "advancements.kaleidoscope_nether.ghast_pendant.description": "在堡垒遗迹中找到恶魂挂坠",
   "advancements.kaleidoscope_nether.seagull_steal_failure.title": "自食恶果",
-  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排"
+  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排",
+
+  "tooltip.kaleidoscope_doll.doll.contributor_0": "作者：旧梦"
 }
