@@ -20,6 +20,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -46,12 +47,13 @@ public class KaleidoscopeNether {
         CREATIVE_MODE_TABS.register(modEventBus);
         KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
+        if (ModList.get().isLoaded("kaleidoscope_doll")) {
+            KaleidoscopeDollIntegration.register(modEventBus);
+        }
+
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         KNFoodBiteRegistry.init();
-        
-        KaleidoscopeDollIntegration.init();
-        modEventBus.register(KaleidoscopeDollIntegration.class);
     }
 
     public static ResourceLocation id(String name) {

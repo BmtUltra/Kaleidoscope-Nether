@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,8 +21,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class KaleidoscopeDollIntegration {
-    private static boolean isLoaded = false;
-
     private static final Map<ResourceLocation, Block> DOLL_BLOCKS = new LinkedHashMap<>();
     private static final Map<ResourceLocation, Item> DOLL_ITEMS = new LinkedHashMap<>();
     private static final Map<ResourceLocation, Item> ENTITY_DOLL_ITEMS = new LinkedHashMap<>();
@@ -44,13 +43,17 @@ public class KaleidoscopeDollIntegration {
         "entity_doll_5", "doll_5"
     );
 
-    public static void init() {
-        isLoaded = ModList.get().isLoaded(KaleidoscopeDoll.MOD_ID);
+    public static void register(IEventBus modEventBus) {
+        modEventBus.register(KaleidoscopeDollIntegration.class);
+    }
+
+    private static boolean isDollModLoaded() {
+        return !ModList.get().isLoaded(KaleidoscopeDoll.MOD_ID);
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegisterEvent event) {
-        if (!isLoaded) {
+        if (isDollModLoaded()) {
             return;
         }
 
@@ -66,7 +69,7 @@ public class KaleidoscopeDollIntegration {
 
     @SubscribeEvent
     public static void registerItems(RegisterEvent event) {
-        if (!isLoaded) {
+        if (isDollModLoaded()) {
             return;
         }
 
@@ -92,7 +95,7 @@ public class KaleidoscopeDollIntegration {
 
     @SubscribeEvent
     public static void addToCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (!isLoaded) {
+        if (isDollModLoaded()) {
             return;
         }
         
