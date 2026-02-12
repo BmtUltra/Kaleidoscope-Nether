@@ -7,7 +7,6 @@ import com.chadate.kaleidoscope_nether.registry.KNBlocks;
 import com.chadate.kaleidoscope_nether.registry.KNComposterRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNCreativeTabs;
 import com.chadate.kaleidoscope_nether.registry.KNEffects;
-import com.chadate.kaleidoscope_nether.registry.KNEnchantments;
 import com.chadate.kaleidoscope_nether.registry.KNEntities;
 import com.chadate.kaleidoscope_nether.registry.KNFoodBiteRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNItems;
@@ -21,6 +20,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -37,14 +37,19 @@ public class KaleidoscopeNether {
 
         KNBlocks.BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
-        CREATIVE_MODE_TABS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
         KNEffects.EFFECTS.register(modEventBus);
-        KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         KNSounds.SOUND_EVENTS.register(modEventBus);
         KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);
         KNAdvancementTriggerRegistry.TRIGGERS.register(modEventBus);
+        
+        CREATIVE_MODE_TABS.register(modEventBus);
+        KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+
+        if (ModList.get().isLoaded("kaleidoscope_doll")) {
+            KaleidoscopeDollIntegration.register(modEventBus);
+        }
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
