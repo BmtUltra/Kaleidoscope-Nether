@@ -6,6 +6,7 @@ import java.util.Map;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.github.ysbbbbbb.kaleidoscopedoll.KaleidoscopeDoll;
 import com.github.ysbbbbbb.kaleidoscopedoll.block.DollBlock;
+import com.github.ysbbbbbb.kaleidoscopedoll.config.GeneralConfig;
 import com.github.ysbbbbbb.kaleidoscopedoll.event.ModRegisterEvent;
 import com.github.ysbbbbbb.kaleidoscopedoll.init.ModCreativeTabs;
 import com.github.ysbbbbbb.kaleidoscopedoll.item.DollEntityItem;
@@ -27,7 +28,7 @@ public class KaleidoscopeDollIntegration {
     private static final Map<ResourceLocation, Item> DOLL_ITEMS = new LinkedHashMap<>();
     private static final Map<ResourceLocation, Item> ENTITY_DOLL_ITEMS = new LinkedHashMap<>();
 
-    private static final Map<String, String> DOLL_DEFINITIONS = Map.of(
+    private static final Map<String, String> AUTHOR_DOLL_DEFINITIONS = Map.of(
             "doll_0", "contributor_0",
             "doll_1", "contributor_1",
             "doll_2", "contributor_2",
@@ -36,13 +37,27 @@ public class KaleidoscopeDollIntegration {
             "doll_5", "contributor_5"
     );
 
+    private static final Map<String, String> SPONSOR_DOLL_DEFINITIONS = Map.of(
+            "doll_6", "contributor_6",
+            "doll_7", "contributor_7",
+            "doll_8", "contributor_8"
+    );
+
+    private static final Map<String, String> DOLL_DEFINITIONS = new LinkedHashMap<>() {{
+        putAll(AUTHOR_DOLL_DEFINITIONS);
+        putAll(SPONSOR_DOLL_DEFINITIONS);
+    }};
+
     private static final Map<String, String> ENTITY_DOLL_DEFINITIONS = Map.of(
             "entity_doll_0", "doll_0",
             "entity_doll_1", "doll_1",
             "entity_doll_2", "doll_2",
             "entity_doll_3", "doll_3",
             "entity_doll_4", "doll_4",
-            "entity_doll_5", "doll_5"
+            "entity_doll_5", "doll_5",
+            "entity_doll_6", "doll_6",
+            "entity_doll_7", "doll_7",
+            "entity_doll_8", "doll_8"
     );
 
     public static void register(IEventBus modEventBus) {
@@ -65,7 +80,7 @@ public class KaleidoscopeDollIntegration {
                 DollBlock block = new DollBlock();
                 DOLL_BLOCKS.put(id, block);
                 event.register(Registries.BLOCK, id, () -> block);
-                
+
                 String tooltipKey = DOLL_DEFINITIONS.get(dollId);
                 ModRegisterEvent.SPECIAL_TOOLTIPS.put(id, tooltipKey);
             });
@@ -105,7 +120,25 @@ public class KaleidoscopeDollIntegration {
         }
 
         if (event.getTab() == ModCreativeTabs.AUTHOR_DOLL_TAB.get()) {
-            DOLL_ITEMS.forEach((id, item) -> event.accept(item));
+            AUTHOR_DOLL_DEFINITIONS.keySet().forEach(dollId -> {
+                ResourceLocation id = ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, dollId);
+                Item item = DOLL_ITEMS.get(id);
+                if (item != null) {
+                    event.accept(item);
+                }
+            });
+        }
+
+        if (event.getTab() == ModCreativeTabs.PLAYER_DOLL_TAB.get()) {
+            if (GeneralConfig.ENABLE_SPONSORED_DOLL.get()) {
+                SPONSOR_DOLL_DEFINITIONS.keySet().forEach(dollId -> {
+                    ResourceLocation id = ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, dollId);
+                    Item item = DOLL_ITEMS.get(id);
+                    if (item != null) {
+                        event.accept(item);
+                    }
+                });
+            }
         }
 
         if (event.getTab() == ModCreativeTabs.ENTITY_DOLL_TAB.get()) {

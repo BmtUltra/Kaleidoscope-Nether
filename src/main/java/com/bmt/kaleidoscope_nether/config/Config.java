@@ -21,13 +21,7 @@ public class Config
     public static final ForgeConfigSpec.BooleanValue EVERLASTING_FLAME_STEAK_ENABLED;
     public static final ForgeConfigSpec.IntValue EVERLASTING_FLAME_STEAK_COOLDOWN;
 
-    public static final ForgeConfigSpec.BooleanValue NETHER_CATERPILLAR_ENABLED;
-    public static final ForgeConfigSpec.DoubleValue NETHER_CATERPILLAR_DROP_CHANCE;
-
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> WARPED_BUFF_AFFECTED_MOBS;
-
-    public static final ForgeConfigSpec.DoubleValue BLESSING_ENCHANTMENT_HEAL_AMOUNT;
-    public static final ForgeConfigSpec.BooleanValue BLESSING_ENCHANTMENT_ENABLED;
 
     public static final ForgeConfigSpec.BooleanValue BLAZE_HEART_DESTROY_TERRAIN;
     public static final ForgeConfigSpec.BooleanValue BLAZE_HEART_HURT_OWNER;
@@ -61,18 +55,6 @@ public class Config
 
         BUILDER.pop();
 
-        BUILDER.push("drops");
-
-        NETHER_CATERPILLAR_ENABLED = BUILDER
-                .comment("Whether Nether Caterpillar drops are enabled")
-                .define("netherCaterpillarEnabled", true);
-
-        NETHER_CATERPILLAR_DROP_CHANCE = BUILDER
-                .comment("Drop chance for Nether Caterpillar from Nether Wart (0.0 to 1.0)")
-                .defineInRange("netherCaterpillarDropChance", 0.1, 0.0, 1.0);
-
-        BUILDER.pop();
-
         BUILDER.push("warped_buff");
 
         WARPED_BUFF_AFFECTED_MOBS = BUILDER
@@ -88,19 +70,7 @@ public class Config
 
         BUILDER.pop();
 
-        BUILDER.push("blessing_enchantment");
-
-        BLESSING_ENCHANTMENT_ENABLED = BUILDER
-                .comment("Whether the Blessing enchantment is enabled")
-                .define("enabled", true);
-
-        BLESSING_ENCHANTMENT_HEAL_AMOUNT = BUILDER
-                .comment("Amount of health healed when eating food with Blessing enchantment (in half-hearts, 0.5 = 1 heart)")
-                .defineInRange("healAmount", 0.5, 0.0, 10.0);
-
-        BUILDER.pop();
-
-        BUILDER.push("blaze_heart");
+        BUILDER.push("blaze_heart（还没做好）");
 
         BLAZE_HEART_DESTROY_TERRAIN = BUILDER
                 .comment("Whether Blaze Heart explosion destroys terrain blocks")
@@ -112,11 +82,5 @@ public class Config
 
         BUILDER.pop();
     }
-
     public static final ForgeConfigSpec SPEC = BUILDER.build();
-
-    @SubscribeEvent
-    static void onLoad(final ModConfigEvent event)
-    {
-    }
 }
