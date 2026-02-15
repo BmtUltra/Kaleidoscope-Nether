@@ -17,7 +17,7 @@ import net.neoforged.neoforge.event.AnvilUpdateEvent;
 public class AnvilEventHandler {
 
     private static final String SHELL_COUNT_TAG = "StriderShellCount";
-    private static final int REQUIRED_SHELLS = 8;
+    private static final int REQUIRED_SHELLS = 1;
 
     @SubscribeEvent
     public static void onAnvilUpdate(AnvilUpdateEvent event) {
@@ -30,49 +30,29 @@ public class AnvilEventHandler {
                 return;
             }
 
-            CompoundTag tag = left.getOrDefault(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY)
-                .copyTag();
-            int currentShells = tag.getInt(SHELL_COUNT_TAG);
-
-            if (currentShells >= REQUIRED_SHELLS) {
-                return;
-            }
-
-            int shellsToUse = 1;
-
-            if (right.getCount() < shellsToUse) {
+            if (right.getCount() < REQUIRED_SHELLS) {
                 return;
             }
 
             ItemStack result = left.copy();
-            CompoundTag resultTag = tag.copy();
 
-            int newShellCount = currentShells + shellsToUse;
-            resultTag.putInt(SHELL_COUNT_TAG, newShellCount);
+            ItemEnchantments.Mutable mutable = new ItemEnchantments.Mutable(result.getEnchantments());
+            mutable.set(event.getPlayer().level().holderOrThrow(KNEnchantments.LAVA_WALKER), 1);
+            result.set(DataComponents.ENCHANTMENTS, mutable.toImmutable());
 
-            if (newShellCount >= REQUIRED_SHELLS) {
-                // 应用附魔
-                ItemEnchantments.Mutable mutable = new ItemEnchantments.Mutable(result.getEnchantments());
-                mutable.set(event.getPlayer().level().holderOrThrow(KNEnchantments.LAVA_WALKER), 1);
-                result.set(DataComponents.ENCHANTMENTS, mutable.toImmutable());
-                resultTag.remove(SHELL_COUNT_TAG);
+            CompoundTag tag = left.getOrDefault(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY)
+                    .copyTag();
+            if (tag.contains(SHELL_COUNT_TAG)) {
+                tag.remove(SHELL_COUNT_TAG);
             }
 
-            // 写回自定义数据
-            if (!resultTag.isEmpty()) {
-                result.set(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(resultTag));
-            }
-
-            // 调整名称以显示强化进度（可选）
-            if (currentShells < REQUIRED_SHELLS) {
-                result.set(DataComponents.CUSTOM_NAME, Component.translatable(
-                    result.getDescriptionId()
-                ));
+            if (!tag.isEmpty()) {
+                result.set(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
             }
 
             event.setOutput(result);
-            event.setCost(shellsToUse);
-            event.setMaterialCost(shellsToUse);
+            event.setCost(REQUIRED_SHELLS);
+            event.setMaterialCost(REQUIRED_SHELLS);
         }
     }
 

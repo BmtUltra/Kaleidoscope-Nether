@@ -212,6 +212,16 @@
   "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat": "熔岩烤鸡",
   "subtitles.kaleidoscope_nether.star_dust_repair": "星之尘",
 
+  "tooltip.kaleidoscope_doll.doll.contributor_0": "作者：旧梦",
+  "tooltip.kaleidoscope_doll.doll.contributor_1": "作者：白馒头",
+  "tooltip.kaleidoscope_doll.doll.contributor_2": "作者：茶枣子",
+  "tooltip.kaleidoscope_doll.doll.contributor_3": "作者：1335",
+  "tooltip.kaleidoscope_doll.doll.contributor_4": "作者：辰",
+  "tooltip.kaleidoscope_doll.doll.contributor_5": "作者：小兔子要听话哦",
+  "tooltip.kaleidoscope_doll.doll.contributor_6": "吉祥物：失mile",
+  "tooltip.kaleidoscope_doll.doll.contributor_7": "吉祥物：皓鸠",
+  "tooltip.kaleidoscope_doll.doll.contributor_8": "吉祥物：钻石块",
+
   "advancements.kaleidoscope_nether.root.title": "森罗物语：下界",
   "advancements.kaleidoscope_nether.root.description": "下界也要有奇幻色彩！",
   "advancements.kaleidoscope_nether.star_dust.title": "这也能磨成粉？",
@@ -251,12 +261,5 @@
   "advancements.kaleidoscope_nether.ghast_pendant.title": "晴天娃娃",
   "advancements.kaleidoscope_nether.ghast_pendant.description": "在堡垒遗迹中找到恶魂挂坠",
   "advancements.kaleidoscope_nether.seagull_steal_failure.title": "自食恶果",
-  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排",
-
-  "tooltip.kaleidoscope_doll.doll.contributor_0": "作者：旧梦",
-  "tooltip.kaleidoscope_doll.doll.contributor_1": "作者：贡献者1",
-  "tooltip.kaleidoscope_doll.doll.contributor_2": "作者：贡献者2",
-  "tooltip.kaleidoscope_doll.doll.contributor_3": "作者：贡献者3",
-  "tooltip.kaleidoscope_doll.doll.contributor_4": "作者：贡献者4",
-  "tooltip.kaleidoscope_doll.doll.contributor_5": "作者：贡献者5"
+  "advancements.kaleidoscope_nether.seagull_steal_failure.description": "被海鸥尝试偷取烈焰永恒牛排"
 }
