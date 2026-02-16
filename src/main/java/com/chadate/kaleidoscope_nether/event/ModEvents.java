@@ -37,14 +37,12 @@ public class ModEvents {
         ItemStack pickupStack = arrow.getPickupItemStackOrigin();
         return pickupStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
     }
-    
+
     @SubscribeEvent
     public static void onLivingChangeTarget(LivingChangeTargetEvent event) {
         if (event.getNewAboutToBeSetTarget() instanceof Player player) {
-            if (player.hasEffect(KNEffects.WARPED_BUFF)) {
-                if (WarpedBuffEffect.isAffectedMob(event.getEntity())) {
-                    event.setCanceled(true);
-                }
+            if (WarpedBuffEffect.shouldAffectMob(event.getEntity(), player)) {
+                event.setCanceled(true);
             }
         }
     }
@@ -88,40 +86,5 @@ public class ModEvents {
                 }
             }
         }
-    }
-
-    @SubscribeEvent
-    public static void onNetherWartHarvest(BlockEvent.BreakEvent event) {
-        if (!Config.NETHER_CATERPILLAR_ENABLED.get()) {
-            return;
-        }
-
-        BlockState state = event.getState();
-        if (state.is(Blocks.NETHER_WART) && state.getValue(NetherWartBlock.AGE) == 3) {
-            if (event.getLevel().getRandom().nextDouble() < Config.NETHER_CATERPILLAR_DROP_CHANCE.get()) {
-                ItemStack caterpillar = new ItemStack(KNItems.NETHER_CATERPILLAR.get());
-                Level level = (Level) event.getLevel();
-                Containers.dropItemStack(level,
-                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), caterpillar);
-            }
-        }
-
-//        if (state.is(Blocks.WEEPING_VINES) || state.is(Blocks.WEEPING_VINES_PLANT)) {
-//            if (event.getLevel().getRandom().nextDouble() < Config.CRIMSON_FRUIT_DROP_CHANCE.get()) {
-//                ItemStack crimsonFruit = new ItemStack(KNItems.CRIMSON_FRUIT.get());
-//                Level level = (Level) event.getLevel();
-//                Containers.dropItemStack(level,
-//                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), crimsonFruit);
-//            }
-//        }
-//
-//        if (state.is(Blocks.TWISTING_VINES) || state.is(Blocks.TWISTING_VINES_PLANT)) {
-//            if (event.getLevel().getRandom().nextDouble() < Config.WARPED_FRUIT_DROP_CHANCE.get()) {
-//                ItemStack warpedFruit = new ItemStack(KNItems.WARPED_FRUIT.get());
-//                Level level = (Level) event.getLevel();
-//                Containers.dropItemStack(level,
-//                        event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), warpedFruit);
-//            }
-//        }
     }
 }

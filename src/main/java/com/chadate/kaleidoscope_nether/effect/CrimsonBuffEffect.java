@@ -4,9 +4,6 @@ import com.chadate.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
-import net.minecraft.world.entity.monster.*;
-import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class CrimsonBuffEffect extends MobEffect {
@@ -24,30 +21,18 @@ public class CrimsonBuffEffect extends MobEffect {
         return false;
     }
 
-    public static boolean isInNether(LivingEntity livingEntity) {
-        return livingEntity.level().dimension().equals(Level.NETHER);
-    }
-
-    public static boolean isUndead(LivingEntity target) {
-        if (target instanceof Zombie ||
-                target instanceof Skeleton ||
-                target instanceof WitherSkeleton ||
-                target instanceof ZombifiedPiglin ||
-                target instanceof Phantom ||
-                target instanceof WitherBoss) {
-            return true;
+    public static float calculateDamageBonus(LivingEntity attacker, float baseDamage) {
+        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
+            return baseDamage * 1.15f + 6.0f;
         }
-
-        return target.getType().is(net.minecraft.tags.EntityTypeTags.SKELETONS);
+        return baseDamage;
     }
 
+    @Deprecated
+    @SuppressWarnings("unused")
     public static float getDamageMultiplier(LivingEntity attacker, LivingEntity target) {
         if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
-            if (isInNether(attacker)) {
-                return 1.3f;
-            } else if (isUndead(target)) {
-                return 1.3f;
-            }
+            return 1.15f;
         }
         return 1.0f;
     }
