@@ -23,16 +23,25 @@ public class CrimsonBuffEffect extends MobEffect {
 
     public static float calculateDamageBonus(LivingEntity attacker, float baseDamage) {
         if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
-            return baseDamage * 1.15f + 6.0f;
+            return baseDamage * 1.2f;
         }
         return baseDamage;
+    }
+
+    public static float calculateArmorPenetration(LivingEntity attacker, LivingEntity target) {
+        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
+            float armorValue = target.getArmorValue();
+            float armorPenetration = armorValue * 0.3f + 10.0f;
+            return Math.max(0, armorValue - armorPenetration);
+        }
+        return target.getArmorValue();
     }
 
     @Deprecated
     @SuppressWarnings("unused")
     public static float getDamageMultiplier(LivingEntity attacker, LivingEntity target) {
         if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
-            return 1.15f;
+            return 1.2f;
         }
         return 1.0f;
     }
