@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class GlowingBuffEffect extends MobEffect {
+public class GlowingEffect extends MobEffect {
 
-    public GlowingBuffEffect(int color) {
+    public GlowingEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
@@ -33,8 +33,8 @@ public class GlowingBuffEffect extends MobEffect {
         Player player = event.getEntity();
         ExperienceOrb orb = event.getOrb();
 
-        if (player.hasEffect(KNEffects.GLOWING_BUFF)) {
-            int amplifier = Objects.requireNonNull(player.getEffect(KNEffects.GLOWING_BUFF)).getAmplifier();
+        if (player.hasEffect(KNEffects.GLOWING)) {
+            int amplifier = Objects.requireNonNull(player.getEffect(KNEffects.GLOWING)).getAmplifier();
 
             float bonusMultiplier = 1.0f + (amplifier + 1) * 0.5f;
             int originalValue = orb.getValue();
@@ -50,8 +50,8 @@ public class GlowingBuffEffect extends MobEffect {
     public static void onPlayerXpChange(PlayerXpEvent.XpChange event) {
         Player player = event.getEntity();
 
-        if (player.hasEffect(KNEffects.GLOWING_BUFF)) {
-            int amplifier = Objects.requireNonNull(player.getEffect(KNEffects.GLOWING_BUFF)).getAmplifier();
+        if (player.hasEffect(KNEffects.GLOWING)) {
+            int amplifier = Objects.requireNonNull(player.getEffect(KNEffects.GLOWING)).getAmplifier();
 
             float bonusMultiplier = 1.0f + (amplifier + 1) * 0.5f;
             int originalAmount = event.getAmount();

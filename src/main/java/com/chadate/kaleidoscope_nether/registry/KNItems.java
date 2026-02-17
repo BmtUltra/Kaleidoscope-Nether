@@ -100,25 +100,11 @@ public class KNItems {
 
     // 绯红果
     public static final DeferredHolder<Item, Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",
-            () -> new SpecialFruitBlockItem(
-                    KNBlocks.WEEPING_CAVE_VINES.get(),
-                    KNFoods.CRIMSON_FRUIT,
-                    KNEffects.CRIMSON_BUFF,
-                    30*20,
-                    0,
-                    Rarity.COMMON
-            ));
+            () -> new SpecialFruitBlockItem(KNBlocks.WEEPING_CAVE_VINES.get(), KNFoods.CRIMSON_FRUIT, Rarity.COMMON));
 
     // 诡异果
     public static final DeferredHolder<Item, Item> WARPED_FRUIT = ITEMS.register("warped_fruit",
-            () -> new SpecialFruitBlockItem(
-                    KNBlocks.TWISTING_CAVE_VINES.get(),
-                    KNFoods.WARPED_FRUIT,
-                    KNEffects.WARPED_BUFF,
-                    30*20,
-                    0,
-                    Rarity.COMMON
-            ));
+            () -> new SpecialFruitBlockItem(KNBlocks.TWISTING_CAVE_VINES.get(), KNFoods.WARPED_FRUIT, Rarity.COMMON));
 
     // 下界猪儿虫
     public static final DeferredHolder<Item, Item> NETHER_CATERPILLAR = ITEMS.register("nether_caterpillar",

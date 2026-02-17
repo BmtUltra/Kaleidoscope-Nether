@@ -13,7 +13,9 @@
     "kaleidoscope_nether.PiglinAiMixin",
     "kaleidoscope_nether.PiglinBruteAiMixin",
     "kaleidoscope_nether.WitherBossMixin",
-    "kaleidoscope_nether.LivingEntityMixin"
+    "kaleidoscope_nether.LivingEntityMixin",
+    "kaleidoscope_nether.TropicalStriderMixin",
+    "kaleidoscope_nether.StarBlessingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

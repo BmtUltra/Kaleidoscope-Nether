@@ -14,7 +14,7 @@ public class DamageEventHandler {
     public static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
         LivingEntity entity = event.getEntity();
 
-        if (entity.hasEffect(KNEffects.LAVA_WALKER)) {
+        if (entity.hasEffect(KNEffects.TROPICAL_STRIDER)) {
             if (event.getSource().is(DamageTypeTags.IS_FIRE)) {
                 event.setCanceled(true);
                 entity.clearFire();

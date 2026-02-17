@@ -12,7 +12,6 @@ import com.chadate.kaleidoscope_nether.registry.KNFoodBiteRegistry;
 import com.chadate.kaleidoscope_nether.registry.KNItems;
 import com.chadate.kaleidoscope_nether.registry.KNPotions;
 import com.chadate.kaleidoscope_nether.registry.KNSounds;
-import com.chadate.kaleidoscope_nether.registry.KNSoupBases;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -66,6 +65,6 @@ public class KaleidoscopeNether {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(KNComposterRegistry::register);
-        event.enqueueWork(KNSoupBases::registerAll);
+//        event.enqueueWork(KNSoupBases::registerAll);
     }
 }

@@ -34,7 +34,6 @@ public class ForgetfulnessSoupItem extends BowlFoodOnlyItem {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof ServerPlayer player) {
-            // 传送回重生点
             if (player.getRespawnPosition() != null) {
                 player.teleportTo(
                         Objects.requireNonNull(player.server.getLevel(player.getRespawnDimension())),
@@ -45,7 +44,6 @@ public class ForgetfulnessSoupItem extends BowlFoodOnlyItem {
                         player.getXRot()
                 );
             } else {
-                // 如果没有设置重生点，传送到世界出生点
                 player.teleportTo(
                         player.server.overworld(),
                         player.server.overworld().getSharedSpawnPos().getX() + 0.5,

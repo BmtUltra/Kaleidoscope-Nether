@@ -1,26 +1,39 @@
 package com.chadate.kaleidoscope_nether.event;
 
 import com.chadate.kaleidoscope_nether.KaleidoscopeNether;
-import com.chadate.kaleidoscope_nether.effect.StarBlessingBuffEffect;
 import com.chadate.kaleidoscope_nether.registry.KNEffects;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID)
 public class StarBlessingEffectEvents {
 
     @SubscribeEvent
-    public static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
-        if (event.getEntity() instanceof Player player) {
-            if (player.hasEffect(KNEffects.STAR_BLESSING_BUFF)) {
-                var effect = player.getEffect(KNEffects.STAR_BLESSING_BUFF);
-                if (effect != null) {
-                    int amplifier = effect.getAmplifier();
-                    float reducedDamage = StarBlessingBuffEffect.getDamageReduction(event.getAmount(), amplifier);
-                    event.setAmount(reducedDamage);
+    public static void onLivingDamage(LivingDamageEvent.Pre event) {
+        if (event.getEntity().hasEffect(KNEffects.STAR_BLESSING)) {
+            event.setNewDamage(event.getNewDamage() * 0.2F);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEffectAdded(MobEffectEvent.Added event) {
+        if (event.getEffectInstance().getEffect().value() == KNEffects.STAR_BLESSING.get()) {
+            List<net.minecraft.core.Holder<net.minecraft.world.effect.MobEffect>> effectsToRemove = new ArrayList<>();
+            for (var entry : event.getEntity().getActiveEffectsMap().entrySet()) {
+                MobEffectInstance effect = entry.getValue();
+                if (effect.getEffect().value().getCategory() == MobEffectCategory.HARMFUL) {
+                    effectsToRemove.add(effect.getEffect());
                 }
+            }
+            for (var effect : effectsToRemove) {
+                event.getEntity().removeEffect(effect);
             }
         }
     }

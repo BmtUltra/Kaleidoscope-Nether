@@ -37,7 +37,7 @@ public class WarpedBuffEffect extends MobEffect {
     }
 
     public static boolean shouldAffectMob(LivingEntity target, LivingEntity player) {
-        if (!player.hasEffect(com.chadate.kaleidoscope_nether.registry.KNEffects.WARPED_BUFF)) {
+        if (!player.hasEffect(com.chadate.kaleidoscope_nether.registry.KNEffects.WARPED)) {
             return false;
         }
         return isAffectedMob(target);

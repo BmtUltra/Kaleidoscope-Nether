@@ -8,8 +8,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
-public class GhostBuffEffect extends MobEffect {
-    public GhostBuffEffect(int color) {
+public class GhostEffect extends MobEffect {
+    public GhostEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 

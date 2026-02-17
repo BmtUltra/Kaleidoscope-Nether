@@ -49,7 +49,7 @@ public class KNAdvances implements AdvancementProvider.AdvancementGenerator {
                         Component.translatable("advancements.kaleidoscope_nether.star_blessing_buff.description"), 
                         null, AdvancementType.GOAL, true, true, false)
                 .addCriterion("star_blessing_buff", EffectsChangedTrigger.TriggerInstance.hasEffects(
-                        MobEffectsPredicate.Builder.effects().and(KNEffects.STAR_BLESSING_BUFF)))
+                        MobEffectsPredicate.Builder.effects().and(KNEffects.STAR_BLESSING)))
                 .save(saver, "kaleidoscope_nether/star_blessing_buff");
         
         // Soul Return Rice - 食用魂归饭

@@ -6,8 +6,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
-public class CrimsonBuffEffect extends MobEffect {
-    public CrimsonBuffEffect(int color) {
+public class CrimsonEffect extends MobEffect {
+    public CrimsonEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
@@ -22,14 +22,14 @@ public class CrimsonBuffEffect extends MobEffect {
     }
 
     public static float calculateDamageBonus(LivingEntity attacker, float baseDamage) {
-        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
+        if (attacker.hasEffect(KNEffects.CRIMSON)) {
             return baseDamage * 1.2f;
         }
         return baseDamage;
     }
 
     public static float calculateArmorPenetration(LivingEntity attacker, LivingEntity target) {
-        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
+        if (attacker.hasEffect(KNEffects.CRIMSON)) {
             float armorValue = target.getArmorValue();
             float armorPenetration = armorValue * 0.3f + 10.0f;
             return Math.max(0, armorValue - armorPenetration);
@@ -40,7 +40,7 @@ public class CrimsonBuffEffect extends MobEffect {
     @Deprecated
     @SuppressWarnings("unused")
     public static float getDamageMultiplier(LivingEntity attacker, LivingEntity target) {
-        if (attacker.hasEffect(KNEffects.CRIMSON_BUFF)) {
+        if (attacker.hasEffect(KNEffects.CRIMSON)) {
             return 1.2f;
         }
         return 1.0f;
