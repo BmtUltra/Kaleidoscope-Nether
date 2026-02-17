@@ -14,6 +14,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TippedArrowItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -69,12 +70,7 @@ public class KNItems {
 
     // 原始砍刀
     public static final DeferredHolder<Item, Item> PRIMITIVE_MACHETE = ITEMS.register("primitive_machete",
-            () -> new KitchenKnifeItem(
-                    new PrimitiveMacheteTier(),
-                    new Item.Properties()
-                            .durability(2031)
-                    //.rarity(Rarity.UNCOMMON)
-            ));
+            () -> new KitchenKnifeItem(new PrimitiveMacheteTier(),new Item.Properties().durability(2031)));
 
     // 恶魂挂坠
     public static final DeferredHolder<Item, Item> GHAST_PENDANT = ITEMS.register("ghast_pendant",
@@ -82,11 +78,7 @@ public class KNItems {
 
     // 烈焰永恒牛排
     public static final DeferredHolder<Item, Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
-            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK,
-                    Config.EVERLASTING_FLAME_STEAK_COOLDOWN,
-                    Config.EVERLASTING_FLAME_STEAK_ENABLED,
-                    Rarity.EPIC
-            ));
+            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK,Config.EVERLASTING_FLAME_STEAK_COOLDOWN,Config.EVERLASTING_FLAME_STEAK_ENABLED,Rarity.EPIC));
 
     // 下界疣木家具
     public static final DeferredHolder<Item, Item> CHAIR_WART = ITEMS.register("chair_wart",
