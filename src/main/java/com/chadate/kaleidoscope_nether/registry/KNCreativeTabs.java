@@ -103,6 +103,13 @@ public class KNCreativeTabs {
                         output.accept(KNItems.GLOWING_SALAD.get());
                         output.accept(KNItems.BLACK_APPLE_SALAD.get());
                         output.accept(KNItems.RUBY_STEAK.get());
+                        output.accept(KNItems.GHAST_KABOB.get());
+                        output.accept(KNItems.SOUL_STRIDER_KABOB.get());
+                        output.accept(KNItems.GOLDEN_KABOB.get());
+                        output.accept(KNItems.BLAZING_KABOB.get());
+                        output.accept(KNItems.CRIMSON_KABOB.get());
+                        output.accept(KNItems.WARPED_KABOB.get());
+                        output.accept(KNItems.GLOWING_KABOB.get());
                         output.accept(KNItems.GIANT_BEAST_CROISSANT.get());
                         output.accept(KNItems.MAGMA_SWEET_AND_SOUR_PORK.get());
                         output.accept(KNItems.FORGETFULNESS_SOUP.get());
