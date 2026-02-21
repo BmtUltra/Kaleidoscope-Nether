@@ -74,7 +74,7 @@ public class Config
 
         BUILDER.pop();
 
-        BUILDER.push("blaze_heart（还没做好）");
+        BUILDER.push("blaze_heart");
 
         BLAZE_HEART_DESTROY_TERRAIN = BUILDER
                 .comment("Whether Blaze Heart explosion destroys terrain blocks")

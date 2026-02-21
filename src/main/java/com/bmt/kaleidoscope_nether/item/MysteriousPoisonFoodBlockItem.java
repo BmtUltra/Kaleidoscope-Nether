@@ -18,7 +18,7 @@ public class MysteriousPoisonFoodBlockItem extends BlockItem {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         return super.finishUsingItem(stack, level, entity);
     }
 }

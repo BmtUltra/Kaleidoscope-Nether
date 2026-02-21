@@ -164,6 +164,7 @@
   "item.minecraft.splash_potion.effect.mysterious_poison": "Splash Potion of Mysterious Poison",
   "item.kaleidoscope_nether.ghast_pendant": "Ghast Pendant",
   "item.kaleidoscope_nether.ghast_pendant.tooltip.line1": "§7Ghasts will remain friendly to you",
+  "item.kaleidoscope_nether.ghast_pendant.tooltip.line2": "§7Can be worn in the chestplate slot or curio slot",
   "effect.kaleidoscope_nether.mysterious_poison": "Mysterious Poison",
   "effect.kaleidoscope_nether.mysterious_poison.description": "Takes damage at regular intervals while under this effect",
   "effect.kaleidoscope_nether.star_blessing_buff": "Star Blessing",

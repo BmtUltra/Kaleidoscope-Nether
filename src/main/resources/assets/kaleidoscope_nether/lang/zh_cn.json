@@ -193,6 +193,7 @@
   "item.minecraft.splash_potion.effect.mysterious_poison": "喷溅型迷之中毒药水",
   "item.kaleidoscope_nether.ghast_pendant": "恶魂挂坠",
   "item.kaleidoscope_nether.ghast_pendant.tooltip.line1": "§7恶魂会对你保持友善",
+  "item.kaleidoscope_nether.ghast_pendant.tooltip.line2": "§7可以穿在胸甲栏位或饰品栏",
   "effect.kaleidoscope_nether.mysterious_poison": "迷之中毒",
   "effect.kaleidoscope_nether.mysterious_poison.description": "获得该效果时，每一定时间受到伤害",
   "effect.kaleidoscope_nether.star_blessing": "星之祝福",
