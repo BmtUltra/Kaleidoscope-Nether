@@ -10,7 +10,6 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
-import com.github.ysbbbbbb.kaleidoscopedoll.item.CustomDollItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -32,8 +31,7 @@ public class KNItems {
 
     // 炽足兽岩壳
     public static final RegistryObject<Item> STRIDER_ROCK_SHELL = ITEMS.register("strider_rock_shell",
-            () -> new Item(new Item.Properties()
-                    .fireResistant()));
+            () -> new Item(new Item.Properties().fireResistant()));
 
     // 镀金碎片
     public static final RegistryObject<Item> GILDED_FRAGMENT = ITEMS.register("gilded_fragment",
@@ -53,10 +51,7 @@ public class KNItems {
 
     // 烈焰珍珠
     public static final RegistryObject<Item> BLAZE_HEART = ITEMS.register("blaze_heart",
-            () -> new ThrowableFuelItem(new Item.Properties()
-                    .rarity(Rarity.COMMON)
-                    .stacksTo(16),
-                    3000));
+            () -> new ThrowableFuelItem(new Item.Properties().rarity(Rarity.COMMON).stacksTo(16), 3000));
 
     // 疣猪兽皮
     public static final RegistryObject<Item> HOGLIN_HIDE = ITEMS.register("hoglin_hide",
@@ -64,18 +59,11 @@ public class KNItems {
 
     // 吹箭筒
     public static final RegistryObject<Item> BLOWGUN = ITEMS.register("blowgun",
-            () -> new BlowgunItem(new Item.Properties()
-                    .durability(384)
-                    .rarity(Rarity.UNCOMMON)));
+            () -> new BlowgunItem(new Item.Properties().durability(384).rarity(Rarity.UNCOMMON)));
 
     // 原始砍刀
     public static final RegistryObject<Item> PRIMITIVE_MACHETE = ITEMS.register("primitive_machete",
-            () -> new KitchenKnifeItem(
-                    new PrimitiveMacheteTier(),
-                    new Item.Properties()
-                            .durability(2031)
-                    //.rarity(Rarity.UNCOMMON)
-            ));
+            () -> new KitchenKnifeItem(new PrimitiveMacheteTier(), new Item.Properties().durability(2031)));
 
     // 恶魂挂坠
     public static final RegistryObject<Item> GHAST_PENDANT = ITEMS.register("ghast_pendant",
@@ -83,11 +71,7 @@ public class KNItems {
 
     // 烈焰永恒牛排
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
-            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK,
-                    Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get,
-                    Config.EVERLASTING_FLAME_STEAK_ENABLED::get,
-                    Rarity.EPIC
-            ));
+            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get, Config.EVERLASTING_FLAME_STEAK_ENABLED::get, Rarity.EPIC));
 
     // 下界疣木家具
     public static final RegistryObject<Item> CHAIR_WART = ITEMS.register("chair_wart",
@@ -101,25 +85,11 @@ public class KNItems {
 
     // 绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",
-            () -> new SpecialFruitBlockItem(
-                    KNBlocks.WEEPING_CAVE_VINES.get(),
-                    KNFoods.CRIMSON_FRUIT,
-                    KNEffects.CRIMSON_BUFF,
-                    30*20,
-                    0,
-                    Rarity.COMMON
-            ));
+            () -> new SpecialFruitBlockItem(KNBlocks.WEEPING_CAVE_VINES.get(), KNFoods.CRIMSON_FRUIT, Rarity.COMMON));
 
     // 诡异果
     public static final RegistryObject<Item> WARPED_FRUIT = ITEMS.register("warped_fruit",
-            () -> new SpecialFruitBlockItem(
-                    KNBlocks.TWISTING_CAVE_VINES.get(),
-                    KNFoods.WARPED_FRUIT,
-                    KNEffects.WARPED_BUFF,
-                    30*20,
-                    0,
-                    Rarity.COMMON
-            ));
+            () -> new SpecialFruitBlockItem(KNBlocks.TWISTING_CAVE_VINES.get(), KNFoods.WARPED_FRUIT, Rarity.COMMON));
 
     // 下界猪儿虫
     public static final RegistryObject<Item> NETHER_CATERPILLAR = ITEMS.register("nether_caterpillar",
@@ -207,13 +177,7 @@ public class KNItems {
 
     // 剧毒果
     public static final RegistryObject<Item> POISONOUS_FRUIT = ITEMS.register("poisonous_fruit",
-            () -> new MysteriousPoisonFoodBlockItem(
-                    KNBlocks.POISONOUS_FRUIT.get(),
-                    KNFoods.POISONOUS_FRUIT,
-                    30, // 30秒
-                    0,
-                    Rarity.COMMON
-            ));
+            () -> new MysteriousPoisonFoodBlockItem(KNBlocks.POISONOUS_FRUIT.get(), KNFoods.POISONOUS_FRUIT, Rarity.COMMON));
 
     // 剧毒浓汤
     public static final RegistryObject<Item> POISONOUS_SOUP = ITEMS.register("poisonous_soup",
@@ -442,11 +406,23 @@ public class KNItems {
     // 玉米胡萝卜排骨汤
     public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
             () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
-/*
-    // 广式肠粉
-    public static final RegistryObject<Item> CANTONESE_RICE_NOODLE_ROLL = ITEMS.register("cantonese_rice_noodle_roll",
-            () -> new BowlFoodOnlyItem(KNFoods.CANTONESE_RICE_NOODLE_ROLL));
-*/
+
+    // 绯红桶
+    public static final RegistryObject<Item> CRIMSON_BUCKET = ITEMS.register("crimson_bucket",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    // 诡异桶
+    public static final RegistryObject<Item> WARPED_BUCKET = ITEMS.register("warped_bucket",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    // 迷毒桶
+    public static final RegistryObject<Item> POISONOUS_BUCKET = ITEMS.register("poisonous_bucket",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    // 灵魂桶
+    public static final RegistryObject<Item> SOUL_BUCKET = ITEMS.register("soul_bucket",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

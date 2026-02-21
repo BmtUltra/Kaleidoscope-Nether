@@ -6,8 +6,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.BlockPos;
 
-public class LavaWalkerEffect extends MobEffect {
-    public LavaWalkerEffect(int color) {
+public class TropicalStriderEffect extends MobEffect {
+    public TropicalStriderEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 

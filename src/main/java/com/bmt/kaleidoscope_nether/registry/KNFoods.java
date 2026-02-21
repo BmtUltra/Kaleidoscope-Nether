@@ -11,10 +11,10 @@ import static net.minecraft.world.effect.MobEffects.*;
 public class KNFoods {
     // 灵魂羊排
     public static final FoodProperties SOUL_LAMB_CHOP_ITEM = (new FoodProperties.Builder()).nutrition(13).saturationMod(0.611F)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 180 * 20), 1.0F).meat().build();
+            .effect(() -> new MobEffectInstance(GHOST.get(), 180 * 20), 1.0F).meat().build();
 
     public static final FoodProperties SOUL_LAMB_CHOP_BLOCK = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.611F)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 240 * 20), 1.0F).meat().build();
+            .effect(() -> new MobEffectInstance(GHOST.get(), 240 * 20), 1.0F).meat().build();
 
     // 烈焰永恒牛排
     public static final FoodProperties EVERLASTING_FLAME_STEAK = new FoodProperties.Builder()
@@ -29,6 +29,7 @@ public class KNFoods {
     public static final FoodProperties CRIMSON_FRUIT = new FoodProperties.Builder()
             .nutrition(2)
             .saturationMod(0.3f)
+            .effect(() -> new MobEffectInstance(CRIMSON.get(), 20 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -36,6 +37,7 @@ public class KNFoods {
     public static final FoodProperties WARPED_FRUIT = new FoodProperties.Builder()
             .nutrition(2)
             .saturationMod(0.3f)
+            .effect(() -> new MobEffectInstance(WARPED.get(), 20 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -49,7 +51,7 @@ public class KNFoods {
     // 回魂饭
     public static final FoodProperties SOUL_RETURN_RICE = new FoodProperties.Builder()
             .nutrition(16).saturationMod(1.8f)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 90 * 20, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(STAR_BLESSING.get(), 30 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -64,14 +66,14 @@ public class KNFoods {
     // 星之炖菜
     public static final FoodProperties STAR_STEW = new FoodProperties.Builder()
             .nutrition(16).saturationMod(1.8f)
-            .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(STAR_BLESSING.get(), 600, 0), 1.0F)
             .alwaysEat()
             .build();
 
     // 灵魂浓汤
     public static final FoodProperties SOUL_SOUP = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.667f)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 90 * 20, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(GHOST.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -187,6 +189,7 @@ public class KNFoods {
     // 剧毒果
     public static final FoodProperties POISONOUS_FRUIT = new FoodProperties.Builder()
             .nutrition(2).saturationMod(0.1f)
+            .effect(() -> new MobEffectInstance(MYSTERIOUS_POISON.get(), 20 * 20), 1.0F)
             .alwaysEat()
             .build();
 
@@ -238,7 +241,7 @@ public class KNFoods {
     // 下界薯条拼盘
     public static final FoodProperties NETHER_FRIES_PLATTER = new FoodProperties.Builder()
             .nutrition(20).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(LAVA_WALKER.get(), 300 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(TROPICAL_STRIDER.get(), 300 * 20), 1.0F)
             .alwaysEat()
             .build();
 
@@ -261,7 +264,7 @@ public class KNFoods {
     // 灵魂椒炒肉
     public static final FoodProperties SOUL_PEPPER_STIR_FRY = new FoodProperties.Builder()
             .nutrition(9).saturationMod(0.611f)
-            .effect(() -> new MobEffectInstance(GHOST_BUFF.get(), 60 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(GHOST.get(), 60 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -269,7 +272,7 @@ public class KNFoods {
     // 炽足兽岩壳炒肉
     public static final FoodProperties STRIDER_SHELL_STIR_FRY = new FoodProperties.Builder()
             .nutrition(13).saturationMod(0.615f)
-            .effect(() -> new MobEffectInstance(LAVA_WALKER.get(), 300 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(TROPICAL_STRIDER.get(), 300 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -298,21 +301,21 @@ public class KNFoods {
     // 烈焰浓汤
     public static final FoodProperties BLAZE_SOUP = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.667f)
-            .effect(() -> new MobEffectInstance(LAVA_WALKER.get(), 180 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(TROPICAL_STRIDER.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 熔岩果冻
     public static final FoodProperties LAVA_JELLY = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.0f)
-            .effect(() -> new MobEffectInstance(LAVA_WALKER.get(), 120 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(TROPICAL_STRIDER.get(), 120 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 绯红沙拉
     public static final FoodProperties CRIMSON_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(CRIMSON_BUFF.get(), 90 * 20, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(CRIMSON.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -327,14 +330,14 @@ public class KNFoods {
     // 诡异沙拉
     public static final FoodProperties WARPED_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 90 * 20, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(WARPED.get(), 90 * 20, 0), 1.0F)
             .alwaysEat()
             .build();
 
     // 灵魂炽足兽烤串
     public static final FoodProperties SOUL_STRIDER_KABOB = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.9f)
-            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 30 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(WARPED.get(), 30 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -350,7 +353,7 @@ public class KNFoods {
     // 烈焰烤串
     public static final FoodProperties BLAZING_KABOB = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.9f)
-            .effect(() -> new MobEffectInstance(LAVA_WALKER.get(), 30 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(TROPICAL_STRIDER.get(), 30 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -358,7 +361,7 @@ public class KNFoods {
     // 绯红烤串
     public static final FoodProperties CRIMSON_KABOB = new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(CRIMSON_BUFF.get(), 45 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(CRIMSON.get(), 45 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -366,7 +369,7 @@ public class KNFoods {
     // 诡异烤串
     public static final FoodProperties WARPED_KABOB = new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 45 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(WARPED.get(), 45 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -374,7 +377,7 @@ public class KNFoods {
     // 星之恶魂意面
     public static final FoodProperties STAR_GHAST_PASTA = new FoodProperties.Builder()
             .nutrition(16).saturationMod(1.8f)
-            .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(STAR_BLESSING.get(), 600, 0), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -382,7 +385,7 @@ public class KNFoods {
     // 星之炖肉
     public static final FoodProperties STAR_STEW_MEAT = new FoodProperties.Builder()
             .nutrition(16).saturationMod(1.8f)
-            .effect(() -> new MobEffectInstance(STAR_BLESSING_BUFF.get(), 600, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(STAR_BLESSING.get(), 600, 0), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -390,21 +393,21 @@ public class KNFoods {
     // 荧光浓汤
     public static final FoodProperties GLOWING_SOUP = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.667f)
-            .effect(() -> new MobEffectInstance(GLOWING_BUFF.get(), 180 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 荧光布丁
     public static final FoodProperties GLOWING_PUDDING = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.0f)
-            .effect(() -> new MobEffectInstance(GLOWING_BUFF.get(), 180 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 荧光烤串
     public static final FoodProperties GLOWING_KABOB = new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(GLOWING_BUFF.get(), 45 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 45 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -412,7 +415,7 @@ public class KNFoods {
     // 荧光沙拉
     public static final FoodProperties GLOWING_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(GLOWING_BUFF.get(), 90 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 90 * 20), 1.0F)
             .alwaysEat()
             .build();
 
@@ -471,7 +474,7 @@ public class KNFoods {
     // 诡异蛋糕
     public static final FoodProperties WARPED_CAKE = new FoodProperties.Builder()
             .nutrition(9).saturationMod(0.4f)
-            .effect(() -> new MobEffectInstance(WARPED_BUFF.get(), 60 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(WARPED.get(), 60 * 20), 1.0F)
             .alwaysEat()
             .build();
 

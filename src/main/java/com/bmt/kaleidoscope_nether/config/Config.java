@@ -2,9 +2,7 @@ package com.bmt.kaleidoscope_nether.config;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
 
 import java.util.Arrays;
 import java.util.List;
@@ -62,9 +60,15 @@ public class Config
                 .defineList("affectedMobs",
                         Arrays.asList(
                                 "minecraft:piglin",
+                                "minecraft:piglin_brute",
+                                "minecraft:zombified_piglin",
+                                "minecraft:hoglin",
+                                "minecraft:zoglin",
                                 "minecraft:ghast",
                                 "minecraft:magma_cube",
-                                "minecraft:hoglin"
+                                "minecraft:blaze",
+                                "minecraft:wither_skeleton",
+                                "minecraft:wither"
                         ),
                         obj -> obj instanceof String);
 

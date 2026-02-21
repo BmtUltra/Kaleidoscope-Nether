@@ -40,7 +40,11 @@ public class KaleidoscopeDollIntegration {
     private static final Map<String, String> SPONSOR_DOLL_DEFINITIONS = Map.of(
             "doll_6", "contributor_6",
             "doll_7", "contributor_7",
-            "doll_8", "contributor_8"
+            "doll_8", "contributor_8",
+            "doll_9", "contributor_9",
+            "doll_10", "contributor_10",
+            "doll_11", "contributor_11",
+            "doll_12", "contributor_12"
     );
 
     private static final Map<String, String> DOLL_DEFINITIONS = new LinkedHashMap<>() {{
@@ -48,16 +52,20 @@ public class KaleidoscopeDollIntegration {
         putAll(SPONSOR_DOLL_DEFINITIONS);
     }};
 
-    private static final Map<String, String> ENTITY_DOLL_DEFINITIONS = Map.of(
-            "entity_doll_0", "doll_0",
-            "entity_doll_1", "doll_1",
-            "entity_doll_2", "doll_2",
-            "entity_doll_3", "doll_3",
-            "entity_doll_4", "doll_4",
-            "entity_doll_5", "doll_5",
-            "entity_doll_6", "doll_6",
-            "entity_doll_7", "doll_7",
-            "entity_doll_8", "doll_8"
+    private static final Map<String, String> ENTITY_DOLL_DEFINITIONS = Map.ofEntries(
+            Map.entry("entity_doll_0", "doll_0"),
+            Map.entry("entity_doll_1", "doll_1"),
+            Map.entry("entity_doll_2", "doll_2"),
+            Map.entry("entity_doll_3", "doll_3"),
+            Map.entry("entity_doll_4", "doll_4"),
+            Map.entry("entity_doll_5", "doll_5"),
+            Map.entry("entity_doll_6", "doll_6"),
+            Map.entry("entity_doll_7", "doll_7"),
+            Map.entry("entity_doll_8", "doll_8"),
+            Map.entry("entity_doll_9", "doll_9"),
+            Map.entry("entity_doll_10", "doll_10"),
+            Map.entry("entity_doll_11", "doll_11"),
+            Map.entry("entity_doll_12", "doll_12")
     );
 
     public static void register(IEventBus modEventBus) {

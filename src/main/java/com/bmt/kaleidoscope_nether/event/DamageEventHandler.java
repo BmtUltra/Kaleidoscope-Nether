@@ -16,7 +16,7 @@ public class DamageEventHandler {
         LivingEntity entity = event.getEntity();
         DamageSource source = event.getSource();
 
-        if (entity.hasEffect(KNEffects.LAVA_WALKER.get())) {
+        if (entity.hasEffect(KNEffects.TROPICAL_STRIDER.get())) {
             if (source.is(DamageTypeTags.IS_FIRE)) {
                 event.setCanceled(true);
                 entity.clearFire();

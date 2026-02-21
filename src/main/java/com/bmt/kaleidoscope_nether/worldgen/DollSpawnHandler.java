@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID)
 public class DollSpawnHandler {
-    private static final BlockPos FIXED_SPAWN_POS = new BlockPos(599, 100, 106);
+    private static final BlockPos FIXED_SPAWN_POS = new BlockPos(599, 34, 106);
 
     @SubscribeEvent
     public static void onWorldLoad(LevelEvent.Load event) {

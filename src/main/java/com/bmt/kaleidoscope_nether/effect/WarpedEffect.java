@@ -1,6 +1,7 @@
 package com.bmt.kaleidoscope_nether.effect;
 
 import com.bmt.kaleidoscope_nether.config.Config;
+import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,14 +10,21 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
-public class WarpedBuffEffect extends MobEffect {
-    public WarpedBuffEffect(int color) {
+public class WarpedEffect extends MobEffect {
+    public WarpedEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
         return false;
+    }
+
+    public static boolean shouldAffectMob(LivingEntity target, LivingEntity player) {
+        if (!player.hasEffect(KNEffects.WARPED.get())) {
+            return false;
+        }
+        return isAffectedMob(target);
     }
 
     public static boolean isAffectedMob(LivingEntity entity) {

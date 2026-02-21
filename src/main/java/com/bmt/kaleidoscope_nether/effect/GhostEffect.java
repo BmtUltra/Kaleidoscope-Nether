@@ -8,8 +8,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
-public class GhostBuffEffect extends MobEffect {
-    public GhostBuffEffect(int color) {
+public class GhostEffect extends MobEffect {
+    public GhostEffect(int color) {
         super(MobEffectCategory.BENEFICIAL, color);
     }
 
@@ -40,7 +40,6 @@ public class GhostBuffEffect extends MobEffect {
         if (!entity.level().isClientSide() && entity.level() instanceof ServerLevel serverLevel) {
             if (entity.tickCount % 10 == 0) {
                 Vec3 pos = entity.position();
-                //降低粒子生成数量（有点挡视线）
                 int particleCount = 1 + amplifier * 1;
 
                 for (int i = 0; i < particleCount; i++) {

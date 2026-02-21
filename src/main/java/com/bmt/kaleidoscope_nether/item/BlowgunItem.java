@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import java.util.function.Predicate;
 
 public class BlowgunItem extends ProjectileWeaponItem {
-    public static final int MAX_DRAW_DURATION = 5;
+    public static final int MAX_DRAW_DURATION = 7;
     public static final float DEFAULT_POWER = 3.0F;
 
     public BlowgunItem(Properties properties) {

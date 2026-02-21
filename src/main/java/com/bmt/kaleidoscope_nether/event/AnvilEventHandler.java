@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AnvilEventHandler {
 
     private static final String SHELL_COUNT_TAG = "StriderShellCount";
-    private static final int REQUIRED_SHELLS = 8;
+    private static final int REQUIRED_SHELLS = 1;
 
     @SubscribeEvent
     public static void onAnvilUpdate(AnvilUpdateEvent event) {
