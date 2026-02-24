@@ -10,6 +10,7 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
+import com.github.ysbbbbbb.kaleidoscopetavern.item.JuiceBucketItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -409,19 +410,19 @@ public class KNItems {
 
     // 绯红桶
     public static final RegistryObject<Item> CRIMSON_BUCKET = ITEMS.register("crimson_bucket",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            JuiceBucketItem::new);
 
     // 诡异桶
     public static final RegistryObject<Item> WARPED_BUCKET = ITEMS.register("warped_bucket",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            JuiceBucketItem::new);
 
     // 迷毒桶
     public static final RegistryObject<Item> POISONOUS_BUCKET = ITEMS.register("poisonous_bucket",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            JuiceBucketItem::new);
 
     // 灵魂桶
     public static final RegistryObject<Item> SOUL_BUCKET = ITEMS.register("soul_bucket",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            JuiceBucketItem::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

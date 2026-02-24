@@ -137,6 +137,16 @@ public class KNCreativeTabs {
 
                         output.accept(KNItems.NETHER_STOVE.get());
 
+                        output.accept(KNPaintings.BMT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.DREAM_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CHA_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CHEN_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.SMILE_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.DIAMOND_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.RABBIT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CAT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.FROG_PAINTING_ITEM.get());
+
                         //output.accept(KNItems.CHAIR_WART.get());
                         //output.accept(KNItems.COOK_STOOL_WART.get());
                         //output.accept(KNItems.TABLE_WART.get());

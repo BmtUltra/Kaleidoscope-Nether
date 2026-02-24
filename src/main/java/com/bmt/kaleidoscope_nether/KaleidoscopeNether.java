@@ -39,6 +39,7 @@ public class KaleidoscopeNether {
         KNSounds.SOUND_EVENTS.register(modEventBus);
         KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);
+        KNPaintings.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         if (ModList.get().isLoaded("kaleidoscope_doll")) {
