@@ -18,9 +18,12 @@
     "kaleidoscope_nether.LivingEntityMixin",
     "kaleidoscope_nether.LavaWalkerLivingMixin",
     "kaleidoscope_nether.StarBlessingMixin",
-    "kaleidoscope_nether.SoulDrunkennessMixin"
+    "kaleidoscope_nether.SoulDrunkennessMixin",
+    "kaleidoscope_nether.SoulDrunkennessAirSupplyMixin"
   ],
-  "client": [],
+  "client": [
+    "kaleidoscope_nether.client.SoulDrunkennessVisualMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

@@ -64,6 +64,7 @@ public class KaleidoscopeNether {
             KNComposterRegistry.register();
             KNAdvancementTriggerRegistry.init();
             KNSoupBases.registerAll();
+            KNBrewingRecipes.register();
         });
     }
 }
