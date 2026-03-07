@@ -45,7 +45,6 @@ public class KaleidoscopeNether {
         if (ModList.get().isLoaded("kaleidoscope_doll")) {
             KaleidoscopeDollIntegration.register(modEventBus);
         }
-
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         KNFoodBiteRegistry.init();
