@@ -147,6 +147,8 @@ public class KNCreativeTabs {
                         output.accept(KNPaintings.CAT_PAINTING_ITEM.get());
                         output.accept(KNPaintings.FROG_PAINTING_ITEM.get());
 
+                        output.accept(KNItems.WARPED_CONNY.get());
+
                         //output.accept(KNItems.CHAIR_WART.get());
                         //output.accept(KNItems.COOK_STOOL_WART.get());
                         //output.accept(KNItems.TABLE_WART.get());

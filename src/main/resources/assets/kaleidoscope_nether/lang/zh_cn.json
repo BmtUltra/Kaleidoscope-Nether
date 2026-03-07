@@ -181,6 +181,12 @@
   "item.kaleidoscope_nether.warped_bucket": "诡异果桶",
   "item.kaleidoscope_nether.poisonous_bucket": "迷毒果桶",
   "item.kaleidoscope_nether.soul_bucket": "灵魂桶",
+  "block.kaleidoscope_nether.crimson_juice": "绯红果汁",
+  "block.kaleidoscope_nether.warped_juice": "诡异果汁",
+  "block.kaleidoscope_nether.poisonous_juice": "迷毒果汁",
+  "block.kaleidoscope_nether.soul_juice": "灵魂果汁",
+  "block.kaleidoscope_nether.warped_conny": "诡异康尼",
+  "item.kaleidoscope_nether.warped_conny": "诡异康尼",
 
   "block.kaleidoscope_nether.nether_stove": "下界炉灶",
   "block.kaleidoscope_nether.chair_wart": "下界疣木椅子",
