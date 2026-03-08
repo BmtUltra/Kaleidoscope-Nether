@@ -14,9 +14,12 @@
     "kaleidoscope_nether.MobMixin",
     "kaleidoscope_nether.PiglinAiMixin",
     "kaleidoscope_nether.PiglinBruteAiMixin",
+    "kaleidoscope_nether.SoulDrunkennessAirSupplyMixin",
+    "kaleidoscope_nether.SoulDrunkennessMixin",
     "kaleidoscope_nether.StarBlessingMixin",
     "kaleidoscope_nether.TropicalStriderMixin",
-    "kaleidoscope_nether.WitherBossMixin"
+    "kaleidoscope_nether.WitherBossMixin",
+    "kaleidoscope_nether.client.SoulDrunkennessVisualMixin"
   ],
   "injectors": {
     "defaultRequire": 1

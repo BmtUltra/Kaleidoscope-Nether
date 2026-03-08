@@ -1,6 +1,6 @@
 package com.chadate.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.chadate.kaleidoscope_nether.effect.WarpedBuffEffect;
+import com.chadate.kaleidoscope_nether.effect.WarpedEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.hoglin.HoglinAi;
@@ -28,7 +28,7 @@ public abstract class HoglinAiMixin {
             LivingEntity target = targetOptional.get();
 
             if (target instanceof Player player) {
-                if (WarpedBuffEffect.shouldAffectMob(hoglin, player)) {
+                if (WarpedEffect.shouldAffectMob(hoglin, player)) {
                     cir.setReturnValue(Optional.empty());
                 }
             }
@@ -42,7 +42,7 @@ public abstract class HoglinAiMixin {
     )
     private static void onWasHurtBy(Hoglin hoglin, LivingEntity attacker, CallbackInfo ci) {
         if (attacker instanceof Player player) {
-            if (WarpedBuffEffect.shouldAffectMob(hoglin, player)) {
+            if (WarpedEffect.shouldAffectMob(hoglin, player)) {
                 ci.cancel();
             }
         }
@@ -55,7 +55,7 @@ public abstract class HoglinAiMixin {
     )
     private static void onSetAttackTarget(Hoglin hoglin, LivingEntity target, CallbackInfo ci) {
         if (target instanceof Player player) {
-            if (WarpedBuffEffect.shouldAffectMob(hoglin, player)) {
+            if (WarpedEffect.shouldAffectMob(hoglin, player)) {
                 ci.cancel();
             }
         }

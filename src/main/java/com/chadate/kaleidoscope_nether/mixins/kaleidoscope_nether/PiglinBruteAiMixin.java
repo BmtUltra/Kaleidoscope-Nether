@@ -1,6 +1,6 @@
 package com.chadate.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.chadate.kaleidoscope_nether.effect.WarpedBuffEffect;
+import com.chadate.kaleidoscope_nether.effect.WarpedEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraft.world.entity.monster.piglin.PiglinBruteAi;
@@ -26,7 +26,7 @@ public abstract class PiglinBruteAiMixin {
             LivingEntity target = targetOptional.get();
 
             if (target instanceof Player player) {
-                if (WarpedBuffEffect.shouldAffectMob(piglinBrute, player)) {
+                if (WarpedEffect.shouldAffectMob(piglinBrute, player)) {
                     cir.setReturnValue(Optional.empty());
                 }
             }

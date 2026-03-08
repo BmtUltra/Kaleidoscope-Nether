@@ -28,6 +28,9 @@ repositories {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
     }
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 base {
@@ -89,9 +92,16 @@ dependencies {
     implementation "maven.modrinth:kaleidoscope-cookery:1.2.0-neoforge+mc1.21.1"
     implementation "maven.modrinth:alexs-mobs(1.21.1):1.22.17"
     implementation "maven.modrinth:citadel:2.7.0"
+    implementation "curse.maven:kaleidoscope-tavern-1475175:7704373"
 
     runtimeOnly "maven.modrinth:kaleidoscope-doll:1.3.0-neoforge+mc1.21.1"
     compileOnly "maven.modrinth:kaleidoscope-doll:1.3.0-neoforge+mc1.21.1"
+
+    runtimeOnly "maven.modrinth:curios:9.5.1+1.21.1"
+    compileOnly "maven.modrinth:curios:9.5.1+1.21.1"
+
+    runtimeOnly "maven.modrinth:farmers-delight:1.21.1-1.2.10"
+
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
