@@ -7,8 +7,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public class KNEnchantments {
-    public static final ResourceKey<Enchantment> LAVA_WALKER = ResourceKey.create(
-            Registries.ENCHANTMENT,
-            ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "lava_walker")
-    );
+    public static final ResourceKey<Enchantment> LAVA_WALKER = ResourceKey.create(Registries.ENCHANTMENT, 
+            ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "lava_walker"));
+    public static final ResourceKey<Enchantment> PIERCING = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "piercing"));
+    public static final ResourceKey<Enchantment> ANESTHESIA = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(KaleidoscopeNether.MOD_ID, "anesthesia"));
+
 }

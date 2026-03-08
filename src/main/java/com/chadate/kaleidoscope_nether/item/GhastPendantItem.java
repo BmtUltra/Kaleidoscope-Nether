@@ -1,26 +1,42 @@
 package com.chadate.kaleidoscope_nether.item;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
+import com.chadate.kaleidoscope_nether.integration.CuriosIntegration;
+import net.minecraft.core.Holder;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+public class GhastPendantItem extends ArmorItem {
 
-public class GhastPendantItem extends Item {
+    private static final Holder<ArmorMaterial> GHAST_PENDANT_MATERIAL = ArmorMaterials.LEATHER;
 
     public GhastPendantItem() {
-        super(new Item.Properties()
-                .rarity(Rarity.COMMON)
+        super(GHAST_PENDANT_MATERIAL, Type.CHESTPLATE, new Properties()
+                .rarity(Rarity.UNCOMMON)
                 .stacksTo(1));
     }
 
-    @Override
-    public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
+    public static boolean isWearingGhastPendant(Player player) {
+        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
+        if (chestplate.getItem() instanceof GhastPendantItem) {
+            return true;
+        }
 
-        tooltip.add(Component.translatable("item.kaleidoscope_nether.ghast_pendant.tooltip.line1"));
+        return CuriosIntegration.hasItemInCurios(player, GhastPendantItem.class);
+    }
+
+    @Override
+    public boolean isEnchantable(@NotNull ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable(@NotNull ItemStack stack, @NotNull ItemStack book) {
+        return false;
     }
 }

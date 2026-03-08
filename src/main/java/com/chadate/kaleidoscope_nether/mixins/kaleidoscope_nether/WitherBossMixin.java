@@ -1,6 +1,6 @@
 package com.chadate.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.chadate.kaleidoscope_nether.effect.WarpedBuffEffect;
+import com.chadate.kaleidoscope_nether.effect.WarpedEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +25,7 @@ public abstract class WitherBossMixin {
             LivingEntity target = self.level().getEntity(entityId) instanceof LivingEntity living ? living : null;
 
             if (target instanceof Player player) {
-                if (WarpedBuffEffect.shouldAffectMob(self, player)) {
+                if (WarpedEffect.shouldAffectMob(self, player)) {
                     cir.setReturnValue(0);
                 }
             }
@@ -43,7 +43,7 @@ public abstract class WitherBossMixin {
             LivingEntity target = self.level().getEntity(newId) instanceof LivingEntity living ? living : null;
 
             if (target instanceof Player player) {
-                if (WarpedBuffEffect.shouldAffectMob(self, player)) {
+                if (WarpedEffect.shouldAffectMob(self, player)) {
                     ci.cancel();
                 }
             }
@@ -63,7 +63,7 @@ public abstract class WitherBossMixin {
         LivingEntity mainTarget = self.getTarget();
 
         if (mainTarget instanceof Player player) {
-            if (WarpedBuffEffect.shouldAffectMob(self, player)) {
+            if (WarpedEffect.shouldAffectMob(self, player)) {
                 self.setTarget(null);
             }
         }

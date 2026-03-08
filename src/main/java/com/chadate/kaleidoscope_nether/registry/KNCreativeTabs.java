@@ -110,8 +110,6 @@ public class KNCreativeTabs {
                         output.accept(KNItems.CRIMSON_KABOB.get());
                         output.accept(KNItems.WARPED_KABOB.get());
                         output.accept(KNItems.GLOWING_KABOB.get());
-                        output.accept(KNItems.GIANT_BEAST_CROISSANT.get());
-                        output.accept(KNItems.MAGMA_SWEET_AND_SOUR_PORK.get());
                         output.accept(KNItems.FORGETFULNESS_SOUP.get());
                         output.accept(KNItems.BRAISED_LION_HEAD.get());
                         output.accept(KNItems.BRAISED_PORK_RICE.get());
@@ -119,7 +117,21 @@ public class KNCreativeTabs {
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
                         output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
+                        output.accept(KNItems.CRIMSON_BUCKET.get());
+                        output.accept(KNItems.WARPED_BUCKET.get());
+                        output.accept(KNItems.POISONOUS_BUCKET.get());
+                        output.accept(KNItems.SOUL_BUCKET.get());
                         output.accept(KNItems.NETHER_STOVE.get());
+                        output.accept(KNPaintings.BMT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.DREAM_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CHA_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CHEN_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.SMILE_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.DIAMOND_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.RABBIT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.CAT_PAINTING_ITEM.get());
+                        output.accept(KNPaintings.FROG_PAINTING_ITEM.get());
+                        output.accept(KNItems.WARPED_CONNY.get());
                     })
                     .build());
 }

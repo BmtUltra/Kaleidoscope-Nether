@@ -14,7 +14,7 @@ public class KNEffects {
             () -> new CrimsonEffect(0xFF0000));
 
     public static final DeferredHolder<MobEffect, MobEffect> WARPED = EFFECTS.register("warped",
-            () -> new WarpedBuffEffect(0x00FFA2));
+            () -> new WarpedDrunkennessEffect(0x00FFA2));
 
     public static final DeferredHolder<MobEffect, MobEffect> STAR_BLESSING = EFFECTS.register("star_blessing",
             () -> new StarBlessingEffect(0x87CEEB));
@@ -30,4 +30,16 @@ public class KNEffects {
 
     public static final DeferredHolder<MobEffect, MobEffect> GLOWING = EFFECTS.register("glowing",
             () -> new GlowingEffect(0xFFFF00));
+
+    public static final DeferredHolder<MobEffect, MobEffect> CRIMSON_DRUNKENNESS = EFFECTS.register("crimson_drunkenness",
+            () -> new CrimsonDrunkennessEffect(0xFF0000));
+
+    public static final DeferredHolder<MobEffect, MobEffect> WARPED_DRUNKENNESS = EFFECTS.register("warped_drunkenness",
+            () -> new WarpedDrunkennessEffect(0x00FFA2));
+
+    public static final DeferredHolder<MobEffect, MobEffect> MYSTERIOUS_POISON_DRUNKENNESS = EFFECTS.register("mysterious_poison_drunkenness",
+            () -> new MysteriousPoisonDrunkennessEffect(0x8A2BE2));
+
+    public static final DeferredHolder<MobEffect, MobEffect> SOUL_DRUNKENNESS = EFFECTS.register("soul_drunkenness",
+            () -> new SoulDrunkennessEffect(0x00CED1));
 }
