@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:kaleidoscope_nether/root",
+  "criteria": {
+    "eat_lava_roasted_chicken": {
+      "conditions": {
+        "item": {
+          "items": [
+            "kaleidoscope_nether:lava_roasted_chicken"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:lava_roasted_chicken"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.eat_lava_roasted_chicken.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_lava_roasted_chicken"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

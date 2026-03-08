@@ -122,13 +122,13 @@ public class KNCreativeTabs {
                         //output.accept(KNItems.GHAST_PENDANT.get());
 
                         output.accept(KNItems.FORGETFULNESS_SOUP.get());
-                        output.accept(KNItems.BRAISED_LION_HEAD.get());
-                        output.accept(KNItems.BRAISED_PORK_RICE.get());
+//                        output.accept(KNItems.BRAISED_LION_HEAD.get());
+//                        output.accept(KNItems.BRAISED_PORK_RICE.get());
                         output.accept(KNItems.GARLIC_OYSTERS.get());
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());
                         //output.accept(KNItems.CANTONESE_RICE_NOODLE_ROLL.get());
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
-                        output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
+//                        output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
 
                         output.accept(KNItems.CRIMSON_BUCKET.get());
                         output.accept(KNItems.WARPED_BUCKET.get());
@@ -148,6 +148,7 @@ public class KNCreativeTabs {
                         output.accept(KNPaintings.FROG_PAINTING_ITEM.get());
 
                         output.accept(KNItems.WARPED_CONNY.get());
+                        output.accept(KNItems.SOUL_BRANDY.get());
 
                         //output.accept(KNItems.CHAIR_WART.get());
                         //output.accept(KNItems.COOK_STOOL_WART.get());

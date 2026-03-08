@@ -37,5 +37,5 @@ side = "BOTH"
 modId = "kaleidoscope_tavern"
 mandatory = true
 versionRange = "[1.0.0-forge+mc1.20.1,)"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"

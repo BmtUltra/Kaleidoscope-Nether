@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:kaleidoscope_nether/get_hoglin_tusk",
+  "criteria": {
+    "get_hoglin_tusk_braised_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_nether:hoglin_tusk_braised_meat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_nether:hoglin_tusk_braised_meat"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_nether.get_hoglin_tusk_braised_meat.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_hoglin_tusk_braised_meat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

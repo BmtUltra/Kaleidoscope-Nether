@@ -386,8 +386,8 @@ public class KNItems {
             () -> new ForgetfulnessSoupItem(KNFoods.FORGETFULNESS_SOUP));
 
     // 红烧狮子头
-    public static final RegistryObject<Item> BRAISED_LION_HEAD = ITEMS.register("braised_lion_head",
-            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_LION_HEAD));
+//    public static final RegistryObject<Item> BRAISED_LION_HEAD = ITEMS.register("braised_lion_head",
+//            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_LION_HEAD));
 
     // 蒜蓉生蚝
     public static final RegistryObject<Item> GARLIC_OYSTERS = ITEMS.register("garlic_oysters",
@@ -398,16 +398,16 @@ public class KNItems {
             () -> new BowlFoodOnlyItem(KNFoods.COUPLES_LUNG_SLICE));
 
     // 卤肉饭
-    public static final RegistryObject<Item> BRAISED_PORK_RICE = ITEMS.register("braised_pork_rice",
-            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_PORK_RICE));
+//    public static final RegistryObject<Item> BRAISED_PORK_RICE = ITEMS.register("braised_pork_rice",
+//            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_PORK_RICE));
 
     // 胡椒猪肚鸡汤
     public static final RegistryObject<Item> PEPPER_PORK_BELLY_CHICKEN_SOUP = ITEMS.register("pepper_pork_belly_chicken_soup",
             () -> new BowlFoodOnlyItem(KNFoods.PEPPER_PORK_BELLY_CHICKEN_SOUP));
 
     // 玉米胡萝卜排骨汤
-    public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
-            () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
+//    public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
+//            () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
 
     // 绯红桶
     public static final RegistryObject<Item> CRIMSON_BUCKET = ITEMS.register("crimson_bucket",
@@ -425,9 +425,13 @@ public class KNItems {
     public static final RegistryObject<Item> SOUL_BUCKET = ITEMS.register("soul_bucket",
             () -> new JuiceBucketItem(KNFluids.SOUL_JUICE));
 
-    // 诡异康尼酒
+    // 诡异康尼
     public static final RegistryObject<Item> WARPED_CONNY = ITEMS.register("warped_conny",
             () -> new DrinkBlockItem(KNBlocks.WARPED_CONNY.get()));
+
+    // 灵魂白兰地
+    public static final RegistryObject<Item> SOUL_BRANDY = ITEMS.register("soul_brandy",
+            () -> new DrinkBlockItem(KNBlocks.SOUL_BRANDY.get()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

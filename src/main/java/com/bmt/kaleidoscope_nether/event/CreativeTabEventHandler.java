@@ -30,7 +30,7 @@ public class CreativeTabEventHandler {
                 ItemStack itemStack = iterator.next().getKey();
                 if (Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
                     iterator.remove();
-                    break;
+//                    break;
                 }
             }
         }

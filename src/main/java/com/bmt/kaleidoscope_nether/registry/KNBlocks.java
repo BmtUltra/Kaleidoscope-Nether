@@ -60,8 +60,22 @@ public class KNBlocks {
     public static final RegistryObject<TableBlock> TABLE_WART = BLOCKS.register("table_wart",
             TableBlock::new);
 
-    // 诡异康尼酒
+    // 诡异康尼
     public static final RegistryObject<Block> WARPED_CONNY = BLOCKS.register("warped_conny",
+            () -> DrinkBlock.create()
+                    .maxCount(4)
+                    .shapes(
+                            Block.box(6, 0, 6, 10, 16, 10),
+                            Block.box(2, 0, 6, 14, 16, 10),
+                            Shapes.or(
+                                    Block.box(2, 0, 10, 14, 16, 14),
+                                    Block.box(6, 0, 2, 10, 16, 14)
+                            ),
+                            Block.box(2, 0, 2, 14, 16, 14)
+                    ).build().get());
+
+    // 灵魂白兰地
+    public static final RegistryObject<Block> SOUL_BRANDY = BLOCKS.register("soul_brandy",
             () -> DrinkBlock.create()
                     .maxCount(4)
                     .shapes(
