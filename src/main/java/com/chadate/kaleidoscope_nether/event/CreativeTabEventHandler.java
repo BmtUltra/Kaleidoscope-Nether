@@ -10,7 +10,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
-import java.util.Iterator;
 import java.util.Objects;
 
 @EventBusSubscriber(modid = KaleidoscopeNether.MOD_ID)

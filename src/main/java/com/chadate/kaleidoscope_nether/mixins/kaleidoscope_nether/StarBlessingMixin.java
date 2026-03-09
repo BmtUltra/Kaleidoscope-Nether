@@ -42,11 +42,10 @@ public abstract class StarBlessingMixin extends Entity {
         }
     }
 
-    @Inject(method = "hurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;knockback(DDD)V"), 
-            cancellable = true)
+    @Inject(method = "hurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;knockback(DDD)V")
+    )
     private void onHurtKnockback(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity livingEntity = (LivingEntity) (Object) this;
-        if (livingEntity.hasEffect(KNEffects.STAR_BLESSING)) {
-        }
+        livingEntity.hasEffect(KNEffects.STAR_BLESSING);
     }
 }

@@ -45,21 +45,12 @@ public class SoulReturnRiceItem extends FoodWithEffectsItem {
                 if (targetLevel != null) {
                     BlockPos pos = globalPos.pos();
 
-                    if (player.level().dimension() == globalPos.dimension()) {
-                        player.teleportTo(targetLevel,
-                                pos.getX() + 0.5,
-                                pos.getY(),
-                                pos.getZ() + 0.5,
-                                player.getYRot(),
-                                player.getXRot());
-                    } else {
-                        player.teleportTo(targetLevel,
-                                pos.getX() + 0.5,
-                                pos.getY(),
-                                pos.getZ() + 0.5,
-                                player.getYRot(),
-                                player.getXRot());
-                    }
+                    player.teleportTo(targetLevel,
+                            pos.getX() + 0.5,
+                            pos.getY(),
+                            pos.getZ() + 0.5,
+                            player.getYRot(),
+                            player.getXRot());
 
                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
                             SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
