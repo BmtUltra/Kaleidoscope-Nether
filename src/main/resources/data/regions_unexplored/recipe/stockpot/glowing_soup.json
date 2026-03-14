@@ -40,6 +40,6 @@
     "count": 3,
     "id": "kaleidoscope_nether:glowing_soup"
   },
-  "soup_base": "minecraft:milk",
+  "soup_base": "minecraft:water",
   "time": 300
 }
