@@ -4,6 +4,9 @@ import com.bmt.kaleidoscope_nether.registry.KNEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class CrimsonEffect extends MobEffect {
     public CrimsonEffect(int color) {
@@ -11,7 +14,7 @@ public class CrimsonEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public void applyEffectTick(@NotNull LivingEntity livingEntity, int amplifier) {
     }
 
     @Override
@@ -21,7 +24,9 @@ public class CrimsonEffect extends MobEffect {
 
     public static float calculateDamageBonus(LivingEntity attacker, float baseDamage) {
         if (attacker.hasEffect(KNEffects.CRIMSON.get())) {
-            return baseDamage * 1.2f;
+            int amplifier = Objects.requireNonNull(attacker.getEffect(KNEffects.CRIMSON.get())).getAmplifier();
+            float multiplier = 1.5f + (amplifier * 0.5f);
+            return baseDamage * multiplier;
         }
         return baseDamage;
     }
@@ -39,7 +44,8 @@ public class CrimsonEffect extends MobEffect {
     @SuppressWarnings("unused")
     public static float getDamageMultiplier(LivingEntity attacker, LivingEntity target) {
         if (attacker.hasEffect(KNEffects.CRIMSON.get())) {
-            return 1.2f;
+            int amplifier = Objects.requireNonNull(attacker.getEffect(KNEffects.CRIMSON.get())).getAmplifier();
+            return 1.5f + (amplifier * 0.5f);
         }
         return 1.0f;
     }
