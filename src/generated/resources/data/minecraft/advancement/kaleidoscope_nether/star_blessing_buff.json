@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:kaleidoscope_nether/star_dust",
   "criteria": {
-    "star_blessing": {
+    "star_blessing_buff": {
       "conditions": {
         "effects": {
           "kaleidoscope_nether:star_blessing": {}
@@ -12,7 +12,7 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.kaleidoscope_nether.star_blessing.description"
+      "translate": "advancements.kaleidoscope_nether.star_blessing_buff.description"
     },
     "frame": "goal",
     "icon": {
@@ -20,12 +20,12 @@
       "id": "kaleidoscope_nether:star_stew"
     },
     "title": {
-      "translate": "advancements.kaleidoscope_nether.star_blessing.title"
+      "translate": "advancements.kaleidoscope_nether.star_blessing_buff.title"
     }
   },
   "requirements": [
     [
-      "star_blessing"
+      "star_blessing_buff"
     ]
   ],
   "sends_telemetry_event": true

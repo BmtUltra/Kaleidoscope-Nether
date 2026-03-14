@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemDisplayContext;
+import org.jetbrains.annotations.NotNull;
 
 public class BlazeHeartProjectileRenderer extends EntityRenderer<BlazeHeartProjectile> {
     private final ItemRenderer itemRenderer;
@@ -23,7 +24,7 @@ public class BlazeHeartProjectileRenderer extends EntityRenderer<BlazeHeartProje
 
     @Override
     public void render(BlazeHeartProjectile entity, float entityYaw, float partialTicks,
-                       PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+                       PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
 
         float yRot = Mth.lerp(partialTicks, entity.yRotO, entity.getYRot());
@@ -49,7 +50,7 @@ public class BlazeHeartProjectileRenderer extends EntityRenderer<BlazeHeartProje
     }
 
     @Override
-    public ResourceLocation getTextureLocation(BlazeHeartProjectile entity) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull BlazeHeartProjectile entity) {
         return InventoryMenu.BLOCK_ATLAS;
     }
 }

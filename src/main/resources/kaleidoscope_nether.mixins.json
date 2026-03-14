@@ -18,7 +18,9 @@
     "kaleidoscope_nether.SoulDrunkennessMixin",
     "kaleidoscope_nether.StarBlessingMixin",
     "kaleidoscope_nether.TropicalStriderMixin",
-    "kaleidoscope_nether.WitherBossMixin",
+    "kaleidoscope_nether.WitherBossMixin"
+  ],
+  "client": [
     "kaleidoscope_nether.client.SoulDrunkennessVisualMixin"
   ],
   "injectors": {

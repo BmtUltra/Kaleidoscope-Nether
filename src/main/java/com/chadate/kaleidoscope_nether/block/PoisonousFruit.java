@@ -5,7 +5,6 @@ import com.chadate.kaleidoscope_nether.registry.KNItems;
 import com.chadate.kaleidoscope_nether.registry.KNEffects;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;

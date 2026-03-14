@@ -588,12 +588,4 @@ public class KNFoods {
             .effect(() -> new MobEffectInstance(ModEffects.SATIATED_SHIELD, 180 * 20), 1.0F)
             .alwaysEdible()
             .build();
-/*
-    // 广式肠粉
-    public static final FoodProperties CANTONESE_RICE_NOODLE_ROLL = new FoodProperties.Builder()
-            .nutrition(7).saturationModifier(0.8f)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0F)
-            .alwaysEdible()
-            .build();
- */
 }

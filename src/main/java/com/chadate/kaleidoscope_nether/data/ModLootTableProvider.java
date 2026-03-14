@@ -67,11 +67,11 @@ public class ModLootTableProvider extends LootTableProvider {
             this.vines(KNBlocks.WEEPING_CAVE_VINES.get(), Items.WEEPING_VINES, KNItems.CRIMSON_FRUIT.get());
             this.vines(KNBlocks.WEEPING_CAVE_VINES_PLANT.get(), Items.WEEPING_VINES, KNItems.CRIMSON_FRUIT.get());
 
-            // Furniture and decoration blocks that drop themselves
             this.dropSelf(KNBlocks.NETHER_STOVE.get());
             this.dropSelf(KNBlocks.CHAIR_WART.get());
             this.dropSelf(KNBlocks.COOK_STOOL_WART.get());
             this.dropSelf(KNBlocks.TABLE_WART.get());
+            this.dropSelf(KNBlocks.WARPED_CONNY.get());
 
             FoodBiteRegistry.FOOD_DATA_MAP.forEach((resourceLocation, foodData) -> {
                 if (resourceLocation.getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
