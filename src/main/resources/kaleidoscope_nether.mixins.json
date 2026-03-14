@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "com.bmt.kaleidoscope_nether.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockItemMixin",
+    "ExperienceOrbMixin",
+    "HoglinAiMixin",
+    "LivingEntityDamageMixin",
+    "LivingEntityMixin",
+    "MobMixin",
+    "PiglinAiMixin",
+    "PiglinBruteAiMixin",
+    "SoulDrunkennessAirSupplyMixin",
+    "SoulDrunkennessMixin",
+    "StarBlessingMixin",
+    "TropicalStriderMixin",
+    "WitherBossMixin",
+    "client.SoulDrunkennessVisualMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+	}
+}
