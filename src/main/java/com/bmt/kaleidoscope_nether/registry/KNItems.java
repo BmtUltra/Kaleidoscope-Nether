@@ -69,21 +69,21 @@ public class KNItems {
 
     // 恶魂挂坠
     public static final RegistryObject<Item> GHAST_PENDANT = ITEMS.register("ghast_pendant",
-            () -> new GhastPendantItem());
+            GhastPendantItem::new);
 
     // 烈焰永恒牛排
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
             () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get, Config.EVERLASTING_FLAME_STEAK_ENABLED::get, Rarity.EPIC));
 
     // 下界疣木家具
-    public static final RegistryObject<Item> CHAIR_WART = ITEMS.register("chair_wart",
-            () -> new BlockItem(KNBlocks.CHAIR_WART.get(), new Item.Properties()));
-
-    public static final RegistryObject<Item> COOK_STOOL_WART = ITEMS.register("cook_stool_wart",
-            () -> new BlockItem(KNBlocks.COOK_STOOL_WART.get(), new Item.Properties()));
-
-    public static final RegistryObject<Item> TABLE_WART = ITEMS.register("table_wart",
-            () -> new BlockItem(KNBlocks.TABLE_WART.get(), new Item.Properties()));
+//    public static final RegistryObject<Item> CHAIR_WART = ITEMS.register("chair_wart",
+//            () -> new BlockItem(KNBlocks.CHAIR_WART.get(), new Item.Properties()));
+//
+//    public static final RegistryObject<Item> COOK_STOOL_WART = ITEMS.register("cook_stool_wart",
+//            () -> new BlockItem(KNBlocks.COOK_STOOL_WART.get(), new Item.Properties()));
+//
+//    public static final RegistryObject<Item> TABLE_WART = ITEMS.register("table_wart",
+//            () -> new BlockItem(KNBlocks.TABLE_WART.get(), new Item.Properties()));
 
     // 绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",

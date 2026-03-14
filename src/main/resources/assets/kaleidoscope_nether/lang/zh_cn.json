@@ -227,10 +227,6 @@
 
   "enchantment.kaleidoscope_nether.lava_walker": "熔岩行者",
   "enchantment.kaleidoscope_nether.lava_walker.desc": "可以在岩浆上行走",
-  "enchantment.kaleidoscope_nether.piercing": "贯刺",
-  "enchantment.kaleidoscope_nether.piercing.desc": "每级无视目标一定护甲值",
-  "enchantment.kaleidoscope_nether.anesthesia": "麻醉",
-  "enchantment.kaleidoscope_nether.anesthesia.desc": "给予目标虚弱和缓慢效果",
 
   "subtitles.kaleidoscope_nether.lava_roasted_chicken_eat": "熔岩烤鸡",
   "subtitles.kaleidoscope_nether.star_dust_repair": "星之尘",

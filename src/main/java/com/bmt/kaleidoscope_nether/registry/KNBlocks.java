@@ -6,6 +6,7 @@ import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.ChairBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.CookStoolBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.TableBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.kitchen.StoveBlock;
+import com.github.ysbbbbbb.kaleidoscopetavern.block.brew.BarCabinetBlock;
 import com.github.ysbbbbbb.kaleidoscopetavern.block.brew.DrinkBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -50,15 +51,15 @@ public class KNBlocks {
     public static final RegistryObject<StoveBlock> NETHER_STOVE = BLOCKS.register("nether_stove",
             StoveBlock::new);
 
-    // 下界疣木家具
-    public static final RegistryObject<ChairBlock> CHAIR_WART = BLOCKS.register("chair_wart",
-            ChairBlock::new);
-
-    public static final RegistryObject<CookStoolBlock> COOK_STOOL_WART = BLOCKS.register("cook_stool_wart",
-            CookStoolBlock::new);
-
-    public static final RegistryObject<TableBlock> TABLE_WART = BLOCKS.register("table_wart",
-            TableBlock::new);
+//    // 下界疣木家具
+//    public static final RegistryObject<ChairBlock> CHAIR_WART = BLOCKS.register("chair_wart",
+//            ChairBlock::new);
+//
+//    public static final RegistryObject<CookStoolBlock> COOK_STOOL_WART = BLOCKS.register("cook_stool_wart",
+//            CookStoolBlock::new);
+//
+//    public static final RegistryObject<TableBlock> TABLE_WART = BLOCKS.register("table_wart",
+//            TableBlock::new);
 
     // 诡异康尼
     public static final RegistryObject<Block> WARPED_CONNY = BLOCKS.register("warped_conny",

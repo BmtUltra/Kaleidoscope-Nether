@@ -31,15 +31,6 @@ public class KNEffects {
     public static final RegistryObject<MobEffect> GLOWING = EFFECTS.register("glowing",
             () -> new GlowingEffect(0xFFFF00));
 
-    public static final RegistryObject<MobEffect> CRIMSON_DRUNKENNESS = EFFECTS.register("crimson_drunkenness",
-            () -> new CrimsonDrunkennessEffect(0xFF0000));
-
-    public static final RegistryObject<MobEffect> WARPED_DRUNKENNESS = EFFECTS.register("warped_drunkenness",
-            () -> new WarpedDrunkennessEffect(0x00FFA2));
-
-    public static final RegistryObject<MobEffect> MYSTERIOUS_POISON_DRUNKENNESS = EFFECTS.register("mysterious_poison_drunkenness",
-            () -> new MysteriousPoisonDrunkennessEffect(0x8A2BE2));
-
-    public static final RegistryObject<MobEffect> SOUL_DRUNKENNESS = EFFECTS.register("soul_drunkenness",
-            () -> new SoulDrunkennessEffect(0x00CED1));
+//    public static final RegistryObject<MobEffect> SOUL_DRUNKENNESS = EFFECTS.register("soul_drunkenness",
+//            () -> new SoulDrunkennessEffect(0x00CED1));
 }
