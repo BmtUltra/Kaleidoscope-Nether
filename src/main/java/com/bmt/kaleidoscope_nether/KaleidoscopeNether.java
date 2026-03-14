@@ -1,5 +1,6 @@
 package com.bmt.kaleidoscope_nether;
 
+import com.bmt.kaleidoscope_nether.client.ClientEvents;
 import com.bmt.kaleidoscope_nether.config.KNConfig;
 import com.bmt.kaleidoscope_nether.event.*;
 import com.bmt.kaleidoscope_nether.registry.*;
@@ -22,6 +23,7 @@ public class KaleidoscopeNether implements ModInitializer {
 		KNFoods.registerFoods();
 
 		ModEvents.registerEvents();
+		ClientEvents.registerEntityRenderers();
 		DamageEventHandler.registerEvents();
 		ItemTabEventHandler.registerEvents();
 		KNEventSubscriber.registerEvents();
