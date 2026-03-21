@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.SpecialFood;
+package com.bmt.kaleidoscope_nether.item.specialfoods;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import net.minecraft.ChatFormatting;

@@ -1,13 +1,14 @@
 package com.bmt.kaleidoscope_nether.entity;
 
-import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.bmt.kaleidoscope_nether.registry.KNEntities;
+import com.bmt.kaleidoscope_nether.init.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class BlazeHeartProjectile extends ThrowableItemProjectile {
 
@@ -19,17 +20,13 @@ public class BlazeHeartProjectile extends ThrowableItemProjectile {
         super(KNEntities.BLAZE_HEART_PROJECTILE.get(), shooter, level);
     }
 
-    public BlazeHeartProjectile(Level level, double x, double y, double z) {
-        super(KNEntities.BLAZE_HEART_PROJECTILE.get(), x, y, z, level);
-    }
-
     @Override
-    protected Item getDefaultItem() {
+    protected @NotNull Item getDefaultItem() {
         return KNItems.BLAZE_HEART.get();
     }
 
     @Override
-    protected void onHit(HitResult result) {
+    protected void onHit(@NotNull HitResult result) {
         super.onHit(result);
 
         if (!this.level().isClientSide) {
@@ -51,6 +48,6 @@ public class BlazeHeartProjectile extends ThrowableItemProjectile {
 
     @Override
     protected float getGravity() {
-        return 0.03F;
+        return super.getGravity();
     }
 }

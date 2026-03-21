@@ -1,22 +1,7 @@
 package com.bmt.kaleidoscope_nether.data.subAdvancements;
 
-import com.bmt.kaleidoscope_nether.api.KNTags;
-import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTrigger;
-import com.bmt.kaleidoscope_nether.data.ModAdvancementProvider;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
-import com.bmt.kaleidoscope_nether.registry.KNFoodBiteRegistry;
-import net.minecraft.advancements.RequirementsStrategy;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.crafting.ConditionalAdvancement;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import org.jetbrains.annotations.NotNull;

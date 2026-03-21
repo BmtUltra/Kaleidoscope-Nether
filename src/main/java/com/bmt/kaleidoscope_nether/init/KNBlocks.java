@@ -1,12 +1,8 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.block.*;
-import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.ChairBlock;
-import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.CookStoolBlock;
-import com.github.ysbbbbbb.kaleidoscopecookery.block.decoration.TableBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.kitchen.StoveBlock;
-import com.github.ysbbbbbb.kaleidoscopetavern.block.brew.BarCabinetBlock;
 import com.github.ysbbbbbb.kaleidoscopetavern.block.brew.DrinkBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;

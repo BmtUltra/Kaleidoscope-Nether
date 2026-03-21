@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 import net.minecraft.world.level.block.ComposterBlock;
 
 public class KNComposterRegistry {

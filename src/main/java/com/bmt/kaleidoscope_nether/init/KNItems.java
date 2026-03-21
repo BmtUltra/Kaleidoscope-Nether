@@ -1,11 +1,10 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.item.*;
-import com.bmt.kaleidoscope_nether.item.EffectItem.*;
-import com.bmt.kaleidoscope_nether.item.SpecialFood.*;
-import com.bmt.kaleidoscope_nether.item.Tier.PrimitiveMacheteTier;
+import com.bmt.kaleidoscope_nether.item.specialfoods.*;
+import com.bmt.kaleidoscope_nether.tier.PrimitiveMacheteTier;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
@@ -73,17 +72,7 @@ public class KNItems {
 
     // 烈焰永恒牛排
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
-            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, Config.EVERLASTING_FLAME_STEAK_COOLDOWN::get, Config.EVERLASTING_FLAME_STEAK_ENABLED::get, Rarity.EPIC));
-
-    // 下界疣木家具
-//    public static final RegistryObject<Item> CHAIR_WART = ITEMS.register("chair_wart",
-//            () -> new BlockItem(KNBlocks.CHAIR_WART.get(), new Item.Properties()));
-//
-//    public static final RegistryObject<Item> COOK_STOOL_WART = ITEMS.register("cook_stool_wart",
-//            () -> new BlockItem(KNBlocks.COOK_STOOL_WART.get(), new Item.Properties()));
-//
-//    public static final RegistryObject<Item> TABLE_WART = ITEMS.register("table_wart",
-//            () -> new BlockItem(KNBlocks.TABLE_WART.get(), new Item.Properties()));
+            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, Config.EVERLASTING_FLAME_STEAK_COOLDOWN, Config.EVERLASTING_FLAME_STEAK_ENABLED));
 
     // 绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",

@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.registry.FoodBiteRegistry;

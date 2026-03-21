@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.SpecialFood;
+package com.bmt.kaleidoscope_nether.item.specialfoods;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import net.minecraft.ChatFormatting;
@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -20,18 +21,16 @@ import java.util.function.Supplier;
 public class EverlastingFoodItem extends FoodWithEffectsItem {
     private final Supplier<Integer> eatingCooldown;
     private final Supplier<Boolean> isEnabled;
-    private final Rarity rarity;
 
 
-    public EverlastingFoodItem(FoodProperties food, Supplier<Integer> eatingCooldown, Supplier<Boolean> isEnabled, Rarity rarity) {
+    public EverlastingFoodItem(FoodProperties food, Supplier<Integer> eatingCooldown, Supplier<Boolean> isEnabled) {
         super(food);
         this.eatingCooldown = eatingCooldown;
         this.isEnabled = isEnabled;
-        this.rarity = rarity;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
         tooltip.add(Component.translatable("item.kaleidoscope_nether.everlasting_flame_steak.tooltip.line1")
@@ -39,7 +38,7 @@ public class EverlastingFoodItem extends FoodWithEffectsItem {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level world, @NotNull LivingEntity entity) {
         if (isEdible()) {
             entity.eat(world, stack.copy());
             addCooldown(entity, eatingCooldown.get());

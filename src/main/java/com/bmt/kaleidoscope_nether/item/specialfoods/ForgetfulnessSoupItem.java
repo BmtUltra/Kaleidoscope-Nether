@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.SpecialFood;
+package com.bmt.kaleidoscope_nether.item.specialfoods;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import net.minecraft.ChatFormatting;
@@ -10,9 +10,11 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ForgetfulnessSoupItem extends BowlFoodOnlyItem {
     public ForgetfulnessSoupItem(FoodProperties food) {
@@ -20,7 +22,7 @@ public class ForgetfulnessSoupItem extends BowlFoodOnlyItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
         tooltip.add(Component.translatable("item.kaleidoscope_nether.forgetfulness_soup.tooltip.line1")
@@ -28,13 +30,13 @@ public class ForgetfulnessSoupItem extends BowlFoodOnlyItem {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, net.minecraft.world.entity.LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, net.minecraft.world.entity.@NotNull LivingEntity entity) {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof ServerPlayer player) {
             if (player.getRespawnPosition() != null) {
                 player.teleportTo(
-                        player.server.getLevel(player.getRespawnDimension()),
+                        Objects.requireNonNull(player.server.getLevel(player.getRespawnDimension())),
                         player.getRespawnPosition().getX() + 0.5,
                         player.getRespawnPosition().getY(),
                         player.getRespawnPosition().getZ() + 0.5,

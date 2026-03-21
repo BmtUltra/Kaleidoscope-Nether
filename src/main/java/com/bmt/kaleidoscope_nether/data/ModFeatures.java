@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.api.KNTags;
-import com.bmt.kaleidoscope_nether.registry.KNBlocks;
+import com.bmt.kaleidoscope_nether.init.KNBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;

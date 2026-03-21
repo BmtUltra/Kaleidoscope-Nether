@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.registry.soupbase;
+package com.bmt.kaleidoscope_nether.init.soupbase;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.api.recipe.soupbase.ISoupBase;
 import com.github.ysbbbbbb.kaleidoscopecookery.client.render.soupbase.SimpleSoupBaseRender;
@@ -10,11 +10,11 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class CrimsonBucketSoupBase implements ISoupBase {
-    private static final ResourceLocation NAME = ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "crimson_bucket");
-    private static final int BUBBLE_COLOR = 0xFF5555;
+public class WarpedBucketSoupBase implements ISoupBase {
+    private static final ResourceLocation NAME = ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "warped_bucket");
+    private static final int BUBBLE_COLOR = 0x55FF55;
     
-    private static final ResourceLocation CRIMSON_TEXTURE = ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "block/crimson_bucket_still");
+    private static final ResourceLocation WARPED_TEXTURE = ResourceLocation.fromNamespaceAndPath("kaleidoscope_nether", "block/warped_bucket_still");
 
     @Override
     public ResourceLocation getName() {
@@ -28,12 +28,12 @@ public class CrimsonBucketSoupBase implements ISoupBase {
 
     @Override
     public ItemStack getDisplayStack() {
-        return new ItemStack(com.bmt.kaleidoscope_nether.registry.KNItems.CRIMSON_BUCKET.get());
+        return new ItemStack(com.bmt.kaleidoscope_nether.init.KNItems.WARPED_BUCKET.get());
     }
 
     @Override
     public boolean isSoupBase(ItemStack stack) {
-        return stack.getItem() == com.bmt.kaleidoscope_nether.registry.KNItems.CRIMSON_BUCKET.get();
+        return stack.getItem() == com.bmt.kaleidoscope_nether.init.KNItems.WARPED_BUCKET.get();
     }
 
     @Override
@@ -48,12 +48,12 @@ public class CrimsonBucketSoupBase implements ISoupBase {
 
     @Override
     public ItemStack getReturnSoupBase(Level level, LivingEntity user, ItemStack container) {
-        return new ItemStack(com.bmt.kaleidoscope_nether.registry.KNItems.CRIMSON_BUCKET.get());
+        return new ItemStack(com.bmt.kaleidoscope_nether.init.KNItems.WARPED_BUCKET.get());
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public com.github.ysbbbbbb.kaleidoscopecookery.api.client.render.ISoupBaseRender getRender() {
-        return new SimpleSoupBaseRender(CRIMSON_TEXTURE);
+        return new SimpleSoupBaseRender(WARPED_TEXTURE);
     }
 }

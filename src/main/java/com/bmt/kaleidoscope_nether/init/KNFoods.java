@@ -1,10 +1,10 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
-import static com.bmt.kaleidoscope_nether.registry.KNEffects.*;
+import static com.bmt.kaleidoscope_nether.init.KNEffects.*;
 import static com.github.ysbbbbbb.kaleidoscopecookery.init.ModEffects.*;
 import static net.minecraft.world.effect.MobEffects.*;
 
@@ -393,21 +393,21 @@ public class KNFoods {
     // 荧光浓汤
     public static final FoodProperties GLOWING_SOUP = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.667f)
-            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 180 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 荧光布丁
     public static final FoodProperties GLOWING_PUDDING = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.0f)
-            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 180 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .build();
 
     // 荧光烤串
     public static final FoodProperties GLOWING_KABOB = new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 45 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 45 * 20), 1.0F)
             .meat()
             .alwaysEat()
             .build();
@@ -415,7 +415,7 @@ public class KNFoods {
     // 荧光沙拉
     public static final FoodProperties GLOWING_SALAD = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.55f)
-            .effect(() -> new MobEffectInstance(KNEffects.GLOWING.get(), 90 * 20), 1.0F)
+            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 90 * 20), 1.0F)
             .alwaysEat()
             .build();
 

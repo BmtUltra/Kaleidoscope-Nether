@@ -1497,7 +1497,7 @@ java.lang.NullPointerException: Cannot invoke "net.minecraft.client.Minecraft.ge
 [143月2026 15:03:06.109] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.event.ModEvents to FORGE
 [143月2026 15:03:06.112] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.event.StarBlessingEffectEvents to FORGE
 [143月2026 15:03:06.113] [modloading-worker-0/DEBUG] [mixin/]: Mixing core.render.frustum.FrustumMixin from embeddium.mixins.json into net.minecraft.client.renderer.culling.Frustum
-[143月2026 15:03:06.135] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.registry.KNFluids to MOD
+[143月2026 15:03:06.135] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.init.KNFluids to MOD
 [143月2026 15:03:06.137] [modloading-worker-0/DEBUG] [mixin/]: Mixing features.textures.animations.tracking.SpriteAtlasTextureMixin from embeddium.mixins.json into net.minecraft.client.renderer.texture.TextureAtlas
 [143月2026 15:03:06.145] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.worldgen.DollSpawnHandler to FORGE
 [143月2026 15:03:06.148] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file citadel-common.toml for citadel tracking

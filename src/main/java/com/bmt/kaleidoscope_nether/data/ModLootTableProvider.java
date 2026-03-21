@@ -1,8 +1,8 @@
 package com.bmt.kaleidoscope_nether.data;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNBlocks;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNBlocks;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.food.FoodBiteBlock;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.registry.FoodBiteRegistry;

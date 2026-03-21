@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.client;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.client.renderer.entity.BlazeHeartProjectileRenderer;
-import com.bmt.kaleidoscope_nether.registry.KNEntities;
+import com.bmt.kaleidoscope_nether.init.KNEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

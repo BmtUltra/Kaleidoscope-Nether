@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.event;
 
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;

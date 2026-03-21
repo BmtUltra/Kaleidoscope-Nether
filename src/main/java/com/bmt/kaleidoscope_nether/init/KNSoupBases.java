@@ -1,6 +1,6 @@
-package com.bmt.kaleidoscope_nether.registry;
+package com.bmt.kaleidoscope_nether.init;
 
-import com.bmt.kaleidoscope_nether.registry.soupbase.*;
+import com.bmt.kaleidoscope_nether.init.soupbase.*;
 import com.github.ysbbbbbb.kaleidoscopecookery.crafting.soupbase.SoupBaseManager;
 
 public class KNSoupBases {

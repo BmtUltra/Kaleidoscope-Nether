@@ -1,6 +1,6 @@
-package com.bmt.kaleidoscope_nether.item.SpecialFood;
+package com.bmt.kaleidoscope_nether.item.specialfoods;
 
-import com.bmt.kaleidoscope_nether.registry.KNSounds;
+import com.bmt.kaleidoscope_nether.init.KNSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

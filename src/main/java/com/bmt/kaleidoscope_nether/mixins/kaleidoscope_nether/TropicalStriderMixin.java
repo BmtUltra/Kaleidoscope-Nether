@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;

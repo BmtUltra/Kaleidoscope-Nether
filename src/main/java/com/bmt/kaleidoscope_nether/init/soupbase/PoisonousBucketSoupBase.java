@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.registry.soupbase;
+package com.bmt.kaleidoscope_nether.init.soupbase;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.api.recipe.soupbase.ISoupBase;
 import com.github.ysbbbbbb.kaleidoscopecookery.client.render.soupbase.SimpleSoupBaseRender;
@@ -28,12 +28,12 @@ public class PoisonousBucketSoupBase implements ISoupBase {
 
     @Override
     public ItemStack getDisplayStack() {
-        return new ItemStack(com.bmt.kaleidoscope_nether.registry.KNItems.POISONOUS_BUCKET.get());
+        return new ItemStack(com.bmt.kaleidoscope_nether.init.KNItems.POISONOUS_BUCKET.get());
     }
 
     @Override
     public boolean isSoupBase(ItemStack stack) {
-        return stack.getItem() == com.bmt.kaleidoscope_nether.registry.KNItems.POISONOUS_BUCKET.get();
+        return stack.getItem() == com.bmt.kaleidoscope_nether.init.KNItems.POISONOUS_BUCKET.get();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class PoisonousBucketSoupBase implements ISoupBase {
 
     @Override
     public ItemStack getReturnSoupBase(Level level, LivingEntity user, ItemStack container) {
-        return new ItemStack(com.bmt.kaleidoscope_nether.registry.KNItems.POISONOUS_BUCKET.get());
+        return new ItemStack(com.bmt.kaleidoscope_nether.init.KNItems.POISONOUS_BUCKET.get());
     }
 
     @Override

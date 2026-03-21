@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.block;
 
-import com.bmt.kaleidoscope_nether.registry.KNBlocks;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNBlocks;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.core.Direction;
 
 public class TwistingCaveVinesPlant extends KNCaveVinesPlantBlock {

@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.effect;
 
 import com.bmt.kaleidoscope_nether.config.Config;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;

@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.EffectItem;
+package com.bmt.kaleidoscope_nether.item;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.api.item.IHasContainer;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;

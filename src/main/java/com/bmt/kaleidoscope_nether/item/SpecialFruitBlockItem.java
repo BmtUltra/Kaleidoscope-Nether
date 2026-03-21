@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.EffectItem;
+package com.bmt.kaleidoscope_nether.item;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;

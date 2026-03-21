@@ -2,8 +2,8 @@ package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether.ArrowAccessor;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
-import com.bmt.kaleidoscope_nether.registry.KNPotions;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNPotions;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

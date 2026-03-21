@@ -9,15 +9,15 @@
     "alexsmobs.SeagullAIStealFromPlayersMixin",
     "kaleidoscope_nether.ArrowAccessor",
     "kaleidoscope_nether.BlockItemMixin",
-    "kaleidoscope_nether.TropicalStriderMixin",
-    "kaleidoscope_nether.MobMixin",
     "kaleidoscope_nether.HoglinAiMixin",
+    "kaleidoscope_nether.LavaWalkerLivingMixin",
+    "kaleidoscope_nether.LivingEntityMixin",
+    "kaleidoscope_nether.MobMixin",
     "kaleidoscope_nether.PiglinAiMixin",
     "kaleidoscope_nether.PiglinBruteAiMixin",
-    "kaleidoscope_nether.WitherBossMixin",
-    "kaleidoscope_nether.LivingEntityMixin",
-    "kaleidoscope_nether.LavaWalkerLivingMixin",
-    "kaleidoscope_nether.StarBlessingMixin"
+    "kaleidoscope_nether.StarBlessingMixin",
+    "kaleidoscope_nether.TropicalStriderMixin",
+    "kaleidoscope_nether.WitherBossMixin"
   ],
   "client": [
   ],

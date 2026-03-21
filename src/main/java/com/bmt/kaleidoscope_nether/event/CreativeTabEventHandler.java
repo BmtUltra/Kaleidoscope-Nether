@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -30,7 +30,6 @@ public class CreativeTabEventHandler {
                 ItemStack itemStack = iterator.next().getKey();
                 if (Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getNamespace().equals(KaleidoscopeNether.MOD_ID)) {
                     iterator.remove();
-//                    break;
                 }
             }
         }

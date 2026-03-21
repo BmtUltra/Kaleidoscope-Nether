@@ -2,7 +2,7 @@ package com.bmt.kaleidoscope_nether.mixinHooks.alexsmobs;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.mixins.alexsmobs.SeagullAIStealFromPlayersAccessor;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import com.github.alexthe666.alexsmobs.entity.EntitySeagull;
 import com.github.alexthe666.alexsmobs.entity.ai.SeagullAIStealFromPlayers;
 import net.minecraft.server.level.ServerPlayer;

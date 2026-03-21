@@ -3,7 +3,7 @@ package com.bmt.kaleidoscope_nether;
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.config.Config;
 import com.bmt.kaleidoscope_nether.integration.KaleidoscopeDollIntegration;
-import com.bmt.kaleidoscope_nether.registry.*;
+import com.bmt.kaleidoscope_nether.init.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;

@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.item;
 
 import com.bmt.kaleidoscope_nether.config.Config;
-import com.bmt.kaleidoscope_nether.registry.KNSounds;
+import com.bmt.kaleidoscope_nether.init.KNSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;

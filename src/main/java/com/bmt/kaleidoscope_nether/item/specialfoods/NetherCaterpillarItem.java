@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.SpecialFood;
+package com.bmt.kaleidoscope_nether.item.specialfoods;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

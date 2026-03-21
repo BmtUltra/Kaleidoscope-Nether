@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.bmt.kaleidoscope_nether.registry.KNEnchantments;
+import com.bmt.kaleidoscope_nether.init.KNEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;

@@ -1,10 +1,8 @@
 package com.bmt.kaleidoscope_nether.block;
 
-import com.bmt.kaleidoscope_nether.registry.KNBlocks;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNBlocks;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TwistingCaveVinesHead extends KNCaveVinesHeadBlock {
 
