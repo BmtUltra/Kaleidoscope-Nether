@@ -27,10 +27,4 @@ public class KNEffects {
 
     public static final RegistryObject<MobEffect> MYSTERIOUS_POISON = EFFECTS.register("mysterious_poison",
             () -> new MysteriousPoisonEffect(0x8A2BE2));
-
-//    public static final RegistryObject<MobEffect> GLOWING = EFFECTS.register("glowing",
-//            () -> new GlowingEffect(0xFFFF00));
-
-//    public static final RegistryObject<MobEffect> SOUL_DRUNKENNESS = EFFECTS.register("soul_drunkenness",
-//            () -> new SoulDrunkennessEffect(0x00CED1));
 }

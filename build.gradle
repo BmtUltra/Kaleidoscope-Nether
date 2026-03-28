@@ -77,7 +77,7 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("blank:kaleidoscopetavern:1.0.0-forge+mc1.20.1")
+//    implementation fg.deobf("blank:kaleidoscopetavern:1.0.0-forge+mc1.20.1")
 
     implementation fg.deobf("curse.maven:kaleidoscope-cookery-1309203:7473809")
     implementation fg.deobf("curse.maven:alexs-mobs-426558:5698791")
@@ -94,7 +94,7 @@ dependencies {
     implementation fg.deobf("curse.maven:radium-reforged-570017:5706069")
 
     //    implementation fg.deobf("curse.maven:modern-ui-352491:6956345")
-    implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
+//    implementation fg.deobf("curse.maven:i18nupdatemod-297404:7173159")
     implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
     implementation fg.deobf("curse.maven:selene-499980:7388296")
 
@@ -114,7 +114,7 @@ dependencies {
     implementation fg.deobf("curse.maven:screenshot-to-clipboard-326950:3643026")
 
     //implementation fg.deobf("curse.maven:kaleidoscope-doll-1233277:7400829")
-//    runtimeOnly fg.deobf("curse.maven:kaleidoscope-doll-1233277:7400829")
+    runtimeOnly fg.deobf("curse.maven:kaleidoscope-doll-1233277:7400829")
     compileOnly fg.deobf("curse.maven:kaleidoscope-doll-1233277:7400829")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

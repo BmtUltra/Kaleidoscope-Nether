@@ -21,8 +21,6 @@ public class KNCreativeTabs {
                     .title(Component.translatable("itemGroup.kaleidoscope_nether"))
                     .icon(() -> new ItemStack(KNItems.BLOWGUN.get()))
                     .displayItems((parameters, output) -> {
-                        //output.accept(KNItems.RAW_GHAST_MEAT.get());
-                        //output.accept(KNItems.COOKED_GHAST_MEAT.get());
                         output.accept(KNItems.PRIMITIVE_MACHETE.get());
                         output.accept(KNItems.GHAST_TENTACLE.get());
                         output.accept(KNItems.ROASTED_GHAST_TENTACLE.get());
@@ -40,9 +38,7 @@ public class KNCreativeTabs {
                         output.accept(KNItems.GILDED_FRAGMENT.get());
                         output.accept(KNItems.WITHER_RIB.get());
                         output.accept(KNItems.STAR_DUST.get());
-                        //output.accept(KNItems.GOLDEN_PLATE.get());
                         output.accept(KNItems.BLAZE_HEART.get());
-                        //output.accept(KNItems.MAGMA_BUBBLE.get());
                         output.accept(KNItems.CRIMSON_FRUIT.get());
                         output.accept(KNItems.WARPED_FRUIT.get());
                         output.accept(KNItems.SOUL_PEPPER.get());
@@ -116,43 +112,11 @@ public class KNCreativeTabs {
                         output.accept(KNItems.CRIMSON_KABOB.get());
                         output.accept(KNItems.WARPED_KABOB.get());
                         output.accept(KNItems.GLOWING_KABOB.get());
-
-                        //output.accept(KNItems.ROASTED_HAM.get());
-
-                        //output.accept(KNItems.GHAST_PENDANT.get());
-
                         output.accept(KNItems.FORGETFULNESS_SOUP.get());
-//                        output.accept(KNItems.BRAISED_LION_HEAD.get());
-//                        output.accept(KNItems.BRAISED_PORK_RICE.get());
                         output.accept(KNItems.GARLIC_OYSTERS.get());
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());
-                        //output.accept(KNItems.CANTONESE_RICE_NOODLE_ROLL.get());
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
-//                        output.accept(KNItems.CORN_CARROT_PORK_RIB_SOUP.get());
-
-                        output.accept(KNItems.CRIMSON_BUCKET.get());
-                        output.accept(KNItems.WARPED_BUCKET.get());
-                        output.accept(KNItems.POISONOUS_BUCKET.get());
-                        output.accept(KNItems.SOUL_BUCKET.get());
-
                         output.accept(KNItems.NETHER_STOVE.get());
-
-                        output.accept(KNPaintings.BMT_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.DREAM_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.CHA_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.CHEN_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.SMILE_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.DIAMOND_PAINTING_ITEM.get());
-                        output.accept(KNPaintings.RABBIT_PAINTING_ITEM.get());
-//                        output.accept(KNPaintings.CAT_PAINTING_ITEM.get());
-//                        output.accept(KNPaintings.FROG_PAINTING_ITEM.get());
-
-                        output.accept(KNItems.WARPED_CONNY.get());
-                        output.accept(KNItems.SOUL_BRANDY.get());
-
-                        //output.accept(KNItems.CHAIR_WART.get());
-                        //output.accept(KNItems.COOK_STOOL_WART.get());
-                        //output.accept(KNItems.TABLE_WART.get());
                     })
                     .build());
 }

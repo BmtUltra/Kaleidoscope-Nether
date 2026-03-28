@@ -9,8 +9,6 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
-import com.github.ysbbbbbb.kaleidoscopetavern.item.DrinkBlockItem;
-import com.github.ysbbbbbb.kaleidoscopetavern.item.JuiceBucketItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -374,10 +372,6 @@ public class KNItems {
     public static final RegistryObject<Item> FORGETFULNESS_SOUP = ITEMS.register("forgetfulness_soup",
             () -> new ForgetfulnessSoupItem(KNFoods.FORGETFULNESS_SOUP));
 
-    // 红烧狮子头
-//    public static final RegistryObject<Item> BRAISED_LION_HEAD = ITEMS.register("braised_lion_head",
-//            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_LION_HEAD));
-
     // 蒜蓉生蚝
     public static final RegistryObject<Item> GARLIC_OYSTERS = ITEMS.register("garlic_oysters",
             () -> new BowlFoodOnlyItem(KNFoods.GARLIC_OYSTERS));
@@ -386,41 +380,9 @@ public class KNItems {
     public static final RegistryObject<Item> COUPLES_LUNG_SLICE = ITEMS.register("couples_lung_slice",
             () -> new BowlFoodOnlyItem(KNFoods.COUPLES_LUNG_SLICE));
 
-    // 卤肉饭
-//    public static final RegistryObject<Item> BRAISED_PORK_RICE = ITEMS.register("braised_pork_rice",
-//            () -> new BowlFoodOnlyItem(KNFoods.BRAISED_PORK_RICE));
-
     // 胡椒猪肚鸡汤
     public static final RegistryObject<Item> PEPPER_PORK_BELLY_CHICKEN_SOUP = ITEMS.register("pepper_pork_belly_chicken_soup",
             () -> new BowlFoodOnlyItem(KNFoods.PEPPER_PORK_BELLY_CHICKEN_SOUP));
-
-    // 玉米胡萝卜排骨汤
-//    public static final RegistryObject<Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
-//            () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
-
-    // 绯红桶
-    public static final RegistryObject<Item> CRIMSON_BUCKET = ITEMS.register("crimson_bucket",
-            () -> new JuiceBucketItem(KNFluids.CRIMSON_JUICE));
-
-    // 诡异桶
-    public static final RegistryObject<Item> WARPED_BUCKET = ITEMS.register("warped_bucket",
-            () -> new JuiceBucketItem(KNFluids.WARPED_JUICE));
-
-    // 迷毒桶
-    public static final RegistryObject<Item> POISONOUS_BUCKET = ITEMS.register("poisonous_bucket",
-            () -> new JuiceBucketItem(KNFluids.POISONOUS_JUICE));
-
-    // 灵魂桶
-    public static final RegistryObject<Item> SOUL_BUCKET = ITEMS.register("soul_bucket",
-            () -> new JuiceBucketItem(KNFluids.SOUL_JUICE));
-
-    // 诡异康尼
-    public static final RegistryObject<Item> WARPED_CONNY = ITEMS.register("warped_conny",
-            () -> new DrinkBlockItem(KNBlocks.WARPED_CONNY.get()));
-
-    // 灵魂白兰地
-    public static final RegistryObject<Item> SOUL_BRANDY = ITEMS.register("soul_brandy",
-            () -> new DrinkBlockItem(KNBlocks.SOUL_BRANDY.get()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

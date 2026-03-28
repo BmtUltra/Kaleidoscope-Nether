@@ -3,13 +3,11 @@ package com.bmt.kaleidoscope_nether.init;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.block.*;
 import com.github.ysbbbbbb.kaleidoscopecookery.block.kitchen.StoveBlock;
-import com.github.ysbbbbbb.kaleidoscopetavern.block.brew.DrinkBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -46,42 +44,4 @@ public class KNBlocks {
     // 下界炉灶
     public static final RegistryObject<StoveBlock> NETHER_STOVE = BLOCKS.register("nether_stove",
             StoveBlock::new);
-
-//    // 下界疣木家具
-//    public static final RegistryObject<ChairBlock> CHAIR_WART = BLOCKS.register("chair_wart",
-//            ChairBlock::new);
-//
-//    public static final RegistryObject<CookStoolBlock> COOK_STOOL_WART = BLOCKS.register("cook_stool_wart",
-//            CookStoolBlock::new);
-//
-//    public static final RegistryObject<TableBlock> TABLE_WART = BLOCKS.register("table_wart",
-//            TableBlock::new);
-
-    // 诡异康尼
-    public static final RegistryObject<Block> WARPED_CONNY = BLOCKS.register("warped_conny",
-            () -> DrinkBlock.create()
-                    .maxCount(4)
-                    .shapes(
-                            Block.box(6, 0, 6, 10, 16, 10),
-                            Block.box(2, 0, 6, 14, 16, 10),
-                            Shapes.or(
-                                    Block.box(2, 0, 10, 14, 16, 14),
-                                    Block.box(6, 0, 2, 10, 16, 14)
-                            ),
-                            Block.box(2, 0, 2, 14, 16, 14)
-                    ).build().get());
-
-    // 灵魂白兰地
-    public static final RegistryObject<Block> SOUL_BRANDY = BLOCKS.register("soul_brandy",
-            () -> DrinkBlock.create()
-                    .maxCount(4)
-                    .shapes(
-                            Block.box(6, 0, 6, 10, 16, 10),
-                            Block.box(2, 0, 6, 14, 16, 10),
-                            Shapes.or(
-                                    Block.box(2, 0, 10, 14, 16, 14),
-                                    Block.box(6, 0, 2, 10, 16, 14)
-                            ),
-                            Block.box(2, 0, 2, 14, 16, 14)
-                    ).build().get());
 }
