@@ -13,8 +13,6 @@ import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
-import com.github.ysbbbbbb.kaleidoscopetavern.item.DrinkBlockItem;
-import com.github.ysbbbbbb.kaleidoscopetavern.item.JuiceBucketItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -415,26 +413,6 @@ public class KNItems {
     // 玉米胡萝卜排骨汤
     public static final DeferredHolder<Item, Item> CORN_CARROT_PORK_RIB_SOUP = ITEMS.register("corn_carrot_pork_rib_soup",
             () -> new BowlFoodOnlyItem(KNFoods.CORN_CARROT_PORK_RIB_SOUP));
-
-    // 绯红桶
-    public static final DeferredHolder<Item, Item>  CRIMSON_BUCKET = ITEMS.register("crimson_bucket",
-            () -> new JuiceBucketItem(KNFluids.CRIMSON_JUICE));
-
-    // 诡异桶
-    public static final DeferredHolder<Item, Item>  WARPED_BUCKET = ITEMS.register("warped_bucket",
-            () -> new JuiceBucketItem(KNFluids.WARPED_JUICE));
-
-    // 迷毒桶
-    public static final DeferredHolder<Item, Item>  POISONOUS_BUCKET = ITEMS.register("poisonous_bucket",
-            () -> new JuiceBucketItem(KNFluids.POISONOUS_JUICE));
-
-    // 灵魂桶
-    public static final DeferredHolder<Item, Item> SOUL_BUCKET = ITEMS.register("soul_bucket",
-            () -> new JuiceBucketItem(KNFluids.SOUL_JUICE));
-
-    // 诡异康尼酒
-    public static final DeferredHolder<Item, Item> WARPED_CONNY = ITEMS.register("warped_conny",
-            () -> new DrinkBlockItem(KNBlocks.WARPED_CONNY.get()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

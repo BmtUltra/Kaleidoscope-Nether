@@ -2,7 +2,6 @@ package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.config.Config;
-import com.bmt.kaleidoscope_nether.event.DrinkBlockEntityTypeEventHandler;
 import com.bmt.kaleidoscope_nether.integration.KaleidoscopeDollIntegration;
 import com.bmt.kaleidoscope_nether.registry.*;
 
@@ -27,11 +26,9 @@ public class KaleidoscopeNether {
 
     public KaleidoscopeNether(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(DrinkBlockEntityTypeEventHandler::onBlockEntityTypeAddBlocks);
+//        modEventBus.addListener(DrinkBlockEntityTypeEventHandler::onBlockEntityTypeAddBlocks);
 
         KNBlocks.BLOCKS.register(modEventBus);
-        KNFluids.FLUID_TYPES.register(modEventBus);
-        KNFluids.FLUIDS.register(modEventBus);
         ITEMS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
         KNEffects.EFFECTS.register(modEventBus);
@@ -39,7 +36,6 @@ public class KaleidoscopeNether {
         KNEntities.ENTITIES.register(modEventBus);
         KNPotions.POISONS.register(modEventBus);
         KNAdvancementTriggerRegistry.TRIGGERS.register(modEventBus);
-        KNPaintings.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
@@ -64,6 +60,5 @@ public class KaleidoscopeNether {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(KNComposterRegistry::register);
-        event.enqueueWork(KNSoupBases::registerAll);
     }
 }
