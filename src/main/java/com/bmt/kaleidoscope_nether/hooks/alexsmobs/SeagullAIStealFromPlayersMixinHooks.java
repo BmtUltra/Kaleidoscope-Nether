@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.mixinHooks.alexsmobs;
+package com.bmt.kaleidoscope_nether.hooks.alexsmobs;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
 import com.bmt.kaleidoscope_nether.mixins.alexsmobs.SeagullAIStealFromPlayersAccessor;

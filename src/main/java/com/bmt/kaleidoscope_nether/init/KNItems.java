@@ -3,7 +3,7 @@ package com.bmt.kaleidoscope_nether.init;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
 import com.bmt.kaleidoscope_nether.config.MainConfig;
 import com.bmt.kaleidoscope_nether.item.*;
-import com.bmt.kaleidoscope_nether.tier.PrimitiveMacheteTier;
+import com.bmt.kaleidoscope_nether.util.PrimitiveMacheteTier;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;

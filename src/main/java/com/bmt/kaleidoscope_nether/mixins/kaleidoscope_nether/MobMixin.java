@@ -29,7 +29,7 @@ public abstract class MobMixin {
             Mob self = (Mob) (Object) this;
 
             if (self instanceof Ghast) {
-                if (GhastPendantItem.isWearingGhastPendant(player)) {
+                if (GhastPendantItem.hasGhastPendant(player)) {
                     cir.setReturnValue(null);
                     return;
                 }
@@ -51,14 +51,14 @@ public abstract class MobMixin {
     private void onSetTarget(LivingEntity target, CallbackInfo ci) {
         if (target instanceof Player player) {
             Mob self = (Mob) (Object) this;
-            
+
             if (self instanceof Ghast) {
-                if (GhastPendantItem.isWearingGhastPendant(player)) {
+                if (GhastPendantItem.hasGhastPendant(player)) {
                     ci.cancel();
                     return;
                 }
             }
-            
+
             if (WarpedEffect.isAffectedMob(self)) {
                 if (WarpedEffect.shouldAffectMob(self, player)) {
                     ci.cancel();

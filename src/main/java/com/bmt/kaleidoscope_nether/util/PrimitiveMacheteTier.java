@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.tier;
+package com.bmt.kaleidoscope_nether.util;
 
 import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.world.item.Tier;

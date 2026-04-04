@@ -24,7 +24,7 @@ public class KNCreativeTabs {
                         output.accept(KNItems.PRIMITIVE_MACHETE.get());
                         output.accept(KNItems.GHAST_TENTACLE.get());
                         output.accept(KNItems.ROASTED_GHAST_TENTACLE.get());
-                        //output.accept(KNItems.GHAST_HIDE.get());
+                        output.accept(KNItems.GHAST_HIDE.get());
                         output.accept(KNItems.HAM_SLICE.get());
                         output.accept(KNItems.HAM.get());
                         output.accept(KNItems.HOGLIN_HIDE.get());
@@ -117,6 +117,7 @@ public class KNCreativeTabs {
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());
                         output.accept(KNItems.PEPPER_PORK_BELLY_CHICKEN_SOUP.get());
                         output.accept(KNItems.NETHER_STOVE.get());
+                        output.accept(KNItems.GHAST_PENDANT.get());
                     })
                     .build());
 }
