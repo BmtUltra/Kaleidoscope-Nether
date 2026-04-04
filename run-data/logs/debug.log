@@ -1468,7 +1468,7 @@ java.lang.NullPointerException: Cannot invoke "net.minecraft.client.Minecraft.ge
 [143月2026 15:03:05.934] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for kaleidoscope_nether
 [143月2026 15:03:05.934] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.client.ClientSetup to MOD
 [143月2026 15:03:05.936] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
-[143月2026 15:03:05.939] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.config.Config to MOD
+[143月2026 15:03:05.939] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.config.MainConfig to MOD
 [143月2026 15:03:05.940] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.bmt.kaleidoscope_nether.datagen.DataMain to MOD
 [143月2026 15:03:05.940] [modloading-worker-0/DEBUG] [mixin/]: Mixing ConditionHackMixin from moonlight.mixins.json into net.minecraft.server.packs.resources.SimplePreparableReloadListener
 [143月2026 15:03:05.950] [modloading-worker-0/DEBUG] [mixin/]: Mixing features.render.world.clouds.WorldRendererMixin from embeddium.mixins.json into net.minecraft.client.renderer.LevelRenderer

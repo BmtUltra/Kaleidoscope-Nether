@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.advancement.KNAdvancementTriggerRegistry;
-import com.bmt.kaleidoscope_nether.config.Config;
+import com.bmt.kaleidoscope_nether.config.MainConfig;
 import com.bmt.kaleidoscope_nether.integration.KaleidoscopeDollIntegration;
 import com.bmt.kaleidoscope_nether.init.*;
 import net.minecraft.core.registries.Registries;
@@ -44,7 +44,7 @@ public class KaleidoscopeNether {
         if (ModList.get().isLoaded("kaleidoscope_doll")) {
             KaleidoscopeDollIntegration.register(modEventBus);
         }
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        context.registerConfig(ModConfig.Type.COMMON, MainConfig.SPEC);
 
         KNFoodBiteRegistry.init();
     }

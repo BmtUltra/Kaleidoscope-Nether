@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.init;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.config.Config;
+import com.bmt.kaleidoscope_nether.config.MainConfig;
 import com.bmt.kaleidoscope_nether.item.*;
 import com.bmt.kaleidoscope_nether.tier.PrimitiveMacheteTier;
 import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
@@ -69,7 +69,7 @@ public class KNItems {
 
     // 烈焰永恒牛排
     public static final RegistryObject<Item> EVERLASTING_FLAME_STEAK = ITEMS.register("everlasting_flame_steak",
-            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, Config.EVERLASTING_FLAME_STEAK_COOLDOWN, Config.EVERLASTING_FLAME_STEAK_ENABLED));
+            () -> new EverlastingFoodItem(KNFoods.EVERLASTING_FLAME_STEAK, MainConfig.EVERLASTING_FLAME_STEAK_COOLDOWN, MainConfig.EVERLASTING_FLAME_STEAK_ENABLED));
 
     // 绯红果
     public static final RegistryObject<Item> CRIMSON_FRUIT = ITEMS.register("crimson_fruit",
