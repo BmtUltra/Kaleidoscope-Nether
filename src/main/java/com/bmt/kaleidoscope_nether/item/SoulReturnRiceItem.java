@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.specialfoods;
+package com.bmt.kaleidoscope_nether.item;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import net.minecraft.ChatFormatting;
@@ -13,6 +13,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class SoulReturnRiceItem extends FoodWithEffectsItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
         tooltip.add(Component.translatable("item.kaleidoscope_nether.soul_return_rice.tooltip.line1")
@@ -32,7 +33,7 @@ public class SoulReturnRiceItem extends FoodWithEffectsItem {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, net.minecraft.world.entity.LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, net.minecraft.world.entity.@NotNull LivingEntity entity) {
         ItemStack result = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof ServerPlayer player) {
@@ -44,21 +45,12 @@ public class SoulReturnRiceItem extends FoodWithEffectsItem {
                 if (targetLevel != null) {
                     BlockPos pos = globalPos.pos();
 
-                    if (player.level().dimension() == globalPos.dimension()) {
-                        player.teleportTo(targetLevel,
-                                pos.getX() + 0.5,
-                                pos.getY(),
-                                pos.getZ() + 0.5,
-                                player.getYRot(),
-                                player.getXRot());
-                    } else {
-                        player.teleportTo(targetLevel,
-                                pos.getX() + 0.5,
-                                pos.getY(),
-                                pos.getZ() + 0.5,
-                                player.getYRot(),
-                                player.getXRot());
-                    }
+                    player.teleportTo(targetLevel,
+                            pos.getX() + 0.5,
+                            pos.getY(),
+                            pos.getZ() + 0.5,
+                            player.getYRot(),
+                            player.getXRot());
 
                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
                             SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);

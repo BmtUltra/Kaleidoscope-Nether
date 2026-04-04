@@ -24,7 +24,6 @@ public class KNFoodBiteRegistry {
 
         BRAISED_LION_HEAD = registry.registerFoodData(KaleidoscopeNether.id("braised_lion_head"), FoodBiteRegistry.FoodData
                 .create(5, KNFoods.BRAISED_LION_HEAD_BLOCK, KNFoods.BRAISED_LION_HEAD_ITEM)
-//                .bowlAABB()
         );
 
         CORN_CARROT_PORK_RIB_SOUP = registry.registerFoodData(KaleidoscopeNether.id("corn_carrot_pork_rib_soup"), FoodBiteRegistry.FoodData

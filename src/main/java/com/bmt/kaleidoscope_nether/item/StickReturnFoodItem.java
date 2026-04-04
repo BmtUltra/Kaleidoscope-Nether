@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.items.ItemHandlerHelper;
+import org.jetbrains.annotations.NotNull;
 
 public class StickReturnFoodItem extends FoodWithEffectsItem implements IHasContainer {
     public StickReturnFoodItem(FoodProperties properties) {
@@ -18,7 +19,7 @@ public class StickReturnFoodItem extends FoodWithEffectsItem implements IHasCont
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
         ItemStack itemStack = super.finishUsingItem(stack, level, entity);
         ItemStack stick = new ItemStack(Items.STICK);
 

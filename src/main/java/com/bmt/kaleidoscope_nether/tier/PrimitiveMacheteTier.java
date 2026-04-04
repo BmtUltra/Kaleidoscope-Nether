@@ -4,6 +4,7 @@ import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
+import org.jetbrains.annotations.NotNull;
 
 public class PrimitiveMacheteTier implements Tier {
     private static final ForgeTier BASE_TIER = new ForgeTier(
@@ -42,7 +43,7 @@ public class PrimitiveMacheteTier implements Tier {
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public @NotNull Ingredient getRepairIngredient() {
         return BASE_TIER.getRepairIngredient();
     }
 }

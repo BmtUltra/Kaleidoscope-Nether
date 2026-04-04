@@ -41,12 +41,4 @@ public abstract class StarBlessingMixin extends Entity {
             ci.cancel();
         }
     }
-
-//    @Inject(method = "hurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;knockback(DDD)V"),
-//            cancellable = true)
-//    private void onHurtKnockback(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-//        LivingEntity livingEntity = (LivingEntity) (Object) this;
-//        if (livingEntity.hasEffect(KNEffects.STAR_BLESSING.get())) {
-//        }
-//    }
 }

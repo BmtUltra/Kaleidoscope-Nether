@@ -40,7 +40,7 @@ public class GhostEffect extends MobEffect {
         if (!entity.level().isClientSide() && entity.level() instanceof ServerLevel serverLevel) {
             if (entity.tickCount % 10 == 0) {
                 Vec3 pos = entity.position();
-                int particleCount = 1 + amplifier * 1;
+                int particleCount = 1 + amplifier;
 
                 for (int i = 0; i < particleCount; i++) {
                     double offsetX = (entity.getRandom().nextDouble() - 0.5) * entity.getBbWidth();

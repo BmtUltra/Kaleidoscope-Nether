@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.specialfoods;
+package com.bmt.kaleidoscope_nether.item;
 
 import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
 import net.minecraft.ChatFormatting;
@@ -9,7 +9,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +46,7 @@ public class EverlastingFoodItem extends FoodWithEffectsItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!isEnabled.get()) {
             return InteractionResultHolder.pass(player.getItemInHand(hand));
         }

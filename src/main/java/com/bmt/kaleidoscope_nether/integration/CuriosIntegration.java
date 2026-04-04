@@ -12,8 +12,4 @@ public class CuriosIntegration {
         }
         return false;
     }
-
-    public static boolean isLoaded() {
-        return ModList.get().isLoaded(CURIOS_MOD_ID);
-    }
 }

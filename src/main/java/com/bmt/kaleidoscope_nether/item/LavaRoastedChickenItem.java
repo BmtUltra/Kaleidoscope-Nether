@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.item.specialfoods;
+package com.bmt.kaleidoscope_nether.item;
 
 import com.bmt.kaleidoscope_nether.init.KNSounds;
 import net.minecraft.sounds.SoundSource;
@@ -8,6 +8,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class LavaRoastedChickenItem extends Item {
     public LavaRoastedChickenItem(FoodProperties food) {
@@ -15,7 +16,7 @@ public class LavaRoastedChickenItem extends Item {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, Level level, @NotNull LivingEntity entity) {
         if (!level.isClientSide() && entity instanceof Player player) {
             level.playSound(null,
                     player.getX(),

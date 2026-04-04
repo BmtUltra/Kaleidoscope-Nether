@@ -10,19 +10,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Predicate;
 
 public class BlowgunItem extends ProjectileWeaponItem {
     public static final int MAX_DRAW_DURATION = 7;
-    //public static final float DEFAULT_POWER = 3.0F;
 
     public BlowgunItem(Properties properties) {
         super(properties);
     }
 
     @Override
-    public Predicate<ItemStack> getAllSupportedProjectiles() {
+    public @NotNull Predicate<ItemStack> getAllSupportedProjectiles() {
         return ARROW_ONLY;
     }
 
@@ -32,7 +32,7 @@ public class BlowgunItem extends ProjectileWeaponItem {
     }
 
     @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity shooter, int timeLeft) {
+    public void releaseUsing(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity shooter, int timeLeft) {
         if (shooter instanceof Player player) {
             boolean creative = player.getAbilities().instabuild;
             ItemStack projectile = player.getProjectile(stack);
@@ -84,7 +84,7 @@ public class BlowgunItem extends ProjectileWeaponItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         boolean hasAmmo = !player.getProjectile(stack).isEmpty();
 
@@ -97,12 +97,12 @@ public class BlowgunItem extends ProjectileWeaponItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(@NotNull ItemStack stack) {
         return 72000;
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
+    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.BOW;
     }
 
@@ -115,7 +115,7 @@ public class BlowgunItem extends ProjectileWeaponItem {
     }
 
     @Override
-    public boolean isFoil(ItemStack stack) {
+    public boolean isFoil(@NotNull ItemStack stack) {
         return false;
     }
 }
