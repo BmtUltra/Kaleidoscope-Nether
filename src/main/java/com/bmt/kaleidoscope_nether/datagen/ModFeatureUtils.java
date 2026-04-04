@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.data;
+package com.bmt.kaleidoscope_nether.datagen;
 
 import net.minecraft.core.Direction;
 import net.minecraft.tags.TagKey;

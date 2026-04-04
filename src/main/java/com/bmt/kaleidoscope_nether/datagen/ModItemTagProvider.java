@@ -1,4 +1,4 @@
-package com.bmt.kaleidoscope_nether.data;
+package com.bmt.kaleidoscope_nether.datagen;
 
 import com.bmt.kaleidoscope_nether.api.KNTags;
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;

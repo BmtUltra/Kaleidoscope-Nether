@@ -1,6 +1,6 @@
-package com.bmt.kaleidoscope_nether.data;
+package com.bmt.kaleidoscope_nether.datagen;
 
-import com.bmt.kaleidoscope_nether.data.subAdvancements.KNAdvances;
+import com.bmt.kaleidoscope_nether.datagen.subAdvancements.KNAdvances;
 import com.google.gson.JsonObject;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.CachedOutput;
