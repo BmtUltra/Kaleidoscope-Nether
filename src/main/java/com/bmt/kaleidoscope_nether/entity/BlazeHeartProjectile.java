@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.entity;
 
-import com.bmt.kaleidoscope_nether.registry.KNItems;
-import com.bmt.kaleidoscope_nether.registry.KNEntities;
+import com.bmt.kaleidoscope_nether.init.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;

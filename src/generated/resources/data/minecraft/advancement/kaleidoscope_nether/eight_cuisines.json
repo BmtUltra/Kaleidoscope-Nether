@@ -1,34 +1,10 @@
 {
   "parent": "minecraft:kaleidoscope_nether/root",
   "criteria": {
-    "braised_lion_head": {
-      "conditions": {
-        "item": {
-          "items": "kaleidoscope_nether:braised_lion_head"
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "braised_pork_rice": {
-      "conditions": {
-        "item": {
-          "items": "kaleidoscope_nether:braised_pork_rice"
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "chongqing_noodles": {
       "conditions": {
         "item": {
           "items": "kaleidoscope_nether:chongqing_noodles"
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "corn_carrot_pork_rib_soup": {
-      "conditions": {
-        "item": {
-          "items": "kaleidoscope_nether:corn_carrot_pork_rib_soup"
         }
       },
       "trigger": "minecraft:consume_item"
@@ -164,12 +140,6 @@
       "forgetfulness_soup"
     ],
     [
-      "braised_lion_head"
-    ],
-    [
-      "braised_pork_rice"
-    ],
-    [
       "garlic_oysters"
     ],
     [
@@ -177,9 +147,6 @@
     ],
     [
       "pepper_pork_belly_chicken_soup"
-    ],
-    [
-      "corn_carrot_pork_rib_soup"
     ]
   ],
   "sends_telemetry_event": true

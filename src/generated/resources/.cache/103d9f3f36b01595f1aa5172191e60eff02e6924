@@ -1,7 +1,5 @@
-// 1.21.1	2026-03-09T11:56:09.5377848	Registries
-5068965a28e23ad15f81c15ecd4bb7d6b8d52aee data/kaleidoscope_nether/enchantment/anesthesia.json
+// 1.21.1	2026-04-25T18:04:32.5907215	Registries
 9d89fc353531897f8ea5717f1c8eee67d1460e8d data/kaleidoscope_nether/enchantment/lava_walker.json
-bb14c150cac462ad019edab9a46bc1146d4c3a8c data/kaleidoscope_nether/enchantment/piercing.json
 3fe7c7d72e3781a5962825decf5afea4e465a988 data/kaleidoscope_nether/neoforge/biome_modifier/poisonous_fruit.json
 e44adcb043ac77f15a7daa77eaab8fd266b537e2 data/kaleidoscope_nether/neoforge/biome_modifier/twisting_cave_vines.json
 51a8d6d0bede16059ade3cda855598c2c5eb9141 data/kaleidoscope_nether/neoforge/biome_modifier/weeping_cave_vines.json

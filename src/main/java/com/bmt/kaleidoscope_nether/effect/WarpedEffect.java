@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.effect;
 
-import com.bmt.kaleidoscope_nether.config.Config;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.bmt.kaleidoscope_nether.config.MainConfig;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -28,7 +28,7 @@ public class WarpedEffect extends MobEffect {
     }
 
     public static boolean isAffectedMob(LivingEntity entity) {
-        List<? extends String> affectedMobIds = Config.WARPED_BUFF_AFFECTED_MOBS.get();
+        List<? extends String> affectedMobIds = MainConfig.WARPED_BUFF_AFFECTED_MOBS.get();
 
         if (affectedMobIds.isEmpty()) {
             return false;

@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
+import com.github.ysbbbbbb.kaleidoscopecookery.item.SickleItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -27,6 +28,11 @@ public class KNCropBlockBase extends CropBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        if (player.getMainHandItem().getItem() instanceof SickleItem ||
+                player.getOffhandItem().getItem() instanceof SickleItem) {
+            return InteractionResult.PASS;
+        }
+
         if (state.getBlock() instanceof CropBlock cropBlock && cropBlock.isMaxAge(state)) {
             getHandHarvestItem(state, level, pos, null, player, ItemStack.EMPTY);
             int ageAfterUse = 5;

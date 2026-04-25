@@ -1,8 +1,8 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNEnchantments;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNEnchantments;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;

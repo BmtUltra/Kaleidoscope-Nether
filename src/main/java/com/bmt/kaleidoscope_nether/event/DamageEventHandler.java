@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;

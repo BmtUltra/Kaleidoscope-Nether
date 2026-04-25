@@ -1,8 +1,8 @@
 package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.api.KNTags;
-import com.bmt.kaleidoscope_nether.registry.KNBlocks;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNBlocks;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import com.github.ysbbbbbb.kaleidoscopecookery.init.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.context.BlockPlaceContext;

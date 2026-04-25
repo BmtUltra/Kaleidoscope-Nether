@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
 import com.bmt.kaleidoscope_nether.effect.CrimsonEffect;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,8 +1,8 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNEffects;
-import com.bmt.kaleidoscope_nether.registry.KNPotions;
+import com.bmt.kaleidoscope_nether.init.KNEffects;
+import com.bmt.kaleidoscope_nether.init.KNPotions;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;

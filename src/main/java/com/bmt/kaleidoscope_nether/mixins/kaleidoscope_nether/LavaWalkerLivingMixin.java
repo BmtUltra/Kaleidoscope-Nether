@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.mixins.kaleidoscope_nether;
 
-import com.bmt.kaleidoscope_nether.registry.KNEnchantments;
+import com.bmt.kaleidoscope_nether.init.KNEnchantments;
 import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import net.minecraft.core.BlockPos;
@@ -38,12 +38,8 @@ public class LavaWalkerLivingMixin {
             return original;
 
         int enchantmentLevel;
-        try {
-            enchantmentLevel = boots.getEnchantmentLevel(
-                    entity.level().holderOrThrow(KNEnchantments.LAVA_WALKER));
-        } catch (Exception e) {
-            return original;
-        }
+
+        enchantmentLevel = boots.getEnchantmentLevel(entity.level().holderOrThrow(KNEnchantments.LAVA_WALKER));
 
         if (enchantmentLevel <= 0)
             return original;
@@ -98,7 +94,6 @@ public class LavaWalkerLivingMixin {
 
             return new Vec3(original.x, highestLavaY, original.z);
         }
-
         return original;
     }
 }

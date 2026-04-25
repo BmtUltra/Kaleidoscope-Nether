@@ -1,6 +1,6 @@
 package com.bmt.kaleidoscope_nether.mixins.alexsmobs;
 
-import com.bmt.kaleidoscope_nether.mixinHooks.alexsmobs.SeagullAIStealFromPlayersMixinHooks;
+import com.bmt.kaleidoscope_nether.hooks.alexsmobs.SeagullAIStealFromPlayersMixinHooks;
 import com.github.alexthe666.alexsmobs.entity.EntitySeagull;
 import com.github.alexthe666.alexsmobs.entity.ai.SeagullAIStealFromPlayers;
 import net.minecraft.world.item.ItemStack;

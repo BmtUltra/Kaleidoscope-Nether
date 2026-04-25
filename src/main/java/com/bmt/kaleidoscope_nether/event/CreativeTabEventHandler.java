@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.event;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
-import com.bmt.kaleidoscope_nether.registry.KNItems;
+import com.bmt.kaleidoscope_nether.init.KNItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;

@@ -1,7 +1,7 @@
 package com.bmt.kaleidoscope_nether.item;
 
-import com.bmt.kaleidoscope_nether.config.Config;
-import com.bmt.kaleidoscope_nether.registry.KNSounds;
+import com.bmt.kaleidoscope_nether.config.MainConfig;
+import com.bmt.kaleidoscope_nether.init.KNSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
@@ -69,7 +69,7 @@ public class StarDustItem extends Item {
         int maxDurability = targetStack.getMaxDamage();
         int currentDamage = targetStack.getDamageValue();
 
-        int repairAmount = (int) (maxDurability * Config.STAR_DUST_REPAIR_PERCENTAGE.get() / 100.0f) + Config.STAR_DUST_REPAIR_FLAT.get();
+        int repairAmount = (int) (maxDurability * MainConfig.STAR_DUST_REPAIR_PERCENTAGE.get() / 100.0f) + MainConfig.STAR_DUST_REPAIR_FLAT.get();
         int newDamage = Math.max(0, currentDamage - repairAmount);
 
         targetStack.setDamageValue(newDamage);

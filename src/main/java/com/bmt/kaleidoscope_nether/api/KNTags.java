@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.Block;
 
 public interface KNTags {
     interface Blocks {
-        TagKey<Block> SOUL_SOIL_SAND = register("soul_soil_sand");
+        TagKey<Block> SOUL_SOIL_SAND = register();
 
-        private static TagKey<Block> register(String name) {
-            return BlockTags.create(KaleidoscopeNether.id(name));
+        private static TagKey<Block> register() {
+            return BlockTags.create(KaleidoscopeNether.id("soul_soil_sand"));
         }
     }
 

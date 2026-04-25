@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "tag": "c:foods/milk"
+      "item": "minecraft:milk_bucket"
     },
     "B": {
       "tag": "c:crimson_fruits"
