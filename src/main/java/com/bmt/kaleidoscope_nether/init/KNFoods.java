@@ -576,13 +576,6 @@ public class KNFoods {
             .build();
 
     // 红烧狮子头
-//    public static final FoodProperties BRAISED_LION_HEAD = new FoodProperties.Builder()
-//            .nutrition(16).saturationMod(0.8f)
-//            .effect(() -> new MobEffectInstance(WARMTH.get(), 80 * 20), 1.0F)
-//            .meat()
-//            .alwaysEat()
-//            .build();
-
     public static final FoodProperties BRAISED_LION_HEAD_ITEM = new FoodProperties.Builder()
             .nutrition(16)
             .saturationMod(0.8F)
@@ -613,13 +606,6 @@ public class KNFoods {
             .build();
 
     // 卤肉饭
-//    public static final FoodProperties BRAISED_PORK_RICE = new FoodProperties.Builder()
-//            .nutrition(13).saturationMod(0.611f)
-//            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
-//            .meat()
-//            .alwaysEat()
-//            .build();
-
     public static final FoodProperties BRAISED_PORK_RICE_ITEM = new FoodProperties.Builder()
             .nutrition(13)
             .saturationMod(0.611F)
@@ -643,13 +629,6 @@ public class KNFoods {
             .build();
 
     // 玉米胡萝卜排骨汤
-//    public static final FoodProperties CORN_CARROT_PORK_RIB_SOUP = new FoodProperties.Builder()
-//            .nutrition(20).saturationMod(0.55f)
-//            .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
-//            .meat()
-//            .alwaysEat()
-//            .build();
-
     public static final FoodProperties CORN_CARROT_PORK_RIB_SOUP_ITEM = new FoodProperties.Builder()
             .nutrition(20)
             .saturationMod(0.55F)
@@ -663,12 +642,4 @@ public class KNFoods {
             .effect(() -> new MobEffectInstance(SATIATED_SHIELD.get(), 180 * 20), 1.0F)
             .alwaysEat()
             .meat().build();
-/*
-    // 广式肠粉
-    public static final FoodProperties CANTONESE_RICE_NOODLE_ROLL = new FoodProperties.Builder()
-            .nutrition(7).saturationMod(0.8f)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0), 1.0F)
-            .alwaysEat()
-            .build();
- */
 }
