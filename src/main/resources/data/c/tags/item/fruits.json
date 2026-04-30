@@ -1,8 +1,9 @@
 {
   "values": [
-    "#c:berries",
-    "#c:fruits/crimson_fruit",
-    "#c:fruits/poisonous_fruit",
-    "#c:fruits/warped_fruit"
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "kaleidoscope_nether:warped_fruit",
+    "kaleidoscope_nether:poisonous_fruit",
+    "kaleidoscope_nether:crimson_fruit"
   ]
 }

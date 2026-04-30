@@ -1,7 +1,5 @@
 {
   "values": [
-    "#c:crops/carrot",
-    "#c:crops/pepper",
-    "#c:crops/potato"
+    "kaleidoscope_nether:soul_pepper"
   ]
 }
