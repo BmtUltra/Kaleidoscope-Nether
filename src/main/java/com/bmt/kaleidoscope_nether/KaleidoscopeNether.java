@@ -26,8 +26,6 @@ public class KaleidoscopeNether {
 
     public KaleidoscopeNether(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-//        modEventBus.addListener(DrinkBlockEntityTypeEventHandler::onBlockEntityTypeAddBlocks);
-
         KNBlocks.BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         KNItems.ITEMS.register(modEventBus);
@@ -38,15 +36,11 @@ public class KaleidoscopeNether {
         KNAdvancementTriggerRegistry.TRIGGERS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         KNCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-
         if (ModList.get().isLoaded("kaleidoscope_doll")) {
             KaleidoscopeDollIntegration.register(modEventBus);
         }
-
         modContainer.registerConfig(ModConfig.Type.COMMON, MainConfig.SPEC);
-
         KNFoodBiteRegistry.init();
-
         NeoForge.EVENT_BUS.addListener(KNBrewingRecipes::registerBrewingRecipes);
     }
 
