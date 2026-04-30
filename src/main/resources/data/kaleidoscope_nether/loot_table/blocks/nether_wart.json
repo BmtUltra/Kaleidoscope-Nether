@@ -1,17 +1,65 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
+  "random_sequence": "minecraft:blocks/nether_wart",
   "pools": [
     {
+      "rolls": 1.0,
+      "functions": [
+        {
+          "function": "minecraft:explosion_decay"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_wart",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 4.0
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "minecraft:nether_wart",
+                  "properties": {
+                    "age": "3"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "parameters": {
+                "bonusMultiplier": 1
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "minecraft:nether_wart",
+                  "properties": {
+                    "age": "3"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "minecraft:nether_wart",
           "condition": "minecraft:block_state_property",
+          "block": "minecraft:nether_wart",
           "properties": {
             "age": "3"
           }
@@ -20,17 +68,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "kaleidoscope_nether:nether_caterpillar",
           "conditions": [
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
+              "condition": "minecraft:random_chance",
+              "chance": 0.1
             }
-          ],
-          "name": "kaleidoscope_nether:nether_caterpillar"
+          ]
         }
-      ],
-      "rolls": 1.0
+      ]
     }
-  ],
-  "random_sequence": "kaleidoscope_nether:blocks/nether_wart"
+  ]
 }
