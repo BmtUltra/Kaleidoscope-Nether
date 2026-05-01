@@ -56,20 +56,18 @@
     {
       "rolls": 1.0,
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:nether_wart",
-          "properties": {
-            "age": "3"
-          }
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "kaleidoscope_nether:nether_caterpillar",
           "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "minecraft:nether_wart",
+              "properties": {
+                "age": "3"
+              }
+            },
             {
               "condition": "minecraft:random_chance",
               "chance": 0.1
