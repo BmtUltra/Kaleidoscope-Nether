@@ -9,6 +9,7 @@ import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 public class StarDustItem extends Item {
@@ -26,6 +27,9 @@ public class StarDustItem extends Item {
         if (incoming.isEmpty()) {
             return false;
         } else {
+            if (tryUpgradeToEnchantedGoldenApple(player, starDustStack, incoming, carriedSlotAccessor)) {
+                return true;
+            }
             return repairTargetItem(player, starDustStack, incoming, carriedSlotAccessor);
         }
     }
@@ -40,8 +44,40 @@ public class StarDustItem extends Item {
         if (targetStack.isEmpty()) {
             return false;
         } else {
+            if (tryUpgradeToEnchantedGoldenApple(player, starDustStack, targetStack, slot)) {
+                return true;
+            }
             return repairTargetItem(player, starDustStack, targetStack, slot);
         }
+    }
+
+    private boolean tryUpgradeToEnchantedGoldenApple(Player player, ItemStack starDustStack, ItemStack targetStack, Object target) {
+        if (!targetStack.is(Items.GOLDEN_APPLE)) {
+            return false;
+        }
+
+        if (starDustStack.isEmpty()) {
+            return false;
+        }
+
+        if (player.level().isClientSide()) {
+            return true;
+        }
+
+        starDustStack.shrink(1);
+
+        ItemStack enchantedApple = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, targetStack.getCount());
+
+        if (target instanceof Slot slot) {
+            slot.set(enchantedApple);
+            slot.setChanged();
+        } else if (target instanceof SlotAccess slotAccess) {
+            slotAccess.set(enchantedApple);
+        }
+
+        player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+                KNSounds.STAR_DUST_REPAIR.get(), SoundSource.PLAYERS, 0.8F, 1.0F);
+        return true;
     }
 
     private boolean repairTargetItem(Player player, ItemStack starDustStack, ItemStack targetStack, Object target) {
@@ -52,7 +88,6 @@ public class StarDustItem extends Item {
         if (targetStack.getDamageValue() == 0) {
             return false;
         }
-
 
         if (starDustStack.isEmpty()) {
             return false;

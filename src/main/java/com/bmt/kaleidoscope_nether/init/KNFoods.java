@@ -48,8 +48,7 @@ public class KNFoods {
 
     // 回魂饭
     public static final FoodProperties SOUL_RETURN_RICE = new FoodProperties.Builder()
-            .nutrition(16).saturationModifier(1.8f)
-            .effect(() -> new MobEffectInstance(GHOST, 90 * 20, 0), 1.0F)
+            .nutrition(10).saturationModifier(1.8f)
             .alwaysEdible()
             .build();
 
@@ -530,7 +529,6 @@ public class KNFoods {
     // 孟婆汤
     public static final FoodProperties FORGETFULNESS_SOUP = new FoodProperties.Builder()
             .nutrition(8).saturationModifier(1.0f)
-            .effect(() -> new MobEffectInstance(ModEffects.WARMTH, 80 * 20), 1.0F)
             .alwaysEdible()
             .build();
 

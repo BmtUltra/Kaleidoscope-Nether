@@ -89,7 +89,7 @@ configurations {
 }
 
 dependencies {
-    implementation "maven.modrinth:kaleidoscope-cookery:1.2.0-neoforge+mc1.21.1"
+    implementation "maven.modrinth:kaleidoscope-cookery:1.4.0-neoforge+mc1.21.1"
     implementation "maven.modrinth:alexs-mobs(1.21.1):1.22.17"
     implementation "maven.modrinth:citadel:2.7.0"
     implementation "curse.maven:jei-238222:7420587"
