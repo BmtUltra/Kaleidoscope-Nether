@@ -39,13 +39,6 @@ public class KNFoods {
             .alwaysEdible()
             .build();
 
-    // 下界猪儿虫
-    public static final FoodProperties NETHER_CATERPILLAR = new FoodProperties.Builder()
-            .nutrition(18).saturationModifier(0.2f)
-            .effect(() -> new MobEffectInstance(CONFUSION, 200), 1F)
-            .alwaysEdible()
-            .build();
-
     // 回魂饭
     public static final FoodProperties SOUL_RETURN_RICE = new FoodProperties.Builder()
             .nutrition(10).saturationModifier(1.8f)
@@ -357,34 +350,6 @@ public class KNFoods {
     public static final FoodProperties STAR_STEW_MEAT = new FoodProperties.Builder()
             .nutrition(16).saturationModifier(1.8f)
             .effect(() -> new MobEffectInstance(STAR_BLESSING, 600, 0), 1.0F)
-            .alwaysEdible()
-            .build();
-
-    // 荧光浓汤
-    public static final FoodProperties GLOWING_SOUP = new FoodProperties.Builder()
-            .nutrition(6).saturationModifier(0.667f)
-            .effect(() -> new MobEffectInstance(ModEffects.SATIATED_SHIELD, 180 * 20), 1.0F)
-            .alwaysEdible()
-            .build();
-
-    // 荧光布丁
-    public static final FoodProperties GLOWING_PUDDING = new FoodProperties.Builder()
-            .nutrition(8).saturationModifier(0.0f)
-            .effect(() -> new MobEffectInstance(ModEffects.SATIATED_SHIELD, 180 * 20), 1.0F)
-            .alwaysEdible()
-            .build();
-
-    // 荧光烤串
-    public static final FoodProperties GLOWING_KABOB = new FoodProperties.Builder()
-            .nutrition(4).saturationModifier(0.55f)
-            .effect(() -> new MobEffectInstance(ModEffects.SATIATED_SHIELD, 45 * 20), 1.0F)
-            .alwaysEdible()
-            .build();
-
-    // 荧光沙拉
-    public static final FoodProperties GLOWING_SALAD = new FoodProperties.Builder()
-            .nutrition(6).saturationModifier(0.55f)
-            .effect(() -> new MobEffectInstance(ModEffects.SATIATED_SHIELD, 90 * 20), 1.0F)
             .alwaysEdible()
             .build();
 

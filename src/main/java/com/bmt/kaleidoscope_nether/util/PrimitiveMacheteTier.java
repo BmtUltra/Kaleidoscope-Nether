@@ -21,7 +21,7 @@ public class PrimitiveMacheteTier implements Tier {
 
     @Override
     public float getAttackDamageBonus() {
-        return 7.0F;
+        return 8.0F;
     }
 
     @Override

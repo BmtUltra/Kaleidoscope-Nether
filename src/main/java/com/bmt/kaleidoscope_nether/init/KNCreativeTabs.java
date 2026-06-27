@@ -60,7 +60,6 @@ public class KNCreativeTabs {
                         output.accept(KNItems.MAGMA_CREAM_SOUP.get());
                         output.accept(KNItems.WITHER_BONE_SOUP.get());
                         output.accept(KNItems.POISONOUS_SOUP.get());
-                        output.accept(KNItems.GLOWING_SOUP.get());
                         output.accept(KNItems.CHONGQING_NOODLES.get());
                         output.accept(KNItems.LUOSIFEN.get());
                         output.accept(KNItems.SPICY_HOGLIN_RAMEN.get());
@@ -82,7 +81,6 @@ public class KNCreativeTabs {
                         output.accept(KNItems.STAR_STEW_MEAT.get());
                         output.accept(KNItems.WARPED_CAKE.get());
                         output.accept(KNItems.GOLDEN_ROAST.get());
-                        output.accept(KNItems.GLOWING_PUDDING.get());
                         output.accept(KNItems.LAVA_JELLY.get());
                         output.accept(KNItems.NETHER_CATERPILLAR_SASHIMI.get());
                         output.accept(KNItems.NETHER_FRIES_PLATTER.get());
@@ -100,16 +98,14 @@ public class KNCreativeTabs {
                             }
                         });
 
-                        output.accept(KNItems.GLOWING_SALAD.get());
                         output.accept(KNItems.BLACK_APPLE_SALAD.get());
                         output.accept(KNItems.RUBY_STEAK.get());
-                        output.accept(KNItems.GHAST_KABOB.get());
-                        output.accept(KNItems.SOUL_STRIDER_KABOB.get());
-                        output.accept(KNItems.GOLDEN_KABOB.get());
-                        output.accept(KNItems.BLAZING_KABOB.get());
-                        output.accept(KNItems.CRIMSON_KABOB.get());
-                        output.accept(KNItems.WARPED_KABOB.get());
-                        output.accept(KNItems.GLOWING_KABOB.get());
+//                        output.accept(KNItems.GHAST_KABOB.get());
+//                        output.accept(KNItems.SOUL_STRIDER_KABOB.get());
+//                        output.accept(KNItems.GOLDEN_KABOB.get());
+//                        output.accept(KNItems.BLAZING_KABOB.get());
+//                        output.accept(KNItems.CRIMSON_KABOB.get());
+//                        output.accept(KNItems.WARPED_KABOB.get());
                         output.accept(KNItems.FORGETFULNESS_SOUP.get());
                         output.accept(KNItems.GARLIC_OYSTERS.get());
                         output.accept(KNItems.COUPLES_LUNG_SLICE.get());

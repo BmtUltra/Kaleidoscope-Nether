@@ -1,20 +1,14 @@
 ﻿{
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "youkaishomecoming"
-    }
-  ],
   "type": "kaleidoscope_cookery:pot",
   "carrier": {
     "item": "minecraft:bowl"
   },
   "ingredients": [
     {
-      "item": "youkaishomecoming:tofu"
+      "item": "minecraft:rotten_flesh"
     },
     {
-      "item": "youkaishomecoming:tofu"
+      "item": "minecraft:rotten_flesh"
     },
     {
       "tag": "c:flour"

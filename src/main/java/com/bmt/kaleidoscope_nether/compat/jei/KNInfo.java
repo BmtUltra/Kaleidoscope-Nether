@@ -1,10 +1,13 @@
 package com.bmt.kaleidoscope_nether.compat.jei;
 
 import com.bmt.kaleidoscope_nether.KaleidoscopeNether;
+import com.bmt.kaleidoscope_nether.compat.jei.category.StarDustUpgradeRecipeCategory;
 import com.bmt.kaleidoscope_nether.init.KNItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -20,8 +23,19 @@ public class KNInfo implements IModPlugin {
     }
 
     @Override
+    public void registerCategories(IRecipeCategoryRegistration registration) {
+        registration.addRecipeCategories(new StarDustUpgradeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+    }
+
+    @Override
     public void registerRecipes(@NotNull IRecipeRegistration registration) {
         addAllMaterialInfo(registration);
+        registration.addRecipes(StarDustUpgradeRecipeCategory.TYPE, StarDustUpgradeRecipeCategory.getRecipes());
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(KNItems.STAR_DUST.get().getDefaultInstance(), StarDustUpgradeRecipeCategory.TYPE);
     }
 
     private void addAllMaterialInfo(IRecipeRegistration registration) {

@@ -6,10 +6,8 @@ import com.bmt.kaleidoscope_nether.item.*;
 import com.bmt.kaleidoscope_nether.item.SpecialFruitBlockItem;
 import com.bmt.kaleidoscope_nether.item.StickReturnFoodItem;
 import com.bmt.kaleidoscope_nether.util.PrimitiveMacheteTier;
-import com.github.ysbbbbbb.kaleidoscopecookery.item.BowlFoodOnlyItem;
-import com.github.ysbbbbbb.kaleidoscopecookery.item.ChiliItem;
-import com.github.ysbbbbbb.kaleidoscopecookery.item.FoodWithEffectsItem;
-import com.github.ysbbbbbb.kaleidoscopecookery.item.KitchenKnifeItem;
+import com.github.ysbbbbbb.kaleidoscopecookery.init.ModFoods;
+import com.github.ysbbbbbb.kaleidoscopecookery.item.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,24 +21,23 @@ public class KNItems {
 
     // 恶魂皮
     public static final DeferredHolder<Item, Item> GHAST_HIDE = ITEMS.register("ghast_hide",
-            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new Item(new Item.Properties()));
 
     // 疣猪兽獠牙
     public static final DeferredHolder<Item, Item> HOGLIN_TUSK = ITEMS.register("hoglin_tusk",
-            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new Item(new Item.Properties()));
 
     // 炽足兽岩壳
     public static final DeferredHolder<Item, Item> STRIDER_ROCK_SHELL = ITEMS.register("strider_rock_shell",
-            () -> new Item(new Item.Properties()
-                    .fireResistant()));
+            () -> new Item(new Item.Properties().fireResistant()));
 
     // 镀金碎片
     public static final DeferredHolder<Item, Item> GILDED_FRAGMENT = ITEMS.register("gilded_fragment",
-            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new Item(new Item.Properties()));
 
     // 凋零骨头
     public static final DeferredHolder<Item, Item> WITHER_RIB = ITEMS.register("wither_rib",
-            () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new Item(new Item.Properties()));
 
     // 下界炉灶
     public static final DeferredHolder<Item, Item> NETHER_STOVE = ITEMS.register("nether_stove",
@@ -52,10 +49,7 @@ public class KNItems {
 
     // 烈焰珍珠
     public static final DeferredHolder<Item, Item> BLAZE_HEART = ITEMS.register("blaze_heart",
-            () -> new ThrowableFuelItem(new Item.Properties()
-                    .rarity(Rarity.COMMON)
-                    .stacksTo(16),
-                    3000));
+            () -> new ThrowableFuelItem(new Item.Properties().stacksTo(16), 3000));
 
     // 疣猪兽皮
     public static final DeferredHolder<Item, Item> HOGLIN_HIDE = ITEMS.register("hoglin_hide",
@@ -89,7 +83,7 @@ public class KNItems {
 
     // 下界猪儿虫
     public static final DeferredHolder<Item, Item> NETHER_CATERPILLAR = ITEMS.register("nether_caterpillar",
-            () -> new NetherCaterpillarItem(KNFoods.NETHER_CATERPILLAR));
+            () -> new WithTooltipsItem(new Item.Properties().food(ModFoods.CATERPILLAR), "nether_caterpillar"));
 
     // 回魂饭
     public static final DeferredHolder<Item, Item> SOUL_RETURN_RICE = ITEMS.register("soul_return_rice",
@@ -278,22 +272,6 @@ public class KNItems {
     // 星之炖肉
     public static final DeferredHolder<Item, Item> STAR_STEW_MEAT = ITEMS.register("star_stew_meat",
             () -> new BowlFoodOnlyItem(KNFoods.STAR_STEW_MEAT));
-
-    // 荧光浓汤
-    public static final DeferredHolder<Item, Item> GLOWING_SOUP = ITEMS.register("glowing_soup",
-            () -> new BowlFoodOnlyItem(KNFoods.GLOWING_SOUP));
-
-    // 荧光布丁
-    public static final DeferredHolder<Item, Item> GLOWING_PUDDING = ITEMS.register("glowing_pudding",
-            () -> new BowlFoodOnlyItem(KNFoods.GLOWING_PUDDING));
-
-    // 荧光烤串
-    public static final DeferredHolder<Item, Item> GLOWING_KABOB = ITEMS.register("glowing_kabob",
-            () -> new StickReturnFoodItem(KNFoods.GLOWING_KABOB));
-
-    // 荧光沙拉
-    public static final DeferredHolder<Item, Item> GLOWING_SALAD = ITEMS.register("glowing_salad",
-            () -> new BowlFoodOnlyItem(KNFoods.GLOWING_SALAD));
 
     // 黑苹果沙拉
     public static final DeferredHolder<Item, Item> BLACK_APPLE_SALAD = ITEMS.register("black_apple_salad",

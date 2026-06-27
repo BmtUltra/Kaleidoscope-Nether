@@ -1,12 +1,9 @@
 {
   "type": "kaleidoscope_cookery:pot",
   "carrier": {
-    "item": "minecraft:bowl"
+    "item": "kaleidoscope_nether:hoglin_tusk"
   },
   "ingredients": [
-    {
-      "item": "kaleidoscope_nether:hoglin_tusk"
-    },
     [
       {
         "tag": "c:raw_ham"

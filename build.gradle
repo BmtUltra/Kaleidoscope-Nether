@@ -31,6 +31,9 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    flatDir {
+        dir 'libs'
+    }
 }
 
 base {
@@ -102,7 +105,8 @@ dependencies {
     compileOnly "maven.modrinth:curios:9.5.1+1.21.1"
 
     runtimeOnly "maven.modrinth:farmers-delight:1.21.1-1.2.10"
-
+    compileOnly fileTree("libs")
+    runtimeOnly fileTree("libs")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
